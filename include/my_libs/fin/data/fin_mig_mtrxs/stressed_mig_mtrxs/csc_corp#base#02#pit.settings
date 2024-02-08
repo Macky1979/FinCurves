@@ -1,0 +1,13 @@
+rho: 0.190000
+alpha: -1.000000
+Z_prev: -1.500000
+Z_curr: -1.200000
+Z_next: -0.500000
+calib_period: 11
+stressed_mm: yes
+stressed_mm_dh: yes
+stressed_mm_dd: yes
+stressed_pd_vector: yes
+updated: yes
+type: pit
+status: HHHHHHHHHDD

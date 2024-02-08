@@ -1,0 +1,38 @@
+\hypertarget{_2home_2macky_2Documents_2Programming_2C_09_09_2FinCurves_2src_2fin_curves_8h-example}{}\doxysection{/home/macky/\+Documents/\+Programming/\+C++/\+Fin\+Curves/src/fin\+\_\+curves.\+h}
+Convert discount factor into zero rate.
+
+Convert discount factor into zero rate.
+\begin{DoxyParams}{Parameters}
+{\em df} & Discount factor. \\
+\hline
+{\em yr\+\_\+frac} & Year fraction, which is used to convert discount factor into zero rate. \\
+\hline
+{\em type} & Type of conversion. ~\newline
+ 0 =\texorpdfstring{$>$}{>} df = 1 / (1 + zr) $^\wedge$ yr\+\_\+frac ~\newline
+ 1 =\texorpdfstring{$>$}{>} df = exp(-\/zr $\ast$ yr\+\_\+frac) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} df = 0.999;}
+\DoxyCodeLine{\textcolor{keywordtype}{double} yr\_frac = 1.0;}
+\DoxyCodeLine{\textcolor{keywordtype}{double} zr\_1 = df\_to\_zr(df, yr\_frac);}
+\DoxyCodeLine{\textcolor{keywordtype}{double} zr\_2 = df\_to\_zr(df, yr\_frac, 2);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\# pragma once}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{double} df\_to\_zr(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& df, \textcolor{keyword}{const} \textcolor{keywordtype}{double}\& yr\_frac, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} type = 0);}
+
+\end{DoxyCodeInclude}
+ 

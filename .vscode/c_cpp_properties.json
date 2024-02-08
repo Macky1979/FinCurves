@@ -1,0 +1,23 @@
+{
+    "env": {
+        "myIncludePath": ["src",
+                          "include/my_libs/fin",
+                          "include/my_libs/general",
+                          "include/my_libs/math",
+                          "include/sqlite-3.44.2",
+                          "include/yaml-cpp"],
+        "myDefines": []
+    },
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": ["${myIncludePath}"],
+            "defines": ["${myDefines}"],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,457 @@
+\hypertarget{classlib__mtrx_1_1myMatrix2D}{}\doxysection{lib\+\_\+mtrx\+::my\+Matrix2D Class Reference}
+\label{classlib__mtrx_1_1myMatrix2D}\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+
+
+2D matrix object.  
+
+
+
+
+{\ttfamily \#include $<$lib\+\_\+mtrx.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a2ae24a91525bcd2d5edc9843c3bc9c9f}{my\+Matrix2D}} (const unsigned short \&x, const unsigned short \&y, const double \&element=0.\+0, const bool \&diagonal=false)
+\begin{DoxyCompactList}\small\item\em Construct a new x-\/by-\/y \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a320e532180b326252f250ad99684ac1c}{my\+Matrix2D}} (const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ elements)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix from vector of vectors of doubles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a5b28743fe4642d730e5621d8a1de3357}{my\+Matrix2D}} (const std\+::string \&file\+\_\+nm, const std\+::string \&sep=\char`\"{},\char`\"{})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix based on matrix stored in a .csv file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_ae4bec7bc7508471f5ea7fc2644f0cf23}{my\+Matrix2D}} (const \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} \&mtrx)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix based on another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a25422b061206d9342edcae27c3cc3520}{my\+Matrix2D}} (const \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} \&mtrx, const std\+::vector$<$ unsigned short $>$ \&rng)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix from a range of another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a0f85f96647bd10c71e74dbaf425487d1}{my\+Matrix2D}} (const \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} \&mtrx, const std\+::string \&rng)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix from a range of another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a317e8e0678fe9875364013ed841100da}{my\+Matrix2D}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$ mtrx)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix based on another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_ab7bac6f1472f304a93f5f66a2a452829}{my\+Matrix2D}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$ mtrx, const std\+::vector$<$ unsigned short $>$ \&rng)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix from a range of another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a81197b9ffd1cee912be20849ddcfb788}{my\+Matrix2D}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$ mtrx, const std\+::string \&rng)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix from a range of another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_afe91a65c7e6e0b72a6cba0797752ff32}\label{classlib__mtrx_1_1myMatrix2D_afe91a65c7e6e0b72a6cba0797752ff32}} 
+{\bfseries $\sim$my\+Matrix2D} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}} (const unsigned short \&precision=7) const
+\begin{DoxyCompactList}\small\item\em Print matrix on screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a84e8f056d98f94d559e8384d67a39c96}{save}} (const std\+::string \&file\+\_\+nm, const char \&sep=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Save matrix into a .csv file. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a96f187fcee2bd8eac9273d59f97ae4cc}{get\+\_\+x}} () const
+\begin{DoxyCompactList}\small\item\em Get number of matrix rows. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a69a105a667ec05b52f2aeeb67688a1ca}{get\+\_\+y}} () const
+\begin{DoxyCompactList}\small\item\em Get number of matrix columns. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a5b9ef894ba19265846e4040e589b946a}{transpose}} ()
+\begin{DoxyCompactList}\small\item\em Transpose matrix. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a90465553f767b595fcb175c068c38657}{sum}} (const unsigned short \&x\+\_\+low, const unsigned short \&x\+\_\+high, const unsigned short \&y\+\_\+low, const unsigned short \&y\+\_\+high)
+\begin{DoxyCompactList}\small\item\em Sum matrix elements specified by a range defined through x\+\_\+low, x\+\_\+high, y\+\_\+low and y\+\_\+high. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_aec37fcc8858750ba416841fcff79464b}{sum}} (const std\+::vector$<$ unsigned short $>$ \&rng=std\+::vector$<$ unsigned short $>$())
+\begin{DoxyCompactList}\small\item\em Sum matrix elements specified by a range in form of \{x\+\_\+low,x\+\_\+high,y\+\_\+low,y\+\_\+high\}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a9224c4a79b09d29a8be5bd74e309118f}{sum}} (const std\+::string \&rng=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Sum matrix elements specified by a range in form of \char`\"{}x\+\_\+low\+:x\+\_\+high,y\+\_\+low\+:y\+\_\+high\char`\"{}. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a9ef26e186189cf711d68c4a6d38fd84b}{get\+\_\+row}} (const unsigned short \&x)
+\begin{DoxyCompactList}\small\item\em Extract row from matrix. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a9b5a070aa2ad376d4081d173f4f28184}{get\+\_\+col}} (const unsigned short \&y)
+\begin{DoxyCompactList}\small\item\em Extract col from matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a1911154d36d45934edf469a5772cb058}{replace\+\_\+row}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$ vector, const unsigned short \&x)
+\begin{DoxyCompactList}\small\item\em Replace row in matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_afc7f91dff017ed7187337d14c032c818}{replace\+\_\+col}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$ vector, const unsigned short \&y)
+\begin{DoxyCompactList}\small\item\em Replace column in matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a9fb0cc9af936b894d215718f2802e392}\label{classlib__mtrx_1_1myMatrix2D_a9fb0cc9af936b894d215718f2802e392}} 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ {\bfseries elements}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+2D matrix object. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_mtrx_examples_8h-example}{lib\+\_\+mtrx\+\_\+examples.\+h}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a2ae24a91525bcd2d5edc9843c3bc9c9f}\label{classlib__mtrx_1_1myMatrix2D_a2ae24a91525bcd2d5edc9843c3bc9c9f}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!myMatrix2D@{myMatrix2D}}
+\index{myMatrix2D@{myMatrix2D}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{myMatrix2D()}{myMatrix2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily lib\+\_\+mtrx\+::my\+Matrix2\+D\+::my\+Matrix2D (\begin{DoxyParamCaption}\item[{const unsigned short \&}]{x,  }\item[{const unsigned short \&}]{y,  }\item[{const double \&}]{element = {\ttfamily 0.0},  }\item[{const bool \&}]{diagonal = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Construct a new x-\/by-\/y \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Number of rows. \\
+\hline
+{\em y} & Number of columns. \\
+\hline
+{\em element} & Element to be used to fill in the matrix. \\
+\hline
+{\em diagonal} & true =\texorpdfstring{$>$}{>} Diagonal migration matrix with elements on the main diagonal only and zeros elsewhere. Applicable only to square matrices. ~\newline
+false =\texorpdfstring{$>$}{>} Migration matrix is fully filled with the user specified element. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a320e532180b326252f250ad99684ac1c}\label{classlib__mtrx_1_1myMatrix2D_a320e532180b326252f250ad99684ac1c}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!myMatrix2D@{myMatrix2D}}
+\index{myMatrix2D@{myMatrix2D}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{myMatrix2D()}{myMatrix2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily lib\+\_\+mtrx\+::my\+Matrix2\+D\+::my\+Matrix2D (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{elements }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix from vector of vectors of doubles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elements} & Vector of vectors of doubles. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a5b28743fe4642d730e5621d8a1de3357}\label{classlib__mtrx_1_1myMatrix2D_a5b28743fe4642d730e5621d8a1de3357}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!myMatrix2D@{myMatrix2D}}
+\index{myMatrix2D@{myMatrix2D}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{myMatrix2D()}{myMatrix2D()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily lib\+\_\+mtrx\+::my\+Matrix2\+D\+::my\+Matrix2D (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+nm,  }\item[{const std\+::string \&}]{sep = {\ttfamily \char`\"{},\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix based on matrix stored in a .csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+nm} & Name of the .csv file holding matrix. \\
+\hline
+{\em sep} & Column separator used in the .csv file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_ae4bec7bc7508471f5ea7fc2644f0cf23}\label{classlib__mtrx_1_1myMatrix2D_ae4bec7bc7508471f5ea7fc2644f0cf23}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!myMatrix2D@{myMatrix2D}}
+\index{myMatrix2D@{myMatrix2D}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{myMatrix2D()}{myMatrix2D()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily lib\+\_\+mtrx\+::my\+Matrix2\+D\+::my\+Matrix2D (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} \&}]{mtrx }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix based on another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mtrx} & Existing \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object which is used to create a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a25422b061206d9342edcae27c3cc3520}\label{classlib__mtrx_1_1myMatrix2D_a25422b061206d9342edcae27c3cc3520}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!myMatrix2D@{myMatrix2D}}
+\index{myMatrix2D@{myMatrix2D}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{myMatrix2D()}{myMatrix2D()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily lib\+\_\+mtrx\+::my\+Matrix2\+D\+::my\+Matrix2D (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} \&}]{mtrx,  }\item[{const std\+::vector$<$ unsigned short $>$ \&}]{rng }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix from a range of another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mtrx} & Existing \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object which is used to create a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \\
+\hline
+{\em rng} & Range in form of \{x\+\_\+low,x\+\_\+high,y\+\_\+low,y\+\_\+high\} specifying what part of the existing \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} is be used to create a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a0f85f96647bd10c71e74dbaf425487d1}\label{classlib__mtrx_1_1myMatrix2D_a0f85f96647bd10c71e74dbaf425487d1}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!myMatrix2D@{myMatrix2D}}
+\index{myMatrix2D@{myMatrix2D}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{myMatrix2D()}{myMatrix2D()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily lib\+\_\+mtrx\+::my\+Matrix2\+D\+::my\+Matrix2D (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} \&}]{mtrx,  }\item[{const std\+::string \&}]{rng }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix from a range of another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mtrx} & Existing \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object which is used to create a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \\
+\hline
+{\em rng} & Range in form of \char`\"{}x\+\_\+low\+:x\+\_\+high,y\+\_\+low\+:y\+\_\+high\char`\"{} specifying what part of the existing \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} is be used to create a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a317e8e0678fe9875364013ed841100da}\label{classlib__mtrx_1_1myMatrix2D_a317e8e0678fe9875364013ed841100da}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!myMatrix2D@{myMatrix2D}}
+\index{myMatrix2D@{myMatrix2D}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{myMatrix2D()}{myMatrix2D()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily lib\+\_\+mtrx\+::my\+Matrix2\+D\+::my\+Matrix2D (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$}]{mtrx }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix based on another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mtrx} & Existing \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object which is used to create a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_ab7bac6f1472f304a93f5f66a2a452829}\label{classlib__mtrx_1_1myMatrix2D_ab7bac6f1472f304a93f5f66a2a452829}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!myMatrix2D@{myMatrix2D}}
+\index{myMatrix2D@{myMatrix2D}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{myMatrix2D()}{myMatrix2D()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily lib\+\_\+mtrx\+::my\+Matrix2\+D\+::my\+Matrix2D (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$}]{mtrx,  }\item[{const std\+::vector$<$ unsigned short $>$ \&}]{rng }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix from a range of another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mtrx} & Existing \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object which is used to create a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \\
+\hline
+{\em rng} & Range in form of \{x\+\_\+low,x\+\_\+high,y\+\_\+low,y\+\_\+high\} specifying what part of the existing \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} is be used to create a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a81197b9ffd1cee912be20849ddcfb788}\label{classlib__mtrx_1_1myMatrix2D_a81197b9ffd1cee912be20849ddcfb788}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!myMatrix2D@{myMatrix2D}}
+\index{myMatrix2D@{myMatrix2D}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{myMatrix2D()}{myMatrix2D()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily lib\+\_\+mtrx\+::my\+Matrix2\+D\+::my\+Matrix2D (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$}]{mtrx,  }\item[{const std\+::string \&}]{rng }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object representing 2D matrix from a range of another \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mtrx} & Existing \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object which is used to create a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \\
+\hline
+{\em rng} & Range in form of \char`\"{}x\+\_\+low\+:x\+\_\+high,y\+\_\+low\+:y\+\_\+high\char`\"{} specifying what part of the existing \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} is be used to create a new \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a9b5a070aa2ad376d4081d173f4f28184}\label{classlib__mtrx_1_1myMatrix2D_a9b5a070aa2ad376d4081d173f4f28184}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!get\_col@{get\_col}}
+\index{get\_col@{get\_col}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{get\_col()}{get\_col()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\+\_\+mtrx\+::my\+Matrix2D}} $>$ lib\+\_\+mtrx\+::my\+Matrix2\+D\+::get\+\_\+col (\begin{DoxyParamCaption}\item[{const unsigned short \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Extract col from matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Position of column to be extracted from matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$my\+Matrix2\+D$>$ Extracted column. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_mtrx_examples_8h-example}{lib\+\_\+mtrx\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a9ef26e186189cf711d68c4a6d38fd84b}\label{classlib__mtrx_1_1myMatrix2D_a9ef26e186189cf711d68c4a6d38fd84b}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!get\_row@{get\_row}}
+\index{get\_row@{get\_row}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{get\_row()}{get\_row()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\+\_\+mtrx\+::my\+Matrix2D}} $>$ lib\+\_\+mtrx\+::my\+Matrix2\+D\+::get\+\_\+row (\begin{DoxyParamCaption}\item[{const unsigned short \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Extract row from matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Position of row to be extracted from matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$my\+Matrix2\+D$>$ Extracted row. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_mtrx_examples_8h-example}{lib\+\_\+mtrx\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a96f187fcee2bd8eac9273d59f97ae4cc}\label{classlib__mtrx_1_1myMatrix2D_a96f187fcee2bd8eac9273d59f97ae4cc}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!get\_x@{get\_x}}
+\index{get\_x@{get\_x}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{get\_x()}{get\_x()}}
+{\footnotesize\ttfamily unsigned short lib\+\_\+mtrx\+::my\+Matrix2\+D\+::get\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of matrix rows. 
+
+\begin{DoxyReturn}{Returns}
+unsigned short Number of matrix rows. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a69a105a667ec05b52f2aeeb67688a1ca}\label{classlib__mtrx_1_1myMatrix2D_a69a105a667ec05b52f2aeeb67688a1ca}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!get\_y@{get\_y}}
+\index{get\_y@{get\_y}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{get\_y()}{get\_y()}}
+{\footnotesize\ttfamily unsigned short lib\+\_\+mtrx\+::my\+Matrix2\+D\+::get\+\_\+y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of matrix columns. 
+
+\begin{DoxyReturn}{Returns}
+unsigned short Number of matrix columns. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}\label{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!print@{print}}
+\index{print@{print}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void lib\+\_\+mtrx\+::my\+Matrix2\+D\+::print (\begin{DoxyParamCaption}\item[{const unsigned short \&}]{precision = {\ttfamily 7} }\end{DoxyParamCaption}) const}
+
+
+
+Print matrix on screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em precision} & Number of decimal digits to be used. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_mtrx_examples_8h-example}{lib\+\_\+mtrx\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_afc7f91dff017ed7187337d14c032c818}\label{classlib__mtrx_1_1myMatrix2D_afc7f91dff017ed7187337d14c032c818}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!replace\_col@{replace\_col}}
+\index{replace\_col@{replace\_col}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{replace\_col()}{replace\_col()}}
+{\footnotesize\ttfamily void lib\+\_\+mtrx\+::my\+Matrix2\+D\+::replace\+\_\+col (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$}]{vector,  }\item[{const unsigned short \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Replace column in matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & Replacement column. \\
+\hline
+{\em y} & Position of column to be replaced. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_mtrx_examples_8h-example}{lib\+\_\+mtrx\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a1911154d36d45934edf469a5772cb058}\label{classlib__mtrx_1_1myMatrix2D_a1911154d36d45934edf469a5772cb058}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!replace\_row@{replace\_row}}
+\index{replace\_row@{replace\_row}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{replace\_row()}{replace\_row()}}
+{\footnotesize\ttfamily void lib\+\_\+mtrx\+::my\+Matrix2\+D\+::replace\+\_\+row (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{my\+Matrix2D}} $>$}]{vector,  }\item[{const unsigned short \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Replace row in matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & Replacement row. \\
+\hline
+{\em x} & Position of row to be replaced. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_mtrx_examples_8h-example}{lib\+\_\+mtrx\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a84e8f056d98f94d559e8384d67a39c96}\label{classlib__mtrx_1_1myMatrix2D_a84e8f056d98f94d559e8384d67a39c96}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!save@{save}}
+\index{save@{save}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void lib\+\_\+mtrx\+::my\+Matrix2\+D\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+nm,  }\item[{const char \&}]{sep = {\ttfamily \textquotesingle{},\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Save matrix into a .csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+nm} & Name of the .csv file. \\
+\hline
+{\em sep} & Column separator used in .csv file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a9224c4a79b09d29a8be5bd74e309118f}\label{classlib__mtrx_1_1myMatrix2D_a9224c4a79b09d29a8be5bd74e309118f}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!sum@{sum}}
+\index{sum@{sum}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily float lib\+\_\+mtrx\+::my\+Matrix2\+D\+::sum (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rng = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Sum matrix elements specified by a range in form of \char`\"{}x\+\_\+low\+:x\+\_\+high,y\+\_\+low\+:y\+\_\+high\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rng} & Range in form of \char`\"{}x\+\_\+low\+:x\+\_\+high,y\+\_\+low\+:y\+\_\+high\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Sum of the elements. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_aec37fcc8858750ba416841fcff79464b}\label{classlib__mtrx_1_1myMatrix2D_aec37fcc8858750ba416841fcff79464b}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!sum@{sum}}
+\index{sum@{sum}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily float lib\+\_\+mtrx\+::my\+Matrix2\+D\+::sum (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned short $>$ \&}]{rng = {\ttfamily std\+:\+:vector$<$unsigned~short$>$()} }\end{DoxyParamCaption})}
+
+
+
+Sum matrix elements specified by a range in form of \{x\+\_\+low,x\+\_\+high,y\+\_\+low,y\+\_\+high\}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rng} & Range in form of \{x\+\_\+low,x\+\_\+high,y\+\_\+low,y\+\_\+high\}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Sum of the elements. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a90465553f767b595fcb175c068c38657}\label{classlib__mtrx_1_1myMatrix2D_a90465553f767b595fcb175c068c38657}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!sum@{sum}}
+\index{sum@{sum}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily float lib\+\_\+mtrx\+::my\+Matrix2\+D\+::sum (\begin{DoxyParamCaption}\item[{const unsigned short \&}]{x\+\_\+low,  }\item[{const unsigned short \&}]{x\+\_\+high,  }\item[{const unsigned short \&}]{y\+\_\+low,  }\item[{const unsigned short \&}]{y\+\_\+high }\end{DoxyParamCaption})}
+
+
+
+Sum matrix elements specified by a range defined through x\+\_\+low, x\+\_\+high, y\+\_\+low and y\+\_\+high. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+low} & Lower row index. \\
+\hline
+{\em x\+\_\+high} & Upper row index. \\
+\hline
+{\em y\+\_\+low} & Lower column index. \\
+\hline
+{\em y\+\_\+high} & Upper column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Sum of the elements. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_mtrx_examples_8h-example}{lib\+\_\+mtrx\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__mtrx_1_1myMatrix2D_a5b9ef894ba19265846e4040e589b946a}\label{classlib__mtrx_1_1myMatrix2D_a5b9ef894ba19265846e4040e589b946a}} 
+\index{lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}!transpose@{transpose}}
+\index{transpose@{transpose}!lib\_mtrx::myMatrix2D@{lib\_mtrx::myMatrix2D}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\+\_\+mtrx\+::my\+Matrix2D}} $>$ lib\+\_\+mtrx\+::my\+Matrix2\+D\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Transpose matrix. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$my\+Matrix2\+D$>$ Transponsed matrix. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_mtrx_examples_8h-example}{lib\+\_\+mtrx\+\_\+examples.\+h}}.\end{Desc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lib__mtrx_8h}{lib\+\_\+mtrx.\+h}}\item 
+lib\+\_\+mtrx.\+cpp\end{DoxyCompactItemize}

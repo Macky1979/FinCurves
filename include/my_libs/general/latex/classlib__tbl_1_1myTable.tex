@@ -1,0 +1,454 @@
+\hypertarget{classlib__tbl_1_1myTable}{}\doxysection{lib\+\_\+tbl\+::my\+Table Class Reference}
+\label{classlib__tbl_1_1myTable}\index{lib\_tbl::myTable@{lib\_tbl::myTable}}
+
+
+Dataframe object.  
+
+
+
+
+{\ttfamily \#include $<$lib\+\_\+tbl.\+h$>$}
+
+
+
+Collaboration diagram for lib\+\_\+tbl\+::my\+Table\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a2ed7ad9b822c6633966568600f9f26b4}\label{classlib__tbl_1_1myTable_a2ed7ad9b822c6633966568600f9f26b4}} 
+{\bfseries my\+Table} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__tbl_1_1myTable}{my\+Table}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__tbl_1_1myTable_a1110024a0f14cf173e51584a04c5459f}{my\+Table}} (\mbox{\hyperlink{structlib__tbl_1_1data}{data}} \mbox{\hyperlink{classlib__tbl_1_1myTable_a256ae3b16736d5008b3bfd6a70cbdf7e}{tbl}})
+\begin{DoxyCompactList}\small\item\em Construct a new my\+Data\+Frame object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a85620d880eb0565ab3231b991606b8e4}\label{classlib__tbl_1_1myTable_a85620d880eb0565ab3231b991606b8e4}} 
+{\bfseries $\sim$my\+Table} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classlib__tbl_1_1myTable}{my\+Table}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__tbl_1_1myTable_afb1773f21868b71a9c00d0a2358191e2}{copy}} (const \mbox{\hyperlink{classlib__tbl_1_1myTable}{my\+Table}} \&source)
+\begin{DoxyCompactList}\small\item\em Deep copy of \mbox{\hyperlink{classlib__tbl_1_1myTable}{my\+Table}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__tbl_1_1myTable_a511c897d28501f1d853f5360442b7b64}{copy}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__tbl_1_1myTable}{lib\+\_\+tbl\+::my\+Table}} $>$ source)
+\begin{DoxyCompactList}\small\item\em Deep copy of \mbox{\hyperlink{classlib__tbl_1_1myTable}{my\+Table}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_aff9e5aa307dfaf3f8ad75a3d6e2f7970}\label{classlib__tbl_1_1myTable_aff9e5aa307dfaf3f8ad75a3d6e2f7970}} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Clear all data. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlib__tbl_1_1myTable_a4cf335cc279a9536b1f40c185593d817}{get\+\_\+rows\+\_\+no}} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlib__tbl_1_1myTable_a4dd30b4eb829bc1bb1865d510cc3411c}{get\+\_\+cols\+\_\+no}} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::size\+\_\+t $>$ \mbox{\hyperlink{classlib__tbl_1_1myTable_adb7ae93207423de63b4f18e89c9c0930}{get\+\_\+rows\+\_\+idx}} (const std\+::string \&col\+\_\+nm, const unsigned int type=0, const std\+::size\+\_\+t first\+\_\+row\+\_\+idx=-\/1, const std\+::size\+\_\+t last\+\_\+row\+\_\+idx=-\/1)
+\begin{DoxyCompactList}\small\item\em Get rows indices for a given column. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ std\+::string $>$ $>$ \mbox{\hyperlink{classlib__tbl_1_1myTable_aab4a980ff81fb80a25920ebc797620a3}{get\+\_\+str\+\_\+column}} (const std\+::string \&col\+\_\+nm, const bool exclude\+\_\+na=false, const std\+::size\+\_\+t first\+\_\+row\+\_\+idx=-\/1, const std\+::size\+\_\+t last\+\_\+row\+\_\+idx=-\/1)
+\begin{DoxyCompactList}\small\item\em Get string type column. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ std\+::string $>$ $>$ \mbox{\hyperlink{classlib__tbl_1_1myTable_a7caef4ecb456e7ef035247a3830f8f83}{get\+\_\+str\+\_\+column}} (const std\+::string \&col\+\_\+nm, const std\+::vector$<$ std\+::size\+\_\+t $>$ \&rows\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Get string type column. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ int $>$ $>$ \mbox{\hyperlink{classlib__tbl_1_1myTable_a74e653fb1bcf908714d45fc30e584a4f}{get\+\_\+int\+\_\+column}} (const std\+::string \&col\+\_\+nm, const bool exclude\+\_\+na=false, const std\+::size\+\_\+t first\+\_\+row\+\_\+idx=-\/1, const std\+::size\+\_\+t last\+\_\+row\+\_\+idx=-\/1)
+\begin{DoxyCompactList}\small\item\em Get integer type column. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ int $>$ $>$ \mbox{\hyperlink{classlib__tbl_1_1myTable_a7199f3d3c34e44df757ba0282f7bfd1a}{get\+\_\+int\+\_\+column}} (const std\+::string \&col\+\_\+nm, const std\+::vector$<$ std\+::size\+\_\+t $>$ \&rows\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Get integer type column. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ long $>$ $>$ \mbox{\hyperlink{classlib__tbl_1_1myTable_ad832e4ce8d8025f616363cf927a5e8e8}{get\+\_\+long\+\_\+column}} (const std\+::string \&col\+\_\+nm, const bool exclude\+\_\+na=false, const std\+::size\+\_\+t first\+\_\+row\+\_\+idx=-\/1, const std\+::size\+\_\+t last\+\_\+row\+\_\+idx=-\/1)
+\begin{DoxyCompactList}\small\item\em Get long integer type column. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ long $>$ $>$ \mbox{\hyperlink{classlib__tbl_1_1myTable_a5d9bec9e62d976a53029b55ecf0b16c9}{get\+\_\+long\+\_\+column}} (const std\+::string \&col\+\_\+nm, const std\+::vector$<$ std\+::size\+\_\+t $>$ \&rows\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Get long integer type column. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ double $>$ $>$ \mbox{\hyperlink{classlib__tbl_1_1myTable_a103a131d8fd3b0f5bf1099c4e7404c02}{get\+\_\+double\+\_\+column}} (const std\+::string \&col\+\_\+nm, const bool exclude\+\_\+na=false, const std\+::size\+\_\+t first\+\_\+row\+\_\+idx=-\/1, const std\+::size\+\_\+t last\+\_\+row\+\_\+idx=-\/1)
+\begin{DoxyCompactList}\small\item\em Get double type column. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ double $>$ $>$ \mbox{\hyperlink{classlib__tbl_1_1myTable_af4446691d93d887918e918ee02859cbf}{get\+\_\+double\+\_\+column}} (const std\+::string \&col\+\_\+nm, const std\+::vector$<$ std\+::size\+\_\+t $>$ \&rows\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Get double type column. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ bool $>$ $>$ \mbox{\hyperlink{classlib__tbl_1_1myTable_a1702889acadee9afa38d3dd37733547d}{get\+\_\+bool\+\_\+column}} (const std\+::string \&col\+\_\+nm, const bool exclude\+\_\+na=false, const std\+::size\+\_\+t first\+\_\+row\+\_\+idx=-\/1, const std\+::size\+\_\+t last\+\_\+row\+\_\+idx=-\/1)
+\begin{DoxyCompactList}\small\item\em Get boolean type column. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ bool $>$ $>$ \mbox{\hyperlink{classlib__tbl_1_1myTable_a904e129981e743ba1533b31f5c46d1d1}{get\+\_\+bool\+\_\+column}} (const std\+::string \&col\+\_\+nm, const std\+::vector$<$ std\+::size\+\_\+t $>$ \&rows\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Get boolean type column. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__tbl_1_1myTable_a12037725b6e577de0159dd8e3a9aea0d}{print}} (const std\+::size\+\_\+t \&rows\+\_\+no=10)
+\begin{DoxyCompactList}\small\item\em Print dataframe on screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__tbl_1_1myTable_a548b698f01a77ad3481f681490d067cd}{write}} (const std\+::string \&file\+\_\+nm, const std\+::string \&sep, const bool \&quotes) const
+\begin{DoxyCompactList}\small\item\em Store dataframe in a .csv file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__tbl_1_1myTable_acc81b91bfa623e28804951102411b272}{read}} (const std\+::string \&file\+\_\+nm, const std\+::string \&sep, const bool \&quotes)
+\begin{DoxyCompactList}\small\item\em Read dataframe from a .csv file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a256ae3b16736d5008b3bfd6a70cbdf7e}\label{classlib__tbl_1_1myTable_a256ae3b16736d5008b3bfd6a70cbdf7e}} 
+\mbox{\hyperlink{structlib__tbl_1_1data}{data}} {\bfseries tbl}
+\begin{DoxyCompactList}\small\item\em Table data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dataframe object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a1110024a0f14cf173e51584a04c5459f}\label{classlib__tbl_1_1myTable_a1110024a0f14cf173e51584a04c5459f}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!myTable@{myTable}}
+\index{myTable@{myTable}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{myTable()}{myTable()}}
+{\footnotesize\ttfamily lib\+\_\+tbl\+::my\+Table\+::my\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlib__tbl_1_1data}{data}}}]{tbl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new my\+Data\+Frame object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tbl} & Data structure with table data. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_afb1773f21868b71a9c00d0a2358191e2}\label{classlib__tbl_1_1myTable_afb1773f21868b71a9c00d0a2358191e2}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!copy@{copy}}
+\index{copy@{copy}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void lib\+\_\+tbl\+::my\+Table\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__tbl_1_1myTable}{my\+Table}} \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Deep copy of \mbox{\hyperlink{classlib__tbl_1_1myTable}{my\+Table}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Source \mbox{\hyperlink{classlib__tbl_1_1myTable}{my\+Table}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a511c897d28501f1d853f5360442b7b64}\label{classlib__tbl_1_1myTable_a511c897d28501f1d853f5360442b7b64}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!copy@{copy}}
+\index{copy@{copy}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void lib\+\_\+tbl\+::my\+Table\+::copy (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__tbl_1_1myTable}{lib\+\_\+tbl\+::my\+Table}} $>$}]{source }\end{DoxyParamCaption})}
+
+
+
+Deep copy of \mbox{\hyperlink{classlib__tbl_1_1myTable}{my\+Table}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Shared pointer to source \mbox{\hyperlink{classlib__tbl_1_1myTable}{my\+Table}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a1702889acadee9afa38d3dd37733547d}\label{classlib__tbl_1_1myTable_a1702889acadee9afa38d3dd37733547d}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_bool\_column@{get\_bool\_column}}
+\index{get\_bool\_column@{get\_bool\_column}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_bool\_column()}{get\_bool\_column()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ bool $>$ $>$ lib\+\_\+tbl\+::my\+Table\+::get\+\_\+bool\+\_\+column (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col\+\_\+nm,  }\item[{const bool}]{exclude\+\_\+na = {\ttfamily false},  }\item[{const std\+::size\+\_\+t}]{first\+\_\+row\+\_\+idx = {\ttfamily -\/1},  }\item[{const std\+::size\+\_\+t}]{last\+\_\+row\+\_\+idx = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Get boolean type column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+nm} & Column name. \\
+\hline
+{\em exclude\+\_\+na} & Exclude N/A values. \\
+\hline
+{\em first\+\_\+row\+\_\+idx} & Number of the first row to extract. Value -\/1 is interpreted as the first row. \\
+\hline
+{\em last\+\_\+row\+\_\+idx} & Number of the last row to extract. Value -\/1 is interpreted as the last row. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ Column values represented as vector of booleans. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a904e129981e743ba1533b31f5c46d1d1}\label{classlib__tbl_1_1myTable_a904e129981e743ba1533b31f5c46d1d1}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_bool\_column@{get\_bool\_column}}
+\index{get\_bool\_column@{get\_bool\_column}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_bool\_column()}{get\_bool\_column()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ bool $>$ $>$ lib\+\_\+tbl\+::my\+Table\+::get\+\_\+bool\+\_\+column (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col\+\_\+nm,  }\item[{const std\+::vector$<$ std\+::size\+\_\+t $>$ \&}]{rows\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Get boolean type column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+nm} & Column name. \\
+\hline
+{\em rows\+\_\+idx} & Vector of row IDs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$bool$>$$>$ Column values represented as vector of booleans. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a4dd30b4eb829bc1bb1865d510cc3411c}\label{classlib__tbl_1_1myTable_a4dd30b4eb829bc1bb1865d510cc3411c}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_cols\_no@{get\_cols\_no}}
+\index{get\_cols\_no@{get\_cols\_no}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_cols\_no()}{get\_cols\_no()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t lib\+\_\+tbl\+::my\+Table\+::get\+\_\+cols\+\_\+no (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get number of columns. 
+
+\begin{DoxyReturn}{Returns}
+std\+::size\+\_\+t Number of columns. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a103a131d8fd3b0f5bf1099c4e7404c02}\label{classlib__tbl_1_1myTable_a103a131d8fd3b0f5bf1099c4e7404c02}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_double\_column@{get\_double\_column}}
+\index{get\_double\_column@{get\_double\_column}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_double\_column()}{get\_double\_column()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ double $>$ $>$ lib\+\_\+tbl\+::my\+Table\+::get\+\_\+double\+\_\+column (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col\+\_\+nm,  }\item[{const bool}]{exclude\+\_\+na = {\ttfamily false},  }\item[{const std\+::size\+\_\+t}]{first\+\_\+row\+\_\+idx = {\ttfamily -\/1},  }\item[{const std\+::size\+\_\+t}]{last\+\_\+row\+\_\+idx = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Get double type column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+nm} & Column name. \\
+\hline
+{\em exclude\+\_\+na} & Exclude N/A values. \\
+\hline
+{\em first\+\_\+row\+\_\+idx} & Number of the first row to extract. Value -\/1 is interpreted as the first row. \\
+\hline
+{\em last\+\_\+row\+\_\+idx} & Number of the last row to extract. Value -\/1 is interpreted as the last row. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ Column values represented as vector of doubles. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_af4446691d93d887918e918ee02859cbf}\label{classlib__tbl_1_1myTable_af4446691d93d887918e918ee02859cbf}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_double\_column@{get\_double\_column}}
+\index{get\_double\_column@{get\_double\_column}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_double\_column()}{get\_double\_column()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ double $>$ $>$ lib\+\_\+tbl\+::my\+Table\+::get\+\_\+double\+\_\+column (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col\+\_\+nm,  }\item[{const std\+::vector$<$ std\+::size\+\_\+t $>$ \&}]{rows\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Get double type column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+nm} & Column name. \\
+\hline
+{\em rows\+\_\+idx} & Vector of row IDs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$double$>$$>$ Column values represented as vector of doubles. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a74e653fb1bcf908714d45fc30e584a4f}\label{classlib__tbl_1_1myTable_a74e653fb1bcf908714d45fc30e584a4f}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_int\_column@{get\_int\_column}}
+\index{get\_int\_column@{get\_int\_column}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_int\_column()}{get\_int\_column()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ int $>$ $>$ lib\+\_\+tbl\+::my\+Table\+::get\+\_\+int\+\_\+column (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col\+\_\+nm,  }\item[{const bool}]{exclude\+\_\+na = {\ttfamily false},  }\item[{const std\+::size\+\_\+t}]{first\+\_\+row\+\_\+idx = {\ttfamily -\/1},  }\item[{const std\+::size\+\_\+t}]{last\+\_\+row\+\_\+idx = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Get integer type column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+nm} & Column name. \\
+\hline
+{\em exclude\+\_\+na} & Exclude N/A values. \\
+\hline
+{\em first\+\_\+row\+\_\+idx} & Number of the first row to extract. Value -\/1 is interpreted as the first row. \\
+\hline
+{\em last\+\_\+row\+\_\+idx} & Number of the last row to extract. Value -\/1 is interpreted as the last row. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ Column values represented as vector of integers. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a7199f3d3c34e44df757ba0282f7bfd1a}\label{classlib__tbl_1_1myTable_a7199f3d3c34e44df757ba0282f7bfd1a}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_int\_column@{get\_int\_column}}
+\index{get\_int\_column@{get\_int\_column}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_int\_column()}{get\_int\_column()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ int $>$ $>$ lib\+\_\+tbl\+::my\+Table\+::get\+\_\+int\+\_\+column (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col\+\_\+nm,  }\item[{const std\+::vector$<$ std\+::size\+\_\+t $>$ \&}]{rows\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Get integer type column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+nm} & Column name. \\
+\hline
+{\em rows\+\_\+idx} & Vector of row IDs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$int$>$$>$ Column values represented as vector of integers. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_ad832e4ce8d8025f616363cf927a5e8e8}\label{classlib__tbl_1_1myTable_ad832e4ce8d8025f616363cf927a5e8e8}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_long\_column@{get\_long\_column}}
+\index{get\_long\_column@{get\_long\_column}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_long\_column()}{get\_long\_column()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ long $>$ $>$ lib\+\_\+tbl\+::my\+Table\+::get\+\_\+long\+\_\+column (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col\+\_\+nm,  }\item[{const bool}]{exclude\+\_\+na = {\ttfamily false},  }\item[{const std\+::size\+\_\+t}]{first\+\_\+row\+\_\+idx = {\ttfamily -\/1},  }\item[{const std\+::size\+\_\+t}]{last\+\_\+row\+\_\+idx = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Get long integer type column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+nm} & Column name. \\
+\hline
+{\em exclude\+\_\+na} & Exclude N/A values. \\
+\hline
+{\em first\+\_\+row\+\_\+idx} & Number of the first row to extract. Value -\/1 is interpreted as the first row. \\
+\hline
+{\em last\+\_\+row\+\_\+idx} & Number of the last row to extract. Value -\/1 is interpreted as the last row. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$long$>$ Column values represented as vector of long integers. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a5d9bec9e62d976a53029b55ecf0b16c9}\label{classlib__tbl_1_1myTable_a5d9bec9e62d976a53029b55ecf0b16c9}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_long\_column@{get\_long\_column}}
+\index{get\_long\_column@{get\_long\_column}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_long\_column()}{get\_long\_column()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ long $>$ $>$ lib\+\_\+tbl\+::my\+Table\+::get\+\_\+long\+\_\+column (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col\+\_\+nm,  }\item[{const std\+::vector$<$ std\+::size\+\_\+t $>$ \&}]{rows\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Get long integer type column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+nm} & Column name. \\
+\hline
+{\em rows\+\_\+idx} & Vector of row IDs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$int$>$$>$ Column values represented as vector of long integers. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_adb7ae93207423de63b4f18e89c9c0930}\label{classlib__tbl_1_1myTable_adb7ae93207423de63b4f18e89c9c0930}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_rows\_idx@{get\_rows\_idx}}
+\index{get\_rows\_idx@{get\_rows\_idx}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_rows\_idx()}{get\_rows\_idx()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::size\+\_\+t $>$ lib\+\_\+tbl\+::my\+Table\+::get\+\_\+rows\+\_\+idx (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col\+\_\+nm,  }\item[{const unsigned int}]{type = {\ttfamily 0},  }\item[{const std\+::size\+\_\+t}]{first\+\_\+row\+\_\+idx = {\ttfamily -\/1},  }\item[{const std\+::size\+\_\+t}]{last\+\_\+row\+\_\+idx = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Get rows indices for a given column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+nm} & Column name. \\
+\hline
+{\em type} & 0 =\texorpdfstring{$>$}{>} All rows in specified range. ~\newline
+ 1 =\texorpdfstring{$>$}{>} Skip rows with N/A values. ~\newline
+ 2 =\texorpdfstring{$>$}{>} Return row IDs with N/A values. \\
+\hline
+{\em first\+\_\+row\+\_\+idx} & Number of the first row to extract. Value -\/1 is interpreted as the first row. \\
+\hline
+{\em last\+\_\+row\+\_\+idx} & Number of the last row to extract. Value -\/1 is interpreted as the last row. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$std\+::size\+\_\+t$>$$>$ Vector with row IDs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a4cf335cc279a9536b1f40c185593d817}\label{classlib__tbl_1_1myTable_a4cf335cc279a9536b1f40c185593d817}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_rows\_no@{get\_rows\_no}}
+\index{get\_rows\_no@{get\_rows\_no}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_rows\_no()}{get\_rows\_no()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t lib\+\_\+tbl\+::my\+Table\+::get\+\_\+rows\+\_\+no (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get number of rows. 
+
+\begin{DoxyReturn}{Returns}
+std\+::size\+\_\+t Number of rows. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_aab4a980ff81fb80a25920ebc797620a3}\label{classlib__tbl_1_1myTable_aab4a980ff81fb80a25920ebc797620a3}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_str\_column@{get\_str\_column}}
+\index{get\_str\_column@{get\_str\_column}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_str\_column()}{get\_str\_column()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ std\+::string $>$ $>$ lib\+\_\+tbl\+::my\+Table\+::get\+\_\+str\+\_\+column (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col\+\_\+nm,  }\item[{const bool}]{exclude\+\_\+na = {\ttfamily false},  }\item[{const std\+::size\+\_\+t}]{first\+\_\+row\+\_\+idx = {\ttfamily -\/1},  }\item[{const std\+::size\+\_\+t}]{last\+\_\+row\+\_\+idx = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Get string type column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+nm} & Column name. \\
+\hline
+{\em first\+\_\+row\+\_\+idx} & Number of the first row to extract. Value -\/1 is interpreted as the first row. \\
+\hline
+{\em last\+\_\+row\+\_\+idx} & Number of the last row to extract. Value -\/1 is interpreted as the last row. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ Column values represented as vector of strings. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a7caef4ecb456e7ef035247a3830f8f83}\label{classlib__tbl_1_1myTable_a7caef4ecb456e7ef035247a3830f8f83}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!get\_str\_column@{get\_str\_column}}
+\index{get\_str\_column@{get\_str\_column}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{get\_str\_column()}{get\_str\_column()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ std\+::string $>$ $>$ lib\+\_\+tbl\+::my\+Table\+::get\+\_\+str\+\_\+column (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col\+\_\+nm,  }\item[{const std\+::vector$<$ std\+::size\+\_\+t $>$ \&}]{rows\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Get string type column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+nm} & Column name. \\
+\hline
+{\em rows\+\_\+idx} & Vector of row IDs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$std\+::string$>$$>$ Column values represented as vector of strings. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a12037725b6e577de0159dd8e3a9aea0d}\label{classlib__tbl_1_1myTable_a12037725b6e577de0159dd8e3a9aea0d}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!print@{print}}
+\index{print@{print}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void lib\+\_\+tbl\+::my\+Table\+::print (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t \&}]{rows\+\_\+no = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+Print dataframe on screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows\+\_\+no} & Number of rows to be printed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_acc81b91bfa623e28804951102411b272}\label{classlib__tbl_1_1myTable_acc81b91bfa623e28804951102411b272}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!read@{read}}
+\index{read@{read}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void lib\+\_\+tbl\+::my\+Table\+::read (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+nm,  }\item[{const std\+::string \&}]{sep,  }\item[{const bool \&}]{quotes }\end{DoxyParamCaption})}
+
+
+
+Read dataframe from a .csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+nm} & File name. \\
+\hline
+{\em sep} & Columns separator. \\
+\hline
+{\em quotes} & Quotest to be used for text strings. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__tbl_1_1myTable_a548b698f01a77ad3481f681490d067cd}\label{classlib__tbl_1_1myTable_a548b698f01a77ad3481f681490d067cd}} 
+\index{lib\_tbl::myTable@{lib\_tbl::myTable}!write@{write}}
+\index{write@{write}!lib\_tbl::myTable@{lib\_tbl::myTable}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void lib\+\_\+tbl\+::my\+Table\+::write (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+nm,  }\item[{const std\+::string \&}]{sep,  }\item[{const bool \&}]{quotes }\end{DoxyParamCaption}) const}
+
+
+
+Store dataframe in a .csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+nm} & File name. \\
+\hline
+{\em sep} & Column separator. \\
+\hline
+{\em quotes} & Quotes to be used for text strings. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lib__tbl_8h}{lib\+\_\+tbl.\+h}}\item 
+lib\+\_\+tbl.\+cpp\end{DoxyCompactItemize}

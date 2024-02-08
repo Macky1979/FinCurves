@@ -1,0 +1,154 @@
+\hypertarget{classlib__df_1_1myDataFrame}{}\doxysection{lib\+\_\+df\+::my\+Data\+Frame Class Reference}
+\label{classlib__df_1_1myDataFrame}\index{lib\_df::myDataFrame@{lib\_df::myDataFrame}}
+
+
+Dataframe object.  
+
+
+
+
+{\ttfamily \#include $<$lib\+\_\+df.\+h$>$}
+
+
+
+Collaboration diagram for lib\+\_\+df\+::my\+Data\+Frame\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib__df_1_1myDataFrame_a5015990c86d0ce34cbb0287d5fa5cea3}\label{classlib__df_1_1myDataFrame_a5015990c86d0ce34cbb0287d5fa5cea3}} 
+{\bfseries my\+Data\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__df_1_1myDataFrame}{my\+Data\+Frame}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__df_1_1myDataFrame_ace3df77e056202f7fb11ef554b32c525}{my\+Data\+Frame}} (\mbox{\hyperlink{structlib__df_1_1dataFrame}{data\+Frame}} \mbox{\hyperlink{classlib__df_1_1myDataFrame_a8b1ca819459e74a18a5beb15847b72c9}{tbl}})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__df_1_1myDataFrame}{my\+Data\+Frame}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib__df_1_1myDataFrame_a4a0ae3c9a3c2676d0cd214d46f800bf7}\label{classlib__df_1_1myDataFrame_a4a0ae3c9a3c2676d0cd214d46f800bf7}} 
+{\bfseries $\sim$my\+Data\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classlib__df_1_1myDataFrame}{my\+Data\+Frame}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib__df_1_1myDataFrame_a5db91309614734d714b0bf9501f556a8}\label{classlib__df_1_1myDataFrame_a5db91309614734d714b0bf9501f556a8}} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Clear all data. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlib__df_1_1myDataFrame_a422ff5b1e6a1772b01895bf2eeb24a9e}{get\+\_\+rows\+\_\+no}} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlib__df_1_1myDataFrame_a602d927ab52ae923348cdfd0725b5380}{get\+\_\+cols\+\_\+no}} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__df_1_1myDataFrame_a9b6d27dd40503a3d6b046f0bd8048c91}{print}} (const std\+::size\+\_\+t \&rows\+\_\+no=10)
+\begin{DoxyCompactList}\small\item\em Print dataframe on screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__df_1_1myDataFrame_a3cd5d5eb25411c970ae133eff7a546e7}{write}} (const std\+::string \&file\+\_\+nm, const std\+::string \&sep, const bool \&quotes) const
+\begin{DoxyCompactList}\small\item\em Store dataframe in a .csv file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__df_1_1myDataFrame_a3990f016fa2edf2c10f2bc47312c6d69}{read}} (const std\+::string \&file\+\_\+nm, const std\+::string \&sep, const bool \&quotes)
+\begin{DoxyCompactList}\small\item\em Read dataframe from a .csv file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib__df_1_1myDataFrame_a8b1ca819459e74a18a5beb15847b72c9}\label{classlib__df_1_1myDataFrame_a8b1ca819459e74a18a5beb15847b72c9}} 
+\mbox{\hyperlink{structlib__df_1_1dataFrame}{data\+Frame}} {\bfseries tbl}
+\begin{DoxyCompactList}\small\item\em Data structure describing dataframe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dataframe object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlib__df_1_1myDataFrame_ace3df77e056202f7fb11ef554b32c525}\label{classlib__df_1_1myDataFrame_ace3df77e056202f7fb11ef554b32c525}} 
+\index{lib\_df::myDataFrame@{lib\_df::myDataFrame}!myDataFrame@{myDataFrame}}
+\index{myDataFrame@{myDataFrame}!lib\_df::myDataFrame@{lib\_df::myDataFrame}}
+\doxysubsubsection{\texorpdfstring{myDataFrame()}{myDataFrame()}}
+{\footnotesize\ttfamily lib\+\_\+df\+::my\+Data\+Frame\+::my\+Data\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlib__df_1_1dataFrame}{data\+Frame}}}]{tbl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__df_1_1myDataFrame}{my\+Data\+Frame}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tbl} & Data structure with table data. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlib__df_1_1myDataFrame_a602d927ab52ae923348cdfd0725b5380}\label{classlib__df_1_1myDataFrame_a602d927ab52ae923348cdfd0725b5380}} 
+\index{lib\_df::myDataFrame@{lib\_df::myDataFrame}!get\_cols\_no@{get\_cols\_no}}
+\index{get\_cols\_no@{get\_cols\_no}!lib\_df::myDataFrame@{lib\_df::myDataFrame}}
+\doxysubsubsection{\texorpdfstring{get\_cols\_no()}{get\_cols\_no()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t lib\+\_\+df\+::my\+Data\+Frame\+::get\+\_\+cols\+\_\+no (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get number of columns. 
+
+\begin{DoxyReturn}{Returns}
+std\+::size\+\_\+t Number of columns. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__df_1_1myDataFrame_a422ff5b1e6a1772b01895bf2eeb24a9e}\label{classlib__df_1_1myDataFrame_a422ff5b1e6a1772b01895bf2eeb24a9e}} 
+\index{lib\_df::myDataFrame@{lib\_df::myDataFrame}!get\_rows\_no@{get\_rows\_no}}
+\index{get\_rows\_no@{get\_rows\_no}!lib\_df::myDataFrame@{lib\_df::myDataFrame}}
+\doxysubsubsection{\texorpdfstring{get\_rows\_no()}{get\_rows\_no()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t lib\+\_\+df\+::my\+Data\+Frame\+::get\+\_\+rows\+\_\+no (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get number of rows. 
+
+\begin{DoxyReturn}{Returns}
+std\+::size\+\_\+t Number of rows. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__df_1_1myDataFrame_a9b6d27dd40503a3d6b046f0bd8048c91}\label{classlib__df_1_1myDataFrame_a9b6d27dd40503a3d6b046f0bd8048c91}} 
+\index{lib\_df::myDataFrame@{lib\_df::myDataFrame}!print@{print}}
+\index{print@{print}!lib\_df::myDataFrame@{lib\_df::myDataFrame}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void lib\+\_\+df\+::my\+Data\+Frame\+::print (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t \&}]{rows\+\_\+no = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+Print dataframe on screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows\+\_\+no} & Number of rows to be printed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__df_1_1myDataFrame_a3990f016fa2edf2c10f2bc47312c6d69}\label{classlib__df_1_1myDataFrame_a3990f016fa2edf2c10f2bc47312c6d69}} 
+\index{lib\_df::myDataFrame@{lib\_df::myDataFrame}!read@{read}}
+\index{read@{read}!lib\_df::myDataFrame@{lib\_df::myDataFrame}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void lib\+\_\+df\+::my\+Data\+Frame\+::read (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+nm,  }\item[{const std\+::string \&}]{sep,  }\item[{const bool \&}]{quotes }\end{DoxyParamCaption})}
+
+
+
+Read dataframe from a .csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+nm} & File name. \\
+\hline
+{\em sep} & Columns separator. \\
+\hline
+{\em quotes} & Quotest to be used for text strings. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__df_1_1myDataFrame_a3cd5d5eb25411c970ae133eff7a546e7}\label{classlib__df_1_1myDataFrame_a3cd5d5eb25411c970ae133eff7a546e7}} 
+\index{lib\_df::myDataFrame@{lib\_df::myDataFrame}!write@{write}}
+\index{write@{write}!lib\_df::myDataFrame@{lib\_df::myDataFrame}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void lib\+\_\+df\+::my\+Data\+Frame\+::write (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+nm,  }\item[{const std\+::string \&}]{sep,  }\item[{const bool \&}]{quotes }\end{DoxyParamCaption}) const}
+
+
+
+Store dataframe in a .csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+nm} & File name. \\
+\hline
+{\em sep} & Column separator. \\
+\hline
+{\em quotes} & Quotes to be used for text strings. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lib__df_8h}{lib\+\_\+df.\+h}}\item 
+lib\+\_\+df.\+cpp\end{DoxyCompactItemize}

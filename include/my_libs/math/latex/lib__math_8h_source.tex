@@ -1,0 +1,61 @@
+\hypertarget{lib__math_8h_source}{}\doxysection{lib\+\_\+math.\+h}
+\mbox{\hyperlink{lib__math_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }lib\_math}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{26     \textcolor{keywordtype}{double} \mbox{\hyperlink{lib__math_8h_ac447705418bfbf6fcf4a4f21dfb16a82}{round}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& x, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \&decimals = 2);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{37     std::vector<double> \mbox{\hyperlink{lib__math_8h_a4a03f44347bf4fd18e6f5a45483b843f}{lin\_interp1d}}(\textcolor{keyword}{const} std::vector<double>\& x, \textcolor{keyword}{const} std::vector<double>\& y, \textcolor{keyword}{const} std::vector<double>\& X, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} extrapolate = \textcolor{keyword}{false});}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{double} \mbox{\hyperlink{lib__math_8h_a7798bd15f5cd4340360e44ed568c9044}{norm\_cdf}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& x);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{double} \mbox{\hyperlink{lib__math_8h_acf0f859fcd73d3d6ed62b3bd85dd3292}{norm\_pdf}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& x);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{double} \mbox{\hyperlink{lib__math_8h_a6a9d2dd0b82c9d95e93ed70d58db615c}{norm\_inv}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& x);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{69     std::vector<double> \mbox{\hyperlink{lib__math_8h_a7798bd15f5cd4340360e44ed568c9044}{norm\_cdf}}(\textcolor{keyword}{const} std::vector<double>\& x);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{77     std::vector<double> \mbox{\hyperlink{lib__math_8h_acf0f859fcd73d3d6ed62b3bd85dd3292}{norm\_pdf}}(\textcolor{keyword}{const} std::vector<double>\& x);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{85     std::vector<double> \mbox{\hyperlink{lib__math_8h_a6a9d2dd0b82c9d95e93ed70d58db615c}{norm\_inv}}(\textcolor{keyword}{const} std::vector<double>\& x);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{91     \textcolor{keyword}{struct }\mbox{\hyperlink{structlib__math_1_1newton__raphson__res}{newton\_raphson\_res}}}
+\DoxyCodeLine{92     \{}
+\DoxyCodeLine{93         \textcolor{keywordtype}{double} x;}
+\DoxyCodeLine{94         \textcolor{keywordtype}{bool} success;}
+\DoxyCodeLine{95         \textcolor{keywordtype}{double} step;}
+\DoxyCodeLine{96         \textcolor{keywordtype}{double} tolerance;}
+\DoxyCodeLine{97         \textcolor{keywordtype}{int} iter\_no;}
+\DoxyCodeLine{98         \textcolor{keywordtype}{int} iter\_max;}
+\DoxyCodeLine{99         std::string msg;}
+\DoxyCodeLine{100     \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{112     \mbox{\hyperlink{structlib__math_1_1newton__raphson__res}{newton\_raphson\_res}} \mbox{\hyperlink{lib__math_8h_a0af3762a51ff511f2e2341d13f63c509}{newton\_raphson}}(\textcolor{keywordtype}{double} (*func)(\textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} x, \textcolor{keyword}{const} \textcolor{keywordtype}{double}\& step, \textcolor{keyword}{const} \textcolor{keywordtype}{double}\& tolerance, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& iter\_max);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{119     \textcolor{keyword}{class }\mbox{\hyperlink{classlib__math_1_1myDiscProbDist}{myDiscProbDist}}}
+\DoxyCodeLine{120     \{}
+\DoxyCodeLine{121         \textcolor{keyword}{private}:}
+\DoxyCodeLine{122             std::vector<double> x;}
+\DoxyCodeLine{123             std::vector<double> y;}
+\DoxyCodeLine{124         }
+\DoxyCodeLine{125         \textcolor{keyword}{public}:}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{133             \mbox{\hyperlink{classlib__math_1_1myDiscProbDist_a07d9713649e82a996f6839200b610f10}{myDiscProbDist}}(\textcolor{keyword}{const} std::vector<double>\& x, \textcolor{keyword}{const} std::vector<double>\& y);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{141             \mbox{\hyperlink{classlib__math_1_1myDiscProbDist_a07d9713649e82a996f6839200b610f10}{myDiscProbDist}}(\textcolor{keyword}{const} std::string\& file\_nm, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& sep = \textcolor{charliteral}{','});}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{147             \mbox{\hyperlink{classlib__math_1_1myDiscProbDist_a9fefcd889656519d7f4bc50cada4ef7a}{\string~myDiscProbDist}}()\{\};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{155             \textcolor{keywordtype}{double} \mbox{\hyperlink{classlib__math_1_1myDiscProbDist_ae053160e221ed58270c24c89dde6507d}{get}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& x);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{163             std::vector<double> \mbox{\hyperlink{classlib__math_1_1myDiscProbDist_ae053160e221ed58270c24c89dde6507d}{get}}(\textcolor{keyword}{const} std::vector<double>\& x);}
+\DoxyCodeLine{164     \};}
+\DoxyCodeLine{165 \}}
+
+\end{DoxyCode}

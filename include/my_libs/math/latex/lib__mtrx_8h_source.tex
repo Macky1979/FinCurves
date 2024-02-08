@@ -1,0 +1,77 @@
+\hypertarget{lib__mtrx_8h_source}{}\doxysection{lib\+\_\+mtrx.\+h}
+\mbox{\hyperlink{lib__mtrx_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{namespace }lib\_mtrx}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{24     \textcolor{keyword}{class }\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{myMatrix2D}}}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \textcolor{keyword}{private}:}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keyword}{public}:}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30             \textcolor{comment}{// object variables}}
+\DoxyCodeLine{31             std::vector<std::vector<double>> elements;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{42             \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a2ae24a91525bcd2d5edc9843c3bc9c9f}{myMatrix2D}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& x, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& y, \textcolor{keyword}{const} \textcolor{keywordtype}{double}\& element = 0.0, \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& diagonal = \textcolor{keyword}{false});}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{49             \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a2ae24a91525bcd2d5edc9843c3bc9c9f}{myMatrix2D}}(\textcolor{keyword}{const} std::vector<std::vector<double>> elements);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{57             \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a2ae24a91525bcd2d5edc9843c3bc9c9f}{myMatrix2D}}(\textcolor{keyword}{const} std::string\& file\_nm, \textcolor{keyword}{const} std::string\& sep = \textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{64             \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a2ae24a91525bcd2d5edc9843c3bc9c9f}{myMatrix2D}}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{myMatrix2D}}\& mtrx);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{72             \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a2ae24a91525bcd2d5edc9843c3bc9c9f}{myMatrix2D}}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{myMatrix2D}}\& mtrx, \textcolor{keyword}{const} std::vector<unsigned short>\& rng);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{80             \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a2ae24a91525bcd2d5edc9843c3bc9c9f}{myMatrix2D}}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{myMatrix2D}}\& mtrx, \textcolor{keyword}{const} std::string\& rng);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{87             \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a2ae24a91525bcd2d5edc9843c3bc9c9f}{myMatrix2D}}(\textcolor{keyword}{const} std::shared\_ptr<myMatrix2D> mtrx);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{95             \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a2ae24a91525bcd2d5edc9843c3bc9c9f}{myMatrix2D}}(\textcolor{keyword}{const} std::shared\_ptr<myMatrix2D> mtrx, \textcolor{keyword}{const} std::vector<unsigned short>\& rng);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{103             \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a81197b9ffd1cee912be20849ddcfb788}{myMatrix2D}}(\textcolor{keyword}{const} std::shared\_ptr<myMatrix2D> mtrx, \textcolor{keyword}{const} std::string\& rng);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{109             \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_afe91a65c7e6e0b72a6cba0797752ff32}{\string~myMatrix2D}}()\{\};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{116             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& precision = 7) \textcolor{keyword}{const};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{124             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a84e8f056d98f94d559e8384d67a39c96}{save}}(\textcolor{keyword}{const} std::string\& file\_nm, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& sep = \textcolor{charliteral}{','});}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{131             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a96f187fcee2bd8eac9273d59f97ae4cc}{get\_x}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} this-\/>elements.size();\};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{138             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a69a105a667ec05b52f2aeeb67688a1ca}{get\_y}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} this-\/>elements[0].size();\};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{145             std::shared\_ptr<myMatrix2D> \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a5b9ef894ba19265846e4040e589b946a}{transpose}}();}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{156             \textcolor{keywordtype}{float} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a90465553f767b595fcb175c068c38657}{sum}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& x\_low, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& x\_high, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& y\_low, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& y\_high);}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{164             \textcolor{keywordtype}{float} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a90465553f767b595fcb175c068c38657}{sum}}(\textcolor{keyword}{const} std::vector<unsigned short>\& rng = std::vector<unsigned short>());}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{172             \textcolor{keywordtype}{float} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a90465553f767b595fcb175c068c38657}{sum}}(\textcolor{keyword}{const} std::string\& rng = \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{180             std::shared\_ptr<myMatrix2D> \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a9ef26e186189cf711d68c4a6d38fd84b}{get\_row}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& x);}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{188             std::shared\_ptr<myMatrix2D> \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a9b5a070aa2ad376d4081d173f4f28184}{get\_col}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& y);}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{196             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a1911154d36d45934edf469a5772cb058}{replace\_row}}(\textcolor{keyword}{const} std::shared\_ptr<myMatrix2D> vector, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& x);}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{204             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_afc7f91dff017ed7187337d14c032c818}{replace\_col}}(\textcolor{keyword}{const} std::shared\_ptr<myMatrix2D> vector, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& y);}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     \};}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{215     std::shared\_ptr<myMatrix2D> \mbox{\hyperlink{lib__mtrx_8h_a733bf0b6223f18c228eb44331a8ae599}{add\_scalar}}(\textcolor{keyword}{const} std::shared\_ptr<myMatrix2D> mtrx, \textcolor{keyword}{const} \textcolor{keywordtype}{double}\& scalar\_to\_add);}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{223     std::shared\_ptr<myMatrix2D> \mbox{\hyperlink{lib__mtrx_8h_a69cf041d6219a5d8ccdfacd332c51c4f}{add\_mtrx}}(\textcolor{keyword}{const} std::vector<std::shared\_ptr<myMatrix2D>> mtrxs);}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{232     std::shared\_ptr<myMatrix2D> \mbox{\hyperlink{lib__mtrx_8h_ad77e01d6064c0efa0934f0c3020d657b}{mult\_scalar}}(\textcolor{keyword}{const} std::shared\_ptr<myMatrix2D> mtrx, \textcolor{keyword}{const} \textcolor{keywordtype}{double}\& scalar\_to\_mult);}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{240     std::shared\_ptr<myMatrix2D> \mbox{\hyperlink{lib__mtrx_8h_afb946a31a7971c46e50028f1bbb37c86}{mult\_mtrx}}(\textcolor{keyword}{const} std::vector<std::shared\_ptr<myMatrix2D>> mtrxs);}
+\DoxyCodeLine{241 \}}
+
+\end{DoxyCode}

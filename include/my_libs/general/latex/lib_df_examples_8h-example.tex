@@ -1,0 +1,61 @@
+\hypertarget{lib_df_examples_8h-example}{}\doxysection{lib\+\_\+df\+\_\+examples.\+h}
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}lib\_sql.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lib__df_8h}{lib\_df.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::string name = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// variables}}
+\DoxyCodeLine{    \textcolor{keyword}{const} \textcolor{keywordtype}{char} * db\_file\_nm = \textcolor{stringliteral}{"{}include/my\_libs/general/data/lib\_sql/database.db"{}};}
+\DoxyCodeLine{    \textcolor{keywordtype}{string} file\_nm = \textcolor{stringliteral}{"{}include/my\_libs/general/data/lib\_sql/cities.csv"{}};}
+\DoxyCodeLine{    std::shared\_ptr<lib\_df::myDataFrame> rslt1 = std::make\_shared<lib\_df::myDataFrame>();}
+\DoxyCodeLine{    std::shared\_ptr<lib\_df::myDataFrame> rslt2 = std::make\_shared<lib\_df::myDataFrame>();}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} read\_only = \textcolor{keyword}{false};}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} wait\_max\_seconds = 10;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} delete\_old\_data = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{string} sep = \textcolor{stringliteral}{"{};"{}};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} quotes = \textcolor{keyword}{true};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// create SQLite object and open connection to SQLite database file in read-\/write mode}}
+\DoxyCodeLine{    \mbox{\hyperlink{classlib__sql_1_1mySQLite}{lib\_sql::mySQLite}} db(db\_file\_nm, read\_only, wait\_max\_seconds);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// create table if it does not exists}}
+\DoxyCodeLine{    db.exec(\textcolor{stringliteral}{"{}CREATE TABLE IF NOT EXISTS cities (city VARCHAR(20), country VARCHAR(20));"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// delete table}}
+\DoxyCodeLine{    db.exec(\textcolor{stringliteral}{"{}DELETE FROM cities;"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// insert data into table}}
+\DoxyCodeLine{    db.exec(\textcolor{stringliteral}{"{}INSERT INTO cities (city, country) VALUES ('Prague', 'Czech Republic');"{}});}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{// vacuum SQLite database file to avoid its excessive growth}}
+\DoxyCodeLine{    db.vacuum();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// download table}}
+\DoxyCodeLine{    rslt1 = db.download\_tbl(\textcolor{stringliteral}{"{}cities"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// close connection to SQLite database file}}
+\DoxyCodeLine{    db.close();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// write dataframe into a .csv file}}
+\DoxyCodeLine{    rslt1-\/>write(file\_nm, sep, quotes);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// create dataframe from a .csv file}}
+\DoxyCodeLine{    rslt2-\/>read(file\_nm, sep, quotes);}
+\DoxyCodeLine{    rslt2-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// everything OK}}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

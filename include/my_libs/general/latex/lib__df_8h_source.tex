@@ -1,0 +1,48 @@
+\hypertarget{lib__df_8h_source}{}\doxysection{lib\+\_\+df.\+h}
+\mbox{\hyperlink{lib__df_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{namespace }lib\_df}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     \textcolor{comment}{// }}
+\DoxyCodeLine{25 \textcolor{comment}{}    \textcolor{keyword}{struct }\mbox{\hyperlink{structlib__df_1_1dataFrame}{dataFrame}}}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         std::vector<std::string> col\_nms;}
+\DoxyCodeLine{28         std::vector<std::string> dtypes;}
+\DoxyCodeLine{29         std::vector<std::vector<std::string>> values; }
+\DoxyCodeLine{30     \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{36     \textcolor{keyword}{class }\mbox{\hyperlink{classlib__df_1_1myDataFrame}{myDataFrame}}}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         \textcolor{keyword}{private}:}
+\DoxyCodeLine{39         }
+\DoxyCodeLine{40         \textcolor{keyword}{public}:}
+\DoxyCodeLine{45             \mbox{\hyperlink{structlib__df_1_1dataFrame}{dataFrame}} \mbox{\hyperlink{classlib__df_1_1myDataFrame_a8b1ca819459e74a18a5beb15847b72c9}{tbl}};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{51             \mbox{\hyperlink{classlib__df_1_1myDataFrame_a5015990c86d0ce34cbb0287d5fa5cea3}{myDataFrame}}()\{\};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{58             \mbox{\hyperlink{classlib__df_1_1myDataFrame_ace3df77e056202f7fb11ef554b32c525}{myDataFrame}}(\mbox{\hyperlink{structlib__df_1_1dataFrame}{dataFrame}} \mbox{\hyperlink{classlib__df_1_1myDataFrame_a8b1ca819459e74a18a5beb15847b72c9}{tbl}})\{this-\/>tbl = \mbox{\hyperlink{classlib__df_1_1myDataFrame_a8b1ca819459e74a18a5beb15847b72c9}{tbl}};\};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{64             \mbox{\hyperlink{classlib__df_1_1myDataFrame_a4a0ae3c9a3c2676d0cd214d46f800bf7}{\string~myDataFrame}}()\{\};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{70             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__df_1_1myDataFrame_a5db91309614734d714b0bf9501f556a8}{clear}}();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{77             std::size\_t \mbox{\hyperlink{classlib__df_1_1myDataFrame_a422ff5b1e6a1772b01895bf2eeb24a9e}{get\_rows\_no}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{84             std::size\_t \mbox{\hyperlink{classlib__df_1_1myDataFrame_a602d927ab52ae923348cdfd0725b5380}{get\_cols\_no}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{91             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__df_1_1myDataFrame_a9b6d27dd40503a3d6b046f0bd8048c91}{print}}(\textcolor{keyword}{const} std::size\_t\& rows\_no = 10);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{100             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__df_1_1myDataFrame_a3cd5d5eb25411c970ae133eff7a546e7}{write}}(\textcolor{keyword}{const} std::string\& file\_nm, \textcolor{keyword}{const} std::string\& sep, \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& quotes) \textcolor{keyword}{const};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{109             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__df_1_1myDataFrame_a3990f016fa2edf2c10f2bc47312c6d69}{read}}(\textcolor{keyword}{const} std::string\& file\_nm, \textcolor{keyword}{const} std::string\& sep, \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& quotes);}
+\DoxyCodeLine{110     \};}
+\DoxyCodeLine{111 \}}
+
+\end{DoxyCode}

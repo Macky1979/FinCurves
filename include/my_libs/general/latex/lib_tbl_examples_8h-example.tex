@@ -1,0 +1,97 @@
+\hypertarget{lib_tbl_examples_8h-example}{}\doxysection{lib\+\_\+tbl\+\_\+examples.\+h}
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}lib\_str.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lib__tbl_8h}{lib\_tbl.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} print\_tbl(\textcolor{keyword}{const} std::vector<std::shared\_ptr<std::string>>\& tenors, \textcolor{keyword}{const} std::vector<std::shared\_ptr<double>>\& rates)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    std::string row;}
+\DoxyCodeLine{    std::cout << lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}="{}}, 15, \textcolor{charliteral}{'='}) << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    row = lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}tenor"{}}, 5, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{    row += lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}rate"{}}, 10, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{    std::cout << row << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}="{}}, 15, \textcolor{charliteral}{'='}) << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (std::size\_t idx = 0; idx < tenors.size(); idx++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (tenors[idx] == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{            row = lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}NULL"{}}, 5, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{        \textcolor{keywordflow}{else}}
+\DoxyCodeLine{            row = lib\_str::add\_leading\_char(*tenors[idx], 5, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (rates[idx] == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{            row += lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}NULL"{}}, 10, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{        \textcolor{keywordflow}{else}}
+\DoxyCodeLine{            row += lib\_str::add\_leading\_char(std::to\_string(*rates[idx]), 10, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << row << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}="{}}, 15, \textcolor{charliteral}{'='}) << std::endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    std::string name = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// variables}}
+\DoxyCodeLine{    \textcolor{keywordtype}{string} input\_file\_nm = \textcolor{stringliteral}{"{}/home/macky/Documents/Programming/C++/FinCurves/include/my\_libs/general/data/lib\_tbl/eur\_ri\_ester\_20220429.csv"{}};}
+\DoxyCodeLine{    \textcolor{keywordtype}{string} output\_file\_nm = \textcolor{stringliteral}{"{}include/my\_libs/general/data/lib\_tbl/ouput.csv"{}};}
+\DoxyCodeLine{    std::shared\_ptr<lib\_tbl::myTable> tbl1 = std::make\_shared<lib\_tbl::myTable>();}
+\DoxyCodeLine{    std::shared\_ptr<lib\_tbl::myTable> tbl2 = std::make\_shared<lib\_tbl::myTable>();}
+\DoxyCodeLine{    \textcolor{keywordtype}{string} sep = \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} quotes = \textcolor{keyword}{false};}
+\DoxyCodeLine{    std::size\_t rows\_no = 10;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// load table from a file}}
+\DoxyCodeLine{    tbl1-\/>read(input\_file\_nm, sep, quotes);}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}tbl1 -\/ all columns"{}} << std::endl;}
+\DoxyCodeLine{    tbl1-\/>print(rows\_no);}
+\DoxyCodeLine{    std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// copy table}}
+\DoxyCodeLine{    tbl2-\/>copy(tbl1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// clear the first table}}
+\DoxyCodeLine{    tbl1-\/>clear();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// print the second table}}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}tbl2 -\/ all columns"{}} << std::endl;}
+\DoxyCodeLine{    tbl2-\/>print(rows\_no);}
+\DoxyCodeLine{    std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// extract columns -\/ all rows}}
+\DoxyCodeLine{    std::vector<std::shared\_ptr<std::string>> tenors1 = tbl2-\/>get\_str\_column(\textcolor{stringliteral}{"{}tenor"{}});}
+\DoxyCodeLine{    std::vector<std::shared\_ptr<double>> rates1 = tbl2-\/>get\_double\_column(\textcolor{stringliteral}{"{}rate"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}tbl2 extract -\/ selected columns; all rows"{}} << std::endl;}
+\DoxyCodeLine{    print\_tbl(tenors1, rates1);}
+\DoxyCodeLine{    std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// extract columns -\/ exclude N/A values}}
+\DoxyCodeLine{    std::vector<std::size\_t> rows\_idx = tbl2-\/>get\_rows\_idx(\textcolor{stringliteral}{"{}rate"{}}, 1);}
+\DoxyCodeLine{    std::vector<std::shared\_ptr<std::string>> tenors2 = tbl2-\/>get\_str\_column(\textcolor{stringliteral}{"{}tenor"{}}, rows\_idx);}
+\DoxyCodeLine{    std::vector<std::shared\_ptr<double>> rates2 = tbl2-\/>get\_double\_column(\textcolor{stringliteral}{"{}rate"{}}, rows\_idx);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}tbl2 -\/ selected columns; drop rows with N/A value in 'rate' column"{}} << std::endl;}
+\DoxyCodeLine{    print\_tbl(tenors2, rates2);}
+\DoxyCodeLine{    std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// save the second table}}
+\DoxyCodeLine{    tbl2-\/>write(output\_file\_nm, sep, quotes);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// everything OK}}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

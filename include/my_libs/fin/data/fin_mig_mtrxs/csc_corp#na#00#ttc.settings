@@ -1,0 +1,10 @@
+rho: 0.19
+alpha: 0.50
+calib_period: 10.0
+stressed_mm: yes
+stressed_mm_dh: yes
+stressed_mm_dd: yes
+stressed_pd_vector: yes
+updated: yes
+type: ttc
+status: HHHHHHHHHDD

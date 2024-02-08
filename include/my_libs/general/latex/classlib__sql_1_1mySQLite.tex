@@ -1,0 +1,47 @@
+\hypertarget{classlib__sql_1_1mySQLite}{}\doxysection{lib\+\_\+sql\+::my\+SQLite Class Reference}
+\label{classlib__sql_1_1mySQLite}\index{lib\_sql::mySQLite@{lib\_sql::mySQLite}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a932decd95c135077efbf9e1a6003cc83}\label{classlib__sql_1_1mySQLite_a932decd95c135077efbf9e1a6003cc83}} 
+{\bfseries my\+SQLite} (const char $\ast$db\+\_\+file\+\_\+nm, const bool read\+\_\+only, int wait\+\_\+max\+\_\+seconds)
+\item 
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a5f3810d4f309627ff8b240bbfef96fd1}\label{classlib__sql_1_1mySQLite_a5f3810d4f309627ff8b240bbfef96fd1}} 
+void {\bfseries open} (const char $\ast$db\+\_\+file\+\_\+nm, const bool read\+\_\+only)
+\item 
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a9ddc4e805a863fc17a0e2c1ea3a72433}\label{classlib__sql_1_1mySQLite_a9ddc4e805a863fc17a0e2c1ea3a72433}} 
+void {\bfseries close} () const
+\item 
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_acd8c1bae0f451189336a4cf866277d6e}\label{classlib__sql_1_1mySQLite_acd8c1bae0f451189336a4cf866277d6e}} 
+void {\bfseries vacuum} () const
+\item 
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_ac20c73c39f62f6a92924f3837f211163}\label{classlib__sql_1_1mySQLite_ac20c73c39f62f6a92924f3837f211163}} 
+void {\bfseries exec} (const std\+::string \&sql) const
+\item 
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a12dd676f350f5e9448d61f9fe9301831}\label{classlib__sql_1_1mySQLite_a12dd676f350f5e9448d61f9fe9301831}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} $>$ {\bfseries query} (const std\+::string \&sql) const
+\item 
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_ae0fa0568ebaf3c4369e3166e9fbbfb45}\label{classlib__sql_1_1mySQLite_ae0fa0568ebaf3c4369e3166e9fbbfb45}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} $>$ {\bfseries download\+\_\+tbl} (const std\+::string \&tbl\+\_\+nm)
+\item 
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_ac15f63f59725afa0cebefe7279d69f33}\label{classlib__sql_1_1mySQLite_ac15f63f59725afa0cebefe7279d69f33}} 
+void {\bfseries upload\+\_\+tbl} (const \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} \&tbl, const std\+::string \&tbl\+\_\+nm, const bool delete\+\_\+old\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a387f0a0791b14b0522a0a434c3ed095d}\label{classlib__sql_1_1mySQLite_a387f0a0791b14b0522a0a434c3ed095d}} 
+int {\bfseries wait\+\_\+max\+\_\+seconds}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_df_examples_8h-example}{lib\+\_\+df\+\_\+examples.\+h}}.\end{Desc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib\+\_\+sql.\+h\item 
+lib\+\_\+sql.\+cpp\end{DoxyCompactItemize}

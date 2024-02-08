@@ -1,0 +1,13 @@
+rho: 0.190000
+alpha: -1.000000
+Z_prev: 0.000000
+Z_curr: 0.000000
+Z_next: 0.000000
+calib_period: 14
+stressed_mm: yes
+stressed_mm_dh: yes
+stressed_mm_dd: yes
+stressed_pd_vector: yes
+updated: yes
+type: ttc
+status: HHHHHHHHHDD

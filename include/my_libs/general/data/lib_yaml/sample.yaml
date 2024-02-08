@@ -1,0 +1,8 @@
+- triangle: A
+  coordinates:
+    - x: 0.00
+      y: 0.00
+    - x: 5.00
+      y: 0.00
+    - x: 2.50
+      y: 5.00

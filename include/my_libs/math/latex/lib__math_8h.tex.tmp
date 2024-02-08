@@ -1,0 +1,249 @@
+\hypertarget{lib__math_8h}{}\doxysection{lib\+\_\+math.\+h File Reference}
+\label{lib__math_8h}\index{lib\_math.h@{lib\_math.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for lib\+\_\+math.\+h\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlib__math_1_1newton__raphson__res}{lib\+\_\+math\+::newton\+\_\+raphson\+\_\+res}}
+\begin{DoxyCompactList}\small\item\em Data structure holding results of Newton-\/\+Raphson method. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlib__math_1_1myDiscProbDist}{lib\+\_\+math\+::my\+Disc\+Prob\+Dist}}
+\begin{DoxyCompactList}\small\item\em Discrete probability distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{lib__math_8h_ac447705418bfbf6fcf4a4f21dfb16a82}{lib\+\_\+math\+::round}} (const double \&x, const unsigned short \&decimals=2)
+\begin{DoxyCompactList}\small\item\em Round double to user-\/specified number of digits. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{lib__math_8h_a4a03f44347bf4fd18e6f5a45483b843f}{lib\+\_\+math\+::lin\+\_\+interp1d}} (const std\+::vector$<$ double $>$ \&x, const std\+::vector$<$ double $>$ \&y, const std\+::vector$<$ double $>$ \&X, const bool extrapolate=false)
+\begin{DoxyCompactList}\small\item\em Linear 1D interpolation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{lib__math_8h_a7798bd15f5cd4340360e44ed568c9044}{lib\+\_\+math\+::norm\+\_\+cdf}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Standardized normal CDF evaluated at a single point. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{lib__math_8h_acf0f859fcd73d3d6ed62b3bd85dd3292}{lib\+\_\+math\+::norm\+\_\+pdf}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Standaridized normal PDF evaluated at a single point. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{lib__math_8h_a6a9d2dd0b82c9d95e93ed70d58db615c}{lib\+\_\+math\+::norm\+\_\+inv}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Inverse standardized normal distribution evaluated at a single quantile. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{lib__math_8h_a96d4a6e6a7be2115fbe955a45b88580e}{lib\+\_\+math\+::norm\+\_\+cdf}} (const std\+::vector$<$ double $>$ \&x)
+\begin{DoxyCompactList}\small\item\em Standardized normal CDF evaluated for a vector of points. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{lib__math_8h_a49e2f972c7e489d06f8b065b028b24ec}{lib\+\_\+math\+::norm\+\_\+pdf}} (const std\+::vector$<$ double $>$ \&x)
+\begin{DoxyCompactList}\small\item\em Standardized normal PDF evaluated for a vector of points. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{lib__math_8h_ac0c941c21043ca88194f29436a775b04}{lib\+\_\+math\+::norm\+\_\+inv}} (const std\+::vector$<$ double $>$ \&x)
+\begin{DoxyCompactList}\small\item\em Inverse standardized normal distribution evaluated for a vector of quantiles. \end{DoxyCompactList}\item 
+newton\+\_\+raphson\+\_\+res \mbox{\hyperlink{lib__math_8h_a0af3762a51ff511f2e2341d13f63c509}{lib\+\_\+math\+::newton\+\_\+raphson}} (double($\ast$func)(double), double x, const double \&step, const double \&tolerance, const unsigned short \&iter\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Implementation of Newton-\/\+Raphson method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Michal Mackanič 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/01-\/28
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lib__math_8h_a4a03f44347bf4fd18e6f5a45483b843f}\label{lib__math_8h_a4a03f44347bf4fd18e6f5a45483b843f}} 
+\index{lib\_math.h@{lib\_math.h}!lin\_interp1d@{lin\_interp1d}}
+\index{lin\_interp1d@{lin\_interp1d}!lib\_math.h@{lib\_math.h}}
+\doxysubsubsection{\texorpdfstring{lin\_interp1d()}{lin\_interp1d()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ lib\+\_\+math\+::lin\+\_\+interp1d (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x,  }\item[{const std\+::vector$<$ double $>$ \&}]{y,  }\item[{const std\+::vector$<$ double $>$ \&}]{X,  }\item[{const bool}]{extrapolate = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Linear 1D interpolation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector of x points ordered from lower to higher. \\
+\hline
+{\em y} & Vector of y points corresponding to individual x points. \\
+\hline
+{\em X} & Vector of X points for which Y points should be interpolated based on x and y points. \\
+\hline
+{\em extrapolate} & true =\texorpdfstring{$>$}{>} Extrapolate end points. ~\newline
+ false =\texorpdfstring{$>$}{>} Do not extrapolate end points. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ Vector of interpolated points Y. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_math_examples_8h-example}{lib\+\_\+math\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{lib__math_8h_a0af3762a51ff511f2e2341d13f63c509}\label{lib__math_8h_a0af3762a51ff511f2e2341d13f63c509}} 
+\index{lib\_math.h@{lib\_math.h}!newton\_raphson@{newton\_raphson}}
+\index{newton\_raphson@{newton\_raphson}!lib\_math.h@{lib\_math.h}}
+\doxysubsubsection{\texorpdfstring{newton\_raphson()}{newton\_raphson()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlib__math_1_1newton__raphson__res}{lib\+\_\+math\+::newton\+\_\+raphson\+\_\+res}} lib\+\_\+math\+::newton\+\_\+raphson (\begin{DoxyParamCaption}\item[{double($\ast$)(double)}]{func,  }\item[{double}]{x,  }\item[{const double \&}]{step,  }\item[{const double \&}]{tolerance,  }\item[{const unsigned short \&}]{iter\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Implementation of Newton-\/\+Raphson method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Single variable function for which we search x such that f(x) = 0 using Newton-\/\+Raphson method. \\
+\hline
+{\em x} & Initial estimate of optimal value of variable x. \\
+\hline
+{\em step} & Lenght of interation step to applied within Newton-\/\+Raphson method. \\
+\hline
+{\em tolerance} & Interation process is stopped if value of the function is in range of +/-\/ tolerance. \\
+\hline
+{\em iter\+\_\+max} & Maximum number of iterations. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+newton\+\_\+raphson\+\_\+res Data structure holding results of Newton-\/\+Raphosn method. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_math_examples_8h-example}{lib\+\_\+math\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{lib__math_8h_a7798bd15f5cd4340360e44ed568c9044}\label{lib__math_8h_a7798bd15f5cd4340360e44ed568c9044}} 
+\index{lib\_math.h@{lib\_math.h}!norm\_cdf@{norm\_cdf}}
+\index{norm\_cdf@{norm\_cdf}!lib\_math.h@{lib\_math.h}}
+\doxysubsubsection{\texorpdfstring{norm\_cdf()}{norm\_cdf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double lib\+\_\+math\+::norm\+\_\+cdf (\begin{DoxyParamCaption}\item[{const double \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Standardized normal CDF evaluated at a single point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Point at which standardized normal CDF is to be evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Value of standardized normal CDF at the point. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_math_examples_8h-example}{lib\+\_\+math\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{lib__math_8h_a96d4a6e6a7be2115fbe955a45b88580e}\label{lib__math_8h_a96d4a6e6a7be2115fbe955a45b88580e}} 
+\index{lib\_math.h@{lib\_math.h}!norm\_cdf@{norm\_cdf}}
+\index{norm\_cdf@{norm\_cdf}!lib\_math.h@{lib\_math.h}}
+\doxysubsubsection{\texorpdfstring{norm\_cdf()}{norm\_cdf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ lib\+\_\+math\+::norm\+\_\+cdf (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Standardized normal CDF evaluated for a vector of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector of points at which standardized normal CDF is to be evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ Values of standardized normal CDF at the individual points. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lib__math_8h_a6a9d2dd0b82c9d95e93ed70d58db615c}\label{lib__math_8h_a6a9d2dd0b82c9d95e93ed70d58db615c}} 
+\index{lib\_math.h@{lib\_math.h}!norm\_inv@{norm\_inv}}
+\index{norm\_inv@{norm\_inv}!lib\_math.h@{lib\_math.h}}
+\doxysubsubsection{\texorpdfstring{norm\_inv()}{norm\_inv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double lib\+\_\+math\+::norm\+\_\+inv (\begin{DoxyParamCaption}\item[{const double \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Inverse standardized normal distribution evaluated at a single quantile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Quantile at which inverse standardized normal distribution is to be evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Value of inverse standardized normal distribution at the quantile. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_math_examples_8h-example}{lib\+\_\+math\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{lib__math_8h_ac0c941c21043ca88194f29436a775b04}\label{lib__math_8h_ac0c941c21043ca88194f29436a775b04}} 
+\index{lib\_math.h@{lib\_math.h}!norm\_inv@{norm\_inv}}
+\index{norm\_inv@{norm\_inv}!lib\_math.h@{lib\_math.h}}
+\doxysubsubsection{\texorpdfstring{norm\_inv()}{norm\_inv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ lib\+\_\+math\+::norm\+\_\+inv (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Inverse standardized normal distribution evaluated for a vector of quantiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector of quantiles at which inverse standardized normal distribuiton is to be evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ Values of inverse standardized normal distribution at the individual quantiles. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lib__math_8h_acf0f859fcd73d3d6ed62b3bd85dd3292}\label{lib__math_8h_acf0f859fcd73d3d6ed62b3bd85dd3292}} 
+\index{lib\_math.h@{lib\_math.h}!norm\_pdf@{norm\_pdf}}
+\index{norm\_pdf@{norm\_pdf}!lib\_math.h@{lib\_math.h}}
+\doxysubsubsection{\texorpdfstring{norm\_pdf()}{norm\_pdf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double lib\+\_\+math\+::norm\+\_\+pdf (\begin{DoxyParamCaption}\item[{const double \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Standaridized normal PDF evaluated at a single point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Point at which standardized normal PDF is to be evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Value of standardized normal PDF at the point. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_math_examples_8h-example}{lib\+\_\+math\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{lib__math_8h_a49e2f972c7e489d06f8b065b028b24ec}\label{lib__math_8h_a49e2f972c7e489d06f8b065b028b24ec}} 
+\index{lib\_math.h@{lib\_math.h}!norm\_pdf@{norm\_pdf}}
+\index{norm\_pdf@{norm\_pdf}!lib\_math.h@{lib\_math.h}}
+\doxysubsubsection{\texorpdfstring{norm\_pdf()}{norm\_pdf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ lib\+\_\+math\+::norm\+\_\+pdf (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Standardized normal PDF evaluated for a vector of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector of points at which standardized normal PDF is to be evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ Values of standardized normal PDF at the individual points. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lib__math_8h_ac447705418bfbf6fcf4a4f21dfb16a82}\label{lib__math_8h_ac447705418bfbf6fcf4a4f21dfb16a82}} 
+\index{lib\_math.h@{lib\_math.h}!round@{round}}
+\index{round@{round}!lib\_math.h@{lib\_math.h}}
+\doxysubsubsection{\texorpdfstring{round()}{round()}}
+{\footnotesize\ttfamily double lib\+\_\+math\+::round (\begin{DoxyParamCaption}\item[{const double \&}]{x,  }\item[{const unsigned short \&}]{decimals = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+Round double to user-\/specified number of digits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Number to be rounded. \\
+\hline
+{\em decimals} & Number of decimals to which the variable x is supposed to be rounded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Rounded number. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_math_examples_8h-example}{lib\+\_\+math\+\_\+examples.\+h}}.\end{Desc}

@@ -1,0 +1,341 @@
+\hypertarget{lib_mtrx_examples_8h-example}{}\doxysection{lib\+\_\+mtrx\+\_\+examples.\+h}
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lib__math_8h}{lib\_math.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lib__mtrx_8h}{lib\_mtrx.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} lib\_mtrx\_examples()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// create unite matrix}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}CREATE UNITE MATRIX"{}} << std::endl;}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} rows\_no = 3;}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} cols\_no = 3;}
+\DoxyCodeLine{        \textcolor{keywordtype}{double} element = 1.0;}
+\DoxyCodeLine{        \textcolor{keywordtype}{bool} diagonal = \textcolor{keyword}{true};}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx = std::make\_shared<lib\_mtrx::myMatrix2D>(rows\_no, cols\_no, element, diagonal);}
+\DoxyCodeLine{        mtrx-\/>print();}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// create matrix of zeros}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}CREATE MATRIX OF ZEROS"{}} << std::endl;}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} rows\_no = 2;}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} cols\_no = 5;}
+\DoxyCodeLine{        \textcolor{keywordtype}{double} element = 0.0;}
+\DoxyCodeLine{        \textcolor{keywordtype}{bool} diagonal = \textcolor{keyword}{false};}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}} mtrx = \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}}(rows\_no, cols\_no, element, diagonal);}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// create matrix from a vector of doubles}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}CREATE MATRIX FROM ARRAY OF DOUBLES"{}} << std::endl;}
+\DoxyCodeLine{        std::vector<std::vector<double>> elements = }
+\DoxyCodeLine{            \{\{0.9037531, 0.0812568, 0.0080906, 0.0018606, 0.0040098, 0.0003044, 0.0001500, 0.0005748\},}
+\DoxyCodeLine{             \{0.1213350, 0.7799222, 0.0617936, 0.0178147, 0.0134249, 0.0018724, 0.0010083, 0.0028288\},}
+\DoxyCodeLine{             \{0.0397476, 0.3592938, 0.4364767, 0.0973718, 0.0457544, 0.0076005, 0.0031961, 0.0105591\},}
+\DoxyCodeLine{             \{0.0160208, 0.2135963, 0.2467575, 0.2999252, 0.1347754, 0.0317650, 0.0139655, 0.0431944\},}
+\DoxyCodeLine{             \{0.0404306, 0.1693487, 0.1340239, 0.1920848, 0.2618114, 0.0733376, 0.0290803, 0.0998829\},}
+\DoxyCodeLine{             \{0.0065295, 0.0499845, 0.0600477, 0.1525826, 0.2277470, 0.1462818, 0.0610217, 0.2958053\},}
+\DoxyCodeLine{             \{0.0030775, 0.0383176, 0.0394161, 0.1121800, 0.1444259, 0.0986995, 0.0680849, 0.4957984\},}
+\DoxyCodeLine{             \{0.0000000, 0.0000000, 0.0000000, 0.0000000, 0.0000000, 0.0000000, 0.0000000, 1.0000000\}\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx = std::make\_shared<lib\_mtrx::myMatrix2D>(elements);}
+\DoxyCodeLine{        mtrx-\/>print();}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// load matrix from a .csv file}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}LOAD MATRIX FROM A .CSV FILE"{}} << std::endl;}
+\DoxyCodeLine{        std::string path = \textcolor{stringliteral}{"{}data/lib\_mtrx/"{}};}
+\DoxyCodeLine{        std::string mtrx\_file\_nm = \textcolor{stringliteral}{"{}mtrx\_A.csv"{}};}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}} mtrx = \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}}(path + mtrx\_file\_nm);}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{ }
+\DoxyCodeLine{    \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}COPY CONSTRUCTOR"{}} << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// create matrix}}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} rows\_no = 2;}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} cols\_no = 3;}
+\DoxyCodeLine{        std::vector<std::vector<double>> elements =}
+\DoxyCodeLine{            \{\{0.9037531, 0.0812568, 0.0080906\},}
+\DoxyCodeLine{             \{0.0018606, 0.0040098, 0.0003044\}\};}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}} mtrx\_1 = \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}}(elements);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// copy constructor}}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}Pointer Copy Constructor"{}} << std::endl;}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}} mtrx\_2 = \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}}(mtrx\_1);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}original matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx\_1.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}copied matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx\_2.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// pointer copy constructor}}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}Reference Copy Constructor"{}} << std::endl;}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx\_3 = std::make\_shared<lib\_mtrx::myMatrix2D>(mtrx\_1);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}original matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx\_1.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}copied matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx\_3-\/>print();}
+\DoxyCodeLine{    }
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// transpose matrix}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}TRANSPOSE MATRIX"{}} << std::endl;}
+\DoxyCodeLine{        std::vector<std::vector<double>> elements = }
+\DoxyCodeLine{            \{\{0.9037531, 0.0812568, 0.0080906\},}
+\DoxyCodeLine{             \{0.0018606, 0.0040098, 0.0003044\}\};}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}} mtrx = \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}}(elements);}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx\_t = mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a5b9ef894ba19265846e4040e589b946a}{transpose}}();}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}original matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}transposed matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx\_t-\/>print();}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \} }
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// sum range}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}SUM RANGE: 1 + 2 + 4 + 5 = 12"{}} << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// create matrix}}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} rows\_no = 2;}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} cols\_no = 3;}
+\DoxyCodeLine{        std::vector<std::vector<double>> elements =}
+\DoxyCodeLine{            \{\{1, 2, 3\},}
+\DoxyCodeLine{             \{4, 5, 6\}\};}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}} mtrx = \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}}(elements);}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// 1 + 2 + 4 + 5 = 12}}
+\DoxyCodeLine{        \textcolor{keywordtype}{double} sum = 0.0;}
+\DoxyCodeLine{        sum = mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a90465553f767b595fcb175c068c38657}{sum}}(\textcolor{stringliteral}{"{}0:2,0:2"{}});}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}mtrx.sum(0:2,0:2) = "{}} << std::to\_string(sum) << std::endl;}
+\DoxyCodeLine{        sum = mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a90465553f767b595fcb175c068c38657}{sum}}(0, 2, 0, 2);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}mtrx.sum(0,2,0,2) = "{}} << std::to\_string(sum) << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// get row}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}GET ROW"{}} << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// create matrix}}
+\DoxyCodeLine{        std::vector<std::vector<double>> mtrx\_elements =}
+\DoxyCodeLine{            \{\{1, 2\},}
+\DoxyCodeLine{             \{3, 4\}\};}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}} mtrx = \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}}(mtrx\_elements);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}original matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// get the second row}}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> row = std::make\_shared<lib\_mtrx::myMatrix2D>(mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a9ef26e186189cf711d68c4a6d38fd84b}{get\_row}}(1));}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}second row"{}} << std::endl;}
+\DoxyCodeLine{        row-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}    }
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// get column}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}GET COLUMN"{}} << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// create matrix}}
+\DoxyCodeLine{        std::vector<std::vector<double>> mtrx\_elements =}
+\DoxyCodeLine{            \{\{1, 2\},}
+\DoxyCodeLine{             \{3, 4\}\};}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}} mtrx = \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}}(mtrx\_elements);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}original matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// get the first column}}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> col = std::make\_shared<lib\_mtrx::myMatrix2D>(mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a9b5a070aa2ad376d4081d173f4f28184}{get\_col}}(0));}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}first column"{}} << std::endl;}
+\DoxyCodeLine{        col-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \} }
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// replace column}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}REPLACE COLUMN"{}} << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// create matrix}}
+\DoxyCodeLine{        std::vector<std::vector<double>> mtrx\_elements =}
+\DoxyCodeLine{            \{\{1, 2\},}
+\DoxyCodeLine{             \{3, 4\}\};}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}} mtrx = \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}}(mtrx\_elements);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}original matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// create column}}
+\DoxyCodeLine{        std::vector<std::vector<double>> vector\_elements =}
+\DoxyCodeLine{            \{\{1\},}
+\DoxyCodeLine{             \{3\}\};}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> vector = std::make\_shared<lib\_mtrx::myMatrix2D>(vector\_elements);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}replacement column"{}} << std::endl;}
+\DoxyCodeLine{        vector-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// replace column}}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_afc7f91dff017ed7187337d14c032c818}{replace\_col}}(vector, 1);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}matrix after replacement"{}} << std::endl;}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// replace row}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}REPLACE ROW"{}} << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// create matrix}}
+\DoxyCodeLine{        std::vector<std::vector<double>> mtrx\_elements =}
+\DoxyCodeLine{            \{\{1, 2\},}
+\DoxyCodeLine{             \{3, 4\}\};}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}} mtrx = \mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D}{lib\_mtrx::myMatrix2D}}(mtrx\_elements);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}original matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// create column}}
+\DoxyCodeLine{        std::vector<std::vector<double>> vector\_elements = \{\{1, 2\}\};}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> vector = std::make\_shared<lib\_mtrx::myMatrix2D>(vector\_elements);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}replacement row"{}} << std::endl;}
+\DoxyCodeLine{        vector-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// replace column}}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a1911154d36d45934edf469a5772cb058}{replace\_row}}(vector, 1);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}matrix after replacement"{}} << std::endl;}
+\DoxyCodeLine{        mtrx.\mbox{\hyperlink{classlib__mtrx_1_1myMatrix2D_a88d6b6479a01085d3c39fa0582add0d5}{print}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// add scalar}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}ADD SCALAR OF 2.0"{}} << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// create matrix}}
+\DoxyCodeLine{        std::vector<std::vector<double>> mtrx\_elements =}
+\DoxyCodeLine{            \{\{1, 2\},}
+\DoxyCodeLine{             \{3, 4\}\};}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx = std::make\_shared<lib\_mtrx::myMatrix2D>(mtrx\_elements);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}original matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// add scalar}}
+\DoxyCodeLine{        mtrx = \mbox{\hyperlink{lib__mtrx_8h_a733bf0b6223f18c228eb44331a8ae599}{lib\_mtrx::add\_scalar}}(mtrx, 2.0);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}matrix after adding 2.0"{}} << std::endl;}
+\DoxyCodeLine{        mtrx-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// multiply with scalar}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}MULTIPLY WITH SCALAR OF 2.0"{}} << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// create matrix}}
+\DoxyCodeLine{        std::vector<std::vector<double>> mtrx\_elements =}
+\DoxyCodeLine{            \{\{1, 2\},}
+\DoxyCodeLine{             \{3, 4\}\};}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx = std::make\_shared<lib\_mtrx::myMatrix2D>(mtrx\_elements);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}original matrix"{}} << std::endl;}
+\DoxyCodeLine{        mtrx-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// multiply with scalar}}
+\DoxyCodeLine{        mtrx = \mbox{\hyperlink{lib__mtrx_8h_ad77e01d6064c0efa0934f0c3020d657b}{lib\_mtrx::mult\_scalar}}(mtrx, 2.0);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}matrix after multiplying with 2.0"{}} << std::endl;}
+\DoxyCodeLine{        mtrx-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// sum matrices}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}SUM MATRICES"{}} << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// create matrices}}
+\DoxyCodeLine{        std::vector<std::vector<double>> mtrx\_elements\_1 =}
+\DoxyCodeLine{            \{\{1, 2\},}
+\DoxyCodeLine{             \{3, 4\}\};}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx\_1 = std::make\_shared<lib\_mtrx::myMatrix2D>(mtrx\_elements\_1);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}matrix 1"{}} << std::endl;}
+\DoxyCodeLine{        mtrx\_1-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::vector<std::vector<double>> mtrx\_elements\_2 =}
+\DoxyCodeLine{            \{\{1, 1\},}
+\DoxyCodeLine{             \{2, 2\}\};}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx\_2 = std::make\_shared<lib\_mtrx::myMatrix2D>(mtrx\_elements\_2);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}matrix 2"{}} << std::endl;}
+\DoxyCodeLine{        mtrx\_2-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// sum the two matrices}}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx = \mbox{\hyperlink{lib__mtrx_8h_a69cf041d6219a5d8ccdfacd332c51c4f}{lib\_mtrx::add\_mtrx}}(std::vector<std::shared\_ptr<lib\_mtrx::myMatrix2D>>\{mtrx\_1, mtrx\_2\});}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}sum of the two matrices"{}} << std::endl;}
+\DoxyCodeLine{        mtrx-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// multiply matrices}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}MULTIPLY MATRICES"{}} << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// create matrices}}
+\DoxyCodeLine{        std::vector<std::vector<double>> mtrx\_elements\_1 = }
+\DoxyCodeLine{            \{\{1, 2\},}
+\DoxyCodeLine{             \{3, 4\},}
+\DoxyCodeLine{             \{5, 6\}\};}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx\_1 = std::make\_shared<lib\_mtrx::myMatrix2D>(mtrx\_elements\_1);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}matrix 1"{}} << std::endl;}
+\DoxyCodeLine{        mtrx\_1-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::vector<std::vector<double>> mtrx\_elements\_2 =}
+\DoxyCodeLine{            \{\{1, 2, 3\},}
+\DoxyCodeLine{             \{4, 5, 6\}\};}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx\_2 = std::make\_shared<lib\_mtrx::myMatrix2D>(mtrx\_elements\_2);}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}matrix 2"{}} << std::endl;}
+\DoxyCodeLine{        mtrx\_2-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// multiplication of the two matrices}}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx = \mbox{\hyperlink{lib__mtrx_8h_afb946a31a7971c46e50028f1bbb37c86}{lib\_mtrx::mult\_mtrx}}(std::vector<std::shared\_ptr<lib\_mtrx::myMatrix2D>>\{mtrx\_1, mtrx\_2\});}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}multiplication of the two matrices"{}} << std::endl;}
+\DoxyCodeLine{        mtrx-\/>print();}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// store matrix into a .csv file}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}STORE MATRIX INTO .CSV FILE"{}} << std::endl;}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// create matrices}}
+\DoxyCodeLine{        std::vector<std::vector<double>> mtrx\_elements =}
+\DoxyCodeLine{            \{\{1, 2\},}
+\DoxyCodeLine{             \{3, 4\},}
+\DoxyCodeLine{             \{5, 6\}\};}
+\DoxyCodeLine{        std::shared\_ptr<lib\_mtrx::myMatrix2D> mtrx = std::make\_shared<lib\_mtrx::myMatrix2D>(mtrx\_elements);}
+\DoxyCodeLine{        mtrx-\/>print();}
+\DoxyCodeLine{        mtrx-\/>save(\textcolor{stringliteral}{"{}data/lib\_mtrx/saved\_mtrx.csv"{}});}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

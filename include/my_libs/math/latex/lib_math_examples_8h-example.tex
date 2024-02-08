@@ -1,0 +1,112 @@
+\hypertarget{lib_math_examples_8h-example}{}\doxysection{lib\+\_\+math\+\_\+examples.\+h}
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lib__math_8h}{lib\_math.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{double} sqrt\_of\_2(\textcolor{keywordtype}{double} x)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} (2 -\/ std::pow(x, 2));}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// ROUND}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}ROUND"{}} << std::endl;}
+\DoxyCodeLine{        \textcolor{keywordtype}{double} pi = 3.141592653589793238462643383279502884197;}
+\DoxyCodeLine{        std::cout << std::to\_string(pi) << \textcolor{stringliteral}{"{} -\/> "{}} << std::to\_string(lib\_math::round(pi, 2));}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// LINEAR INTERPOLATION}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}LINEAR INTERPOLATION"{}} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordtype}{bool} extrapolate = \textcolor{keyword}{true};}
+\DoxyCodeLine{        std::vector<double> x = \{0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0\};}
+\DoxyCodeLine{        std::vector<double> y = \{-\/2.30258509, -\/1.60943791, -\/1.20397280, -\/0.91629073, -\/0.69314718, -\/0.51082562, -\/0.35667494, -\/0.22314355, -\/0.10536052, 0.00000000,}
+\DoxyCodeLine{                                  0.09531018,  0.18232156,  0.26236426,  0.33647224,  0.40546511,  0.47000363,  0.53062825,  0.58778666,  0.64185389, 0.69314718\};}
+\DoxyCodeLine{        std::vector<double> X = \{0.09, 0.15, 0.25, 2.10\};}
+\DoxyCodeLine{        std::vector<double> Y = \mbox{\hyperlink{lib__math_8h_a4a03f44347bf4fd18e6f5a45483b843f}{lib\_math::lin\_interp1d}}(x, y, X, extrapolate);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (std::size\_t idx = 0; idx < X.size(); idx++)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            std::cout << \textcolor{stringliteral}{"{}exact:         ln("{}} << std::to\_string(X[idx]) << \textcolor{stringliteral}{"{}) =  "{}} << std::to\_string(std::log(X[idx])) << std::endl;}
+\DoxyCodeLine{            std::cout << \textcolor{stringliteral}{"{}interpolation: ln("{}} << std::to\_string(X[idx]) << \textcolor{stringliteral}{"{}) => "{}} << std::to\_string(Y[idx]) << std::endl;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// NORMAL DISTRIBUTION}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}NORMAL DISTRIBUTION"{}} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::vector<double> x = \{-\/4.0, -\/3.0, -\/2.0, -\/1.0, 0.0, 1.0, 2.0, 3.0, 4.0\};}
+\DoxyCodeLine{        std::vector<double> pdf = \mbox{\hyperlink{lib__math_8h_acf0f859fcd73d3d6ed62b3bd85dd3292}{lib\_math::norm\_pdf}}(x);}
+\DoxyCodeLine{        std::vector<double> cdf = \mbox{\hyperlink{lib__math_8h_a7798bd15f5cd4340360e44ed568c9044}{lib\_math::norm\_cdf}}(x);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} idx = 0; idx < x.size(); idx++)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            std::cout << \textcolor{stringliteral}{"{}x: "{}} << std::to\_string(x[idx]) << \textcolor{stringliteral}{"{} -\/> pdf: "{}} << std::to\_string(pdf[idx]) << \textcolor{stringliteral}{"{}, cdf: "{}} << std::to\_string(cdf[idx]) << std::endl;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::vector<double> q = \{0.001, 0.01, 0.10, 0.25, 0.50, 0.75, 0.90, 0.99, 0.999\};}
+\DoxyCodeLine{        std::vector<double> z = \mbox{\hyperlink{lib__math_8h_a6a9d2dd0b82c9d95e93ed70d58db615c}{lib\_math::norm\_inv}}(q);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} idx = 0; idx < q.size(); idx++)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            std::cout << \textcolor{stringliteral}{"{}q: "{}} << std::to\_string(q[idx]) << \textcolor{stringliteral}{"{} -\/> inv: "{}} << std::to\_string(z[idx])<< std::endl;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// NEWTON-\/RAPHSON METHOD}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}NEWTON-\/RAPHSON METHOD"{}} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordtype}{double} X = 1.5;  \textcolor{comment}{// initial estimate of square root of 2}}
+\DoxyCodeLine{        \textcolor{keywordtype}{double} step = 1e-\/5;}
+\DoxyCodeLine{        \textcolor{keywordtype}{double} tolerance = 1e-\/7;}
+\DoxyCodeLine{        \textcolor{keywordtype}{int} iter\_max = 1000;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{structlib__math_1_1newton__raphson__res}{lib\_math::newton\_raphson\_res}} res = \mbox{\hyperlink{lib__math_8h_a0af3762a51ff511f2e2341d13f63c509}{lib\_math::newton\_raphson}}(sqrt\_of\_2, X, step, tolerance, iter\_max);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (res.success)}
+\DoxyCodeLine{            std::cout << \textcolor{stringliteral}{"{}Newton-\/Raphson method: success"{}} << std::endl;}
+\DoxyCodeLine{        \textcolor{keywordflow}{else}}
+\DoxyCodeLine{            std::cout << \textcolor{stringliteral}{"{}Newton-\/Raphson method: failure"{}} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}square root of 2 is "{}} << std::to\_string(res.x) << std::endl;}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}step: "{}} << std::to\_string(res.step) << \textcolor{stringliteral}{"{}; tolerance: "{}} << std::to\_string(res.tolerance) << \textcolor{stringliteral}{"{}; iter\_no: "{}} << std::to\_string(res.iter\_no) << \textcolor{stringliteral}{"{}; iter\_max: "{}} << std::to\_string(res.iter\_max) << std::endl;}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}msg: "{}} << res.msg << std::endl;}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// EMPIRICAL PROBABILITY DISTRIBUTION}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}EMPIRICAL PROBABILITY DISTRIBUTION"{}} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// cumulative normal distribution}}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__math_1_1myDiscProbDist}{lib\_math::myDiscProbDist}} cdf = \mbox{\hyperlink{classlib__math_1_1myDiscProbDist}{lib\_math::myDiscProbDist}}(\textcolor{stringliteral}{"{}include/my\_libs/math/data/lib\_math/norm\_cdf.csv"{}});}
+\DoxyCodeLine{        std::cout << \textcolor{stringliteral}{"{}norm\_cdf(-\/0.25) = "{}} << cdf.\mbox{\hyperlink{classlib__math_1_1myDiscProbDist_ae053160e221ed58270c24c89dde6507d}{get}}(-\/0.25) << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{// inverse normal distribution}}
+\DoxyCodeLine{        \mbox{\hyperlink{classlib__math_1_1myDiscProbDist}{lib\_math::myDiscProbDist}} inv = \mbox{\hyperlink{classlib__math_1_1myDiscProbDist}{lib\_math::myDiscProbDist}}(\textcolor{stringliteral}{"{}include/my\_libs/math/data/lib\_math/norm\_inv.csv"{}});}
+\DoxyCodeLine{        std::vector<double> x = \{0.01, 0.10, 0.50, 0.90, 0.95, 0.99\};}
+\DoxyCodeLine{        std::vector<double> y = inv.\mbox{\hyperlink{classlib__math_1_1myDiscProbDist_ae053160e221ed58270c24c89dde6507d}{get}}(x);}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < x.size(); i++)}
+\DoxyCodeLine{            std::cout << \textcolor{stringliteral}{"{}norm\_inv("{}} << x[i] << \textcolor{stringliteral}{"{}) = "{}} << y[i] << std::endl;}
+\DoxyCodeLine{        std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

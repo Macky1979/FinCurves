@@ -1,0 +1,118 @@
+\hypertarget{classlib__math_1_1myDiscProbDist}{}\doxysection{lib\+\_\+math\+::my\+Disc\+Prob\+Dist Class Reference}
+\label{classlib__math_1_1myDiscProbDist}\index{lib\_math::myDiscProbDist@{lib\_math::myDiscProbDist}}
+
+
+Discrete probability distribution.  
+
+
+
+
+{\ttfamily \#include $<$lib\+\_\+math.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlib__math_1_1myDiscProbDist_a07d9713649e82a996f6839200b610f10}{my\+Disc\+Prob\+Dist}} (const std\+::vector$<$ double $>$ \&x, const std\+::vector$<$ double $>$ \&y)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__math_1_1myDiscProbDist}{my\+Disc\+Prob\+Dist}} object using vectors of x and y. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__math_1_1myDiscProbDist_a7d8b1484fa27f487ea98ff53ce4835fc}{my\+Disc\+Prob\+Dist}} (const std\+::string \&file\+\_\+nm, const char \&sep=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__math_1_1myDiscProbDist}{my\+Disc\+Prob\+Dist}} object using information on x and y stored in a .csv file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib__math_1_1myDiscProbDist_a9fefcd889656519d7f4bc50cada4ef7a}\label{classlib__math_1_1myDiscProbDist_a9fefcd889656519d7f4bc50cada4ef7a}} 
+{\bfseries $\sim$my\+Disc\+Prob\+Dist} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classlib__math_1_1myDiscProbDist}{my\+Disc\+Prob\+Dist}} object. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classlib__math_1_1myDiscProbDist_ae053160e221ed58270c24c89dde6507d}{get}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Get f(x) for a single point x. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classlib__math_1_1myDiscProbDist_a50af86192405946d77721de32b5f0a55}{get}} (const std\+::vector$<$ double $>$ \&x)
+\begin{DoxyCompactList}\small\item\em Get vector of f(x) values corresponding to vector of x values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Discrete probability distribution. 
+
+The object maps x to y = f(x). In this way, CDF, PDF and inverse probability functions could be implemented. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_math_examples_8h-example}{lib\+\_\+math\+\_\+examples.\+h}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlib__math_1_1myDiscProbDist_a07d9713649e82a996f6839200b610f10}\label{classlib__math_1_1myDiscProbDist_a07d9713649e82a996f6839200b610f10}} 
+\index{lib\_math::myDiscProbDist@{lib\_math::myDiscProbDist}!myDiscProbDist@{myDiscProbDist}}
+\index{myDiscProbDist@{myDiscProbDist}!lib\_math::myDiscProbDist@{lib\_math::myDiscProbDist}}
+\doxysubsubsection{\texorpdfstring{myDiscProbDist()}{myDiscProbDist()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily lib\+\_\+math\+::my\+Disc\+Prob\+Dist\+::my\+Disc\+Prob\+Dist (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x,  }\item[{const std\+::vector$<$ double $>$ \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__math_1_1myDiscProbDist}{my\+Disc\+Prob\+Dist}} object using vectors of x and y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector of x points. \\
+\hline
+{\em y} & Vector of y points. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__math_1_1myDiscProbDist_a7d8b1484fa27f487ea98ff53ce4835fc}\label{classlib__math_1_1myDiscProbDist_a7d8b1484fa27f487ea98ff53ce4835fc}} 
+\index{lib\_math::myDiscProbDist@{lib\_math::myDiscProbDist}!myDiscProbDist@{myDiscProbDist}}
+\index{myDiscProbDist@{myDiscProbDist}!lib\_math::myDiscProbDist@{lib\_math::myDiscProbDist}}
+\doxysubsubsection{\texorpdfstring{myDiscProbDist()}{myDiscProbDist()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily lib\+\_\+math\+::my\+Disc\+Prob\+Dist\+::my\+Disc\+Prob\+Dist (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+nm,  }\item[{const char \&}]{sep = {\ttfamily \textquotesingle{},\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__math_1_1myDiscProbDist}{my\+Disc\+Prob\+Dist}} object using information on x and y stored in a .csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+nm} & Name of a .csv file holding information on x points (the first column) and their corresponding y points (the second column). \\
+\hline
+{\em sep} & Column separator used in the .csv file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlib__math_1_1myDiscProbDist_ae053160e221ed58270c24c89dde6507d}\label{classlib__math_1_1myDiscProbDist_ae053160e221ed58270c24c89dde6507d}} 
+\index{lib\_math::myDiscProbDist@{lib\_math::myDiscProbDist}!get@{get}}
+\index{get@{get}!lib\_math::myDiscProbDist@{lib\_math::myDiscProbDist}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double lib\+\_\+math\+::my\+Disc\+Prob\+Dist\+::get (\begin{DoxyParamCaption}\item[{const double \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Get f(x) for a single point x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Single point x. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Single point y = f(x). 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_math_examples_8h-example}{lib\+\_\+math\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__math_1_1myDiscProbDist_a50af86192405946d77721de32b5f0a55}\label{classlib__math_1_1myDiscProbDist_a50af86192405946d77721de32b5f0a55}} 
+\index{lib\_math::myDiscProbDist@{lib\_math::myDiscProbDist}!get@{get}}
+\index{get@{get}!lib\_math::myDiscProbDist@{lib\_math::myDiscProbDist}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ lib\+\_\+math\+::my\+Disc\+Prob\+Dist\+::get (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Get vector of f(x) values corresponding to vector of x values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector of x points. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ Vector of y = f(x) points. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lib__math_8h}{lib\+\_\+math.\+h}}\item 
+lib\+\_\+math.\+cpp\end{DoxyCompactItemize}
