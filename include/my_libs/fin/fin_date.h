@@ -1,107 +1,13 @@
-/*
-#include <string>
-#include <iostream>
-#include <memory>
-#include "lib_date.h"
-#include "fin_date.h"
-
-int main()
-{
-    // day count method
-    {
-        std::cout << "DAY COUNT METHOD" << std::endl;
-
-        // day count method
-        std::string dcm;
-
-        // year fraction variable
-        double year_fraction;
-
-        // create date objects
-        lib_date::myDate date1 = lib_date::myDate("30/12/1979", "dd/mm/yyyy");
-        lib_date::myDate date2 = lib_date::myDate("21/11/2021", "dd/mm/yyyy");
-
-        // 30/360
-        dcm = "30_360";
-        year_fraction = fin_date::day_count_method(date1, date2, dcm);
-        std::cout << "Year fraction between dates " + date1.get_date_str() + " and " + date2.get_date_str() +\
-            " assuming " + dcm + " is " + std::to_string(year_fraction) + " years" << std::endl;
-
-        // actual/360
-        dcm = "ACT_360";
-        year_fraction = fin_date::day_count_method(date1, date2, dcm);
-        std::cout << "Year fraction between dates " + date1.get_date_str() + " and " + date2.get_date_str() +\
-            " assuming " + dcm + " is " + std::to_string(year_fraction) + " years" << std::endl;
-
-        // actual/365
-        dcm = "ACT_365";
-        year_fraction = fin_date::day_count_method(date1, date2, dcm);
-        std::cout << "Year fraction between dates " + date1.get_date_str() + " and " + date2.get_date_str() +\
-            " assuming " + dcm + " is " + std::to_string(year_fraction) + " years" << std::endl;
-
-        // actual/actual
-        dcm = "ACT_ACT";
-        year_fraction = fin_date::day_count_method(date1, date2, dcm);
-        std::cout << "Year fraction between dates " + date1.get_date_str() + " and " + date2.get_date_str() +\
-            " assuming " + dcm + " is " + std::to_string(year_fraction) + " years" << std::endl;
-
-        std::cout << '\n' << std::endl;
-    }
-
-    // date rolling
-    {
-        std::cout << "DATE ROLLING" << std::endl;
-
-        // define begining and end date
-        lib_date::myDate date_begin = lib_date::myDate(20230523);
-        lib_date::myDate date_end = date_begin;
-        date_end.add("1Y");
-
-        // get list of Czech holidays
-        std::vector<lib_date::myDate> holidays = lib_date::get_holidays_cz(date_begin.get_year(), date_end.get_year());
-
-        // generate a time series
-        std::string freq = "1M";
-        std::string date_format = "yyyymmdd";
-        std::vector<lib_date::myDate> dates = lib_date::create_date_serie(date_begin.get_date_str(), date_end.get_date_str(), freq, date_format);
-
-        // print the original dates
-        std::cout << "Dates before rolling" << std::endl;
-        for (unsigned short idx = 0; idx < dates.size(); idx++)
-            std::cout << dates[idx].get_date_str() << std::endl;
-
-        // roll dates
-        std::string drm = "following";
-        fin_date::date_rolling(dates, holidays, drm);
-
-        // print the rolled dates
-        std::cout << "Dates after rolling" << std::endl;
-        for (unsigned short idx = 0; idx < dates.size(); idx++)
-            std::cout << dates[idx].get_date_str() << std::endl;
-
-        std::cout << '\n' << std::endl;
-    }
-
-    // financial date series
-    {
-        std::cout << "FINANCIAL DATE SERIE" << std::endl;
-
-        std::string date_begin_str = "20220429";
-        std::vector<std::string> date_freqs = {"ON", "TN", "1W", "2W", "1M", "2M", "1M-3M", "4M", "5M", "6M", "7M", "8M", "9M", "10M", "11M", "12M", "15M", "18M", "21M", "2Y", "3Y", "4Y", "5Y", "6Y", "7Y", "8Y", "9Y", "10Y", "11Y", "12Y", "13Y", "14Y", "15Y", "16Y", "17Y", "18Y", "19Y", "20Y", "21Y", "22Y", "23Y", "24Y", "25Y", "26Y", "27Y", "28Y", "29Y", "30Y"};
-        std::string cnty = "de";
-        std::string drm = "following";
-        std::vector<std::tuple<lib_date::myDate, lib_date::myDate>> dates = fin_date::create_date_serie(date_begin_str, date_freqs, cnty, drm);
-
-        for (unsigned short idx = 0; idx < dates.size(); idx++)
-            std::cout << std::get<0>(dates[idx]).get_date_str() << " " << std::get<1>(dates[idx]).get_date_str() << std::endl;
-
-        std::cout << '\n' << std::endl;
-    }
-
-    // everything OK
-    return 0;
-}
-*/
+/** \example fin_date_examples.h
+ * @file fin_date.h
+ * @author Michal Mackanic
+ * @brief Functions for date manipulations.
+ * @version 1.0
+ * @date 2024-02-16
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 
 #pragma once
 
@@ -110,8 +16,72 @@ int main()
 
 namespace fin_date
 {
-    double day_count_method(const lib_date::myDate& date1, const lib_date::myDate& date2, const std::string& dcm);
+    /**
+     * @brief Determine year fraction between two dates using a specified day count method. For more details see https://en.wikipedia.org/wiki/Day_count_convention.
+     * 
+     * @param date_begin Begining date.
+     * @param date_end End date.
+     * @param dcm Day count method to be applied; supported values are "30_360", "30US_360", "ACT_360", "ACT_365" and "ACT_ACT".
+     * @return double Year fraction.
+     */
+    double day_count_method(const lib_date::myDate& date_begin, const lib_date::myDate& date_end, const std::string& dcm);
+
+    /**
+     * @brief Determine year fractions between dates organized in a vector using a specified day count method. For more details see https://en.wikipedia.org/wiki/Day_count_convention.
+     * 
+     * @param dates Vector of dates.
+     * @param dcm Day count method to be applied; supported values are "30_360", "30US_360", "ACT_360", "ACT_365" and "ACT_ACT".
+     * @return std::vector<double> Vector of year fractions; the vector is one element shorter compared to vector of dates.
+     */
+    std::vector<double> day_count_method(const std::vector<lib_date::myDate>& dates, const std::string& dcm);
+
+    /**
+     * @brief Determine year fraction between dates in the vector and reference date using a specified day count method. For more details see https://en.wikipedia.org/wiki/Day_count_convention.
+     * 
+     * @param date_ref Reference date.
+     * @param dates Vector of dates.
+     * @param dcm Day count method to be applied; supported values are "30_360", "30US_360", "ACT_360", "ACT_365" and "ACT_ACT".
+     * @return std::vector<double> Vector of year fractions; the vector is of the same length as vector of dates.
+     */
+    std::vector<double> day_count_method(const lib_date::myDate& date_ref, const std::vector<lib_date::myDate>& dates, const std::string& dcm);
+
+    /**
+     * @brief Determine year fraction between dates in two vectors using a specified day count method. The two vectors must be of the same length. For more details see https://en.wikipedia.org/wiki/Day_count_convention.
+     * 
+     * @param dates_begin Vector of dates defining beging of the period.
+     * @param dates_end  Vector of dates defining end of the period.
+     * @param dcm Day count method to be applied; supported values are "30_360", "30US_360", "ACT_360", "ACT_365" and "ACT_ACT".
+     * @return std::vector<double> Vector of year fractions; the vector is of the same length as the two vector of dates.
+     */
+    std::vector<double> day_count_method(const std::vector<lib_date::myDate>& dates_begin, const std::vector<lib_date::myDate>& dates_end, const std::string& dcm);
+
+    /**
+     * @brief Roll the date to deal with weekends and public holidays if necessary. For more details see https://en.wikipedia.org/wiki/Date_rolling.
+     * 
+     * @param date Date to be rolled for weekend / public holidays if necessary.
+     * @param holidays List of public holidays.
+     * @param drm Date rolling method; suppoted values are "following", "modified_following", "previous" and "modified_previous".
+     */
     void date_rolling(lib_date::myDate& date, const std::vector<lib_date::myDate>& holidays, const std::string& drm);
+
+    /**
+     * @brief Roll the dates to deal with weekends and public holidays if necessary. For more details see https://en.wikipedia.org/wiki/Date_rolling.
+     * 
+     * @param dates Vector of dates to be rolled for weekend / public holidays if necessary.
+     * @param holidays List of public holidays.
+     * @param drm Date rolling method; suppoted values are "following", "modified_following", "previous" and "modified_previous".
+     */
     void date_rolling(std::vector<lib_date::myDate>& dates, const std::vector<lib_date::myDate>& holidays, const std::string& drm);
-    std::vector<std::tuple<lib_date::myDate, lib_date::myDate>> create_date_serie(const std::string& date_str_begin, const std::vector<std::string>& date_freqs, const std::string& cnty, const std::string& drm, const std::string& date_format = "yyyymmdd");
+
+    /**
+     * @brief Create a date serie based on a begining date and vector of frequency strings. During the serie construction country and day rolling method are specifed so that the resut consists of working days only.
+     * 
+     * @param date_start Start date in string format.
+     * @param date_freqs Vector of frequency  strings.
+     * @param cnty Countery name determining public holidays calendar.
+     * @param drm Day rolling method.
+     * @param date_format Date format, e.g. "yyyymmdd".
+     * @return std::tuple<std::vector<lib_date::myDate>, std::vector<lib_date::myDate>> Tuple of date vectors. The first vector represents period begining and the second represents period end. For example, in case of "ON", the first date corresponds to the begining date and the second date is the next working day.
+     */
+    std::tuple<std::vector<lib_date::myDate>, std::vector<lib_date::myDate>> create_date_serie(const std::string& date_start_str, const std::vector<std::string>& date_freqs, const std::string& cnty, const std::string& drm, const std::string& date_format = "yyyymmdd");
 }

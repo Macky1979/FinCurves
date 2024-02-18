@@ -50,14 +50,15 @@ namespace lib_tbl
     // convert column name into column number
     int col_nm_to_idx(const std::vector<std::string>& col_nms, const std::string& col_nm)
     {
-
         std::size_t col_idx;
         for (std::size_t idx = 0; idx < col_nms.size(); idx++)
         {
             if (col_nms[idx].compare(col_nm) == 0)
                 return idx;
         }
-        throw std::runtime_error((std::string)__func__ + ": Column '" + col_nm + "' does not exist!");;
+
+        // column name not found
+        throw std::runtime_error((std::string)__func__ + ": Column '" + col_nm + "' does not exist!");
     }
 
     // determine the first and the last row to extract
@@ -395,8 +396,6 @@ namespace lib_tbl
             cols_width.push_back(col_width);
         }
 
-        // inform about number of rows being print
-
         // table start
         {
             std::string row = "=";
@@ -516,6 +515,10 @@ namespace lib_tbl
     // read data from a .csv file
     void lib_tbl::myTable::read(const std::string& file_nm, const std::string& sep, const bool& quotes)
     {
+        // clean data
+        this->tbl.col_nms.clear();
+        this->tbl.values.clear();
+
         // row read from the .csv file
         std::string row;
 

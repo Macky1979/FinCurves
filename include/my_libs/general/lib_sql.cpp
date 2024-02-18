@@ -44,9 +44,7 @@ void lib_sql::mySQLite::open(const char* db_file_nm, const bool read_only)
             counter--;
 
             if (counter == 0)
-            {
                 throw std::runtime_error((std::string)__func__ + ": SQLite database file is locked for more than " + std::to_string(wait_max_seconds) + " seconds!");
-            }
 
         }
         while ((sts == SQLITE_BUSY) && (counter > 0)); // wait for "free" SQLite database file

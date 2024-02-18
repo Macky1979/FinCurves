@@ -63,6 +63,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">fin_curves.h File Reference</div></div>
 </div><!--header-->
@@ -70,27 +71,61 @@ $(function() {
 
 <p>Implement financial curve boostrapping.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &quot;lib_date.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="fin__generators_8h_source.html">fin_generators.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for fin_curves.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="fin__curves_8h__incl.png" border="0" usemap="#afin__curves_8h" alt=""/></div>
 <map name="afin__curves_8h" id="afin__curves_8h">
-<area shape="rect" title="Implement financial curve boostrapping." alt="" coords="5,5,99,32"/>
-<area shape="rect" title=" " alt="" coords="23,80,81,107"/>
+<area shape="rect" title="Implement financial curve boostrapping." alt="" coords="167,5,260,32"/>
+<area shape="rect" title=" " alt="" coords="5,155,77,181"/>
+<area shape="rect" title=" " alt="" coords="112,155,171,181"/>
+<area shape="rect" title=" " alt="" coords="201,155,247,181"/>
+<area shape="rect" title=" " alt="" coords="275,155,344,181"/>
+<area shape="rect" title=" " alt="" coords="350,80,429,107"/>
+<area shape="rect" href="fin__generators_8h.html" title="Generator is a curve building block defining its individual underlying instruments." alt="" coords="109,80,224,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="fin__curves_8h__dep__incl.png" border="0" usemap="#afin__curves_8hdep" alt=""/></div>
+<map name="afin__curves_8hdep" id="afin__curves_8hdep">
+<area shape="rect" title="Implement financial curve boostrapping." alt="" coords="9,5,103,32"/>
+<area shape="rect" href="fin__zerorate_8h.html" title="Zerorate object returns zero rates / discounting factors." alt="" coords="5,80,107,107"/>
 </map>
 </div>
 </div>
 <p><a href="fin__curves_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfin__curves_1_1myDepoInstr.html">fin_curves::myDepoInstr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object holding depo instrument.  <a href="classfin__curves_1_1myDepoInstr.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a479b6ea23be3c620f518f4e05ebb22ac"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fin__curves_8h.html#a479b6ea23be3c620f518f4e05ebb22ac">df_to_zr</a> (const double &amp;df, const double &amp;yr_frac, const unsigned short type=0)</td></tr>
-<tr class="memdesc:a479b6ea23be3c620f518f4e05ebb22ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert discount factor into zero rate.  <a href="fin__curves_8h.html#a479b6ea23be3c620f518f4e05ebb22ac">More...</a><br /></td></tr>
-<tr class="separator:a479b6ea23be3c620f518f4e05ebb22ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecb12dbbbd105cacdc5f35eba01f09fb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fin__curves_8h.html#aecb12dbbbd105cacdc5f35eba01f09fb">df_to_zr</a> (const std::vector&lt; double &gt; &amp;dfs, const std::vector&lt; double &gt; &amp;yr_frac, const unsigned short type=0)</td></tr>
-<tr class="memdesc:aecb12dbbbd105cacdc5f35eba01f09fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert discount factors into zero rates.  <a href="fin__curves_8h.html#aecb12dbbbd105cacdc5f35eba01f09fb">More...</a><br /></td></tr>
-<tr class="separator:aecb12dbbbd105cacdc5f35eba01f09fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeba1a1f9f0093e1cb3ac9292085e400e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fin__curves_8h.html#aeba1a1f9f0093e1cb3ac9292085e400e">fin_curves::zr_to_df</a> (const double &amp;zr, const double &amp;yr_frac, const unsigned short type=0)</td></tr>
+<tr class="memdesc:aeba1a1f9f0093e1cb3ac9292085e400e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert zero rate into discount factor.  <a href="fin__curves_8h.html#aeba1a1f9f0093e1cb3ac9292085e400e">More...</a><br /></td></tr>
+<tr class="separator:aeba1a1f9f0093e1cb3ac9292085e400e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4073249f5bdf97075d561642442b24c8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fin__curves_8h.html#a4073249f5bdf97075d561642442b24c8">fin_curves::zr_to_df</a> (const std::vector&lt; double &gt; &amp;zrs, const std::vector&lt; double &gt; &amp;yr_frac, const unsigned short type=0)</td></tr>
+<tr class="memdesc:a4073249f5bdf97075d561642442b24c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert zero rates into discount factors.  <a href="fin__curves_8h.html#a4073249f5bdf97075d561642442b24c8">More...</a><br /></td></tr>
+<tr class="separator:a4073249f5bdf97075d561642442b24c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a3a716cc238737a6493bea18b60360"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fin__curves_8h.html#a05a3a716cc238737a6493bea18b60360">fin_curves::df_to_zr</a> (const double &amp;df, const double &amp;yr_frac, const unsigned short type=0)</td></tr>
+<tr class="memdesc:a05a3a716cc238737a6493bea18b60360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert discount factor into zero rate.  <a href="fin__curves_8h.html#a05a3a716cc238737a6493bea18b60360">More...</a><br /></td></tr>
+<tr class="separator:a05a3a716cc238737a6493bea18b60360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb11ee3db3959b027648b718ed4975b4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fin__curves_8h.html#acb11ee3db3959b027648b718ed4975b4">fin_curves::df_to_zr</a> (const std::vector&lt; double &gt; &amp;dfs, const std::vector&lt; double &gt; &amp;yr_frac, const unsigned short type=0)</td></tr>
+<tr class="memdesc:acb11ee3db3959b027648b718ed4975b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert discount factors into zero rates.  <a href="fin__curves_8h.html#acb11ee3db3959b027648b718ed4975b4">More...</a><br /></td></tr>
+<tr class="separator:acb11ee3db3959b027648b718ed4975b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d31306c7262f51224a9a2f679b6d522"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; std::vector&lt; double &gt;, std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fin__curves_8h.html#a4d31306c7262f51224a9a2f679b6d522">fin_curves::interp_rate</a> (const std::vector&lt; std::shared_ptr&lt; double &gt; &gt; &amp;yr_fracs, const std::vector&lt; std::shared_ptr&lt; double &gt; &gt; &amp;zrs, const std::string &amp;interp_tp=&quot;linear&quot;)</td></tr>
+<tr class="memdesc:a4d31306c7262f51224a9a2f679b6d522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate missing rates. Missing rate is identified through a null pointer.  <a href="fin__curves_8h.html#a4d31306c7262f51224a9a2f679b6d522">More...</a><br /></td></tr>
+<tr class="separator:a4d31306c7262f51224a9a2f679b6d522"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Implement financial curve boostrapping. </p>
@@ -99,14 +134,14 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2024-01-27</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a479b6ea23be3c620f518f4e05ebb22ac" name="a479b6ea23be3c620f518f4e05ebb22ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a479b6ea23be3c620f518f4e05ebb22ac">&#9670;&nbsp;</a></span>df_to_zr() <span class="overload">[1/2]</span></h2>
+<a id="a05a3a716cc238737a6493bea18b60360" name="a05a3a716cc238737a6493bea18b60360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05a3a716cc238737a6493bea18b60360">&#9670;&nbsp;</a></span>df_to_zr() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double df_to_zr </td>
+          <td class="memname">double fin_curves::df_to_zr </td>
           <td>(</td>
           <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>df</em>, </td>
@@ -142,18 +177,20 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>double Zero rate. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="fin_curves_examples_8h-example.html#a0">fin_curves_examples.h</a>.</dd>
+</dl>
 
 </div>
 </div>
-<a id="aecb12dbbbd105cacdc5f35eba01f09fb" name="aecb12dbbbd105cacdc5f35eba01f09fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecb12dbbbd105cacdc5f35eba01f09fb">&#9670;&nbsp;</a></span>df_to_zr() <span class="overload">[2/2]</span></h2>
+<a id="acb11ee3db3959b027648b718ed4975b4" name="acb11ee3db3959b027648b718ed4975b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb11ee3db3959b027648b718ed4975b4">&#9670;&nbsp;</a></span>df_to_zr() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; double &gt; df_to_zr </td>
+          <td class="memname">std::vector&lt; double &gt; fin_curves::df_to_zr </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>dfs</em>, </td>
@@ -189,7 +226,146 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;double&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;double&gt; Vector of zero rates. </dd></dl>
+
+</div>
+</div>
+<a id="a4d31306c7262f51224a9a2f679b6d522" name="a4d31306c7262f51224a9a2f679b6d522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d31306c7262f51224a9a2f679b6d522">&#9670;&nbsp;</a></span>interp_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt; std::vector&lt; double &gt;, std::vector&lt; double &gt; &gt; fin_curves::interp_rate </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::shared_ptr&lt; double &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>yr_fracs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::shared_ptr&lt; double &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>zrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>interp_tp</em> = <code>&quot;linear&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interpolate missing rates. Missing rate is identified through a null pointer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">yr_fracs</td><td>Vector of year fractions. </td></tr>
+    <tr><td class="paramname">zrs</td><td>Vector of zero rates. </td></tr>
+    <tr><td class="paramname">interp_tp</td><td>Interpolation type; currently the only supported type is linear interpolation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::tuple&lt;double, double&gt; Vector of year fractions and zero rates with missing zero rates being interpolated. </dd></dl>
+
+</div>
+</div>
+<a id="aeba1a1f9f0093e1cb3ac9292085e400e" name="aeba1a1f9f0093e1cb3ac9292085e400e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeba1a1f9f0093e1cb3ac9292085e400e">&#9670;&nbsp;</a></span>zr_to_df() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double fin_curves::zr_to_df </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>zr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>yr_frac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned short&#160;</td>
+          <td class="paramname"><em>type</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert zero rate into discount factor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">zr</td><td>Zero rate. </td></tr>
+    <tr><td class="paramname">yr_frac</td><td>Year fraction, which is used to convert zero rate into discount factor. </td></tr>
+    <tr><td class="paramname">type</td><td>Type of conversion. <br  />
+ 0 =&gt; df = 1 / (1 + zr) ^ yr_frac <br  />
+ 1 =&gt; df = exp(-zr * yr_frac) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double Discount factor. </dd></dl>
+
+</div>
+</div>
+<a id="a4073249f5bdf97075d561642442b24c8" name="a4073249f5bdf97075d561642442b24c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4073249f5bdf97075d561642442b24c8">&#9670;&nbsp;</a></span>zr_to_df() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; fin_curves::zr_to_df </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>zrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>yr_frac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned short&#160;</td>
+          <td class="paramname"><em>type</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert zero rates into discount factors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">zrs</td><td>Vector of zero rates. </td></tr>
+    <tr><td class="paramname">yr_frac</td><td>Vector of year fractions, which are used to convert zero rates into discount factors. </td></tr>
+    <tr><td class="paramname">type</td><td>Type of conversion. <br  />
+ 0 =&gt; df = 1 / (1 + zr) ^ yr_frac <br  />
+ 1 =&gt; df = exp(-zr * yr_frac) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;double&gt; Vector of discount factors. </dd></dl>
 
 </div>
 </div>

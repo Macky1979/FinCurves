@@ -1,2 +1,2 @@
-﻿instrument,cal_fix,cal_pmt,bdm,dcm,days_shift,period
+instrument,cal_fix,cal_pmt,drm,dcm,days_shift,period
 fra,us,london,following,ACT_360,2,3M
