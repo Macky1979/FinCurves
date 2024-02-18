@@ -4,8 +4,6 @@
 #include "lib_sql.h"
 #include "lib_df.h"
 
-using namespace std;
-
 int main()
 {
 
@@ -13,13 +11,13 @@ int main()
 
     // variables
     const char * db_file_nm = "include/my_libs/general/data/lib_sql/database.db";
-    string file_nm = "include/my_libs/general/data/lib_sql/cities.csv";
+    std::string file_nm = "include/my_libs/general/data/lib_sql/cities.csv";
     std::shared_ptr<lib_df::myDataFrame> rslt1 = std::make_shared<lib_df::myDataFrame>();
     std::shared_ptr<lib_df::myDataFrame> rslt2 = std::make_shared<lib_df::myDataFrame>();
     bool read_only = false;
     int wait_max_seconds = 10;
     bool delete_old_data = true;
-    string sep = ";";
+    std::string sep = ";";
     bool quotes = true;
 
     // create SQLite object and open connection to SQLite database file in read-write mode

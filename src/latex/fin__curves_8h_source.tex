@@ -2,12 +2,97 @@
 \mbox{\hyperlink{fin__curves_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
-\DoxyCodeLine{12 \textcolor{preprocessor}{\# pragma once}}
-\DoxyCodeLine{13 }
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{15 }
-\DoxyCodeLine{24 \textcolor{keywordtype}{double} \mbox{\hyperlink{fin__curves_8h_a479b6ea23be3c620f518f4e05ebb22ac}{df\_to\_zr}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& df, \textcolor{keyword}{const} \textcolor{keywordtype}{double}\& yr\_frac, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} type = 0);}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{34 std::vector<double> \mbox{\hyperlink{fin__curves_8h_a479b6ea23be3c620f518f4e05ebb22ac}{df\_to\_zr}}(\textcolor{keyword}{const} std::vector<double>\& dfs, \textcolor{keyword}{const} std::vector<double>\& yr\_frac, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} type = 0);}
+\DoxyCodeLine{12 \textcolor{comment}{/*}}
+\DoxyCodeLine{13 \textcolor{comment}{\#include <iostream>}}
+\DoxyCodeLine{14 \textcolor{comment}{\#include "{}fin\_curves.h"{}}}
+\DoxyCodeLine{15 \textcolor{comment}{}}
+\DoxyCodeLine{16 \textcolor{comment}{int main()}}
+\DoxyCodeLine{17 \textcolor{comment}{\{}}
+\DoxyCodeLine{18 \textcolor{comment}{    // test df\_to\_zr() functions}}
+\DoxyCodeLine{19 \textcolor{comment}{    \{}}
+\DoxyCodeLine{20 \textcolor{comment}{        std::cout << "{}TEST df\_to\_zr() FUNCTIONS"{} << std::endl;}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{        std::cout << "{}double df\_to\_zr(const double\& df, const double\& yr\_frac, const unsigned short type = 0)"{} << std::endl;}}
+\DoxyCodeLine{23 \textcolor{comment}{        double df = 0.999;}}
+\DoxyCodeLine{24 \textcolor{comment}{        double yr\_frac = 1.0;}}
+\DoxyCodeLine{25 \textcolor{comment}{        double zr\_1 = fin\_curves::df\_to\_zr(df, yr\_frac);}}
+\DoxyCodeLine{26 \textcolor{comment}{        double zr\_2 = fin\_curves::df\_to\_zr(df, yr\_frac, 1);}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{        std::cout << "{}   df = 1 / (1 + zr) \string^ yr\_frac"{} << std::endl;}}
+\DoxyCodeLine{29 \textcolor{comment}{        std::cout << "{}      df = "{} << std::to\_string(df) << "{} => zr = "{} << std::to\_string(zr\_1) << std::endl;}}
+\DoxyCodeLine{30 \textcolor{comment}{}}
+\DoxyCodeLine{31 \textcolor{comment}{        std::cout << "{}   df = exp(-\/zr * yr\_frac)"{} << std::endl;}}
+\DoxyCodeLine{32 \textcolor{comment}{        std::cout << "{}      df = "{} << std::to\_string(df) << "{} => zr = "{} << std::to\_string(zr\_2) << std::endl;}}
+\DoxyCodeLine{33 \textcolor{comment}{}}
+\DoxyCodeLine{34 \textcolor{comment}{        std::cout << "{}std::vector<double> df\_to\_zr(const std::vector<double>\& dfs, const std::vector<double>\& yr\_frac, const unsigned short type = 0)"{} << std::endl;}}
+\DoxyCodeLine{35 \textcolor{comment}{        std::vector<double> dfs = \{0.999, 1.001\};}}
+\DoxyCodeLine{36 \textcolor{comment}{        std::vector<double> yr\_fracs = \{1.0, 1.0\};}}
+\DoxyCodeLine{37 \textcolor{comment}{        std::vector<double> zrs\_1 = fin\_curves::df\_to\_zr(dfs, yr\_fracs);}}
+\DoxyCodeLine{38 \textcolor{comment}{        std::vector<double> zrs\_2 = fin\_curves::df\_to\_zr(dfs, yr\_fracs, 1);}}
+\DoxyCodeLine{39 \textcolor{comment}{}}
+\DoxyCodeLine{40 \textcolor{comment}{        std::cout << "{}   df = 1 / (1 + zr) \string^ yr\_frac"{} << std::endl;}}
+\DoxyCodeLine{41 \textcolor{comment}{        for (std::size\_t idx = 0; idx < dfs.size(); idx++)}}
+\DoxyCodeLine{42 \textcolor{comment}{            std::cout << "{}      df = "{} << std::to\_string(dfs[idx]) << "{} => zr = "{} << std::to\_string(zrs\_1[idx]) << std::endl;}}
+\DoxyCodeLine{43 \textcolor{comment}{}}
+\DoxyCodeLine{44 \textcolor{comment}{        std::cout << "{}   df = exp(-\/zr * yr\_frac)"{} << std::endl;}}
+\DoxyCodeLine{45 \textcolor{comment}{        for (std::size\_t idx = 0; idx < dfs.size(); idx++)}}
+\DoxyCodeLine{46 \textcolor{comment}{            std::cout << "{}      df = "{} << std::to\_string(dfs[idx]) << "{} => zr = "{} << std::to\_string(zrs\_2[idx]) << std::endl;}}
+\DoxyCodeLine{47 \textcolor{comment}{}}
+\DoxyCodeLine{48 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
+\DoxyCodeLine{49 \textcolor{comment}{    \}}}
+\DoxyCodeLine{50 \textcolor{comment}{}}
+\DoxyCodeLine{51 \textcolor{comment}{    // test min\_interp\_points() function}}
+\DoxyCodeLine{52 \textcolor{comment}{    \{}}
+\DoxyCodeLine{53 \textcolor{comment}{        std::cout << "{}TEST in\_interp\_points() FUNCTION"{} << std::endl;}}
+\DoxyCodeLine{54 \textcolor{comment}{}}
+\DoxyCodeLine{55 \textcolor{comment}{        std::cout << "{}mininum number of points for linear interpolation: "{} << std::to\_string(fin\_curves::min\_interp\_points("{}linear"{})) << std::endl;}}
+\DoxyCodeLine{56 \textcolor{comment}{        std::cout << "{}mininum number of points for cubic interpolation: "{} << std::to\_string(fin\_curves::min\_interp\_points("{}cubic"{})) << std::endl;}}
+\DoxyCodeLine{57 \textcolor{comment}{}}
+\DoxyCodeLine{58 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
+\DoxyCodeLine{59 \textcolor{comment}{    \}}}
+\DoxyCodeLine{60 \textcolor{comment}{}}
+\DoxyCodeLine{61 \textcolor{comment}{    // everything OK}}
+\DoxyCodeLine{62 \textcolor{comment}{    return 0;}}
+\DoxyCodeLine{63 \textcolor{comment}{\}}}
+\DoxyCodeLine{64 \textcolor{comment}{*/}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\# pragma once}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#include "{}lib\_date.h"{}}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{fin__generators_8h}{fin\_generators.h}}"{}}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{namespace }fin\_curves}
+\DoxyCodeLine{76 \{}
+\DoxyCodeLine{85     \textcolor{keywordtype}{double} \mbox{\hyperlink{fin__curves_8h_aeba1a1f9f0093e1cb3ac9292085e400e}{zr\_to\_df}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& zr, \textcolor{keyword}{const} \textcolor{keywordtype}{double}\& yr\_frac, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} type = 0);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{95     std::vector<double> \mbox{\hyperlink{fin__curves_8h_aeba1a1f9f0093e1cb3ac9292085e400e}{zr\_to\_df}}(\textcolor{keyword}{const} std::vector<double>\& zrs, \textcolor{keyword}{const} std::vector<double>\& yr\_frac, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} type = 0);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{105     \textcolor{keywordtype}{double} \mbox{\hyperlink{fin__curves_8h_a05a3a716cc238737a6493bea18b60360}{df\_to\_zr}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& df, \textcolor{keyword}{const} \textcolor{keywordtype}{double}\& yr\_frac, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} type = 0);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{115     std::vector<double> \mbox{\hyperlink{fin__curves_8h_a05a3a716cc238737a6493bea18b60360}{df\_to\_zr}}(\textcolor{keyword}{const} std::vector<double>\& dfs, \textcolor{keyword}{const} std::vector<double>\& yr\_frac, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} type = 0);}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{125     std::tuple<std::vector<double>, std::vector<double>> \mbox{\hyperlink{fin__curves_8h_a4d31306c7262f51224a9a2f679b6d522}{interp\_rate}}(\textcolor{keyword}{const} std::vector<std::shared\_ptr<double>>\& yr\_fracs, \textcolor{keyword}{const} std::vector<std::shared\_ptr<double>>\& zrs, \textcolor{keyword}{const} std::string\& interp\_tp = \textcolor{stringliteral}{"{}linear"{}});}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{131     \textcolor{keyword}{class }\mbox{\hyperlink{classfin__curves_1_1myDepoInstr}{myDepoInstr}}}
+\DoxyCodeLine{132     \{}
+\DoxyCodeLine{133         \textcolor{keyword}{private}:}
+\DoxyCodeLine{134             std::string date\_exec;}
+\DoxyCodeLine{135             std::string tenor;}
+\DoxyCodeLine{136             std::vector<std::string> tenors;}
+\DoxyCodeLine{137             std::vector<std::tuple<lib\_date::myDate, lib\_date::myDate>> date\_series;}
+\DoxyCodeLine{138             \textcolor{keywordtype}{double} quote;}
+\DoxyCodeLine{139             std::shared\_ptr<fin\_curves::generator> \mbox{\hyperlink{structfin__curves_1_1generator}{generator}};}
+\DoxyCodeLine{140             std::tuple<lib\_date::myDate, lib\_date::myDate> dates\_int;}
+\DoxyCodeLine{141             std::string crv\_nm;}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143         \textcolor{keyword}{public}:}
+\DoxyCodeLine{144             \mbox{\hyperlink{classfin__curves_1_1myDepoInstr}{myDepoInstr}}(std::string date\_exec, std::string tenor, \textcolor{keywordtype}{double} quote, std::string crv\_nm, std::shared\_ptr<fin\_curves::generator> \mbox{\hyperlink{structfin__curves_1_1generator}{generator}}, std::string date\_format = \textcolor{stringliteral}{"{}yyyymmdd"{}});}
+\DoxyCodeLine{145             std::vector<std::tuple<lib\_date::myDate, lib\_date::myDate>> get\_date\_series()\{\textcolor{keywordflow}{return} this-\/>date\_series;\};}
+\DoxyCodeLine{146     \};}
+\DoxyCodeLine{147 \}}
 
 \end{DoxyCode}

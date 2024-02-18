@@ -5,16 +5,34 @@
 Implement financial curve boostrapping.  
 
 
+{\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include \char`\"{}lib\+\_\+date.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fin\+\_\+generators.\+h\char`\"{}}\newline
 Include dependency graph for fin\+\_\+curves.\+h\+:
 % FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfin__curves_1_1myDepoInstr}{fin\+\_\+curves\+::my\+Depo\+Instr}}
+\begin{DoxyCompactList}\small\item\em Object holding depo instrument. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-double \mbox{\hyperlink{fin__curves_8h_a479b6ea23be3c620f518f4e05ebb22ac}{df\+\_\+to\+\_\+zr}} (const double \&df, const double \&yr\+\_\+frac, const unsigned short type=0)
+double \mbox{\hyperlink{fin__curves_8h_aeba1a1f9f0093e1cb3ac9292085e400e}{fin\+\_\+curves\+::zr\+\_\+to\+\_\+df}} (const double \&zr, const double \&yr\+\_\+frac, const unsigned short type=0)
+\begin{DoxyCompactList}\small\item\em Convert zero rate into discount factor. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{fin__curves_8h_a4073249f5bdf97075d561642442b24c8}{fin\+\_\+curves\+::zr\+\_\+to\+\_\+df}} (const std\+::vector$<$ double $>$ \&zrs, const std\+::vector$<$ double $>$ \&yr\+\_\+frac, const unsigned short type=0)
+\begin{DoxyCompactList}\small\item\em Convert zero rates into discount factors. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{fin__curves_8h_a05a3a716cc238737a6493bea18b60360}{fin\+\_\+curves\+::df\+\_\+to\+\_\+zr}} (const double \&df, const double \&yr\+\_\+frac, const unsigned short type=0)
 \begin{DoxyCompactList}\small\item\em Convert discount factor into zero rate. \end{DoxyCompactList}\item 
-std\+::vector$<$ double $>$ \mbox{\hyperlink{fin__curves_8h_aecb12dbbbd105cacdc5f35eba01f09fb}{df\+\_\+to\+\_\+zr}} (const std\+::vector$<$ double $>$ \&dfs, const std\+::vector$<$ double $>$ \&yr\+\_\+frac, const unsigned short type=0)
-\begin{DoxyCompactList}\small\item\em Convert discount factors into zero rates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::vector$<$ double $>$ \mbox{\hyperlink{fin__curves_8h_acb11ee3db3959b027648b718ed4975b4}{fin\+\_\+curves\+::df\+\_\+to\+\_\+zr}} (const std\+::vector$<$ double $>$ \&dfs, const std\+::vector$<$ double $>$ \&yr\+\_\+frac, const unsigned short type=0)
+\begin{DoxyCompactList}\small\item\em Convert discount factors into zero rates. \end{DoxyCompactList}\item 
+std\+::tuple$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{fin__curves_8h_a4d31306c7262f51224a9a2f679b6d522}{fin\+\_\+curves\+::interp\+\_\+rate}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ double $>$ $>$ \&yr\+\_\+fracs, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ double $>$ $>$ \&zrs, const std\+::string \&interp\+\_\+tp=\char`\"{}linear\char`\"{})
+\begin{DoxyCompactList}\small\item\em Interpolate missing rates. Missing rate is identified through a null pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -35,11 +53,11 @@ Copyright (c) 2024
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{fin__curves_8h_a479b6ea23be3c620f518f4e05ebb22ac}\label{fin__curves_8h_a479b6ea23be3c620f518f4e05ebb22ac}} 
+\mbox{\Hypertarget{fin__curves_8h_a05a3a716cc238737a6493bea18b60360}\label{fin__curves_8h_a05a3a716cc238737a6493bea18b60360}} 
 \index{fin\_curves.h@{fin\_curves.h}!df\_to\_zr@{df\_to\_zr}}
 \index{df\_to\_zr@{df\_to\_zr}!fin\_curves.h@{fin\_curves.h}}
 \doxysubsubsection{\texorpdfstring{df\_to\_zr()}{df\_to\_zr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily double df\+\_\+to\+\_\+zr (\begin{DoxyParamCaption}\item[{const double \&}]{df,  }\item[{const double \&}]{yr\+\_\+frac,  }\item[{const unsigned short}]{type = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily double fin\+\_\+curves\+::df\+\_\+to\+\_\+zr (\begin{DoxyParamCaption}\item[{const double \&}]{df,  }\item[{const double \&}]{yr\+\_\+frac,  }\item[{const unsigned short}]{type = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
@@ -57,13 +75,16 @@ Convert discount factor into zero rate.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-double 
+double Zero rate. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{fin__curves_8h_aecb12dbbbd105cacdc5f35eba01f09fb}\label{fin__curves_8h_aecb12dbbbd105cacdc5f35eba01f09fb}} 
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{fin_curves_examples_8h-example}{fin\+\_\+curves\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{fin__curves_8h_acb11ee3db3959b027648b718ed4975b4}\label{fin__curves_8h_acb11ee3db3959b027648b718ed4975b4}} 
 \index{fin\_curves.h@{fin\_curves.h}!df\_to\_zr@{df\_to\_zr}}
 \index{df\_to\_zr@{df\_to\_zr}!fin\_curves.h@{fin\_curves.h}}
 \doxysubsubsection{\texorpdfstring{df\_to\_zr()}{df\_to\_zr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily std\+::vector$<$ double $>$ df\+\_\+to\+\_\+zr (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{dfs,  }\item[{const std\+::vector$<$ double $>$ \&}]{yr\+\_\+frac,  }\item[{const unsigned short}]{type = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ fin\+\_\+curves\+::df\+\_\+to\+\_\+zr (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{dfs,  }\item[{const std\+::vector$<$ double $>$ \&}]{yr\+\_\+frac,  }\item[{const unsigned short}]{type = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
@@ -81,5 +102,75 @@ Convert discount factors into zero rates.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-std\+::vector$<$double$>$ 
+std\+::vector$<$double$>$ Vector of zero rates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fin__curves_8h_a4d31306c7262f51224a9a2f679b6d522}\label{fin__curves_8h_a4d31306c7262f51224a9a2f679b6d522}} 
+\index{fin\_curves.h@{fin\_curves.h}!interp\_rate@{interp\_rate}}
+\index{interp\_rate@{interp\_rate}!fin\_curves.h@{fin\_curves.h}}
+\doxysubsubsection{\texorpdfstring{interp\_rate()}{interp\_rate()}}
+{\footnotesize\ttfamily std\+::tuple$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ fin\+\_\+curves\+::interp\+\_\+rate (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ double $>$ $>$ \&}]{yr\+\_\+fracs,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ double $>$ $>$ \&}]{zrs,  }\item[{const std\+::string \&}]{interp\+\_\+tp = {\ttfamily \char`\"{}linear\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Interpolate missing rates. Missing rate is identified through a null pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yr\+\_\+fracs} & Vector of year fractions. \\
+\hline
+{\em zrs} & Vector of zero rates. \\
+\hline
+{\em interp\+\_\+tp} & Interpolation type; currently the only supported type is linear interpolation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::tuple$<$double, double$>$ Vector of year fractions and zero rates with missing zero rates being interpolated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fin__curves_8h_aeba1a1f9f0093e1cb3ac9292085e400e}\label{fin__curves_8h_aeba1a1f9f0093e1cb3ac9292085e400e}} 
+\index{fin\_curves.h@{fin\_curves.h}!zr\_to\_df@{zr\_to\_df}}
+\index{zr\_to\_df@{zr\_to\_df}!fin\_curves.h@{fin\_curves.h}}
+\doxysubsubsection{\texorpdfstring{zr\_to\_df()}{zr\_to\_df()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double fin\+\_\+curves\+::zr\+\_\+to\+\_\+df (\begin{DoxyParamCaption}\item[{const double \&}]{zr,  }\item[{const double \&}]{yr\+\_\+frac,  }\item[{const unsigned short}]{type = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Convert zero rate into discount factor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zr} & Zero rate. \\
+\hline
+{\em yr\+\_\+frac} & Year fraction, which is used to convert zero rate into discount factor. \\
+\hline
+{\em type} & Type of conversion. ~\newline
+ 0 =\texorpdfstring{$>$}{>} df = 1 / (1 + zr) $^\wedge$ yr\+\_\+frac ~\newline
+ 1 =\texorpdfstring{$>$}{>} df = exp(-\/zr $\ast$ yr\+\_\+frac) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Discount factor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fin__curves_8h_a4073249f5bdf97075d561642442b24c8}\label{fin__curves_8h_a4073249f5bdf97075d561642442b24c8}} 
+\index{fin\_curves.h@{fin\_curves.h}!zr\_to\_df@{zr\_to\_df}}
+\index{zr\_to\_df@{zr\_to\_df}!fin\_curves.h@{fin\_curves.h}}
+\doxysubsubsection{\texorpdfstring{zr\_to\_df()}{zr\_to\_df()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ fin\+\_\+curves\+::zr\+\_\+to\+\_\+df (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{zrs,  }\item[{const std\+::vector$<$ double $>$ \&}]{yr\+\_\+frac,  }\item[{const unsigned short}]{type = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Convert zero rates into discount factors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zrs} & Vector of zero rates. \\
+\hline
+{\em yr\+\_\+frac} & Vector of year fractions, which are used to convert zero rates into discount factors. \\
+\hline
+{\em type} & Type of conversion. ~\newline
+ 0 =\texorpdfstring{$>$}{>} df = 1 / (1 + zr) $^\wedge$ yr\+\_\+frac ~\newline
+ 1 =\texorpdfstring{$>$}{>} df = exp(-\/zr $\ast$ yr\+\_\+frac) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ Vector of discount factors. 
 \end{DoxyReturn}

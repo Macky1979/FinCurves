@@ -1,7 +1,7 @@
 /** \example lib_df_examples.h
  * @file lib_df.h
  * @author Michal Mackanic
- * @brief 
+ * @brief Very simple dataframe which is used to load / retreive data into / from SQLite.
  * @version 1.0
  * @date 2024-01-30
  * 
@@ -17,7 +17,6 @@
 
 namespace lib_df
 {
-    // 
     /**
      * @brief User defined datatype to hold result of SQL query.
      * 
