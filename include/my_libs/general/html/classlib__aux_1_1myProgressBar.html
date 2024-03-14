@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>general: lib_aux::myProgressBar Class Reference</title>
+<title>General C++ libraries: lib_aux::myProgressBar Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">general
+   <div id="projectname">General C++ libraries
    </div>
-   <div id="projectbrief">General C++ libraries</div>
+   <div id="projectbrief">C++ libraries to handle basic date, file, string and SQL operations, reading .csv files, etc.</div>
   </td>
  </tr>
  </tbody>
@@ -73,25 +73,130 @@ $(function() {
   <div class="headertitle"><div class="title">lib_aux::myProgressBar Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Progress bar object.  
+ <a href="classlib__aux_1_1myProgressBar.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="lib__aux_8h_source.html">lib_aux.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a92508a00aab5ab4de066bcd56b369a25"><td class="memItemLeft" align="right" valign="top"><a id="a92508a00aab5ab4de066bcd56b369a25" name="a92508a00aab5ab4de066bcd56b369a25"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>get_cycles_no</b> () const</td></tr>
+<tr class="memitem:a92508a00aab5ab4de066bcd56b369a25"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__aux_1_1myProgressBar.html#a92508a00aab5ab4de066bcd56b369a25">get_cycles_no</a> () const</td></tr>
+<tr class="memdesc:a92508a00aab5ab4de066bcd56b369a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of cycles to tracked by the progress bar.  <a href="classlib__aux_1_1myProgressBar.html#a92508a00aab5ab4de066bcd56b369a25">More...</a><br /></td></tr>
 <tr class="separator:a92508a00aab5ab4de066bcd56b369a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3f1fe2075340b5907435f05eca4a013"><td class="memItemLeft" align="right" valign="top"><a id="ab3f1fe2075340b5907435f05eca4a013" name="ab3f1fe2075340b5907435f05eca4a013"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_msg</b> () const</td></tr>
+<tr class="memitem:ab3f1fe2075340b5907435f05eca4a013"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__aux_1_1myProgressBar.html#ab3f1fe2075340b5907435f05eca4a013">get_msg</a> () const</td></tr>
+<tr class="memdesc:ab3f1fe2075340b5907435f05eca4a013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get progress bar string, i.e. [##### ].  <a href="classlib__aux_1_1myProgressBar.html#ab3f1fe2075340b5907435f05eca4a013">More...</a><br /></td></tr>
 <tr class="separator:ab3f1fe2075340b5907435f05eca4a013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac86aca8b47046517d0cee4846171496b"><td class="memItemLeft" align="right" valign="top"><a id="ac86aca8b47046517d0cee4846171496b" name="ac86aca8b47046517d0cee4846171496b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>next</b> ()</td></tr>
+<tr class="memdesc:ac86aca8b47046517d0cee4846171496b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move to the next cycle. <br /></td></tr>
 <tr class="separator:ac86aca8b47046517d0cee4846171496b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d67a69e0ec8f713b106de2c364d8f13"><td class="memItemLeft" align="right" valign="top"><a id="a6d67a69e0ec8f713b106de2c364d8f13" name="a6d67a69e0ec8f713b106de2c364d8f13"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>myProgressBar</b> (unsigned long cycles_no)</td></tr>
+<tr class="memitem:a6d67a69e0ec8f713b106de2c364d8f13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__aux_1_1myProgressBar.html#a6d67a69e0ec8f713b106de2c364d8f13">myProgressBar</a> (unsigned long cycles_no)</td></tr>
+<tr class="memdesc:a6d67a69e0ec8f713b106de2c364d8f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classlib__aux_1_1myProgressBar.html" title="Progress bar object.">myProgressBar</a> object.  <a href="classlib__aux_1_1myProgressBar.html#a6d67a69e0ec8f713b106de2c364d8f13">More...</a><br /></td></tr>
 <tr class="separator:a6d67a69e0ec8f713b106de2c364d8f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ba8ea5be9097270f659192da551f8c1"><td class="memItemLeft" align="right" valign="top"><a id="a6ba8ea5be9097270f659192da551f8c1" name="a6ba8ea5be9097270f659192da551f8c1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> ()</td></tr>
+<tr class="memdesc:a6ba8ea5be9097270f659192da551f8c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload ++ operator with <a class="el" href="classlib__aux_1_1myProgressBar.html#ac86aca8b47046517d0cee4846171496b" title="Move to the next cycle.">next()</a> function. <br /></td></tr>
 <tr class="separator:a6ba8ea5be9097270f659192da551f8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Progress bar object. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_aux_examples_8h-example.html#_a6">lib_aux_examples.h</a>.</dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6d67a69e0ec8f713b106de2c364d8f13" name="a6d67a69e0ec8f713b106de2c364d8f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d67a69e0ec8f713b106de2c364d8f13">&#9670;&nbsp;</a></span>myProgressBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib_aux::myProgressBar::myProgressBar </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>cycles_no</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classlib__aux_1_1myProgressBar.html" title="Progress bar object.">myProgressBar</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cycles_no</td><td>Set number of cycles to be tracked by the progress bar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a92508a00aab5ab4de066bcd56b369a25" name="a92508a00aab5ab4de066bcd56b369a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92508a00aab5ab4de066bcd56b369a25">&#9670;&nbsp;</a></span>get_cycles_no()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long lib_aux::myProgressBar::get_cycles_no </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get number of cycles to tracked by the progress bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned long Number of cycles. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_aux_examples_8h-example.html#a7">lib_aux_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="ab3f1fe2075340b5907435f05eca4a013" name="ab3f1fe2075340b5907435f05eca4a013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3f1fe2075340b5907435f05eca4a013">&#9670;&nbsp;</a></span>get_msg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string lib_aux::myProgressBar::get_msg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get progress bar string, i.e. [##### ]. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string Progress bar string. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="lib__aux_8h_source.html">lib_aux.h</a></li>
 <li>lib_aux.cpp</li>

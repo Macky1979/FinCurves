@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>general: lib_tbl_examples.h</title>
+<title>General C++ libraries: lib_tbl_examples.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">general
+   <div id="projectname">General C++ libraries
    </div>
-   <div id="projectbrief">General C++ libraries</div>
+   <div id="projectbrief">C++ libraries to handle basic date, file, string and SQL operations, reading .csv files, etc.</div>
   </td>
  </tr>
  </tbody>
@@ -70,7 +70,7 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;lib_str.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lib__str_8h.html">lib_str.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lib__tbl_8h.html">lib_tbl.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
@@ -78,7 +78,7 @@ $(function() {
 <div class="line"><span class="keywordtype">void</span> print_tbl(<span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;std::string&gt;&gt;&amp; tenors, <span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;double&gt;&gt;&amp; rates)</div>
 <div class="line">{</div>
 <div class="line">    std::string row;</div>
-<div class="line">    std::cout &lt;&lt; lib_str::add_leading_char(<span class="stringliteral">&quot;=&quot;</span>, 15, <span class="charliteral">&#39;=&#39;</span>) &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <a id="a0" name="a0"></a>lib_str::add_leading_char(<span class="stringliteral">&quot;=&quot;</span>, 15, <span class="charliteral">&#39;=&#39;</span>) &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    row = lib_str::add_leading_char(<span class="stringliteral">&quot;tenor&quot;</span>, 5, <span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line">    row += lib_str::add_leading_char(<span class="stringliteral">&quot;rate&quot;</span>, 10, <span class="charliteral">&#39; &#39;</span>);</div>
@@ -96,7 +96,7 @@ $(function() {
 <div class="line">        <span class="keywordflow">if</span> (rates[idx] == <span class="keyword">nullptr</span>)</div>
 <div class="line">            row += lib_str::add_leading_char(<span class="stringliteral">&quot;NULL&quot;</span>, 10, <span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line">        <span class="keywordflow">else</span></div>
-<div class="line">            row += lib_str::add_leading_char(std::to_string(*rates[idx]), 10, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">            row += lib_str::add_leading_char(<a id="a1" name="a1"></a>std::to_string(*rates[idx]), 10, <span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line"> </div>
 <div class="line">        std::cout &lt;&lt; row &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
@@ -157,7 +157,8 @@ $(function() {
 <div class="line">    <span class="comment">// everything OK</span></div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="alib__tbl_8h_html"><div class="ttname"><a href="lib__tbl_8h.html">lib_tbl.h</a></div></div>
+<div class="ttc" id="alib__str_8h_html"><div class="ttname"><a href="lib__str_8h.html">lib_str.h</a></div><div class="ttdoc">String related C++ functions.</div></div>
+<div class="ttc" id="alib__tbl_8h_html"><div class="ttname"><a href="lib__tbl_8h.html">lib_tbl.h</a></div><div class="ttdoc">Simple implementation of table that could be read from a .csv file.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

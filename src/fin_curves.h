@@ -123,25 +123,4 @@ namespace fin_curves
      * @return std::tuple<double, double> Vector of year fractions and zero rates with missing zero rates being interpolated.
      */
     std::tuple<std::vector<double>, std::vector<double>> interp_rate(const std::vector<std::shared_ptr<double>>& yr_fracs, const std::vector<std::shared_ptr<double>>& zrs, const std::string& interp_tp = "linear");
-
-    /**
-     * @brief Object holding depo instrument.
-     * 
-     */
-    class myDepoInstr
-    {
-        private:
-            std::string date_exec;
-            std::string tenor;
-            std::vector<std::string> tenors;
-            std::vector<std::tuple<lib_date::myDate, lib_date::myDate>> date_series;
-            double quote;
-            std::shared_ptr<fin_curves::generator> generator;
-            std::tuple<lib_date::myDate, lib_date::myDate> dates_int;
-            std::string crv_nm;
-
-        public:
-            myDepoInstr(std::string date_exec, std::string tenor, double quote, std::string crv_nm, std::shared_ptr<fin_curves::generator> generator, std::string date_format = "yyyymmdd");
-            std::vector<std::tuple<lib_date::myDate, lib_date::myDate>> get_date_series(){return this->date_series;};
-    };
 }

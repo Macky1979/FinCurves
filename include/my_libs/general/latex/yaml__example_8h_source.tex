@@ -1,50 +1,49 @@
 \hypertarget{yaml__example_8h_source}{}\doxysection{yaml\+\_\+example.\+h}
-
+\mbox{\hyperlink{yaml__example_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{\#include <yaml-\/cpp/yaml.h>}}
-\DoxyCodeLine{3 \textcolor{comment}{\#include <iostream>}}
-\DoxyCodeLine{4 \textcolor{comment}{\#include <string>}}
-\DoxyCodeLine{5 \textcolor{comment}{}}
-\DoxyCodeLine{6 \textcolor{comment}{int main ()}}
-\DoxyCodeLine{7 \textcolor{comment}{\{}}
-\DoxyCodeLine{8 \textcolor{comment}{    // try to open and parse sample YAML file}}
-\DoxyCodeLine{9 \textcolor{comment}{    try}}
-\DoxyCodeLine{10 \textcolor{comment}{    \{}}
-\DoxyCodeLine{11 \textcolor{comment}{        // read the sample YAML file}}
-\DoxyCodeLine{12 \textcolor{comment}{        YAML::Node config = YAML::LoadFile("{}../data/lib\_yaml/sample.yaml"{});}}
-\DoxyCodeLine{13 \textcolor{comment}{}}
-\DoxyCodeLine{14 \textcolor{comment}{        // the outer element is an array}}
-\DoxyCodeLine{15 \textcolor{comment}{        for(auto dict : config)}}
-\DoxyCodeLine{16 \textcolor{comment}{        \{}}
-\DoxyCodeLine{17 \textcolor{comment}{            // the array element is a map containing the triangle and coordinates keys:}}
-\DoxyCodeLine{18 \textcolor{comment}{            auto name = dict["{}triangle"{}];}}
-\DoxyCodeLine{19 \textcolor{comment}{            auto coordinates = dict["{}coordinates"{}];}}
-\DoxyCodeLine{20 \textcolor{comment}{}}
-\DoxyCodeLine{21 \textcolor{comment}{            // print triangle name}}
-\DoxyCodeLine{22 \textcolor{comment}{            std::cout << "{}triangle: "{} << name << '\(\backslash\)n';}}
-\DoxyCodeLine{23 \textcolor{comment}{}}
-\DoxyCodeLine{24 \textcolor{comment}{            // loop over the triangle coordinates and print them}}
-\DoxyCodeLine{25 \textcolor{comment}{            for (auto coordinate : coordinates)}}
-\DoxyCodeLine{26 \textcolor{comment}{                std::cout << "{}   "{} << coordinate["{}x"{}] << "{}, "{} << coordinate["{}y"{}] << std::endl;}}
-\DoxyCodeLine{27 \textcolor{comment}{        \}}}
-\DoxyCodeLine{28 \textcolor{comment}{    \}}}
-\DoxyCodeLine{29 \textcolor{comment}{    // catch problems with the file}}
-\DoxyCodeLine{30 \textcolor{comment}{    catch (const YAML::BadFile\& e)}}
-\DoxyCodeLine{31 \textcolor{comment}{    \{}}
-\DoxyCodeLine{32 \textcolor{comment}{        std::cerr << e.msg << std::endl;}}
-\DoxyCodeLine{33 \textcolor{comment}{        return 1;}}
-\DoxyCodeLine{34 \textcolor{comment}{    \}}}
-\DoxyCodeLine{35 \textcolor{comment}{    // catch problem with the parsing}}
-\DoxyCodeLine{36 \textcolor{comment}{    catch (const YAML::ParserException\& e)}}
-\DoxyCodeLine{37 \textcolor{comment}{    \{}}
-\DoxyCodeLine{38 \textcolor{comment}{        std::cerr << e.msg << std::endl;}}
-\DoxyCodeLine{39 \textcolor{comment}{        return 1;}}
-\DoxyCodeLine{40 \textcolor{comment}{    \}}}
-\DoxyCodeLine{41 \textcolor{comment}{}}
-\DoxyCodeLine{42 \textcolor{comment}{    // everything is OK}}
-\DoxyCodeLine{43 \textcolor{comment}{    return 0; }}
-\DoxyCodeLine{44 \textcolor{comment}{\}}}
-\DoxyCodeLine{45 \textcolor{comment}{*/}}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <yaml-\/cpp/yaml.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keywordtype}{int} main ()}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     \textcolor{comment}{// try to open and parse sample YAML file}}
+\DoxyCodeLine{19     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         \textcolor{comment}{// read the sample YAML file}}
+\DoxyCodeLine{22         YAML::Node config = YAML::LoadFile(\textcolor{stringliteral}{"{}../data/lib\_yaml/sample.yaml"{}});}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \textcolor{comment}{// the outer element is an array}}
+\DoxyCodeLine{25         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} dict : config)}
+\DoxyCodeLine{26         \{}
+\DoxyCodeLine{27             \textcolor{comment}{// the array element is a map containing the triangle and coordinates keys:}}
+\DoxyCodeLine{28             \textcolor{keyword}{auto} name = dict[\textcolor{stringliteral}{"{}triangle"{}}];}
+\DoxyCodeLine{29             \textcolor{keyword}{auto} coordinates = dict[\textcolor{stringliteral}{"{}coordinates"{}}];}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31             \textcolor{comment}{// print triangle name}}
+\DoxyCodeLine{32             std::cout << \textcolor{stringliteral}{"{}triangle: "{}} << name << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34             \textcolor{comment}{// loop over the triangle coordinates and print them}}
+\DoxyCodeLine{35             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} coordinate : coordinates)}
+\DoxyCodeLine{36                 std::cout << \textcolor{stringliteral}{"{}   "{}} << coordinate[\textcolor{stringliteral}{"{}x"{}}] << \textcolor{stringliteral}{"{}, "{}} << coordinate[\textcolor{stringliteral}{"{}y"{}}] << std::endl;}
+\DoxyCodeLine{37         \}}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39     \textcolor{comment}{// catch problems with the file}}
+\DoxyCodeLine{40     \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} YAML::BadFile\& e)}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         std::cerr << e.msg << std::endl;}
+\DoxyCodeLine{43         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45     \textcolor{comment}{// catch problem with the parsing}}
+\DoxyCodeLine{46     \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} YAML::ParserException\& e)}
+\DoxyCodeLine{47     \{}
+\DoxyCodeLine{48         std::cerr << e.msg << std::endl;}
+\DoxyCodeLine{49         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{comment}{// everything is OK}}
+\DoxyCodeLine{53     \textcolor{keywordflow}{return} 0; }
+\DoxyCodeLine{54 \}}
 
 \end{DoxyCode}

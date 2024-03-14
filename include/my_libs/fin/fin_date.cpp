@@ -1,6 +1,201 @@
 #include <string>
 #include <algorithm>
+#include "lib_math.h"
 #include "fin_date.h"
+
+// decompose frequncy string in frequency amount and frequency unit
+std::tuple<int, std::string> fin_date::decompose_freq(const std::string& freq_str)
+{
+    // special treatment of O/N and T/N tenor
+    if (freq_str.compare("ON") == 0)
+    {
+        std::tuple<int, std::string> freq = {-2, "D"};
+        return freq;
+    }
+    else if (freq_str.compare("TN") == 0)
+    {
+        std::tuple<int, std::string> freq = {-1, "D"};
+        return freq;
+    }
+
+    // suported frequency units
+    std::vector<std::string> freq_units = {"D", "W", "M", "Y"};
+
+    // determine if the frequency string is e.g. "1Y" or "1Y3M"
+    std::vector<std::string> freq_units_sep;
+    for (std::size_t idx = 0; idx < freq_str.size(); idx++)
+    {
+        if (std::find(freq_units.begin(), freq_units.end(), freq_str.substr(idx, 1)) != freq_units.end())
+            freq_units_sep.push_back(freq_str.substr(idx, 1));
+    }
+
+    // check frequency units in the string
+    if (freq_units_sep.size() == 0)
+        throw std::invalid_argument((std::string)__func__ + ": No supported frequency unit found in '" + freq_str + "'!");
+    else if (freq_units_sep.size() > 2)
+        throw std::invalid_argument((std::string)__func__ + ": More than two frequency units found in '" + freq_str + "'!");
+
+    // check that frequency units have a correct order
+    if (freq_units_sep.size() == 2)
+    {
+        if ((freq_units_sep[0].compare("Y") == 1) or (freq_units_sep[1].compare("M") == 1))
+            throw std::invalid_argument((std::string)__func__ + ": '" + freq_str + "' is not a supported frequency string!");
+    }
+
+    // define variable holding frequency amount and frequency unit
+    int freq_amt;
+    std::string freq_unit;
+
+    // decompose frequency string
+    if (freq_units_sep.size() == 1)
+    {
+        // split frequency string to amount and unit
+        freq_amt = std::stoi(freq_str.substr(0, freq_str.size() - 1));
+        freq_unit = freq_str.substr(freq_str.size() - 1, 1);
+
+        // convert years to months
+        if (freq_unit.compare("Y") == 0)
+        {
+            freq_unit = "M";
+            freq_amt *= 12;
+        }
+    }
+    else
+    {
+        std::size_t pos;
+
+        pos = freq_str.find(freq_units_sep[0]);
+        int freq_amt_yr = std::stoi(freq_str.substr(pos - 1, 1));
+
+        pos = freq_str.find(freq_units_sep[1]);
+        int freq_amt_mth = std::stoi(freq_str.substr(pos - 1, 1));
+
+        freq_amt = freq_amt_yr * 12 + freq_amt_mth;
+        freq_unit = "M";
+    }
+
+    // return frequency amout and frequency unit
+    std::tuple<int, std::string> freq = {freq_amt, freq_unit};
+    return freq;
+}
+
+// compose frequency string from frequency amount and frequency unit
+std::string fin_date::compose_freq(const std::tuple<int, std::string>& freq_decomposed)
+{
+    // specidal treatment for "ON"
+    if ((std::get<0>(freq_decomposed) == -2) && (std::get<1>(freq_decomposed).compare("D") == 0))
+        return "ON";
+    // special treatment for "TN"
+    else if ((std::get<0>(freq_decomposed) == -1) && (std::get<1>(freq_decomposed).compare("D") == 0))
+        return "TN";
+    // other case
+    else
+    {
+        // suported frequency units
+        std::vector<std::string> freq_units = {"D", "W", "M", "Y"};
+
+        // compose the frequency amount and frequency unit
+        if (std::find(freq_units.begin(), freq_units.end(), std::get<1>(freq_decomposed)) != freq_units.end())
+            return std::to_string(std::get<0>(freq_decomposed)) + std::get<1>(freq_decomposed);
+        else
+            throw std::invalid_argument((std::string)__func__ + ": '" + std::get<1>(freq_decomposed) + "' is not a supported frequency unit!");
+    }
+}
+
+// convert frequency amount and frequency unit, e.g. [1, "M"], into proxy maturity, e.g. 1 / 12 = 0.0833333.
+double fin_date::get_tenor_maturity(const std::tuple<int, std::string>& freq_decomposed)
+{
+    if (std::get<1>(freq_decomposed).compare("D") == 0)
+        return std::get<0>(freq_decomposed) / 365.0;
+    else if (std::get<1>(freq_decomposed).compare("W") == 0)
+        return std::get<0>(freq_decomposed) / (365.0 / 7.0);
+    else if (std::get<1>(freq_decomposed).compare("M") == 0)
+        return std::get<0>(freq_decomposed) / 12.0;
+    else if (std::get<1>(freq_decomposed).compare("Y") == 0)
+        return std::get<0>(freq_decomposed) / 1.0;
+    else
+        throw std::invalid_argument((std::string)__func__ + ": '" + std::get<1>(freq_decomposed) + "' is not a supported frequency unit!");
+}
+
+// create a list of frequency amounts and units, e.g. [[1, "M"], [2, "M"], [3, "M"], ...], till maturity specified in years.
+std::vector<std::tuple<int, std::string>> fin_date::generate_freqs(const std::tuple<int, std::string>& freq_decomposed, const unsigned short& maturity)
+{
+    // check frequency init
+    if ((std::get<1>(freq_decomposed).compare("M") == 1) && (std::get<1>(freq_decomposed).compare("Y")))
+        throw std::invalid_argument((std::string)__func__ + ": '" + std::get<1>(freq_decomposed) + "' is not a supported frequency unit!");
+
+    // list of decomposed frequencies
+    std::vector<std::tuple<int, std::string>> freqs;
+
+    // generate frequency series
+    int freq_amt = std::get<0>(freq_decomposed);
+    std::string freq_unit = std::get<1>(freq_decomposed);
+    double actual_maturity = fin_date::get_tenor_maturity(freq_decomposed);
+
+    while (actual_maturity <= maturity)
+    {
+        freqs.push_back(std::tuple<int, std::string>(freq_amt, freq_unit));
+        freq_amt++;
+        actual_maturity = fin_date::get_tenor_maturity(std::tuple<int, std::string>(freq_amt, freq_unit));
+    }
+
+    // return list of decomposed frequencies
+    return freqs;
+}
+
+// drop duplicates from a frequency list; the list has a form of [[1, "M"], [2, "M"], [3, "M"], ...].
+std::vector<std::tuple<int, std::string>> fin_date::drop_freq_duplicates(const std::vector<std::tuple<int, std::string>>& freqs_decomposed)
+{
+    std::vector<std::tuple<int, std::string>> freqs_no_duplicities;
+
+    for (std::size_t idx = 0; idx < freqs_decomposed.size(); idx++)
+    {
+        if (not (std::find(freqs_no_duplicities.begin(), freqs_no_duplicities.end(), freqs_decomposed[idx]) != freqs_no_duplicities.end()))
+            freqs_no_duplicities.push_back(freqs_decomposed[idx]);
+    }
+
+    return freqs_no_duplicities;
+}
+
+// sort list of frequency amounts and units in a form of [[1, "M"], [2, "M"], [3, "M"], ...]
+std::vector<std::tuple<int, std::string>> fin_date::sort_freqs(const std::vector<std::tuple<int, std::string>>& freqs_decomposed)
+{
+    // determine tenor maturities
+    std::vector<double> maturities;
+    for (std::size_t idx = 0; idx < freqs_decomposed.size(); idx++)
+        maturities.push_back(fin_date::get_tenor_maturity(freqs_decomposed[idx]));
+
+    // sort vector by index
+    std::vector<std::size_t> i = lib_math::sort_index(maturities);
+
+    // sort frequencies using sorted indicies
+    std::vector<std::tuple<int, std::string>> freqs_sorted;
+    for (std::size_t idx = 0; idx < i.size(); idx++)
+        freqs_sorted.push_back(freqs_decomposed[i[idx]]);
+
+    // return sorted frequency vector
+    return freqs_sorted;
+}
+
+// add or subtract two decomposed frequencies provided they have the same frequecy unit, e.g. [1, "M"] and [2, "M"]
+std::tuple<int, std::string> fin_date::combine_freqs(const std::tuple<int, std::string>& freq1, const std::tuple<int, std::string>& freq2, const std::string& operand)
+{
+    // check if the two decomposed frequencies have the same unit
+    if (std::get<1>(freq1) != std::get<1>(freq2))
+        throw std::invalid_argument((std::string)__func__ + ": The two frequencies must have the same frequency unit!");
+
+    // extract frequency amounts
+    int freq1_amt = std::get<0>(freq1);
+    int freq2_amt = std::get<0>(freq2);
+
+    // combine the two decomposed frequencies
+    if (operand == "+")
+        return std::tuple<int, std::string>(freq1_amt + freq2_amt, std::get<1>(freq1));
+    else if (operand == "-")
+        return std::tuple<int, std::string>(freq1_amt - freq2_amt, std::get<1>(freq1));
+    else
+        throw std::invalid_argument((std::string)__func__ + ": '" + operand + "' is not a supported operand!");
+}
 
 // calculate year fractions for family of 30/360 methods
 double calc_year_fraction(const int& day1, const int& month1, const int& year1, const int& day2, const int& month2, const int& year2)

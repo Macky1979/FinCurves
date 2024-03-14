@@ -1,281 +1,136 @@
 \hypertarget{lib__date_8h_source}{}\doxysection{lib\+\_\+date.\+h}
-
+\mbox{\hyperlink{lib__date_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{\#include <string>}}
-\DoxyCodeLine{3 \textcolor{comment}{\#include <iostream>}}
-\DoxyCodeLine{4 \textcolor{comment}{\#include <memory>}}
-\DoxyCodeLine{5 \textcolor{comment}{\#include "{}lib\_date.h"{}}}
-\DoxyCodeLine{6 \textcolor{comment}{}}
-\DoxyCodeLine{7 \textcolor{comment}{int main()}}
-\DoxyCodeLine{8 \textcolor{comment}{\{}}
-\DoxyCodeLine{9 \textcolor{comment}{    // introduction of the myDate object}}
-\DoxyCodeLine{10 \textcolor{comment}{    \{}}
-\DoxyCodeLine{11 \textcolor{comment}{        std::cout << "{}INTRODUCTION OF myDate OBJECT"{} << std::endl;}}
-\DoxyCodeLine{12 \textcolor{comment}{        std::string date\_str = "{}30/12/1979"{};}}
-\DoxyCodeLine{13 \textcolor{comment}{        std::string date\_format = "{}dd/mm/yyyy"{};}}
-\DoxyCodeLine{14 \textcolor{comment}{        lib\_date::myDate my\_birth(date\_str, date\_format);}}
-\DoxyCodeLine{15 \textcolor{comment}{        std::cout << "{}I was born "{} + std::to\_string(my\_birth.get\_days\_no()) + "{} days after 01/01/1601."{} << std::endl;}}
-\DoxyCodeLine{16 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{17 \textcolor{comment}{    \}}}
-\DoxyCodeLine{18 \textcolor{comment}{}}
-\DoxyCodeLine{19 \textcolor{comment}{    // overloaded operators}}
-\DoxyCodeLine{20 \textcolor{comment}{    \{}}
-\DoxyCodeLine{21 \textcolor{comment}{        std::cout << "{}OVERLOADED OPERATOR"{} << std::endl;}}
-\DoxyCodeLine{22 \textcolor{comment}{        lib\_date::myDate my\_birth(19791230);}}
-\DoxyCodeLine{23 \textcolor{comment}{        lib\_date::myDate today(20230209);}}
-\DoxyCodeLine{24 \textcolor{comment}{        std::cout << today -\/ my\_birth << "{} days being alive!"{} << std::endl;}}
-\DoxyCodeLine{25 \textcolor{comment}{        lib\_date::myDate some\_day;}}
-\DoxyCodeLine{26 \textcolor{comment}{        some\_day = today;}}
-\DoxyCodeLine{27 \textcolor{comment}{        std::cout << "{}Today is "{} + some\_day.get\_date\_str() + "{}."{} << std::endl;}}
-\DoxyCodeLine{28 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{29 \textcolor{comment}{    \}}}
-\DoxyCodeLine{30 \textcolor{comment}{}}
-\DoxyCodeLine{31 \textcolor{comment}{    // copy construtor and function add()}}
-\DoxyCodeLine{32 \textcolor{comment}{    \{}}
-\DoxyCodeLine{33 \textcolor{comment}{        std::cout << "{}COPY CONSTRUCTOR AND FUNCTION ADD()"{} << std::endl;}}
-\DoxyCodeLine{34 \textcolor{comment}{        lib\_date::myDate my\_birth(19791230);}}
-\DoxyCodeLine{35 \textcolor{comment}{        lib\_date::myDate birthsday = my\_birth;}}
-\DoxyCodeLine{36 \textcolor{comment}{        birthsday.add("{}40Y"{});}}
-\DoxyCodeLine{37 \textcolor{comment}{        std::cout << "{}I was born on "{} + my\_birth.get\_date\_str() + "{}."{} << std::endl;}}
-\DoxyCodeLine{38 \textcolor{comment}{        std::cout << "{}I was 40Y on "{} + birthsday.get\_date\_str() + "{}."{} << std::endl;}}
-\DoxyCodeLine{39 \textcolor{comment}{        birthsday.add("{}22M"{});}}
-\DoxyCodeLine{40 \textcolor{comment}{        std::cout << "{}Today I am "{} + std::to\_string((birthsday -\/ my\_birth) / 365.) + "{} years old."{} << std::endl;}}
-\DoxyCodeLine{41 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{42 \textcolor{comment}{    \}}}
-\DoxyCodeLine{43 \textcolor{comment}{}}
-\DoxyCodeLine{44 \textcolor{comment}{    // function remove}}
-\DoxyCodeLine{45 \textcolor{comment}{    \{}}
-\DoxyCodeLine{46 \textcolor{comment}{        std::cout << "{}FUNCTION REMOVE()"{} << std::endl;}}
-\DoxyCodeLine{47 \textcolor{comment}{        lib\_date::myDate yesterday = lib\_date::myDate(20211106);}}
-\DoxyCodeLine{48 \textcolor{comment}{        yesterday.remove("{}253M"{});}}
-\DoxyCodeLine{49 \textcolor{comment}{        std::cout << "{}253 months before 20211106 was "{} << yesterday.get\_date\_str() + "{}."{} << std::endl;}}
-\DoxyCodeLine{50 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{51 \textcolor{comment}{    \}}}
-\DoxyCodeLine{52 \textcolor{comment}{}}
-\DoxyCodeLine{53 \textcolor{comment}{    // smart pointer to myDate object}}
-\DoxyCodeLine{54 \textcolor{comment}{    \{}}
-\DoxyCodeLine{55 \textcolor{comment}{        std::cout << "{}SMART POINTER"{} << std::endl;}}
-\DoxyCodeLine{56 \textcolor{comment}{        std::shared\_ptr<lib\_date::myDate> christmas = std::make\_shared<lib\_date::myDate>(20231224);}}
-\DoxyCodeLine{57 \textcolor{comment}{        std::cout << "{}Next X-\/mas is on "{} + christmas-\/>get\_date\_str() + "{}."{} << std::endl;}}
-\DoxyCodeLine{58 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{59 \textcolor{comment}{    \}}}
-\DoxyCodeLine{60 \textcolor{comment}{}}
-\DoxyCodeLine{61 \textcolor{comment}{    // default constructor and create\_date\_serie() function}}
-\DoxyCodeLine{62 \textcolor{comment}{    \{}}
-\DoxyCodeLine{63 \textcolor{comment}{        std::cout << "{}DEFAULT CONSTRUCTOR AND CREATE\_DATE\_SERIES() FUNCTION"{} << std::endl;}}
-\DoxyCodeLine{64 \textcolor{comment}{        lib\_date::myDate renesaince;}}
-\DoxyCodeLine{65 \textcolor{comment}{        std::cout << "{}The lowest possible date is "{} + renesaince.get\_date\_str() + "{}."{} << std::endl;}}
-\DoxyCodeLine{66 \textcolor{comment}{}}
-\DoxyCodeLine{67 \textcolor{comment}{        // all days in my life; demonstration of create\_date\_series() function}}
-\DoxyCodeLine{68 \textcolor{comment}{        std::string date\_str\_begin = "{}19791230"{};}}
-\DoxyCodeLine{69 \textcolor{comment}{        std::string date\_str\_end = "{}20211107"{};}}
-\DoxyCodeLine{70 \textcolor{comment}{        std::string date\_freq = "{}1D"{};}}
-\DoxyCodeLine{71 \textcolor{comment}{        std::string date\_format = "{}yyyymmdd"{};}}
-\DoxyCodeLine{72 \textcolor{comment}{        std::vector<lib\_date::myDate> my\_life = lib\_date::create\_date\_serie(date\_str\_begin, date\_str\_end, date\_freq, date\_format);}}
-\DoxyCodeLine{73 \textcolor{comment}{        std::cout << "{}I am alive "{} + std::to\_string(my\_life.size()) + "{} days!"{} << std::endl;}}
-\DoxyCodeLine{74 \textcolor{comment}{        std::cout << "{}Do you want to list all the days? (y/n)"{};}}
-\DoxyCodeLine{75 \textcolor{comment}{        std::string answer;}}
-\DoxyCodeLine{76 \textcolor{comment}{        std::cin >> answer;}}
-\DoxyCodeLine{77 \textcolor{comment}{        if ((answer.compare("{}y"{}) == 0) || (answer.compare("{}Y"{}) == 0))}}
-\DoxyCodeLine{78 \textcolor{comment}{        \{}}
-\DoxyCodeLine{79 \textcolor{comment}{            for (unsigned short i = 0; i < my\_life.size(); i++)}}
-\DoxyCodeLine{80 \textcolor{comment}{            \{}}
-\DoxyCodeLine{81 \textcolor{comment}{                std::cout << my\_life[i].get\_date\_str() << '\(\backslash\)n';}}
-\DoxyCodeLine{82 \textcolor{comment}{            \}}}
-\DoxyCodeLine{83 \textcolor{comment}{        \}}}
-\DoxyCodeLine{84 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{85 \textcolor{comment}{    \}}}
-\DoxyCodeLine{86 \textcolor{comment}{}}
-\DoxyCodeLine{87 \textcolor{comment}{    // Easter related functions}}
-\DoxyCodeLine{88 \textcolor{comment}{    \{}}
-\DoxyCodeLine{89 \textcolor{comment}{        std::cout << "{}EASTER RELATED FUNCTIONS"{} << std::endl;}}
-\DoxyCodeLine{90 \textcolor{comment}{}}
-\DoxyCodeLine{91 \textcolor{comment}{        std::size\_t year = 2023;}}
-\DoxyCodeLine{92 \textcolor{comment}{        std::cout << "{}Easter Friday:"{} << lib\_date::get\_easter\_friday(year).get\_date\_str() << std::endl;}}
-\DoxyCodeLine{93 \textcolor{comment}{        std::cout << "{}Easter Monday:"{} << lib\_date::get\_easter\_monday(year).get\_date\_str() << std::endl;}}
-\DoxyCodeLine{94 \textcolor{comment}{        std::cout << "{}Ascension Day:"{} << lib\_date::get\_ascension\_day(year).get\_date\_str() << std::endl;}}
-\DoxyCodeLine{95 \textcolor{comment}{}}
-\DoxyCodeLine{96 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{97 \textcolor{comment}{    \}}}
-\DoxyCodeLine{98 \textcolor{comment}{}}
-\DoxyCodeLine{99 \textcolor{comment}{    // the second and the last Monday in May 2023}}
-\DoxyCodeLine{100 \textcolor{comment}{    \{}}
-\DoxyCodeLine{101 \textcolor{comment}{        std::cout << "{}THE SECOND AND THE LAST MONDAY IN MAY 2023"{} << std::endl;}}
-\DoxyCodeLine{102 \textcolor{comment}{}}
-\DoxyCodeLine{103 \textcolor{comment}{        bool go\_forward;}}
-\DoxyCodeLine{104 \textcolor{comment}{        lib\_date::myDate date\_begin(20230501);}}
-\DoxyCodeLine{105 \textcolor{comment}{        lib\_date::myDate date\_end(20230531);}}
-\DoxyCodeLine{106 \textcolor{comment}{        unsigned short day\_in\_week = 1;  // Monday}}
-\DoxyCodeLine{107 \textcolor{comment}{        unsigned short rank = 1; // the first or the last day\_in\_week}}
-\DoxyCodeLine{108 \textcolor{comment}{}}
-\DoxyCodeLine{109 \textcolor{comment}{        // the first Monday}}
-\DoxyCodeLine{110 \textcolor{comment}{        go\_forward = true;}}
-\DoxyCodeLine{111 \textcolor{comment}{        std::cout << "{}The first Monday in May 2023:"{} << lib\_date::get\_holiday\_day(date\_begin, date\_end, day\_in\_week, rank, go\_forward).get\_date\_str() << std::endl;}}
-\DoxyCodeLine{112 \textcolor{comment}{}}
-\DoxyCodeLine{113 \textcolor{comment}{        // the last Monday}}
-\DoxyCodeLine{114 \textcolor{comment}{        go\_forward = false;}}
-\DoxyCodeLine{115 \textcolor{comment}{        std::cout << "{}The last Monday in May 2023:"{} << lib\_date::get\_holiday\_day(date\_begin, date\_end, day\_in\_week, rank, go\_forward).get\_date\_str() << std::endl;}}
-\DoxyCodeLine{116 \textcolor{comment}{}}
-\DoxyCodeLine{117 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{118 \textcolor{comment}{    \}}}
-\DoxyCodeLine{119 \textcolor{comment}{}}
-\DoxyCodeLine{120 \textcolor{comment}{    // Czech public holidays}}
-\DoxyCodeLine{121 \textcolor{comment}{    \{}}
-\DoxyCodeLine{122 \textcolor{comment}{        std::cout << "{}CZECH PUBLIC HOLIDAYS IN 2021 -\/ 2022"{} << std::endl;}}
-\DoxyCodeLine{123 \textcolor{comment}{        std::vector<lib\_date::myDate> holidays = lib\_date::get\_holidays\_cz(2021, 2022);}}
-\DoxyCodeLine{124 \textcolor{comment}{        for (unsigned short i = 0; i < holidays.size(); i++)}}
-\DoxyCodeLine{125 \textcolor{comment}{            std::cout << holidays[i].get\_date\_str() << std::endl;}}
-\DoxyCodeLine{126 \textcolor{comment}{}}
-\DoxyCodeLine{127 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{128 \textcolor{comment}{    \}}}
-\DoxyCodeLine{129 \textcolor{comment}{}}
-\DoxyCodeLine{130 \textcolor{comment}{    // Check for date for weekend, holidays and working date}}
-\DoxyCodeLine{131 \textcolor{comment}{    \{}}
-\DoxyCodeLine{132 \textcolor{comment}{        std::cout << "{}CHECK DATE FOR WEEKEND, HOLIDAYS AND WORKING DATE"{} << std::endl;}}
-\DoxyCodeLine{133 \textcolor{comment}{        lib\_date::myDate some\_date = lib\_date::myDate(20231216);}}
-\DoxyCodeLine{134 \textcolor{comment}{        std::vector<lib\_date::myDate> holidays = lib\_date::get\_holidays\_de(2023, 2023);}}
-\DoxyCodeLine{135 \textcolor{comment}{}}
-\DoxyCodeLine{136 \textcolor{comment}{        // check for weekend}}
-\DoxyCodeLine{137 \textcolor{comment}{        if (some\_date.is\_weekend())}}
-\DoxyCodeLine{138 \textcolor{comment}{            std::cout << some\_date.get\_date\_str() << "{} is weekend"{} << std::endl;}}
-\DoxyCodeLine{139 \textcolor{comment}{        else}}
-\DoxyCodeLine{140 \textcolor{comment}{            std::cout << some\_date.get\_date\_str() << "{} is not weekend"{} << std::endl;}}
-\DoxyCodeLine{141 \textcolor{comment}{}}
-\DoxyCodeLine{142 \textcolor{comment}{        // check for holidays}}
-\DoxyCodeLine{143 \textcolor{comment}{        if (some\_date.is\_holidays(holidays))}}
-\DoxyCodeLine{144 \textcolor{comment}{            std::cout << some\_date.get\_date\_str() << "{} is holidays in Germany"{} << std::endl;}}
-\DoxyCodeLine{145 \textcolor{comment}{        else}}
-\DoxyCodeLine{146 \textcolor{comment}{            std::cout << some\_date.get\_date\_str() << "{} is not holidays in Germany"{} << std::endl;}}
-\DoxyCodeLine{147 \textcolor{comment}{}}
-\DoxyCodeLine{148 \textcolor{comment}{        // check for working day}}
-\DoxyCodeLine{149 \textcolor{comment}{        if (some\_date.is\_working\_day(holidays))}}
-\DoxyCodeLine{150 \textcolor{comment}{            std::cout << some\_date.get\_date\_str() << "{} is working day in Germany"{} << std::endl;}}
-\DoxyCodeLine{151 \textcolor{comment}{        else}}
-\DoxyCodeLine{152 \textcolor{comment}{            std::cout << some\_date.get\_date\_str() << "{} is not working day in Germany"{} << std::endl;}}
-\DoxyCodeLine{153 \textcolor{comment}{}}
-\DoxyCodeLine{154 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{155 \textcolor{comment}{    \}}}
-\DoxyCodeLine{156 \textcolor{comment}{}}
-\DoxyCodeLine{157 \textcolor{comment}{    // next and previous working day}}
-\DoxyCodeLine{158 \textcolor{comment}{    \{}}
-\DoxyCodeLine{159 \textcolor{comment}{        std::cout << "{}NEXT AND PREVIOUS WORKING DAY"{} << std::endl;}}
-\DoxyCodeLine{160 \textcolor{comment}{}}
-\DoxyCodeLine{161 \textcolor{comment}{        // get list of US federal holidays in 2024}}
-\DoxyCodeLine{162 \textcolor{comment}{        std::vector<lib\_date::myDate> holidays = lib\_date::get\_holidays\_us(2024, 2024);}}
-\DoxyCodeLine{163 \textcolor{comment}{}}
-\DoxyCodeLine{164 \textcolor{comment}{        // next business day}}
-\DoxyCodeLine{165 \textcolor{comment}{        lib\_date::myDate next\_working\_day = lib\_date::myDate(20240112);}}
-\DoxyCodeLine{166 \textcolor{comment}{        std::cout << "{}Next working day after "{} << next\_working\_day.get\_date\_str();}}
-\DoxyCodeLine{167 \textcolor{comment}{        next\_working\_day.set\_to\_next\_working\_day(holidays);}}
-\DoxyCodeLine{168 \textcolor{comment}{        std::cout << "{} is "{} << next\_working\_day.get\_date\_str() << std::endl;}}
-\DoxyCodeLine{169 \textcolor{comment}{}}
-\DoxyCodeLine{170 \textcolor{comment}{        // previous business day}}
-\DoxyCodeLine{171 \textcolor{comment}{        lib\_date::myDate prev\_working\_day = lib\_date::myDate(20240112);}}
-\DoxyCodeLine{172 \textcolor{comment}{        std::cout << "{}Previous working day before "{} << prev\_working\_day.get\_date\_str();}}
-\DoxyCodeLine{173 \textcolor{comment}{        prev\_working\_day.set\_to\_prev\_working\_day(holidays);}}
-\DoxyCodeLine{174 \textcolor{comment}{        std::cout << "{} is "{} << prev\_working\_day.get\_date\_str() << std::endl;}}
-\DoxyCodeLine{175 \textcolor{comment}{}}
-\DoxyCodeLine{176 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{177 \textcolor{comment}{    \}}}
-\DoxyCodeLine{178 \textcolor{comment}{}}
-\DoxyCodeLine{179 \textcolor{comment}{    // everything OK}}
-\DoxyCodeLine{180 \textcolor{comment}{    return 0;}}
-\DoxyCodeLine{181 \textcolor{comment}{\}}}
-\DoxyCodeLine{182 \textcolor{comment}{*/}}
-\DoxyCodeLine{183 }
-\DoxyCodeLine{184 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{185 }
-\DoxyCodeLine{186 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{187 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{188 \textcolor{preprocessor}{\#include <tuple>}}
-\DoxyCodeLine{189 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{190 }
-\DoxyCodeLine{191 \textcolor{keyword}{namespace }lib\_date}
-\DoxyCodeLine{192 \{}
-\DoxyCodeLine{193     \textcolor{comment}{// define date class}}
-\DoxyCodeLine{194     \textcolor{keyword}{class }\mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}}
-\DoxyCodeLine{195     \{}
-\DoxyCodeLine{196         \textcolor{keyword}{private}:}
-\DoxyCodeLine{197             \textcolor{comment}{// variables}}
-\DoxyCodeLine{198             std::string date\_str;}
-\DoxyCodeLine{199             std::size\_t date\_int;}
-\DoxyCodeLine{200             std::size\_t year;}
-\DoxyCodeLine{201             std::size\_t month;}
-\DoxyCodeLine{202             std::size\_t day;}
-\DoxyCodeLine{203             std::size\_t days\_no;}
-\DoxyCodeLine{204             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} day\_in\_week;}
-\DoxyCodeLine{205             \textcolor{keyword}{const} std::size\_t init\_year = 1601;}
-\DoxyCodeLine{206 }
-\DoxyCodeLine{207             \textcolor{comment}{// functions}}
-\DoxyCodeLine{208             \textcolor{keywordtype}{void} set\_year\_month\_day();}
-\DoxyCodeLine{209             \textcolor{keywordtype}{void} set\_days\_no();}
-\DoxyCodeLine{210             \textcolor{keywordtype}{void} set\_day\_in\_week();}
-\DoxyCodeLine{211 }
-\DoxyCodeLine{212         \textcolor{keyword}{public}:}
-\DoxyCodeLine{213             \textcolor{comment}{// object constructors}}
-\DoxyCodeLine{214             \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}();}
-\DoxyCodeLine{215             \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}(\textcolor{keyword}{const} std::string\& date\_str, \textcolor{keyword}{const} std::string\& date\_format);}
-\DoxyCodeLine{216             \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}(\textcolor{keyword}{const} std::size\_t\& date\_int);}
-\DoxyCodeLine{217 }
-\DoxyCodeLine{218             \textcolor{comment}{// copy constructor}}
-\DoxyCodeLine{219             \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} (\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date);}
-\DoxyCodeLine{220 }
-\DoxyCodeLine{221             \textcolor{comment}{// object destructor}}
-\DoxyCodeLine{222             \mbox{\hyperlink{classlib__date_1_1myDate}{\string~myDate}}()\{\};}
-\DoxyCodeLine{223 }
-\DoxyCodeLine{224             \textcolor{comment}{// overloaded operators}}
-\DoxyCodeLine{225             \textcolor{keywordtype}{long} operator-\/ (\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date2);}
-\DoxyCodeLine{226             \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& operator= (\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& \_date);}
-\DoxyCodeLine{227             \textcolor{keywordtype}{bool} operator== (\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& \_date);}
-\DoxyCodeLine{228             \textcolor{keywordtype}{bool} operator< (\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date);}
-\DoxyCodeLine{229             \textcolor{keywordtype}{bool} operator> (\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date);}
-\DoxyCodeLine{230             \textcolor{keywordtype}{bool} operator<= (\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date);}
-\DoxyCodeLine{231             \textcolor{keywordtype}{bool} operator>= (\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date);}
-\DoxyCodeLine{232 }
-\DoxyCodeLine{233             \textcolor{comment}{// object function declarations}}
-\DoxyCodeLine{234             \textcolor{keywordtype}{void} recalc();}
-\DoxyCodeLine{235             \textcolor{keywordtype}{void} set(\textcolor{keyword}{const} std::string\& date\_str, \textcolor{keyword}{const} std::string\& date\_format);}
-\DoxyCodeLine{236             \textcolor{keywordtype}{void} set(\textcolor{keyword}{const} std::size\_t\& date\_int);}
-\DoxyCodeLine{237             std::size\_t get\_year()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} year;\}}
-\DoxyCodeLine{238             std::size\_t get\_month()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} month;\}}
-\DoxyCodeLine{239             std::size\_t get\_day()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} day;\}}
-\DoxyCodeLine{240             std::size\_t get\_days\_no()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} days\_no;\}}
-\DoxyCodeLine{241             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} get\_day\_in\_week()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} day\_in\_week;\}}
-\DoxyCodeLine{242             std::size\_t get\_date\_int()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} date\_int;\}}
-\DoxyCodeLine{243             std::string get\_date\_str()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} date\_str;\}}
-\DoxyCodeLine{244             \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} std::string\& date\_freq);}
-\DoxyCodeLine{245             \textcolor{keywordtype}{void} remove(\textcolor{keyword}{const} std::string\& date\_freq);}
-\DoxyCodeLine{246             \textcolor{keywordtype}{bool} is\_last\_day\_in\_month() \textcolor{keyword}{const};}
-\DoxyCodeLine{247             \textcolor{keywordtype}{bool} is\_leap\_year() \textcolor{keyword}{const};}
-\DoxyCodeLine{248             \textcolor{keywordtype}{bool} is\_weekend() \textcolor{keyword}{const};}
-\DoxyCodeLine{249             \textcolor{keywordtype}{bool} is\_holidays(\textcolor{keyword}{const} std::vector<myDate>\& holidays) \textcolor{keyword}{const};}
-\DoxyCodeLine{250             \textcolor{keywordtype}{bool} is\_working\_day(\textcolor{keyword}{const} std::vector<myDate>\& holidays) \textcolor{keyword}{const};}
-\DoxyCodeLine{251             \textcolor{keywordtype}{void} add\_working\_days(\textcolor{keyword}{const} std::vector<myDate>\& holidays, \textcolor{keyword}{const} std::size\_t\& working\_days\_no = 1);}
-\DoxyCodeLine{252             \textcolor{keywordtype}{void} set\_to\_next\_working\_day(\textcolor{keyword}{const} std::vector<myDate>\& holidays);}
-\DoxyCodeLine{253             \textcolor{keywordtype}{void} set\_to\_prev\_working\_day(\textcolor{keyword}{const} std::vector<myDate>\& holidays);}
-\DoxyCodeLine{254     \};}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <tuple>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{namespace }lib\_date}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{25     \textcolor{keyword}{class }\mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         \textcolor{keyword}{private}:}
+\DoxyCodeLine{28             \textcolor{comment}{// variables}}
+\DoxyCodeLine{29             std::string date\_str;}
+\DoxyCodeLine{30             std::size\_t date\_int;}
+\DoxyCodeLine{31             std::size\_t year;}
+\DoxyCodeLine{32             std::size\_t month;}
+\DoxyCodeLine{33             std::size\_t day;}
+\DoxyCodeLine{34             std::size\_t days\_no;}
+\DoxyCodeLine{35             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} day\_in\_week;}
+\DoxyCodeLine{36             \textcolor{keyword}{const} std::size\_t init\_year = 1601;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38             \textcolor{comment}{// functions}}
+\DoxyCodeLine{39             \textcolor{keywordtype}{void} set\_year\_month\_day();}
+\DoxyCodeLine{40             \textcolor{keywordtype}{void} set\_days\_no();}
+\DoxyCodeLine{41             \textcolor{keywordtype}{void} set\_day\_in\_week();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{keyword}{public}:}
+\DoxyCodeLine{48             \mbox{\hyperlink{classlib__date_1_1myDate_a553f277b6a43975ecac5004a65372447}{myDate}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{56             \mbox{\hyperlink{classlib__date_1_1myDate_a553f277b6a43975ecac5004a65372447}{myDate}}(\textcolor{keyword}{const} std::string\& date\_str, \textcolor{keyword}{const} std::string\& date\_format);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{63             \mbox{\hyperlink{classlib__date_1_1myDate_a553f277b6a43975ecac5004a65372447}{myDate}}(\textcolor{keyword}{const} std::size\_t\& date\_int);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{70             \mbox{\hyperlink{classlib__date_1_1myDate_a553f277b6a43975ecac5004a65372447}{myDate}} (\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{76             \mbox{\hyperlink{classlib__date_1_1myDate_a31b301f74849e0601f490a5abcc7c5f9}{\string~myDate}}()\{\};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{84             \textcolor{keywordtype}{long} \mbox{\hyperlink{classlib__date_1_1myDate_ad07a81f653dbcd740521e33db95dd42d}{operator-\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date2);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{92             \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& \mbox{\hyperlink{classlib__date_1_1myDate_ae8bab4cf9c28d0797d678f3040c0ea1b}{operator= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& \_date);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{101             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classlib__date_1_1myDate_ab69d4ccd052db2ad7dadcdf6d8c7d4ca}{operator== }}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& \_date);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{110             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classlib__date_1_1myDate_abfe3f9d5f39fa87e803ba229c884925f}{operator< }}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{119             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classlib__date_1_1myDate_a6debf023572d11b5660074acfe77acd7}{operator> }}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{128             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classlib__date_1_1myDate_a6bfb8e8979e8b0c3bfcd9d8da4211cf5}{operator<= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{137             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classlib__date_1_1myDate_a8dda29663aeaad04a7f5e7c824043987}{operator>= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{143             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__date_1_1myDate_a35d0de8f921efb12d6a64d313848a604}{recalc}}();}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{151             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__date_1_1myDate_ab795a92dbba74824f992db25c942fc2f}{set}}(\textcolor{keyword}{const} std::string\& date\_str, \textcolor{keyword}{const} std::string\& date\_format);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{158             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__date_1_1myDate_ab795a92dbba74824f992db25c942fc2f}{set}}(\textcolor{keyword}{const} std::size\_t\& date\_int);}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{165             std::size\_t \mbox{\hyperlink{classlib__date_1_1myDate_a4566a67839621f3fab74b43b8b806804}{get\_year}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} year;\}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{172             std::size\_t \mbox{\hyperlink{classlib__date_1_1myDate_a79c2f2abed4e06a69b56c1aad7a4793d}{get\_month}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} month;\}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{179             std::size\_t \mbox{\hyperlink{classlib__date_1_1myDate_a06a628c33b049674b9d4af3d186a98ef}{get\_day}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} day;\}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{186             std::size\_t \mbox{\hyperlink{classlib__date_1_1myDate_a5f221fe2c190aadfbc8b8392c80aa85a}{get\_days\_no}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} days\_no;\}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{193             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{classlib__date_1_1myDate_a60b485f3d70f1279cfbfc50f4dd4a4ff}{get\_day\_in\_week}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} day\_in\_week;\}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{200             std::size\_t \mbox{\hyperlink{classlib__date_1_1myDate_ac05e3954e487b0027dc760c9e4192b98}{get\_date\_int}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} date\_int;\}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{207             std::string \mbox{\hyperlink{classlib__date_1_1myDate_a8be515a9880f9e8083fe4acd30c88fcb}{get\_date\_str}}()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} date\_str;\}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{214             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__date_1_1myDate_a4d7abaac285d6ba7be70ef16eb006745}{add}}(\textcolor{keyword}{const} std::string\& date\_freq);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{221             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__date_1_1myDate_af93f56f85d5468601c3d10f727de2c76}{remove}}(\textcolor{keyword}{const} std::string\& date\_freq);}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{229             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classlib__date_1_1myDate_a07af95a90b51c889a5e485c66dfb36cf}{is\_last\_day\_in\_month}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{237             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classlib__date_1_1myDate_a390541adc6b1bdfcbde0b126c49e98f2}{is\_leap\_year}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{245             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classlib__date_1_1myDate_a98c1185672e4a1637bbea449a76c70e1}{is\_weekend}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{254             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classlib__date_1_1myDate_affa00efd35a3695f787d4737198a112e}{is\_holidays}}(\textcolor{keyword}{const} std::vector<myDate>\& holidays) \textcolor{keyword}{const};}
 \DoxyCodeLine{255 }
-\DoxyCodeLine{256     \textcolor{comment}{// stand-\/alone functions}}
-\DoxyCodeLine{257     std::size\_t days\_in\_month(\textcolor{keyword}{const} std::size\_t\& year, \textcolor{keyword}{const} std::size\_t\& month);}
-\DoxyCodeLine{258     std::vector<std::size\_t> add\_months(\textcolor{keyword}{const} std::size\_t\& year, \textcolor{keyword}{const} std::size\_t\& month, \textcolor{keyword}{const} std::size\_t\& day, \textcolor{keyword}{const} std::size\_t\& months\_to\_add);}
-\DoxyCodeLine{259     std::vector<std::size\_t> remove\_months(\textcolor{keyword}{const} std::size\_t\& year, \textcolor{keyword}{const} std::size\_t\& month, \textcolor{keyword}{const} std::size\_t\& day, \textcolor{keyword}{const} std::size\_t\& months\_to\_remove);}
-\DoxyCodeLine{260     std::tuple<std::size\_t, std::string> decompose\_freq(\textcolor{keyword}{const} std::string\& freq);}
-\DoxyCodeLine{261     \textcolor{keywordtype}{double} eval\_freq(\textcolor{keyword}{const} std::string\& freq);}
-\DoxyCodeLine{262     std::vector<myDate> create\_date\_serie(\textcolor{keyword}{const} std::string\& date\_str\_begin, \textcolor{keyword}{const} std::string\& date\_str\_end, \textcolor{keyword}{const} std::string\& date\_freq, \textcolor{keyword}{const} std::string\& date\_format = \textcolor{stringliteral}{"{}yyyymmdd"{}});}
-\DoxyCodeLine{263     std::size\_t get\_nearest\_idx(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date, \textcolor{keyword}{const} std::vector<myDate>\& dates, \textcolor{keyword}{const} std::string\& type);}
-\DoxyCodeLine{264     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} get\_easter\_sunday(\textcolor{keyword}{const} std::size\_t\& year);}
-\DoxyCodeLine{265     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} get\_easter\_monday(\textcolor{keyword}{const} std::size\_t\& year);}
-\DoxyCodeLine{266     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} get\_easter\_friday(\textcolor{keyword}{const} std::size\_t\& year);}
-\DoxyCodeLine{267     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} get\_ascension\_day(\textcolor{keyword}{const} std::size\_t\& year);}
-\DoxyCodeLine{268     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} get\_whit\_monday(\textcolor{keyword}{const} std::size\_t\& year);}
-\DoxyCodeLine{269     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} get\_holiday\_day(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date\_begin, \textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date\_end, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& day\_in\_week, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& rank, \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& go\_forward = \textcolor{keyword}{true});}
-\DoxyCodeLine{270     std::vector<myDate> get\_weekends(\textcolor{keyword}{const} std::size\_t\& year\_begin, \textcolor{keyword}{const} std::size\_t\& year\_end);}
-\DoxyCodeLine{271     std::vector<myDate> get\_holidays\_cz(\textcolor{keyword}{const} std::size\_t\& year\_begin, \textcolor{keyword}{const} std::size\_t\& year\_end);}
-\DoxyCodeLine{272     std::vector<myDate> get\_holidays\_de(\textcolor{keyword}{const} std::size\_t\& year\_begin, \textcolor{keyword}{const} std::size\_t\& year\_end);}
-\DoxyCodeLine{273     std::vector<myDate> get\_holidays\_us(\textcolor{keyword}{const} std::size\_t\& year\_begin, \textcolor{keyword}{const} std::size\_t\& year\_end);}
-\DoxyCodeLine{274     std::vector<myDate> get\_holidays\_uk(\textcolor{keyword}{const} std::size\_t\& year\_begin, \textcolor{keyword}{const} std::size\_t\& year\_end);}
-\DoxyCodeLine{275 \}}
-\DoxyCodeLine{276 }
+\DoxyCodeLine{263             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classlib__date_1_1myDate_a6be0979f6444c4627ad1cea5517a41ca}{is\_working\_day}}(\textcolor{keyword}{const} std::vector<myDate>\& holidays) \textcolor{keyword}{const};}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{271             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__date_1_1myDate_ad99e4f47e34d6a5ac802f7088bd0bc3c}{add\_working\_days}}(\textcolor{keyword}{const} std::vector<myDate>\& holidays, \textcolor{keyword}{const} std::size\_t\& working\_days\_no = 1);}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{278             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__date_1_1myDate_aacd8e41776d1de9040bf3f229897f4dc}{set\_to\_next\_working\_day}}(\textcolor{keyword}{const} std::vector<myDate>\& holidays);}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{285             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__date_1_1myDate_aee210cfba95c1397f19302ec4774173c}{set\_to\_prev\_working\_day}}(\textcolor{keyword}{const} std::vector<myDate>\& holidays);}
+\DoxyCodeLine{286     \};}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{295     std::size\_t days\_in\_month(\textcolor{keyword}{const} std::size\_t\& year, \textcolor{keyword}{const} std::size\_t\& month);}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{306     std::vector<std::size\_t> add\_months(\textcolor{keyword}{const} std::size\_t\& year, \textcolor{keyword}{const} std::size\_t\& month, \textcolor{keyword}{const} std::size\_t\& day, \textcolor{keyword}{const} std::size\_t\& months\_to\_add);}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{317     std::vector<std::size\_t> remove\_months(\textcolor{keyword}{const} std::size\_t\& year, \textcolor{keyword}{const} std::size\_t\& month, \textcolor{keyword}{const} std::size\_t\& day, \textcolor{keyword}{const} std::size\_t\& months\_to\_remove);}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{325     std::tuple<std::size\_t, std::string> decompose\_freq(\textcolor{keyword}{const} std::string\& freq);}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{333     \textcolor{keywordtype}{double} eval\_freq(\textcolor{keyword}{const} std::string\& freq);}
+\DoxyCodeLine{334 }
+\DoxyCodeLine{344     std::vector<myDate> create\_date\_serie(\textcolor{keyword}{const} std::string\& date\_str\_begin, \textcolor{keyword}{const} std::string\& date\_str\_end, \textcolor{keyword}{const} std::string\& date\_freq, \textcolor{keyword}{const} std::string\& date\_format = \textcolor{stringliteral}{"{}yyyymmdd"{}});}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{354     std::size\_t get\_nearest\_idx(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date, \textcolor{keyword}{const} std::vector<myDate>\& dates, \textcolor{keyword}{const} std::string\& type);}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{362     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} \mbox{\hyperlink{lib__date_8h_a16f51094fa0cf717f8d874ce21ebd336}{get\_easter\_sunday}}(\textcolor{keyword}{const} std::size\_t\& year);}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{370     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} \mbox{\hyperlink{lib__date_8h_a84b559fdff9f8b5813cb65e516cc0660}{get\_easter\_monday}}(\textcolor{keyword}{const} std::size\_t\& year);}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{378     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} \mbox{\hyperlink{lib__date_8h_af8e215a55b17c5ed8d301114b41082b6}{get\_easter\_friday}}(\textcolor{keyword}{const} std::size\_t\& year);}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{386     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} \mbox{\hyperlink{lib__date_8h_a0df977c089ee411f68f74f8f83206bd4}{get\_ascension\_day}}(\textcolor{keyword}{const} std::size\_t\& year);}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{394     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} \mbox{\hyperlink{lib__date_8h_a454d2b156c1045f369ead9722c809675}{get\_whit\_monday}}(\textcolor{keyword}{const} std::size\_t\& year);}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{406     \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}} \mbox{\hyperlink{lib__date_8h_a358ddb436aaeabba5307bd25890a769f}{get\_holiday\_day}}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date\_begin, \textcolor{keyword}{const} \mbox{\hyperlink{classlib__date_1_1myDate}{myDate}}\& date\_end, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& day\_in\_week, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& rank, \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& go\_forward = \textcolor{keyword}{true});}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{415     std::vector<myDate> \mbox{\hyperlink{lib__date_8h_adff4ddcf26209e1f6d2b39bc8ebd67fe}{get\_weekends}}(\textcolor{keyword}{const} std::size\_t\& year\_begin, \textcolor{keyword}{const} std::size\_t\& year\_end);}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{424     std::vector<myDate> \mbox{\hyperlink{lib__date_8h_ac7e3639918e9de52a286a66bcb6944d3}{get\_holidays\_cz}}(\textcolor{keyword}{const} std::size\_t\& year\_begin, \textcolor{keyword}{const} std::size\_t\& year\_end);}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{433     std::vector<myDate> \mbox{\hyperlink{lib__date_8h_a9734751fad4f8618a6673b15be72a36c}{get\_holidays\_de}}(\textcolor{keyword}{const} std::size\_t\& year\_begin, \textcolor{keyword}{const} std::size\_t\& year\_end);}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{442     std::vector<myDate> \mbox{\hyperlink{lib__date_8h_ac8d8ac15e4942a3cf565bbb15419b559}{get\_holidays\_us}}(\textcolor{keyword}{const} std::size\_t\& year\_begin, \textcolor{keyword}{const} std::size\_t\& year\_end);}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{451     std::vector<myDate> \mbox{\hyperlink{lib__date_8h_a770d04024209a27e851999cd0ba4bafb}{get\_holidays\_uk}}(\textcolor{keyword}{const} std::size\_t\& year\_begin, \textcolor{keyword}{const} std::size\_t\& year\_end);}
+\DoxyCodeLine{452 \}}
+\DoxyCodeLine{453 }
 
 \end{DoxyCode}

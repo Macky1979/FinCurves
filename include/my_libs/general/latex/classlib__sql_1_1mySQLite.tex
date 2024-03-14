@@ -1,47 +1,174 @@
 \hypertarget{classlib__sql_1_1mySQLite}{}\doxysection{lib\+\_\+sql\+::my\+SQLite Class Reference}
 \label{classlib__sql_1_1mySQLite}\index{lib\_sql::mySQLite@{lib\_sql::mySQLite}}
+
+
+SQLite object.  
+
+
+
+
+{\ttfamily \#include $<$lib\+\_\+sql.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a932decd95c135077efbf9e1a6003cc83}\label{classlib__sql_1_1mySQLite_a932decd95c135077efbf9e1a6003cc83}} 
-{\bfseries my\+SQLite} (const char $\ast$db\+\_\+file\+\_\+nm, const bool read\+\_\+only, int wait\+\_\+max\+\_\+seconds)
-\item 
-\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a5f3810d4f309627ff8b240bbfef96fd1}\label{classlib__sql_1_1mySQLite_a5f3810d4f309627ff8b240bbfef96fd1}} 
-void {\bfseries open} (const char $\ast$db\+\_\+file\+\_\+nm, const bool read\+\_\+only)
-\item 
+\mbox{\hyperlink{classlib__sql_1_1mySQLite_a932decd95c135077efbf9e1a6003cc83}{my\+SQLite}} (const char $\ast$db\+\_\+file\+\_\+nm, const bool read\+\_\+only, int \mbox{\hyperlink{classlib__sql_1_1mySQLite_a387f0a0791b14b0522a0a434c3ed095d}{wait\+\_\+max\+\_\+seconds}})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__sql_1_1mySQLite}{my\+SQLite}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a3e7df021abc365731efbfdd879488550}\label{classlib__sql_1_1mySQLite_a3e7df021abc365731efbfdd879488550}} 
+{\bfseries $\sim$my\+SQLite} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classlib__sql_1_1mySQLite}{my\+SQLite}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__sql_1_1mySQLite_a5f3810d4f309627ff8b240bbfef96fd1}{open}} (const char $\ast$db\+\_\+file\+\_\+nm, const bool read\+\_\+only)
+\begin{DoxyCompactList}\small\item\em Open connection to SQLite database file. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classlib__sql_1_1mySQLite_a9ddc4e805a863fc17a0e2c1ea3a72433}\label{classlib__sql_1_1mySQLite_a9ddc4e805a863fc17a0e2c1ea3a72433}} 
 void {\bfseries close} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Close connection to SQLite database file. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classlib__sql_1_1mySQLite_acd8c1bae0f451189336a4cf866277d6e}\label{classlib__sql_1_1mySQLite_acd8c1bae0f451189336a4cf866277d6e}} 
 void {\bfseries vacuum} () const
-\item 
-\mbox{\Hypertarget{classlib__sql_1_1mySQLite_ac20c73c39f62f6a92924f3837f211163}\label{classlib__sql_1_1mySQLite_ac20c73c39f62f6a92924f3837f211163}} 
-void {\bfseries exec} (const std\+::string \&sql) const
-\item 
-\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a12dd676f350f5e9448d61f9fe9301831}\label{classlib__sql_1_1mySQLite_a12dd676f350f5e9448d61f9fe9301831}} 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} $>$ {\bfseries query} (const std\+::string \&sql) const
-\item 
-\mbox{\Hypertarget{classlib__sql_1_1mySQLite_ae0fa0568ebaf3c4369e3166e9fbbfb45}\label{classlib__sql_1_1mySQLite_ae0fa0568ebaf3c4369e3166e9fbbfb45}} 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} $>$ {\bfseries download\+\_\+tbl} (const std\+::string \&tbl\+\_\+nm)
-\item 
-\mbox{\Hypertarget{classlib__sql_1_1mySQLite_ac15f63f59725afa0cebefe7279d69f33}\label{classlib__sql_1_1mySQLite_ac15f63f59725afa0cebefe7279d69f33}} 
-void {\bfseries upload\+\_\+tbl} (const \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} \&tbl, const std\+::string \&tbl\+\_\+nm, const bool delete\+\_\+old\+\_\+data)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Vacuum SQLite database file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__sql_1_1mySQLite_ac20c73c39f62f6a92924f3837f211163}{exec}} (const std\+::string \&sql) const
+\begin{DoxyCompactList}\small\item\em Execute SQL query, e.\+g. DELETE, DROP, INSERT commands. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} $>$ \mbox{\hyperlink{classlib__sql_1_1mySQLite_a12dd676f350f5e9448d61f9fe9301831}{query}} (const std\+::string \&sql) const
+\begin{DoxyCompactList}\small\item\em Run SQL query, e.\+g. SELECT command. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} $>$ \mbox{\hyperlink{classlib__sql_1_1mySQLite_ae0fa0568ebaf3c4369e3166e9fbbfb45}{download\+\_\+tbl}} (const std\+::string \&tbl\+\_\+nm)
+\begin{DoxyCompactList}\small\item\em Retrieve content of a table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__sql_1_1mySQLite_ac15f63f59725afa0cebefe7279d69f33}{upload\+\_\+tbl}} (const \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} \&tbl, const std\+::string \&tbl\+\_\+nm, const bool delete\+\_\+old\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Upload table into SQLite database file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classlib__sql_1_1mySQLite_a387f0a0791b14b0522a0a434c3ed095d}\label{classlib__sql_1_1mySQLite_a387f0a0791b14b0522a0a434c3ed095d}} 
 int {\bfseries wait\+\_\+max\+\_\+seconds}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em How many seconds to wait for SQLite database file being available. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+SQLite object. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_df_examples_8h-example}{lib\+\_\+df\+\_\+examples.\+h}}, and \mbox{\hyperlink{lib_sql_examples_8h-example}{lib\+\_\+sql\+\_\+examples.\+h}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a932decd95c135077efbf9e1a6003cc83}\label{classlib__sql_1_1mySQLite_a932decd95c135077efbf9e1a6003cc83}} 
+\index{lib\_sql::mySQLite@{lib\_sql::mySQLite}!mySQLite@{mySQLite}}
+\index{mySQLite@{mySQLite}!lib\_sql::mySQLite@{lib\_sql::mySQLite}}
+\doxysubsubsection{\texorpdfstring{mySQLite()}{mySQLite()}}
+{\footnotesize\ttfamily lib\+\_\+sql\+::my\+SQLite\+::my\+SQLite (\begin{DoxyParamCaption}\item[{const char $\ast$}]{db\+\_\+file\+\_\+nm,  }\item[{const bool}]{read\+\_\+only,  }\item[{int}]{wait\+\_\+max\+\_\+seconds }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__sql_1_1mySQLite}{my\+SQLite}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db\+\_\+file\+\_\+nm} & Name of SQLite database file. \\
+\hline
+{\em read\+\_\+only} & true =\texorpdfstring{$>$}{>} SQLite database file is read-\/only. ~\newline
+ false =\texorpdfstring{$>$}{>} SQLite database file could be written into. \\
+\hline
+{\em wait\+\_\+max\+\_\+seconds} & How many seconds to wait for SQLite database file being available. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_ae0fa0568ebaf3c4369e3166e9fbbfb45}\label{classlib__sql_1_1mySQLite_ae0fa0568ebaf3c4369e3166e9fbbfb45}} 
+\index{lib\_sql::mySQLite@{lib\_sql::mySQLite}!download\_tbl@{download\_tbl}}
+\index{download\_tbl@{download\_tbl}!lib\_sql::mySQLite@{lib\_sql::mySQLite}}
+\doxysubsubsection{\texorpdfstring{download\_tbl()}{download\_tbl()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} $>$ lib\+\_\+sql\+::my\+SQLite\+::download\+\_\+tbl (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tbl\+\_\+nm }\end{DoxyParamCaption})}
+
+
+
+Retrieve content of a table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tbl\+\_\+nm} & Name of the table to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$lib\+\_\+df\+::my\+Data\+Frame$>$ Data retrieved from the table. 
+\end{DoxyReturn}
 \begin{Desc}
 \item[Examples]\par
 \mbox{\hyperlink{lib_df_examples_8h-example}{lib\+\_\+df\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_ac20c73c39f62f6a92924f3837f211163}\label{classlib__sql_1_1mySQLite_ac20c73c39f62f6a92924f3837f211163}} 
+\index{lib\_sql::mySQLite@{lib\_sql::mySQLite}!exec@{exec}}
+\index{exec@{exec}!lib\_sql::mySQLite@{lib\_sql::mySQLite}}
+\doxysubsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily void lib\+\_\+sql\+::my\+SQLite\+::exec (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sql }\end{DoxyParamCaption}) const}
+
+
+
+Execute SQL query, e.\+g. DELETE, DROP, INSERT commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sql} & SQL query to be executed. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_df_examples_8h-example}{lib\+\_\+df\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a5f3810d4f309627ff8b240bbfef96fd1}\label{classlib__sql_1_1mySQLite_a5f3810d4f309627ff8b240bbfef96fd1}} 
+\index{lib\_sql::mySQLite@{lib\_sql::mySQLite}!open@{open}}
+\index{open@{open}!lib\_sql::mySQLite@{lib\_sql::mySQLite}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void lib\+\_\+sql\+::my\+SQLite\+::open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{db\+\_\+file\+\_\+nm,  }\item[{const bool}]{read\+\_\+only }\end{DoxyParamCaption})}
+
+
+
+Open connection to SQLite database file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db\+\_\+file\+\_\+nm} & SQLite database file name. \\
+\hline
+{\em read\+\_\+only} & true =\texorpdfstring{$>$}{>} SQLite database file is read-\/only. ~\newline
+ false =\texorpdfstring{$>$}{>} SQLite database file could be written into. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_a12dd676f350f5e9448d61f9fe9301831}\label{classlib__sql_1_1mySQLite_a12dd676f350f5e9448d61f9fe9301831}} 
+\index{lib\_sql::mySQLite@{lib\_sql::mySQLite}!query@{query}}
+\index{query@{query}!lib\_sql::mySQLite@{lib\_sql::mySQLite}}
+\doxysubsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} $>$ lib\+\_\+sql\+::my\+SQLite\+::query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sql }\end{DoxyParamCaption}) const}
+
+
+
+Run SQL query, e.\+g. SELECT command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sql} & SQL query to be run. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$lib\+\_\+df\+::my\+Data\+Frame$>$ Data retrieved via SQL query. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__sql_1_1mySQLite_ac15f63f59725afa0cebefe7279d69f33}\label{classlib__sql_1_1mySQLite_ac15f63f59725afa0cebefe7279d69f33}} 
+\index{lib\_sql::mySQLite@{lib\_sql::mySQLite}!upload\_tbl@{upload\_tbl}}
+\index{upload\_tbl@{upload\_tbl}!lib\_sql::mySQLite@{lib\_sql::mySQLite}}
+\doxysubsubsection{\texorpdfstring{upload\_tbl()}{upload\_tbl()}}
+{\footnotesize\ttfamily void lib\+\_\+sql\+::my\+SQLite\+::upload\+\_\+tbl (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\+\_\+df\+::my\+Data\+Frame}} \&}]{tbl,  }\item[{const std\+::string \&}]{tbl\+\_\+nm,  }\item[{const bool}]{delete\+\_\+old\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Upload table into SQLite database file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tbl} & Table in form of my\+Data\+Frame object. \\
+\hline
+{\em tbl\+\_\+nm} & Name of the table to be created. \\
+\hline
+{\em delete\+\_\+old\+\_\+data} & true =\texorpdfstring{$>$}{>} Delete existing data in the table before uploading the table. ~\newline
+ false =\texorpdfstring{$>$}{>} Add date to existing data when uploading the table. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-lib\+\_\+sql.\+h\item 
+\mbox{\hyperlink{lib__sql_8h}{lib\+\_\+sql.\+h}}\item 
 lib\+\_\+sql.\+cpp\end{DoxyCompactItemize}

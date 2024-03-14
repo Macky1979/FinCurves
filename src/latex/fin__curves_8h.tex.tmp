@@ -15,11 +15,6 @@ Include dependency graph for fin\+\_\+curves.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
-\doxysubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-class \mbox{\hyperlink{classfin__curves_1_1myDepoInstr}{fin\+\_\+curves\+::my\+Depo\+Instr}}
-\begin{DoxyCompactList}\small\item\em Object holding depo instrument. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -79,7 +74,7 @@ double Zero rate.
 \end{DoxyReturn}
 \begin{Desc}
 \item[Examples]\par
-\mbox{\hyperlink{fin_curves_examples_8h-example}{fin\+\_\+curves\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\hyperlink{fin_curves_examples_8h-example}{fin\+\_\+curves\+\_\+examples.\+h}}, and \mbox{\hyperlink{fin_depoinstr_examples_8h-example}{fin\+\_\+depoinstr\+\_\+examples.\+h}}.\end{Desc}
 \mbox{\Hypertarget{fin__curves_8h_acb11ee3db3959b027648b718ed4975b4}\label{fin__curves_8h_acb11ee3db3959b027648b718ed4975b4}} 
 \index{fin\_curves.h@{fin\_curves.h}!df\_to\_zr@{df\_to\_zr}}
 \index{df\_to\_zr@{df\_to\_zr}!fin\_curves.h@{fin\_curves.h}}

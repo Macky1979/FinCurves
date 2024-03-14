@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>general: lib_df_examples.h</title>
+<title>General C++ libraries: lib_df_examples.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">general
+   <div id="projectname">General C++ libraries
    </div>
-   <div id="projectbrief">General C++ libraries</div>
+   <div id="projectbrief">C++ libraries to handle basic date, file, string and SQL operations, reading .csv files, etc.</div>
   </td>
  </tr>
  </tbody>
@@ -69,10 +69,8 @@ $(function() {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;lib_sql.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lib__sql_8h.html">lib_sql.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lib__df_8h.html">lib_df.h</a>&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
@@ -81,35 +79,35 @@ $(function() {
 <div class="line"> </div>
 <div class="line">    <span class="comment">// variables</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> * db_file_nm = <span class="stringliteral">&quot;include/my_libs/general/data/lib_sql/database.db&quot;</span>;</div>
-<div class="line">    <span class="keywordtype">string</span> file_nm = <span class="stringliteral">&quot;include/my_libs/general/data/lib_sql/cities.csv&quot;</span>;</div>
+<div class="line">    std::string file_nm = <span class="stringliteral">&quot;include/my_libs/general/data/lib_sql/cities.csv&quot;</span>;</div>
 <div class="line">    std::shared_ptr&lt;lib_df::myDataFrame&gt; rslt1 = std::make_shared&lt;lib_df::myDataFrame&gt;();</div>
 <div class="line">    std::shared_ptr&lt;lib_df::myDataFrame&gt; rslt2 = std::make_shared&lt;lib_df::myDataFrame&gt;();</div>
 <div class="line">    <span class="keywordtype">bool</span> read_only = <span class="keyword">false</span>;</div>
 <div class="line">    <span class="keywordtype">int</span> wait_max_seconds = 10;</div>
 <div class="line">    <span class="keywordtype">bool</span> delete_old_data = <span class="keyword">true</span>;</div>
-<div class="line">    <span class="keywordtype">string</span> sep = <span class="stringliteral">&quot;;&quot;</span>;</div>
+<div class="line">    std::string sep = <span class="stringliteral">&quot;;&quot;</span>;</div>
 <div class="line">    <span class="keywordtype">bool</span> quotes = <span class="keyword">true</span>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// create SQLite object and open connection to SQLite database file in read-write mode</span></div>
 <div class="line">    <a id="_a0" name="_a0"></a><a class="code hl_class" href="classlib__sql_1_1mySQLite.html">lib_sql::mySQLite</a> db(db_file_nm, read_only, wait_max_seconds);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// create table if it does not exists</span></div>
-<div class="line">    db.<a id="a1" name="a1"></a>exec(<span class="stringliteral">&quot;CREATE TABLE IF NOT EXISTS cities (city VARCHAR(20), country VARCHAR(20));&quot;</span>);</div>
+<div class="line">    db.<a id="a1" name="a1"></a><a class="code hl_function" href="classlib__sql_1_1mySQLite.html#ac20c73c39f62f6a92924f3837f211163">exec</a>(<span class="stringliteral">&quot;CREATE TABLE IF NOT EXISTS cities (city VARCHAR(20), country VARCHAR(20));&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// delete table</span></div>
-<div class="line">    db.exec(<span class="stringliteral">&quot;DELETE FROM cities;&quot;</span>);</div>
+<div class="line">    db.<a class="code hl_function" href="classlib__sql_1_1mySQLite.html#ac20c73c39f62f6a92924f3837f211163">exec</a>(<span class="stringliteral">&quot;DELETE FROM cities;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// insert data into table</span></div>
-<div class="line">    db.exec(<span class="stringliteral">&quot;INSERT INTO cities (city, country) VALUES (&#39;Prague&#39;, &#39;Czech Republic&#39;);&quot;</span>);</div>
+<div class="line">    db.<a class="code hl_function" href="classlib__sql_1_1mySQLite.html#ac20c73c39f62f6a92924f3837f211163">exec</a>(<span class="stringliteral">&quot;INSERT INTO cities (city, country) VALUES (&#39;Prague&#39;, &#39;Czech Republic&#39;);&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// vacuum SQLite database file to avoid its excessive growth</span></div>
-<div class="line">    db.<a id="a2" name="a2"></a>vacuum();</div>
+<div class="line">    db.<a id="a2" name="a2"></a><a class="code hl_function" href="classlib__sql_1_1mySQLite.html#acd8c1bae0f451189336a4cf866277d6e">vacuum</a>();</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// download table</span></div>
-<div class="line">    rslt1 = db.<a id="a3" name="a3"></a>download_tbl(<span class="stringliteral">&quot;cities&quot;</span>);</div>
+<div class="line">    rslt1 = db.<a id="a3" name="a3"></a><a class="code hl_function" href="classlib__sql_1_1mySQLite.html#ae0fa0568ebaf3c4369e3166e9fbbfb45">download_tbl</a>(<span class="stringliteral">&quot;cities&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// close connection to SQLite database file</span></div>
-<div class="line">    db.<a id="a4" name="a4"></a>close();</div>
+<div class="line">    db.<a id="a4" name="a4"></a><a class="code hl_function" href="classlib__sql_1_1mySQLite.html#a9ddc4e805a863fc17a0e2c1ea3a72433">close</a>();</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// write dataframe into a .csv file</span></div>
 <div class="line">    rslt1-&gt;write(file_nm, sep, quotes);</div>
@@ -121,8 +119,13 @@ $(function() {
 <div class="line">    <span class="comment">// everything OK</span></div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclasslib__sql_1_1mySQLite_html"><div class="ttname"><a href="classlib__sql_1_1mySQLite.html">lib_sql::mySQLite</a></div><div class="ttdef"><b>Definition:</b> lib_sql.h:124</div></div>
-<div class="ttc" id="alib__df_8h_html"><div class="ttname"><a href="lib__df_8h.html">lib_df.h</a></div></div>
+<div class="ttc" id="aclasslib__sql_1_1mySQLite_html"><div class="ttname"><a href="classlib__sql_1_1mySQLite.html">lib_sql::mySQLite</a></div><div class="ttdoc">SQLite object.</div><div class="ttdef"><b>Definition:</b> lib_sql.h:47</div></div>
+<div class="ttc" id="aclasslib__sql_1_1mySQLite_html_a9ddc4e805a863fc17a0e2c1ea3a72433"><div class="ttname"><a href="classlib__sql_1_1mySQLite.html#a9ddc4e805a863fc17a0e2c1ea3a72433">lib_sql::mySQLite::close</a></div><div class="ttdeci">void close() const</div><div class="ttdoc">Close connection to SQLite database file.</div><div class="ttdef"><b>Definition:</b> lib_sql.cpp:77</div></div>
+<div class="ttc" id="aclasslib__sql_1_1mySQLite_html_ac20c73c39f62f6a92924f3837f211163"><div class="ttname"><a href="classlib__sql_1_1mySQLite.html#ac20c73c39f62f6a92924f3837f211163">lib_sql::mySQLite::exec</a></div><div class="ttdeci">void exec(const std::string &amp;sql) const</div><div class="ttdoc">Execute SQL query, e.g. DELETE, DROP, INSERT commands.</div><div class="ttdef"><b>Definition:</b> lib_sql.cpp:134</div></div>
+<div class="ttc" id="aclasslib__sql_1_1mySQLite_html_acd8c1bae0f451189336a4cf866277d6e"><div class="ttname"><a href="classlib__sql_1_1mySQLite.html#acd8c1bae0f451189336a4cf866277d6e">lib_sql::mySQLite::vacuum</a></div><div class="ttdeci">void vacuum() const</div><div class="ttdoc">Vacuum SQLite database file.</div><div class="ttdef"><b>Definition:</b> lib_sql.cpp:105</div></div>
+<div class="ttc" id="aclasslib__sql_1_1mySQLite_html_ae0fa0568ebaf3c4369e3166e9fbbfb45"><div class="ttname"><a href="classlib__sql_1_1mySQLite.html#ae0fa0568ebaf3c4369e3166e9fbbfb45">lib_sql::mySQLite::download_tbl</a></div><div class="ttdeci">std::shared_ptr&lt; lib_df::myDataFrame &gt; download_tbl(const std::string &amp;tbl_nm)</div><div class="ttdoc">Retrieve content of a table.</div><div class="ttdef"><b>Definition:</b> lib_sql.cpp:310</div></div>
+<div class="ttc" id="alib__df_8h_html"><div class="ttname"><a href="lib__df_8h.html">lib_df.h</a></div><div class="ttdoc">Very simple dataframe to load / retreive data into / from SQLite.</div></div>
+<div class="ttc" id="alib__sql_8h_html"><div class="ttname"><a href="lib__sql_8h.html">lib_sql.h</a></div><div class="ttdoc">User defined SQLite C++ functions.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -76,23 +76,6 @@
 \DoxyCodeLine{115     std::vector<double> \mbox{\hyperlink{fin__curves_8h_a05a3a716cc238737a6493bea18b60360}{df\_to\_zr}}(\textcolor{keyword}{const} std::vector<double>\& dfs, \textcolor{keyword}{const} std::vector<double>\& yr\_frac, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} type = 0);}
 \DoxyCodeLine{116 }
 \DoxyCodeLine{125     std::tuple<std::vector<double>, std::vector<double>> \mbox{\hyperlink{fin__curves_8h_a4d31306c7262f51224a9a2f679b6d522}{interp\_rate}}(\textcolor{keyword}{const} std::vector<std::shared\_ptr<double>>\& yr\_fracs, \textcolor{keyword}{const} std::vector<std::shared\_ptr<double>>\& zrs, \textcolor{keyword}{const} std::string\& interp\_tp = \textcolor{stringliteral}{"{}linear"{}});}
-\DoxyCodeLine{126 }
-\DoxyCodeLine{131     \textcolor{keyword}{class }\mbox{\hyperlink{classfin__curves_1_1myDepoInstr}{myDepoInstr}}}
-\DoxyCodeLine{132     \{}
-\DoxyCodeLine{133         \textcolor{keyword}{private}:}
-\DoxyCodeLine{134             std::string date\_exec;}
-\DoxyCodeLine{135             std::string tenor;}
-\DoxyCodeLine{136             std::vector<std::string> tenors;}
-\DoxyCodeLine{137             std::vector<std::tuple<lib\_date::myDate, lib\_date::myDate>> date\_series;}
-\DoxyCodeLine{138             \textcolor{keywordtype}{double} quote;}
-\DoxyCodeLine{139             std::shared\_ptr<fin\_curves::generator> \mbox{\hyperlink{structfin__curves_1_1generator}{generator}};}
-\DoxyCodeLine{140             std::tuple<lib\_date::myDate, lib\_date::myDate> dates\_int;}
-\DoxyCodeLine{141             std::string crv\_nm;}
-\DoxyCodeLine{142 }
-\DoxyCodeLine{143         \textcolor{keyword}{public}:}
-\DoxyCodeLine{144             \mbox{\hyperlink{classfin__curves_1_1myDepoInstr}{myDepoInstr}}(std::string date\_exec, std::string tenor, \textcolor{keywordtype}{double} quote, std::string crv\_nm, std::shared\_ptr<fin\_curves::generator> \mbox{\hyperlink{structfin__curves_1_1generator}{generator}}, std::string date\_format = \textcolor{stringliteral}{"{}yyyymmdd"{}});}
-\DoxyCodeLine{145             std::vector<std::tuple<lib\_date::myDate, lib\_date::myDate>> get\_date\_series()\{\textcolor{keywordflow}{return} this-\/>date\_series;\};}
-\DoxyCodeLine{146     \};}
-\DoxyCodeLine{147 \}}
+\DoxyCodeLine{126 \}}
 
 \end{DoxyCode}

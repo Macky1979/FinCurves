@@ -9,9 +9,9 @@ int main()
 
     // list of generators
     std::vector<std::string> instrument_nms = {"BS_USDEUR_STFX", "EUR_3M_MANUAL", "EUR_ESTCRV_3M", "EUR ESTER CURVE",
-                                                "EUR ESTER FIXING", "EUR EURIBOR 3M RC", "EUR MM FIX", "STFX_FXD_USDEUR",
-                                                "USD_3M_MANUAL", "USD LIBOR 3M LCH", "USD LIBOR 3M RC", "USD MM FIX",
-                                                "USD SOFR CURVE", "USD SOFR FIXING"};
+                                               "EUR ESTER FIXING", "EUR EURIBOR 3M RC", "EUR MM FIX", "STFX_FXD_USDEUR",
+                                               "USD_3M_MANUAL", "USD LIBOR 3M LCH", "USD LIBOR 3M RC", "USD MM FIX",
+                                               "USD SOFR CURVE", "USD SOFR FIXING"};
 
     // load generators into a object
     fin_curves::myGenerators generators = fin_curves::myGenerators(instrument_nms);

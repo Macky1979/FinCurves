@@ -42,7 +42,7 @@ std::vector<double> lib_math::lin_interp1d(const std::vector<double>& x, const s
     for (std::size_t X_idx = 0; X_idx < X.size(); X_idx++)
     {
         // lower values
-        if (X[X_idx] < x[0])
+        if (X[X_idx] <= x[0])
         {
             // extrapolation
             if (extrapolate)
@@ -59,7 +59,7 @@ std::vector<double> lib_math::lin_interp1d(const std::vector<double>& x, const s
                 Y.push_back(y[0]);
         }
         // upper values
-        else if (X[X_idx] > x[x.size() - 1])
+        else if (X[X_idx] >= x[x.size() - 1])
         {
             // extrapolation
             if (extrapolate)
@@ -73,7 +73,7 @@ std::vector<double> lib_math::lin_interp1d(const std::vector<double>& x, const s
             }
             // no extrapolation
             else
-                Y.push_back(y[y.size() - 2]);
+                Y.push_back(y[y.size() - 1]);
         }
         // intermediate points
         else

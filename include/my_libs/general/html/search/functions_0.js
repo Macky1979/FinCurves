@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['clear_0',['clear',['../classlib__df_1_1myDataFrame.html#a5db91309614734d714b0bf9501f556a8',1,'lib_df::myDataFrame::clear()'],['../classlib__tbl_1_1myTable.html#aff9e5aa307dfaf3f8ad75a3d6e2f7970',1,'lib_tbl::myTable::clear()']]],
-  ['copy_1',['copy',['../classlib__tbl_1_1myTable.html#afb1773f21868b71a9c00d0a2358191e2',1,'lib_tbl::myTable::copy(const myTable &amp;source)'],['../classlib__tbl_1_1myTable.html#a511c897d28501f1d853f5360442b7b64',1,'lib_tbl::myTable::copy(const std::shared_ptr&lt; lib_tbl::myTable &gt; source)']]]
+  ['add_0',['add',['../classlib__date_1_1myDate.html#a4d7abaac285d6ba7be70ef16eb006745',1,'lib_date::myDate']]],
+  ['add_5fleading_5fchar_1',['add_leading_char',['../lib__str_8h.html#a0ccfefc164b8b2146c1e7dc54bfdaf92',1,'lib_str']]],
+  ['add_5fmonths_2',['add_months',['../lib__date_8h.html#a13c9a66acf8ef2a9d2d4cd78daca92c3',1,'lib_date']]],
+  ['add_5ftrailing_5fchar_3',['add_trailing_char',['../lib__str_8h.html#abbcb07cf39fb2fe75d826000b52b7fd0',1,'lib_str']]],
+  ['add_5fworking_5fdays_4',['add_working_days',['../classlib__date_1_1myDate.html#ad99e4f47e34d6a5ac802f7088bd0bc3c',1,'lib_date::myDate']]]
 ];

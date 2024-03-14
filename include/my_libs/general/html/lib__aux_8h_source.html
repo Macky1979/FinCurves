@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>general: lib_aux.h Source File</title>
+<title>General C++ libraries: lib_aux.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">general
+   <div id="projectname">General C++ libraries
    </div>
-   <div id="projectbrief">General C++ libraries</div>
+   <div id="projectbrief">C++ libraries to handle basic date, file, string and SQL operations, reading .csv files, etc.</div>
   </td>
  </tr>
  </tbody>
@@ -66,158 +66,89 @@ $(function() {
   <div class="headertitle"><div class="title">lib_aux.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">#include &lt;thread&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">#include &lt;chrono&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">#include &quot;lib_aux.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">int main()</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">{</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">    // tic &amp; toc</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">    {</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">        std::cout &lt;&lt; &quot;TIC &amp; TOC EXAMPLE&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">        lib_aux::tic();</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">        std::cout &lt;&lt; &quot;We are waiting to demonstrate tic() &amp; toc() functions...&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">        std::this_thread::sleep_for(std::chrono::seconds(3));</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">        std::cout &lt;&lt; &quot;We waited for approximately &quot; + std::to_string(lib_aux::toc()) + &quot; seconds!&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">        std::cout &lt;&lt; &#39;\n&#39; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">    }</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"></span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">    // time and date stamp</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">    {</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">        std::cout &lt;&lt; &quot;TIME AND DATE STAMP&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">        std::cout &lt;&lt; &quot;time stamp: &quot; + lib_aux::get_timestamp() &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">        std::cout &lt;&lt; &quot;date stamp: &quot; + lib_aux::get_datestamp() &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">        std::cout &lt;&lt; &#39;\n&#39; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">    }</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"></span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">    // vector split - used in multiprocessing</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">    {</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">        std::cout &lt;&lt; &quot;VECTOR SPLIT - USED IN MULTIPROCESSING&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">        int vector_length = 10;</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">        int splits_no = 4;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">        std::vector&lt;lib_aux::coordinates&lt;int&gt;&gt; indicies = lib_aux::split_vector(vector_length, splits_no);</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">        for (unsigned short idx = 0; idx &lt; splits_no; idx++)</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">        {</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">            std::cout &lt;&lt; &quot;batch: &quot; + std::to_string(idx) &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">            std::cout &lt;&lt; &quot;   begin at &quot; &lt;&lt; std::to_string(indicies[idx].x) &lt;&lt; &quot; position&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">            std::cout &lt;&lt; &quot;   end at &quot; &lt;&lt; std::to_string(indicies[idx].y) &lt;&lt; &quot; position&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">        }</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">        std::cout &lt;&lt; &#39;\n&#39; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">    }</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"></span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">    // progress bar</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">    {</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">        std::cout &lt;&lt; &quot;PROGRESS BAR&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">        lib_aux::myProgressBar bar = lib_aux::myProgressBar(15);</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">        for (unsigned i = 0; i &lt; bar.get_cycles_no(); i++)</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">        {</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">            std::this_thread::sleep_for(std::chrono::seconds(1)); // pretend some work</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">            ++bar;</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">        }</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">        std::cout &lt;&lt; &#39;\n&#39; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">    }</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"></span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">    // logging</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">    {</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">        std::cout &lt;&lt; &quot;LOGGING&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"></span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">        std::string log_file_nm = &quot;data/lib_aux/&quot; + lib_aux::get_datestamp(1) + &quot;_log.txt&quot;;</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">        bool clear_file = true;</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">        lib_aux::myLog log = lib_aux::myLog(log_file_nm, clear_file);</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">        log.write(&quot;This is a log message!&quot;);</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"></span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">        std::cout &lt;&lt; &#39;\n&#39; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">    }</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"></span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">    // everything OK</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">    return 0;</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">}</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">namespace </span>lib_aux</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">// co-ordinates structure</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structlib__aux_1_1coordinates.html">   85</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structlib__aux_1_1coordinates.html">coordinates</a></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        T x;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        T y;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    };</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">// implementation of tic()</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> tic();</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment">// implementation of toc()</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">double</span> toc();</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// implementation of timestamp</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    std::string get_timestamp(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>&amp; format_type = 0);</div>
+<a href="lib__aux_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span>lib_aux</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structlib__aux_1_1coordinates.html">   28</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structlib__aux_1_1coordinates.html">coordinates</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        T x;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        T y;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    };</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="lib__aux_8h.html#a508c9f524fb598db58ff391e75c38cd7">tic</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="lib__aux_8h.html#a8472c98b686451d4c625d9f87c413797">toc</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    std::string <a class="code hl_function" href="lib__aux_8h.html#aff3204699d494bca21e99f9f5c73c1ab">get_timestamp</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>&amp; format_type = 0);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::string <a class="code hl_function" href="lib__aux_8h.html#a17b2bc6e2de166c99b4994a2de04aa37">get_datestamp</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>&amp; format_type = 0);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    std::vector&lt;coordinates&lt;int&gt;&gt; <a class="code hl_function" href="lib__aux_8h.html#abcc168da46ce25eb72d05e46588d483d">split_vector</a>(<span class="keyword">const</span> std::size_t&amp; vector_length, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; splits_no);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classlib__aux_1_1myProgressBar.html">   76</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classlib__aux_1_1myProgressBar.html">myProgressBar</a></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> cycles_no;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> cycle;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordtype">double</span> progress;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> progress_bar_len;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            std::string msg;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classlib__aux_1_1myProgressBar.html#a92508a00aab5ab4de066bcd56b369a25">   91</a></span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code hl_function" href="classlib__aux_1_1myProgressBar.html#a92508a00aab5ab4de066bcd56b369a25">get_cycles_no</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;cycles_no;};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classlib__aux_1_1myProgressBar.html#ab3f1fe2075340b5907435f05eca4a013">   98</a></span>            std::string <a class="code hl_function" href="classlib__aux_1_1myProgressBar.html#ab3f1fe2075340b5907435f05eca4a013">get_msg</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;msg;};</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="comment">// implementation of datestamp</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    std::string get_datestamp(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>&amp; format_type = 0);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// split vector into several vectors of approximately same size =&gt; return indices which defines the new vectors</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    std::vector&lt;coordinates&lt;int&gt;&gt; split_vector(<span class="keyword">const</span> std::size_t&amp; vector_length, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; splits_no);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classlib__aux_1_1myProgressBar.html#ac86aca8b47046517d0cee4846171496b">next</a>();</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">// progress bar</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classlib__aux_1_1myProgressBar.html">  107</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classlib__aux_1_1myProgressBar.html">myProgressBar</a></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    {</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> cycles_no;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> cycle;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordtype">double</span> progress;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> progress_bar_len;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            std::string msg;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="comment">// object functions</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> get_cycles_no()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;cycles_no;};</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            std::string get_msg()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;msg;};</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordtype">void</span> next();</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="comment">// object constructors</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            <a class="code hl_class" href="classlib__aux_1_1myProgressBar.html">myProgressBar</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> cycles_no){this-&gt;cycles_no = cycles_no; this-&gt;cycle = 0; this-&gt;progress = 0; this-&gt;progress_bar_len = 40; this-&gt;msg = <span class="stringliteral">&quot;&quot;</span>;};</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="comment">// overloaded operator ++</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keywordtype">void</span> operator++()</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                this-&gt;next();</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    };</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="comment">// logging object</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classlib__aux_1_1myLog.html">  132</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classlib__aux_1_1myLog.html">myLog</a></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    {</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            std::string log_file_nm;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            std::ofstream log_file;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="comment">// object functions</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            std::string get_log_file_nm()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;log_file_nm;};</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <span class="keywordtype">void</span> write(std::string msg);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <span class="comment">// object constructors</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <a class="code hl_class" href="classlib__aux_1_1myLog.html">myLog</a>(<span class="keyword">const</span> std::string&amp; log_file_nm, <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; clear_file = <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="comment">// object destructor</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <a class="code hl_class" href="classlib__aux_1_1myLog.html">~myLog</a>();</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    };</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classlib__aux_1_1myProgressBar.html#a6d67a69e0ec8f713b106de2c364d8f13">  111</a></span>            <a class="code hl_function" href="classlib__aux_1_1myProgressBar.html#a6d67a69e0ec8f713b106de2c364d8f13">myProgressBar</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> cycles_no){this-&gt;cycles_no = cycles_no; this-&gt;cycle = 0; this-&gt;progress = 0; this-&gt;progress_bar_len = 40; this-&gt;msg = <span class="stringliteral">&quot;&quot;</span>;};</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classlib__aux_1_1myProgressBar.html#a6ba8ea5be9097270f659192da551f8c1">  117</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classlib__aux_1_1myProgressBar.html#a6ba8ea5be9097270f659192da551f8c1">operator++</a>()</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                this-&gt;<a class="code hl_function" href="classlib__aux_1_1myProgressBar.html#ac86aca8b47046517d0cee4846171496b">next</a>();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    };</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classlib__aux_1_1myLog.html">  127</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classlib__aux_1_1myLog.html">myLog</a></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            std::string log_file_nm;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            std::ofstream log_file;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classlib__aux_1_1myLog.html#af8dfd774f917d83feb78ce9063983fbb">  138</a></span>            std::string <a class="code hl_function" href="classlib__aux_1_1myLog.html#af8dfd774f917d83feb78ce9063983fbb">get_log_file_nm</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;log_file_nm;};</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            <span class="keywordtype">void</span> write(std::string msg);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <a class="code hl_function" href="classlib__aux_1_1myLog.html#aec5d0167ed3243a952ce4c3d6c4bd5c7">myLog</a>(<span class="keyword">const</span> std::string&amp; log_file_nm, <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; clear_file = <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>}</div>
-<div class="ttc" id="aclasslib__aux_1_1myLog_html"><div class="ttname"><a href="classlib__aux_1_1myLog.html">lib_aux::myLog</a></div><div class="ttdef"><b>Definition:</b> lib_aux.h:133</div></div>
-<div class="ttc" id="aclasslib__aux_1_1myProgressBar_html"><div class="ttname"><a href="classlib__aux_1_1myProgressBar.html">lib_aux::myProgressBar</a></div><div class="ttdef"><b>Definition:</b> lib_aux.h:108</div></div>
-<div class="ttc" id="astructlib__aux_1_1coordinates_html"><div class="ttname"><a href="structlib__aux_1_1coordinates.html">lib_aux::coordinates</a></div><div class="ttdef"><b>Definition:</b> lib_aux.h:86</div></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <a class="code hl_function" href="classlib__aux_1_1myLog.html#ab8284727d0ff4c1555c8cb23a8adfac1">~myLog</a>();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    };</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>}</div>
+<div class="ttc" id="aclasslib__aux_1_1myLog_html"><div class="ttname"><a href="classlib__aux_1_1myLog.html">lib_aux::myLog</a></div><div class="ttdoc">Logging object that stores messages into a text file.</div><div class="ttdef"><b>Definition:</b> lib_aux.h:128</div></div>
+<div class="ttc" id="aclasslib__aux_1_1myLog_html_ab8284727d0ff4c1555c8cb23a8adfac1"><div class="ttname"><a href="classlib__aux_1_1myLog.html#ab8284727d0ff4c1555c8cb23a8adfac1">lib_aux::myLog::~myLog</a></div><div class="ttdeci">~myLog()</div><div class="ttdoc">Destroy the myLog object.</div><div class="ttdef"><b>Definition:</b> lib_aux.cpp:169</div></div>
+<div class="ttc" id="aclasslib__aux_1_1myLog_html_aec5d0167ed3243a952ce4c3d6c4bd5c7"><div class="ttname"><a href="classlib__aux_1_1myLog.html#aec5d0167ed3243a952ce4c3d6c4bd5c7">lib_aux::myLog::myLog</a></div><div class="ttdeci">myLog(const std::string &amp;log_file_nm, const bool &amp;clear_file=true)</div><div class="ttdoc">Construct a new myLog object.</div><div class="ttdef"><b>Definition:</b> lib_aux.cpp:152</div></div>
+<div class="ttc" id="aclasslib__aux_1_1myLog_html_af8dfd774f917d83feb78ce9063983fbb"><div class="ttname"><a href="classlib__aux_1_1myLog.html#af8dfd774f917d83feb78ce9063983fbb">lib_aux::myLog::get_log_file_nm</a></div><div class="ttdeci">std::string get_log_file_nm() const</div><div class="ttdoc">Get the logging file name.</div><div class="ttdef"><b>Definition:</b> lib_aux.h:138</div></div>
+<div class="ttc" id="aclasslib__aux_1_1myProgressBar_html"><div class="ttname"><a href="classlib__aux_1_1myProgressBar.html">lib_aux::myProgressBar</a></div><div class="ttdoc">Progress bar object.</div><div class="ttdef"><b>Definition:</b> lib_aux.h:77</div></div>
+<div class="ttc" id="aclasslib__aux_1_1myProgressBar_html_a6ba8ea5be9097270f659192da551f8c1"><div class="ttname"><a href="classlib__aux_1_1myProgressBar.html#a6ba8ea5be9097270f659192da551f8c1">lib_aux::myProgressBar::operator++</a></div><div class="ttdeci">void operator++()</div><div class="ttdoc">Overload ++ operator with next() function.</div><div class="ttdef"><b>Definition:</b> lib_aux.h:117</div></div>
+<div class="ttc" id="aclasslib__aux_1_1myProgressBar_html_a6d67a69e0ec8f713b106de2c364d8f13"><div class="ttname"><a href="classlib__aux_1_1myProgressBar.html#a6d67a69e0ec8f713b106de2c364d8f13">lib_aux::myProgressBar::myProgressBar</a></div><div class="ttdeci">myProgressBar(unsigned long cycles_no)</div><div class="ttdoc">Construct a new myProgressBar object.</div><div class="ttdef"><b>Definition:</b> lib_aux.h:111</div></div>
+<div class="ttc" id="aclasslib__aux_1_1myProgressBar_html_a92508a00aab5ab4de066bcd56b369a25"><div class="ttname"><a href="classlib__aux_1_1myProgressBar.html#a92508a00aab5ab4de066bcd56b369a25">lib_aux::myProgressBar::get_cycles_no</a></div><div class="ttdeci">unsigned long get_cycles_no() const</div><div class="ttdoc">Get number of cycles to tracked by the progress bar.</div><div class="ttdef"><b>Definition:</b> lib_aux.h:91</div></div>
+<div class="ttc" id="aclasslib__aux_1_1myProgressBar_html_ab3f1fe2075340b5907435f05eca4a013"><div class="ttname"><a href="classlib__aux_1_1myProgressBar.html#ab3f1fe2075340b5907435f05eca4a013">lib_aux::myProgressBar::get_msg</a></div><div class="ttdeci">std::string get_msg() const</div><div class="ttdoc">Get progress bar string, i.e. [##### ].</div><div class="ttdef"><b>Definition:</b> lib_aux.h:98</div></div>
+<div class="ttc" id="aclasslib__aux_1_1myProgressBar_html_ac86aca8b47046517d0cee4846171496b"><div class="ttname"><a href="classlib__aux_1_1myProgressBar.html#ac86aca8b47046517d0cee4846171496b">lib_aux::myProgressBar::next</a></div><div class="ttdeci">void next()</div><div class="ttdoc">Move to the next cycle.</div><div class="ttdef"><b>Definition:</b> lib_aux.cpp:116</div></div>
+<div class="ttc" id="alib__aux_8h_html_a17b2bc6e2de166c99b4994a2de04aa37"><div class="ttname"><a href="lib__aux_8h.html#a17b2bc6e2de166c99b4994a2de04aa37">lib_aux::get_datestamp</a></div><div class="ttdeci">std::string get_datestamp(const unsigned short &amp;format_type=0)</div><div class="ttdoc">Return datestamp.</div><div class="ttdef"><b>Definition:</b> lib_aux.cpp:54</div></div>
+<div class="ttc" id="alib__aux_8h_html_a508c9f524fb598db58ff391e75c38cd7"><div class="ttname"><a href="lib__aux_8h.html#a508c9f524fb598db58ff391e75c38cd7">lib_aux::tic</a></div><div class="ttdeci">void tic()</div><div class="ttdoc">Implementation of tic() function. Functions tic() and toc() could be used to measure code runtime.</div><div class="ttdef"><b>Definition:</b> lib_aux.cpp:17</div></div>
+<div class="ttc" id="alib__aux_8h_html_a8472c98b686451d4c625d9f87c413797"><div class="ttname"><a href="lib__aux_8h.html#a8472c98b686451d4c625d9f87c413797">lib_aux::toc</a></div><div class="ttdeci">double toc()</div><div class="ttdoc">Implementation of toc() function. Functions tic() and toc() could be used to measure code runtime.</div><div class="ttdef"><b>Definition:</b> lib_aux.cpp:23</div></div>
+<div class="ttc" id="alib__aux_8h_html_abcc168da46ce25eb72d05e46588d483d"><div class="ttname"><a href="lib__aux_8h.html#abcc168da46ce25eb72d05e46588d483d">lib_aux::split_vector</a></div><div class="ttdeci">std::vector&lt; coordinates&lt; int &gt; &gt; split_vector(const std::size_t &amp;vector_length, const int &amp;splits_no)</div><div class="ttdoc">Split vector into several vectors of approximately same size. The function returns indices which defi...</div><div class="ttdef"><b>Definition:</b> lib_aux.cpp:78</div></div>
+<div class="ttc" id="alib__aux_8h_html_aff3204699d494bca21e99f9f5c73c1ab"><div class="ttname"><a href="lib__aux_8h.html#aff3204699d494bca21e99f9f5c73c1ab">lib_aux::get_timestamp</a></div><div class="ttdeci">std::string get_timestamp(const unsigned short &amp;format_type=0)</div><div class="ttdoc">Return timestamp.</div><div class="ttdef"><b>Definition:</b> lib_aux.cpp:30</div></div>
+<div class="ttc" id="astructlib__aux_1_1coordinates_html"><div class="ttname"><a href="structlib__aux_1_1coordinates.html">lib_aux::coordinates</a></div><div class="ttdoc">Template structure for [x, y] co-ordinate.</div><div class="ttdef"><b>Definition:</b> lib_aux.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -13,6 +13,8 @@
 
 #include <string>
 #include <vector>
+#include <numeric>  
+#include <algorithm>
 
 namespace lib_math
 {
@@ -83,6 +85,52 @@ namespace lib_math
      * @return std::vector<double> Values of inverse standardized normal distribution at the individual quantiles.
      */
     std::vector<double> norm_inv(const std::vector<double>& x);
+
+    /**
+     * @brief Return original element indicies of a sorted vector.
+     * 
+     * @tparam T Data type of vector element.
+     * @param v Vector to be sorted.
+     * @return std::vector<std::size_t> Vector of original element indicies of a sorted vector.
+     */
+    template<typename T>
+    std::vector<std::size_t> sort_index(const std::vector<T>& v)
+    {
+        // initialize original index locations
+        std::vector<size_t> idx(v.size());
+        std::iota(idx.begin(), idx.end(), 0);
+
+        // sort indexes based on comparing values in v
+        // using std::stable_sort instead of std::sort
+        // to avoid unnecessary index re-orderings
+        // when v contains elements of equal values 
+        std::stable_sort(idx.begin(), idx.end(), [&v](size_t i1, size_t i2) {return v[i1] < v[i2];});
+
+        // return sorted indicies
+        return idx;
+    }
+
+    /**
+     * @brief Return sorted vector.
+     * 
+     * @tparam T Data type of vector element.
+     * @param v Vector to be sorted.
+     * @return std::vector<T> Sorted vector.
+     */
+    template<typename T>
+    std::vector<T> sort_vector(const std::vector<T>& v)
+    {
+        // get sorted element indicies
+        std::vector<size_t> i = lib_math::sort_index(v);
+
+        // sort the vector elements
+        std::vector<T> v_sorted;
+        for (std::size_t idx = 0; idx < i.size(); idx++)
+            v_sorted.push_back(v[i[idx]]);
+
+        // return sorted vector
+        return v_sorted;
+    }
 
     /** 
      * @brief Data structure holding results of Newton-Raphson method.

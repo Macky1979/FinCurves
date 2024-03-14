@@ -1,108 +1,13 @@
-/*
-#include <iostream>
-#include <fstream>
-#include <string>
-#include "lib_file.h"
-
-int main()
-{
-    // create a folder ~/test_cpp
-    {
-        std::cout << "CREATE A FOLDER /home/macky/test_cpp" << std::endl;
-        std::string path_nm = "/home/macky/test_cpp";
-        if (lib_file::create_folder(path_nm))
-            std::cout << "Folder " + path_nm + " created!" << std::endl;
-        else
-            std::cout << "Could not create folder " + path_nm + "!" << std::endl;
-        std::cout << '\n' << std::endl;
-    }
-
-    // check existence of a folder ~/test_cpp
-    {
-        std::cout << "CHECK EXISTANCE OF /home/macky/test_cpp" << std::endl;
-        std::string path_nm = "/home/macky/test_cpp";
-        if (lib_file::path_exists(path_nm))
-            std::cout << "Folder " + path_nm + " exists" << std::endl;
-        else
-            std::cout << "Folder " + path_nm + " does not exist" << std::endl;
-        std::cout << '\n' << std::endl;
-    }
- 
-    // get list of files in folder
-    {
-        std::cout << "GET LIST OF FILES IN FOLDER /home/macky/test_cpp" << std::endl;
-        std::string path_nm = "/home/macky/test_cpp";
-        
-        std::ofstream f1(path_nm + "/file_1.txt");
-        f1 << "This is the first file!\n"; 
-        f1.close();
-
-        std::ofstream f2(path_nm + "/file_2.txt");
-        f2 << "This is the second file!\n"; 
-        f2.close();
-
-        std::ofstream f3(path_nm + "/file_3.txt");
-        f3 << "This is the third file!\n"; 
-        f3.close();
-
-        std::vector<std::string> file_nms = lib_file::get_file_list(path_nm);
-        for (unsigned short idx = 0; idx < file_nms.size(); idx++)
-            std::cout << file_nms[idx] << std::endl;
-
-        std::cout << '\n' << std::endl;
-    }
-
-    // delete a single file
-    {
-        std::cout << "DELETE A SINGLE FILE IN FOLDER /home/macky/test_cpp" << std::endl;
-        std::string path_nm = "/home/macky/test_cpp/file_1.txt";
-        if (lib_file::delete_path (path_nm))
-            std::cout << "File " + path_nm + " deleted!" << std::endl;
-        else
-            std::cout << "Could not delete file " + path_nm + "!" << std::endl;
-        
-        std::cout << '\n' << std::endl;
-    }
-
-    // delete files stored in a vector
-    {
-        std::cout << "DELETE FILES IN FOLDER /home/macky/test_cpp" << std::endl;
-        std::string path_nm = "/home/macky/test_cpp/file_2.txt";
-        std::vector<std::string> path_nms = {path_nm};
-        unsigned short deleted_files_no = lib_file::delete_paths(path_nms);
-        std::cout << std::to_string(deleted_files_no) + " files deleted!" << std::endl;
-
-        std::cout << '\n' << std::endl;  
-    }
-
-    // delete all files in folder
-    {
-        std::cout << "DELETE ALL FILES IN FOLDER /home/macky/test_cpp" << std::endl;
-        std::string path_nm = "/home/macky/test_cpp";
-        unsigned short deleted_files_no = lib_file::delete_all_files(path_nm);
-        std::cout << std::to_string(deleted_files_no) + " files deleted!" << std::endl;
-        
-        std::cout << '\n' << std::endl;
-    }
-
-    // delete folder
-    {
-        std::cout << "DELETE FOLDER /home/macky/test_cpp" << std::endl;
-        std::string path_nm = "/home/macky/test_cpp";
-        if (lib_file::create_folder(path_nm))
-            std::cout << "Folder " + path_nm + " deleted!";
-        else
-            std::cout << "Could not delete folder " + path_nm + "!";
-
-        std::cout << '\n' << std::endl;
-    }
-
-    // everything OK
-    return 0;
-}
-*/
-
-
+/** \example lib_file_examples.h
+ * @file lib_file.h
+ * @author Michal Mackanic
+ * @brief  Files and folders C++ functions.
+ * @version 1.0
+ * @date 2024-02-16
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 
 #pragma once
 
@@ -111,21 +16,54 @@ int main()
 
 namespace lib_file
 {
-    // check file or path existence
+    /**
+     * @brief Check path existence.
+     * 
+     * @param path_nm Path to be checked.
+     * @return true Path exists.
+     * @return false Path does not exist.
+     */
     bool path_exists (const std::string& path_nm);
 
-    // get vector of files in a folder
+    /**
+     * @brief Get vector of files in a folder.
+     * 
+     * @param path_nm Path to the folder.
+     * @return std::vector<std::string> Vector of file names in the folder.
+     */
     std::vector<std::string> get_file_list(const std::string& path_nm);
 
-    // delete file or path
+    /**
+     * @brief Delete file or folder defined through a path.
+     * 
+     * @param path_nm Path which defines file or folder.
+     * @return true File or folder successfully deleted.
+     * @return false Problems with file or folder deletion.
+     */
     bool delete_path (const std::string& path_nm);
 
-    // delete files
+    /**
+     * @brief Delete files or folders defined through a vector of paths.
+     * 
+     * @param path_nms Vector of paths defining files or folders to be deleted.
+     * @return unsigned short Number of deleted files or folders.
+     */
     unsigned short delete_paths (const std::vector<std::string>& path_nms);
 
-    // delete all files in path
+    /**
+     * @brief Delete all files in a folder defined through user specified path.
+     * 
+     * @param path_nm Path defining folder in which all files are to be deleted.
+     * @return unsigned short Number of deleted files.
+     */
     unsigned short delete_all_files (const std::string& path_nm);
 
-    // create folder
+    /**
+     * @brief Create a folder specified through a path.
+     * 
+     * @param path_nm Path defining folder to be created.
+     * @return true Folder successfully created.
+     * @return false Folder was not created.
+     */
     bool create_folder(const std::string& path_nm);
 }

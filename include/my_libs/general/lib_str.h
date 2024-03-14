@@ -1,119 +1,13 @@
-/*
-#include <iostream>
-#include <string>
-#include <vector>
-#include "lib_str.h"
-
-int main()
-{
-    // remove character from a string
-    {
-        std::cout << "REMOVE CHARACTER FROM A STRING" << std::endl;
-        std::string ahoj = "A  h o   j";
-        std::cout << ahoj << std::endl;
-        lib_str::remove_char(ahoj, ' ');
-        std::cout << ahoj << std::endl;
-        std::cout << '\n' << std::endl;
-    }
-    // remove character from a vector of strings
-    {
-        std::cout << "REMOVE CHARACTER FROM A VECTOR OF STRINGS" << std::endl;
-        std::vector<std::string> ahoj = {"A  h o   j", " Na z da   r"};
-        for (int i = 0; i < ahoj.size(); i++)
-            std::cout << ahoj[i] << std::endl;
-        lib_str::remove_char(ahoj, ' ');
-         for (int i = 0; i < ahoj.size(); i++)
-            std::cout << ahoj[i] << std::endl;       
-        std::cout << '\n' << std::endl;
-    }
-
-    // split string
-    {
-        std::cout << "SPLIT STRING" << std::endl;
-        std::string string_to_split = "a,h,o,j";
-        std::vector<std::string> splits = lib_str::split_string(string_to_split, ',');
-        for (int i = 0; i < splits.size(); i++)
-            std::cout << splits[i] << std::endl;
-        std::cout << '\n' << std::endl;
-    }
-
-    // leading zeros
-    {
-        std::cout << "LEADING ZEROS" << std::endl;
-        unsigned short number = 10;
-
-        std::cout << lib_str::to_string(number, 2) << std::endl;
-        std::cout << lib_str::to_string(number, 3) << std::endl;
-
-        std::cout << '\n' << std::endl;
-    }
-
-    // cast to lower and upper case
-    {
-        std::cout << "CAST TO UPPER AND LOWER CASE" << std::endl;
-
-        std::string x = "hello!";
-        std::string y = "BYE!";
-
-        std::cout << x << " -> " << lib_str::to_upper(x) << std::endl;
-        std::cout << y << " -> " << lib_str::to_lower(y) << std::endl;
-
-        std::cout << '\n' << std::endl;
-    }
- 
-    // repeat character
-    {
-        std::cout << "REPEATING CHARACTER" << std::endl;
-
-        std::string input_str = "^-";
-        unsigned short repeat_no = 5;
-        std::string output_str = lib_str::repeat_char(input_str, repeat_no);
-        std::cout << "input string:  " + input_str << std::endl;
-        std::cout << "output string: " + output_str << std::endl;
-
-        std::cout << '\n' << std::endl;
-    }
-
-    // leading and trailing character
-    {
-        std::cout << "LEADING AND TRAILING CHARACTER" << std::endl;
-
-        std::string number = "123";
-        std::size_t str_len = 6;
-        char add_char = '0';
-
-        std::cout << number << " -> " << lib_str::add_leading_char(number, str_len, add_char) << std::endl;
-        std::cout << number << " -> " << lib_str::add_trailing_char(number, str_len, add_char) << std::endl;
-
-        std::cout << '\n' << std::endl;
-    }
-
-    // reverse string
-    {
-        std::cout << "REVERSE STRING" << std::endl;
-        std::string input_str = "Ahoj!";
-        std::string reversed_str = lib_str::reverse_str(input_str);
-        std::cout << input_str << " -> " << reversed_str << std::endl;
-        std::cout << '\n' << std::endl;
-    }
-
-    // format number
-    {
-        std::cout << "FORMAT NUMBER" << std::endl;
-        double num = 123545.598;
-        bool ths_sep = true;
-        std::size_t dec_places = 2;
-        bool round = true;
-        std::string formated_num = lib_str::format_num(num, ths_sep, dec_places, round);
-
-        std::cout << std::to_string(num) << " -> " << formated_num << std::endl;
-        std::cout << '\n' << std::endl;
-    }
-
-    // everything OK
-    return 0;
-}
-*/
+/** \example lib_str_examples.h
+ * @file lib_str.h
+ * @author Michal Mackanic
+ * @brief  String related C++ functions.
+ * @version 1.0
+ * @date 2024-02-16
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 
 #pragma once
 
@@ -123,42 +17,118 @@ int main()
 
 namespace lib_str
 {
-    // remove selected character from the string
+    /**
+     * @brief Remove character from string.
+     * 
+     * @param str String from which the character is to be removed.
+     * @param char_to_remove Character to be removed.
+     */
     void remove_char(std::string& str, const char& char_to_remove = ' ');
+
+    /**
+     * @brief Remove character from strings in vector.
+     * 
+     * @param str Vector of strings from which the character is to be removed.
+     * @param char_to_remove Character to be removed.
+     */
     void remove_char(std::vector<std::string>& str, const char& char_to_remove = ' ');
 
-    // split string
+    /**
+     * @brief Split string with a character used as a separator.
+     * 
+     * @param string_to_split String to be split.
+     * @param sep Character to be used as a separator.
+     * @return std::vector<std::string> Vector consisting of the split part of the original string.
+     */
     std::vector<std::string> split_string(const std::string& string_to_split, const char& sep);
 
     // convert unsigned short to string with leading zeros
+    /**
+     * @brief Convert unsigned short to a string with leading zeros.
+     * 
+     * @param number Number to be converted into a string with leading zeros.
+     * @param length Length of the resulting string. Leading zeros are used to achieve a desired string length.
+     * @return std::string String consisting of the original number and possibly leading zeros.
+     */
     std::string to_string(const unsigned short& number, const unsigned short& length);
 
-    // convert string to an upper case
+    /**
+     * @brief Convert string to upper case.
+     * 
+     * @param input_str String to be converted to upper case.
+     * @return std::string Converted string.
+     */
     std::string to_upper(const std::string& input_str);
 
-    // convert string to an upper case
+    /**
+     * @brief Convert string to lower case.
+     * 
+     * @param input_str String to be converted to lower case.
+     * @return std::string Converted string.
+     */
     std::string to_lower(const std::string& input_str);
 
-    // repeat character
-    std::string repeat_char(const std::string& input_str, const unsigned short& repeat_no = 1);
+    /**
+     * @brief Repeate string.
+     * 
+     * @param input_str String to be repeated.
+     * @param repeat_no Number of repetitions.
+     * @return std::string Resulting string.
+     */
+    std::string repeate_char(const std::string& input_str, const unsigned short& repeat_no = 1);
 
-    // add leading character
+    /**
+     * @brief Add leading character to exisitng string to achieve a desired length.
+     * 
+     * @param input_str String to which leading charater should be added.
+     * @param str_len Desired length of the resulting string.
+     * @param add_char Leading character.
+     * @return std::string Resulting string.
+     */
     std::string add_leading_char(const std::string& input_str, const std::size_t& str_len, const char& add_char = ' ');
 
-    // add trailing character
+    /**
+     * @brief Add trailing character to exisitng string to achieve a desired length.
+     * 
+     * @param input_str String to which trailing charater should be added.
+     * @param str_len Desired length of the resulting string.
+     * @param add_char Trailing character.
+     * @return std::string Resulting string.
+     */
     std::string add_trailing_char(const std::string& input_str, const std::size_t& str_len, const char& add_char = ' ');
 
-    // reverse string
+    /**
+     * @brief Reverse string.
+     * 
+     * @param input_str Original string.
+     * @return std::string Reversed string.
+     */
     std::string reverse_str(const std::string& input_str);
 
-    // auxiliary function to format the number
+    /**
+     * @brief Auxiliary function that formats number expressed as a string.
+     * 
+     * @param num_str Number converted into a string.
+     * @param ths_sep true => Use thousand separator. \n false => Do not user thousand separator.
+     * @param dec_places Number of decimal places to display.
+     * @return std::string Resulting string.
+     */
     std::string format_num(std::string& num_str, const bool& ths_sep, const std::size_t& dec_places);
 
-    // format number
+    /**
+     * @brief Convert number into a string and format it.
+     * 
+     * @tparam T Numerial type of the number to be converted into string and formated.
+     * @param input_num Number to be converted into string and formated.
+     * @param ths_sep true => Use thousand separator. \n false => Do not user thousand separator.
+     * @param dec_places Number of decimal places to display.
+     * @param round true => Round the number to required number of decimal places before its convertion to string. \n Do not round the number before its conversion to string.
+     * @return std::string Resulting string.
+     */
     template <class T>
     std::string format_num(const T& input_num, const bool& ths_sep = true, const std::size_t& dec_places = 2, const bool& round = true)
     {
-        // convert number to string
+        // convert number to stringNumber of decimal places to display.
         std::string num;
         if (round)
         {
@@ -168,7 +138,7 @@ namespace lib_str
         }
         else
             num = std::to_string(input_num);
-        
+
         // format the number
         return format_num(num, ths_sep, dec_places);
     };

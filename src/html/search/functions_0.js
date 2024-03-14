@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['df_5fto_5fzr_0',['df_to_zr',['../fin__curves_8h.html#a05a3a716cc238737a6493bea18b60360',1,'fin_curves::df_to_zr(const double &amp;df, const double &amp;yr_frac, const unsigned short type=0)'],['../fin__curves_8h.html#acb11ee3db3959b027648b718ed4975b4',1,'fin_curves::df_to_zr(const std::vector&lt; double &gt; &amp;dfs, const std::vector&lt; double &gt; &amp;yr_frac, const unsigned short type=0)']]]
+  ['add_0',['add',['../classfin__curves_1_1myZeroRate.html#ab78cbd3b16ed9c058db8f9fbd03250da',1,'fin_curves::myZeroRate']]]
 ];
