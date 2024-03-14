@@ -13,7 +13,7 @@ int main()
     bool quotes = false;  // no quotes used in .csv file to "enclose" text
     fin_curves::myZeroRate eur_ri_3m_fo = fin_curves::myZeroRate(path, crv_nm, sep, quotes);
 
-    fin_curves::interp_def interp_def = eur_ri_3m_fo.get_def();
+    fin_curves::zr_interp_def interp_def = eur_ri_3m_fo.get_def();
     std::cout << "   " << "curve name: " << eur_ri_3m_fo.get_crv_nm() << std::endl;
     std::cout << "   " << "currency: " << interp_def.ccy << std::endl;
     std::cout << "   " << "day-count method: " << interp_def.zr_dcm << std::endl;
@@ -46,12 +46,22 @@ int main()
 
     std::vector<double> yr_fracs = {0.0931507, 0.2575342, 0.5068493, 0.7534247, 1.0054795, 2.0109589, 3.0082192, 4.0082192, 5.0082192};
     std::vector<double> zrs = {-0.0069821, -0.0034579, -0.0003441, 0.0022772, 0.0047364, 0.0106236, 0.0127052, 0.0139706, 0.0149029};
-    eur_ri_3m_fo.load(yr_fracs, zrs);
+    eur_ri_3m_fo.load(date, yr_fracs, zrs, path);
 
+    // zero rate and discount factor
+    std::cout << "Calculating zero rate and discount factor..." << std::endl;
     yr_frac = 2.0;
     zr = eur_ri_3m_fo.get_zr(yr_frac);
     df = eur_ri_3m_fo.get_df(yr_frac);
     std::cout << "   year fraction: " << std::to_string(yr_frac) << " - zero rate: " << std::to_string(zr) << ", discount factor: " << std::to_string(df) << std::endl;
+
+    // store interpolation definition into a .csv file
+    std::cout << "Saving interpolation definition into a .csv file..." << std::endl;
+    eur_ri_3m_fo.save_def();
+
+    // store data into a .csv file
+    std::cout << "Saving data into a .csv file..." << std::endl;
+    eur_ri_3m_fo.save_data();
 
     std::cout << '\n' << std::endl;
 

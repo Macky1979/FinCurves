@@ -1,4 +1,14 @@
-/*
+/**
+ * @file yaml_example.h
+ * @author Michal Mackanic
+ * @brief  Illustrative example for YAML library.
+ * @version 1.0
+ * @date 2024-02-25
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include <yaml-cpp/yaml.h>
 #include <iostream>
 #include <string>
@@ -42,4 +52,3 @@ int main ()
     // everything is OK
     return 0; 
 }
-*/

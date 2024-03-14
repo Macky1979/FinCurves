@@ -1,136 +1,25 @@
 \hypertarget{lib__file_8h_source}{}\doxysection{lib\+\_\+file.\+h}
-
+\mbox{\hyperlink{lib__file_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{\#include <iostream>}}
-\DoxyCodeLine{3 \textcolor{comment}{\#include <fstream>}}
-\DoxyCodeLine{4 \textcolor{comment}{\#include <string>}}
-\DoxyCodeLine{5 \textcolor{comment}{\#include "{}lib\_file.h"{}}}
-\DoxyCodeLine{6 \textcolor{comment}{}}
-\DoxyCodeLine{7 \textcolor{comment}{int main()}}
-\DoxyCodeLine{8 \textcolor{comment}{\{}}
-\DoxyCodeLine{9 \textcolor{comment}{    // create a folder \string~/test\_cpp}}
-\DoxyCodeLine{10 \textcolor{comment}{    \{}}
-\DoxyCodeLine{11 \textcolor{comment}{        std::cout << "{}CREATE A FOLDER /home/macky/test\_cpp"{} << std::endl;}}
-\DoxyCodeLine{12 \textcolor{comment}{        std::string path\_nm = "{}/home/macky/test\_cpp"{};}}
-\DoxyCodeLine{13 \textcolor{comment}{        if (lib\_file::create\_folder(path\_nm))}}
-\DoxyCodeLine{14 \textcolor{comment}{            std::cout << "{}Folder "{} + path\_nm + "{} created!"{} << std::endl;}}
-\DoxyCodeLine{15 \textcolor{comment}{        else}}
-\DoxyCodeLine{16 \textcolor{comment}{            std::cout << "{}Could not create folder "{} + path\_nm + "{}!"{} << std::endl;}}
-\DoxyCodeLine{17 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{18 \textcolor{comment}{    \}}}
-\DoxyCodeLine{19 \textcolor{comment}{}}
-\DoxyCodeLine{20 \textcolor{comment}{    // check existence of a folder \string~/test\_cpp}}
-\DoxyCodeLine{21 \textcolor{comment}{    \{}}
-\DoxyCodeLine{22 \textcolor{comment}{        std::cout << "{}CHECK EXISTANCE OF /home/macky/test\_cpp"{} << std::endl;}}
-\DoxyCodeLine{23 \textcolor{comment}{        std::string path\_nm = "{}/home/macky/test\_cpp"{};}}
-\DoxyCodeLine{24 \textcolor{comment}{        if (lib\_file::path\_exists(path\_nm))}}
-\DoxyCodeLine{25 \textcolor{comment}{            std::cout << "{}Folder "{} + path\_nm + "{} exists"{} << std::endl;}}
-\DoxyCodeLine{26 \textcolor{comment}{        else}}
-\DoxyCodeLine{27 \textcolor{comment}{            std::cout << "{}Folder "{} + path\_nm + "{} does not exist"{} << std::endl;}}
-\DoxyCodeLine{28 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{29 \textcolor{comment}{    \}}}
-\DoxyCodeLine{30 \textcolor{comment}{ }}
-\DoxyCodeLine{31 \textcolor{comment}{    // get list of files in folder}}
-\DoxyCodeLine{32 \textcolor{comment}{    \{}}
-\DoxyCodeLine{33 \textcolor{comment}{        std::cout << "{}GET LIST OF FILES IN FOLDER /home/macky/test\_cpp"{} << std::endl;}}
-\DoxyCodeLine{34 \textcolor{comment}{        std::string path\_nm = "{}/home/macky/test\_cpp"{};}}
-\DoxyCodeLine{35 \textcolor{comment}{        }}
-\DoxyCodeLine{36 \textcolor{comment}{        std::ofstream f1(path\_nm + "{}/file\_1.txt"{});}}
-\DoxyCodeLine{37 \textcolor{comment}{        f1 << "{}This is the first file!\(\backslash\)n"{}; }}
-\DoxyCodeLine{38 \textcolor{comment}{        f1.close();}}
-\DoxyCodeLine{39 \textcolor{comment}{}}
-\DoxyCodeLine{40 \textcolor{comment}{        std::ofstream f2(path\_nm + "{}/file\_2.txt"{});}}
-\DoxyCodeLine{41 \textcolor{comment}{        f2 << "{}This is the second file!\(\backslash\)n"{}; }}
-\DoxyCodeLine{42 \textcolor{comment}{        f2.close();}}
-\DoxyCodeLine{43 \textcolor{comment}{}}
-\DoxyCodeLine{44 \textcolor{comment}{        std::ofstream f3(path\_nm + "{}/file\_3.txt"{});}}
-\DoxyCodeLine{45 \textcolor{comment}{        f3 << "{}This is the third file!\(\backslash\)n"{}; }}
-\DoxyCodeLine{46 \textcolor{comment}{        f3.close();}}
-\DoxyCodeLine{47 \textcolor{comment}{}}
-\DoxyCodeLine{48 \textcolor{comment}{        std::vector<std::string> file\_nms = lib\_file::get\_file\_list(path\_nm);}}
-\DoxyCodeLine{49 \textcolor{comment}{        for (unsigned short idx = 0; idx < file\_nms.size(); idx++)}}
-\DoxyCodeLine{50 \textcolor{comment}{            std::cout << file\_nms[idx] << std::endl;}}
-\DoxyCodeLine{51 \textcolor{comment}{}}
-\DoxyCodeLine{52 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{53 \textcolor{comment}{    \}}}
-\DoxyCodeLine{54 \textcolor{comment}{}}
-\DoxyCodeLine{55 \textcolor{comment}{    // delete a single file}}
-\DoxyCodeLine{56 \textcolor{comment}{    \{}}
-\DoxyCodeLine{57 \textcolor{comment}{        std::cout << "{}DELETE A SINGLE FILE IN FOLDER /home/macky/test\_cpp"{} << std::endl;}}
-\DoxyCodeLine{58 \textcolor{comment}{        std::string path\_nm = "{}/home/macky/test\_cpp/file\_1.txt"{};}}
-\DoxyCodeLine{59 \textcolor{comment}{        if (lib\_file::delete\_path (path\_nm))}}
-\DoxyCodeLine{60 \textcolor{comment}{            std::cout << "{}File "{} + path\_nm + "{} deleted!"{} << std::endl;}}
-\DoxyCodeLine{61 \textcolor{comment}{        else}}
-\DoxyCodeLine{62 \textcolor{comment}{            std::cout << "{}Could not delete file "{} + path\_nm + "{}!"{} << std::endl;}}
-\DoxyCodeLine{63 \textcolor{comment}{        }}
-\DoxyCodeLine{64 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{65 \textcolor{comment}{    \}}}
-\DoxyCodeLine{66 \textcolor{comment}{}}
-\DoxyCodeLine{67 \textcolor{comment}{    // delete files stored in a vector}}
-\DoxyCodeLine{68 \textcolor{comment}{    \{}}
-\DoxyCodeLine{69 \textcolor{comment}{        std::cout << "{}DELETE FILES IN FOLDER /home/macky/test\_cpp"{} << std::endl;}}
-\DoxyCodeLine{70 \textcolor{comment}{        std::string path\_nm = "{}/home/macky/test\_cpp/file\_2.txt"{};}}
-\DoxyCodeLine{71 \textcolor{comment}{        std::vector<std::string> path\_nms = \{path\_nm\};}}
-\DoxyCodeLine{72 \textcolor{comment}{        unsigned short deleted\_files\_no = lib\_file::delete\_paths(path\_nms);}}
-\DoxyCodeLine{73 \textcolor{comment}{        std::cout << std::to\_string(deleted\_files\_no) + "{} files deleted!"{} << std::endl;}}
-\DoxyCodeLine{74 \textcolor{comment}{}}
-\DoxyCodeLine{75 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;  }}
-\DoxyCodeLine{76 \textcolor{comment}{    \}}}
-\DoxyCodeLine{77 \textcolor{comment}{}}
-\DoxyCodeLine{78 \textcolor{comment}{    // delete all files in folder}}
-\DoxyCodeLine{79 \textcolor{comment}{    \{}}
-\DoxyCodeLine{80 \textcolor{comment}{        std::cout << "{}DELETE ALL FILES IN FOLDER /home/macky/test\_cpp"{} << std::endl;}}
-\DoxyCodeLine{81 \textcolor{comment}{        std::string path\_nm = "{}/home/macky/test\_cpp"{};}}
-\DoxyCodeLine{82 \textcolor{comment}{        unsigned short deleted\_files\_no = lib\_file::delete\_all\_files(path\_nm);}}
-\DoxyCodeLine{83 \textcolor{comment}{        std::cout << std::to\_string(deleted\_files\_no) + "{} files deleted!"{} << std::endl;}}
-\DoxyCodeLine{84 \textcolor{comment}{        }}
-\DoxyCodeLine{85 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{86 \textcolor{comment}{    \}}}
-\DoxyCodeLine{87 \textcolor{comment}{}}
-\DoxyCodeLine{88 \textcolor{comment}{    // delete folder}}
-\DoxyCodeLine{89 \textcolor{comment}{    \{}}
-\DoxyCodeLine{90 \textcolor{comment}{        std::cout << "{}DELETE FOLDER /home/macky/test\_cpp"{} << std::endl;}}
-\DoxyCodeLine{91 \textcolor{comment}{        std::string path\_nm = "{}/home/macky/test\_cpp"{};}}
-\DoxyCodeLine{92 \textcolor{comment}{        if (lib\_file::create\_folder(path\_nm))}}
-\DoxyCodeLine{93 \textcolor{comment}{            std::cout << "{}Folder "{} + path\_nm + "{} deleted!"{};}}
-\DoxyCodeLine{94 \textcolor{comment}{        else}}
-\DoxyCodeLine{95 \textcolor{comment}{            std::cout << "{}Could not delete folder "{} + path\_nm + "{}!"{};}}
-\DoxyCodeLine{96 \textcolor{comment}{}}
-\DoxyCodeLine{97 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{98 \textcolor{comment}{    \}}}
-\DoxyCodeLine{99 \textcolor{comment}{}}
-\DoxyCodeLine{100 \textcolor{comment}{    // everything OK}}
-\DoxyCodeLine{101 \textcolor{comment}{    return 0;}}
-\DoxyCodeLine{102 \textcolor{comment}{\}}}
-\DoxyCodeLine{103 \textcolor{comment}{*/}}
-\DoxyCodeLine{104 }
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106 }
-\DoxyCodeLine{107 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{108 }
-\DoxyCodeLine{109 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{110 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{112 \textcolor{keyword}{namespace }lib\_file}
-\DoxyCodeLine{113 \{}
-\DoxyCodeLine{114     \textcolor{comment}{// check file or path existence}}
-\DoxyCodeLine{115     \textcolor{keywordtype}{bool} path\_exists (\textcolor{keyword}{const} std::string\& path\_nm);}
-\DoxyCodeLine{116 }
-\DoxyCodeLine{117     \textcolor{comment}{// get vector of files in a folder}}
-\DoxyCodeLine{118     std::vector<std::string> get\_file\_list(\textcolor{keyword}{const} std::string\& path\_nm);}
-\DoxyCodeLine{119 }
-\DoxyCodeLine{120     \textcolor{comment}{// delete file or path}}
-\DoxyCodeLine{121     \textcolor{keywordtype}{bool} delete\_path (\textcolor{keyword}{const} std::string\& path\_nm);}
-\DoxyCodeLine{122 }
-\DoxyCodeLine{123     \textcolor{comment}{// delete files}}
-\DoxyCodeLine{124     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} delete\_paths (\textcolor{keyword}{const} std::vector<std::string>\& path\_nms);}
-\DoxyCodeLine{125 }
-\DoxyCodeLine{126     \textcolor{comment}{// delete all files in path}}
-\DoxyCodeLine{127     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} delete\_all\_files (\textcolor{keyword}{const} std::string\& path\_nm);}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129     \textcolor{comment}{// create folder}}
-\DoxyCodeLine{130     \textcolor{keywordtype}{bool} create\_folder(\textcolor{keyword}{const} std::string\& path\_nm);}
-\DoxyCodeLine{131 \}}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }lib\_file}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{26     \textcolor{keywordtype}{bool} \mbox{\hyperlink{lib__file_8h_a12dc5de17052a3800b676b38ab3780ec}{path\_exists}} (\textcolor{keyword}{const} std::string\& path\_nm);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{34     std::vector<std::string> \mbox{\hyperlink{lib__file_8h_a182a900014f599ad6c4bde29221296b4}{get\_file\_list}}(\textcolor{keyword}{const} std::string\& path\_nm);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{bool} \mbox{\hyperlink{lib__file_8h_ae8edb31e8f99347a6046ea59ae9c0572}{delete\_path}} (\textcolor{keyword}{const} std::string\& path\_nm);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{lib__file_8h_a74c7103c3297a45d84e09165d095cebb}{delete\_paths}} (\textcolor{keyword}{const} std::vector<std::string>\& path\_nms);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{lib__file_8h_a52f0a9ca1478b52c05431626a4d6583c}{delete\_all\_files}} (\textcolor{keyword}{const} std::string\& path\_nm);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{bool} \mbox{\hyperlink{lib__file_8h_a78edf323f62223f493b78ebf30d3def1}{create\_folder}}(\textcolor{keyword}{const} std::string\& path\_nm);}
+\DoxyCodeLine{69 \}}
 
 \end{DoxyCode}

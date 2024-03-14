@@ -1,65 +1,51 @@
-#include <iostream>
-#include "fin_curves.h"
+#include "lib_str.h"
+#include "fin_generators.h"
+#include "fin_depoinstr.h"
 
 int main()
 {
-    // test df_to_zr() functions
+    // create generator
+    std::string instrument_nm = "EUR_3M_MANUAL";
+    std::vector<std::string> instrument_nms = {instrument_nm};
+    fin_curves::myGenerators generators = fin_curves::myGenerators(instrument_nms);
+    std::shared_ptr<fin_curves::generator> generator = generators.get(instrument_nm);
+
+    // underlying zero rate curve
+    std::string path = "/home/macky/Documents/Programming/C++/FinCurves/data/";
+    std::string crv_nm = "eur_ri_3m_fo";
+    std::string sep = ",";
+    fin_curves::myZeroRate crv = fin_curves::myZeroRate(path, crv_nm, sep);
+
+    // calculate discount factors deposit instrument
+    std::string date_exec = "20220531";
+    std::string date_format = "yyyymmdd";
+    std::vector<std::string> tenors = {"ON", "TN", "1M", "2M"};
+    std::vector<double> par_rates = {-0.008452, -0.008452, -0.006815, -0.005172};
+
+    for (std::size_t idx = 0; idx < tenors.size(); idx++)
+        fin_curves::myDepoInstr depo = fin_curves::myDepoInstr(date_exec, tenors[idx], par_rates[idx], generator, crv, date_format);
+
+    // retrieve calculated figures
+    std::vector<double> yr_fracs = crv.get_yr_fracs();
+    std::vector<double> dfs;
+    for (std::size_t idx = 0; idx < yr_fracs.size(); idx++)
     {
-        std::cout << "TEST df_to_zr() FUNCTIONS" << std::endl;
-
-        std::cout << "double df_to_zr(const double& df, const double& yr_frac, const unsigned short type = 0)" << std::endl;
-        double df = 0.999;
-        double yr_frac = 1.0;
-        double zr_1 = fin_curves::df_to_zr(df, yr_frac);
-        double zr_2 = fin_curves::df_to_zr(df, yr_frac, 1);
-
-        std::cout << "   df = 1 / (1 + zr) ^ yr_frac" << std::endl;
-        std::cout << "      df = " << std::to_string(df) << " => zr = " << std::to_string(zr_1) << std::endl;
-
-        std::cout << "   df = exp(-zr * yr_frac)" << std::endl;
-        std::cout << "      df = " << std::to_string(df) << " => zr = " << std::to_string(zr_2) << std::endl;
-
-        std::cout << "std::vector<double> df_to_zr(const std::vector<double>& dfs, const std::vector<double>& yr_frac, const unsigned short type = 0)" << std::endl;
-        std::vector<double> dfs = {0.999, 1.001};
-        std::vector<double> yr_fracs = {1.0, 1.0};
-        std::vector<double> zrs_1 = fin_curves::df_to_zr(dfs, yr_fracs);
-        std::vector<double> zrs_2 = fin_curves::df_to_zr(dfs, yr_fracs, 1);
-
-        std::cout << "   df = 1 / (1 + zr) ^ yr_frac" << std::endl;
-        for (std::size_t idx = 0; idx < dfs.size(); idx++)
-            std::cout << "      df = " << std::to_string(dfs[idx]) << " => zr = " << std::to_string(zrs_1[idx]) << std::endl;
-
-        std::cout << "   df = exp(-zr * yr_frac)" << std::endl;
-        for (std::size_t idx = 0; idx < dfs.size(); idx++)
-            std::cout << "      df = " << std::to_string(dfs[idx]) << " => zr = " << std::to_string(zrs_2[idx]) << std::endl;
-
-        std::cout << '\n' << std::endl;
+        dfs.push_back(crv.get_df(yr_fracs[idx]));
     }
 
-    // depo
+    // print calculate discount factors
+    std::cout << instrument_nm << std::endl;
+    std::cout << lib_str::repeate_char("=", 45) << std::endl;
+    std::cout << "|tenor  " << "|year fraction" << "|par rate  " << "|df        " << "|" << std::endl;
+    std::cout << lib_str::repeate_char("=", 45) << std::endl;
+    for (std::size_t idx = 0; idx < yr_fracs.size(); idx++)
     {
-        std::cout << "DEPO" << std::endl;
-
-        std::string date_exec = "20240109";
-        std::string tenor = "1Y";
-        double quote = 0.01;
-        std::string crv_nm = "--na--";
-        std::string date_format = "yyyymmdd";
-
-        std::vector<std::string> instrument_nms = {"USD_3M_MANUAL"};
-        fin_curves::myGenerators generators = fin_curves::myGenerators(instrument_nms);
-        std::shared_ptr<fin_curves::generator> generator = generators.get("USD_3M_MANUAL");
-
-        fin_curves::myDepoInstr depo = fin_curves::myDepoInstr(date_exec, tenor, quote, crv_nm, generator, date_format);
-
-        std::vector<std::tuple<lib_date::myDate, lib_date::myDate>> dates = depo.get_date_series();
-        for (std::size_t idx = 0; idx < dates.size(); idx++)
-        {
-            std::cout << std::get<0>(dates[idx]).get_date_str() << " - " << std::get<1>(dates[idx]).get_date_str() << std::endl;
-        }
-
-        std::cout << '\n' << std::endl;
+        std::cout << "|" << lib_str::add_trailing_char(tenors[idx], 7) << "|" << lib_str::add_trailing_char(std::to_string(yr_fracs[idx]), 13);
+        std::cout << "|" << lib_str::add_trailing_char(std::to_string(par_rates[idx]), 10);
+        std::cout << "|" << lib_str::add_trailing_char(std::to_string(dfs[idx]), 10);
+        std::cout << "|" << std::endl;
     }
+    std::cout << lib_str::repeate_char("=", 45) << std::endl;
 
     // everything OK
     return 0;

@@ -1,20 +1,72 @@
 \hypertarget{classlib__aux_1_1myLog}{}\doxysection{lib\+\_\+aux\+::my\+Log Class Reference}
 \label{classlib__aux_1_1myLog}\index{lib\_aux::myLog@{lib\_aux::myLog}}
+
+
+Logging object that stores messages into a text file.  
+
+
+
+
+{\ttfamily \#include $<$lib\+\_\+aux.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classlib__aux_1_1myLog_af8dfd774f917d83feb78ce9063983fbb}\label{classlib__aux_1_1myLog_af8dfd774f917d83feb78ce9063983fbb}} 
-std\+::string {\bfseries get\+\_\+log\+\_\+file\+\_\+nm} () const
-\item 
+std\+::string \mbox{\hyperlink{classlib__aux_1_1myLog_af8dfd774f917d83feb78ce9063983fbb}{get\+\_\+log\+\_\+file\+\_\+nm}} () const
+\begin{DoxyCompactList}\small\item\em Get the logging file name. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classlib__aux_1_1myLog_a5ff038bbd36ed2729be1a63cd46f557c}\label{classlib__aux_1_1myLog_a5ff038bbd36ed2729be1a63cd46f557c}} 
 void {\bfseries write} (std\+::string msg)
 \item 
+\mbox{\hyperlink{classlib__aux_1_1myLog_aec5d0167ed3243a952ce4c3d6c4bd5c7}{my\+Log}} (const std\+::string \&log\+\_\+file\+\_\+nm, const bool \&clear\+\_\+file=true)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__aux_1_1myLog}{my\+Log}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib__aux_1_1myLog_ab8284727d0ff4c1555c8cb23a8adfac1}\label{classlib__aux_1_1myLog_ab8284727d0ff4c1555c8cb23a8adfac1}} 
+{\bfseries $\sim$my\+Log} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classlib__aux_1_1myLog}{my\+Log}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Logging object that stores messages into a text file. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_aux_examples_8h-example}{lib\+\_\+aux\+\_\+examples.\+h}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classlib__aux_1_1myLog_aec5d0167ed3243a952ce4c3d6c4bd5c7}\label{classlib__aux_1_1myLog_aec5d0167ed3243a952ce4c3d6c4bd5c7}} 
-{\bfseries my\+Log} (const std\+::string \&log\+\_\+file\+\_\+nm, const bool \&clear\+\_\+file=true)
-\end{DoxyCompactItemize}
+\index{lib\_aux::myLog@{lib\_aux::myLog}!myLog@{myLog}}
+\index{myLog@{myLog}!lib\_aux::myLog@{lib\_aux::myLog}}
+\doxysubsubsection{\texorpdfstring{myLog()}{myLog()}}
+{\footnotesize\ttfamily lib\+\_\+aux\+::my\+Log\+::my\+Log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{log\+\_\+file\+\_\+nm,  }\item[{const bool \&}]{clear\+\_\+file = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__aux_1_1myLog}{my\+Log}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log\+\_\+file\+\_\+nm} & Logging file name including path. \\
+\hline
+{\em clear\+\_\+file} & Clear logging file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlib__aux_1_1myLog_af8dfd774f917d83feb78ce9063983fbb}\label{classlib__aux_1_1myLog_af8dfd774f917d83feb78ce9063983fbb}} 
+\index{lib\_aux::myLog@{lib\_aux::myLog}!get\_log\_file\_nm@{get\_log\_file\_nm}}
+\index{get\_log\_file\_nm@{get\_log\_file\_nm}!lib\_aux::myLog@{lib\_aux::myLog}}
+\doxysubsubsection{\texorpdfstring{get\_log\_file\_nm()}{get\_log\_file\_nm()}}
+{\footnotesize\ttfamily std\+::string lib\+\_\+aux\+::my\+Log\+::get\+\_\+log\+\_\+file\+\_\+nm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the logging file name. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Logging file name. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-lib\+\_\+aux.\+h\item 
+\mbox{\hyperlink{lib__aux_8h}{lib\+\_\+aux.\+h}}\item 
 lib\+\_\+aux.\+cpp\end{DoxyCompactItemize}

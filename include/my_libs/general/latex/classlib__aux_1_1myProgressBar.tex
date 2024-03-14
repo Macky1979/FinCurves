@@ -1,26 +1,88 @@
 \hypertarget{classlib__aux_1_1myProgressBar}{}\doxysection{lib\+\_\+aux\+::my\+Progress\+Bar Class Reference}
 \label{classlib__aux_1_1myProgressBar}\index{lib\_aux::myProgressBar@{lib\_aux::myProgressBar}}
+
+
+Progress bar object.  
+
+
+
+
+{\ttfamily \#include $<$lib\+\_\+aux.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classlib__aux_1_1myProgressBar_a92508a00aab5ab4de066bcd56b369a25}\label{classlib__aux_1_1myProgressBar_a92508a00aab5ab4de066bcd56b369a25}} 
-unsigned long {\bfseries get\+\_\+cycles\+\_\+no} () const
-\item 
-\mbox{\Hypertarget{classlib__aux_1_1myProgressBar_ab3f1fe2075340b5907435f05eca4a013}\label{classlib__aux_1_1myProgressBar_ab3f1fe2075340b5907435f05eca4a013}} 
-std\+::string {\bfseries get\+\_\+msg} () const
-\item 
+unsigned long \mbox{\hyperlink{classlib__aux_1_1myProgressBar_a92508a00aab5ab4de066bcd56b369a25}{get\+\_\+cycles\+\_\+no}} () const
+\begin{DoxyCompactList}\small\item\em Get number of cycles to tracked by the progress bar. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classlib__aux_1_1myProgressBar_ab3f1fe2075340b5907435f05eca4a013}{get\+\_\+msg}} () const
+\begin{DoxyCompactList}\small\item\em Get progress bar string, i.\+e. \mbox{[}\#\#\#\#\# \mbox{]}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classlib__aux_1_1myProgressBar_ac86aca8b47046517d0cee4846171496b}\label{classlib__aux_1_1myProgressBar_ac86aca8b47046517d0cee4846171496b}} 
 void {\bfseries next} ()
-\item 
-\mbox{\Hypertarget{classlib__aux_1_1myProgressBar_a6d67a69e0ec8f713b106de2c364d8f13}\label{classlib__aux_1_1myProgressBar_a6d67a69e0ec8f713b106de2c364d8f13}} 
-{\bfseries my\+Progress\+Bar} (unsigned long cycles\+\_\+no)
-\item 
+\begin{DoxyCompactList}\small\item\em Move to the next cycle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__aux_1_1myProgressBar_a6d67a69e0ec8f713b106de2c364d8f13}{my\+Progress\+Bar}} (unsigned long cycles\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__aux_1_1myProgressBar}{my\+Progress\+Bar}} object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classlib__aux_1_1myProgressBar_a6ba8ea5be9097270f659192da551f8c1}\label{classlib__aux_1_1myProgressBar_a6ba8ea5be9097270f659192da551f8c1}} 
 void {\bfseries operator++} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Overload ++ operator with \mbox{\hyperlink{classlib__aux_1_1myProgressBar_ac86aca8b47046517d0cee4846171496b}{next()}} function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Progress bar object. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_aux_examples_8h-example}{lib\+\_\+aux\+\_\+examples.\+h}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlib__aux_1_1myProgressBar_a6d67a69e0ec8f713b106de2c364d8f13}\label{classlib__aux_1_1myProgressBar_a6d67a69e0ec8f713b106de2c364d8f13}} 
+\index{lib\_aux::myProgressBar@{lib\_aux::myProgressBar}!myProgressBar@{myProgressBar}}
+\index{myProgressBar@{myProgressBar}!lib\_aux::myProgressBar@{lib\_aux::myProgressBar}}
+\doxysubsubsection{\texorpdfstring{myProgressBar()}{myProgressBar()}}
+{\footnotesize\ttfamily lib\+\_\+aux\+::my\+Progress\+Bar\+::my\+Progress\+Bar (\begin{DoxyParamCaption}\item[{unsigned long}]{cycles\+\_\+no }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__aux_1_1myProgressBar}{my\+Progress\+Bar}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cycles\+\_\+no} & Set number of cycles to be tracked by the progress bar. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlib__aux_1_1myProgressBar_a92508a00aab5ab4de066bcd56b369a25}\label{classlib__aux_1_1myProgressBar_a92508a00aab5ab4de066bcd56b369a25}} 
+\index{lib\_aux::myProgressBar@{lib\_aux::myProgressBar}!get\_cycles\_no@{get\_cycles\_no}}
+\index{get\_cycles\_no@{get\_cycles\_no}!lib\_aux::myProgressBar@{lib\_aux::myProgressBar}}
+\doxysubsubsection{\texorpdfstring{get\_cycles\_no()}{get\_cycles\_no()}}
+{\footnotesize\ttfamily unsigned long lib\+\_\+aux\+::my\+Progress\+Bar\+::get\+\_\+cycles\+\_\+no (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of cycles to tracked by the progress bar. 
+
+\begin{DoxyReturn}{Returns}
+unsigned long Number of cycles. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_aux_examples_8h-example}{lib\+\_\+aux\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__aux_1_1myProgressBar_ab3f1fe2075340b5907435f05eca4a013}\label{classlib__aux_1_1myProgressBar_ab3f1fe2075340b5907435f05eca4a013}} 
+\index{lib\_aux::myProgressBar@{lib\_aux::myProgressBar}!get\_msg@{get\_msg}}
+\index{get\_msg@{get\_msg}!lib\_aux::myProgressBar@{lib\_aux::myProgressBar}}
+\doxysubsubsection{\texorpdfstring{get\_msg()}{get\_msg()}}
+{\footnotesize\ttfamily std\+::string lib\+\_\+aux\+::my\+Progress\+Bar\+::get\+\_\+msg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get progress bar string, i.\+e. \mbox{[}\#\#\#\#\# \mbox{]}. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Progress bar string. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-lib\+\_\+aux.\+h\item 
+\mbox{\hyperlink{lib__aux_8h}{lib\+\_\+aux.\+h}}\item 
 lib\+\_\+aux.\+cpp\end{DoxyCompactItemize}

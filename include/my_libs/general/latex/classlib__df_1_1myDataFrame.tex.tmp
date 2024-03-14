@@ -2,7 +2,7 @@
 \label{classlib__df_1_1myDataFrame}\index{lib\_df::myDataFrame@{lib\_df::myDataFrame}}
 
 
-Dataframe object.  
+Dataframe class.  
 
 
 
@@ -46,7 +46,7 @@ void \mbox{\hyperlink{classlib__df_1_1myDataFrame_a3990f016fa2edf2c10f2bc47312c6
 
 
 \doxysubsection{Detailed Description}
-Dataframe object. 
+Dataframe class. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classlib__df_1_1myDataFrame_ace3df77e056202f7fb11ef554b32c525}\label{classlib__df_1_1myDataFrame_ace3df77e056202f7fb11ef554b32c525}} 

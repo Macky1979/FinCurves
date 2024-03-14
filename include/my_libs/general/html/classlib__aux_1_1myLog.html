@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>general: lib_aux::myLog Class Reference</title>
+<title>General C++ libraries: lib_aux::myLog Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">general
+   <div id="projectname">General C++ libraries
    </div>
-   <div id="projectbrief">General C++ libraries</div>
+   <div id="projectbrief">C++ libraries to handle basic date, file, string and SQL operations, reading .csv files, etc.</div>
   </td>
  </tr>
  </tbody>
@@ -73,19 +73,99 @@ $(function() {
   <div class="headertitle"><div class="title">lib_aux::myLog Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Logging object that stores messages into a text file.  
+ <a href="classlib__aux_1_1myLog.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="lib__aux_8h_source.html">lib_aux.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af8dfd774f917d83feb78ce9063983fbb"><td class="memItemLeft" align="right" valign="top"><a id="af8dfd774f917d83feb78ce9063983fbb" name="af8dfd774f917d83feb78ce9063983fbb"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_log_file_nm</b> () const</td></tr>
+<tr class="memitem:af8dfd774f917d83feb78ce9063983fbb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__aux_1_1myLog.html#af8dfd774f917d83feb78ce9063983fbb">get_log_file_nm</a> () const</td></tr>
+<tr class="memdesc:af8dfd774f917d83feb78ce9063983fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the logging file name.  <a href="classlib__aux_1_1myLog.html#af8dfd774f917d83feb78ce9063983fbb">More...</a><br /></td></tr>
 <tr class="separator:af8dfd774f917d83feb78ce9063983fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ff038bbd36ed2729be1a63cd46f557c"><td class="memItemLeft" align="right" valign="top"><a id="a5ff038bbd36ed2729be1a63cd46f557c" name="a5ff038bbd36ed2729be1a63cd46f557c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (std::string msg)</td></tr>
 <tr class="separator:a5ff038bbd36ed2729be1a63cd46f557c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec5d0167ed3243a952ce4c3d6c4bd5c7"><td class="memItemLeft" align="right" valign="top"><a id="aec5d0167ed3243a952ce4c3d6c4bd5c7" name="aec5d0167ed3243a952ce4c3d6c4bd5c7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>myLog</b> (const std::string &amp;log_file_nm, const bool &amp;clear_file=true)</td></tr>
+<tr class="memitem:aec5d0167ed3243a952ce4c3d6c4bd5c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__aux_1_1myLog.html#aec5d0167ed3243a952ce4c3d6c4bd5c7">myLog</a> (const std::string &amp;log_file_nm, const bool &amp;clear_file=true)</td></tr>
+<tr class="memdesc:aec5d0167ed3243a952ce4c3d6c4bd5c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classlib__aux_1_1myLog.html" title="Logging object that stores messages into a text file.">myLog</a> object.  <a href="classlib__aux_1_1myLog.html#aec5d0167ed3243a952ce4c3d6c4bd5c7">More...</a><br /></td></tr>
 <tr class="separator:aec5d0167ed3243a952ce4c3d6c4bd5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8284727d0ff4c1555c8cb23a8adfac1"><td class="memItemLeft" align="right" valign="top"><a id="ab8284727d0ff4c1555c8cb23a8adfac1" name="ab8284727d0ff4c1555c8cb23a8adfac1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~myLog</b> ()</td></tr>
+<tr class="memdesc:ab8284727d0ff4c1555c8cb23a8adfac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classlib__aux_1_1myLog.html" title="Logging object that stores messages into a text file.">myLog</a> object. <br /></td></tr>
+<tr class="separator:ab8284727d0ff4c1555c8cb23a8adfac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Logging object that stores messages into a text file. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_aux_examples_8h-example.html#_a8">lib_aux_examples.h</a>.</dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aec5d0167ed3243a952ce4c3d6c4bd5c7" name="aec5d0167ed3243a952ce4c3d6c4bd5c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec5d0167ed3243a952ce4c3d6c4bd5c7">&#9670;&nbsp;</a></span>myLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib_aux::myLog::myLog </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>log_file_nm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>clear_file</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classlib__aux_1_1myLog.html" title="Logging object that stores messages into a text file.">myLog</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log_file_nm</td><td>Logging file name including path. </td></tr>
+    <tr><td class="paramname">clear_file</td><td>Clear logging file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af8dfd774f917d83feb78ce9063983fbb" name="af8dfd774f917d83feb78ce9063983fbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8dfd774f917d83feb78ce9063983fbb">&#9670;&nbsp;</a></span>get_log_file_nm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string lib_aux::myLog::get_log_file_nm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the logging file name. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string Logging file name. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="lib__aux_8h_source.html">lib_aux.h</a></li>
 <li>lib_aux.cpp</li>

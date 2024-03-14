@@ -1,153 +1,49 @@
 \hypertarget{lib__sql_8h_source}{}\doxysection{lib\+\_\+sql.\+h}
-
+\mbox{\hyperlink{lib__sql_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{\#include <string>}}
-\DoxyCodeLine{3 \textcolor{comment}{\#include <iostream>}}
-\DoxyCodeLine{4 \textcolor{comment}{\#include <vector>}}
-\DoxyCodeLine{5 \textcolor{comment}{\#include <sqlite3.h>}}
-\DoxyCodeLine{6 \textcolor{comment}{\#include "{}lib\_df.h"{}}}
-\DoxyCodeLine{7 \textcolor{comment}{\#include "{}lib\_sql.h"{}}}
-\DoxyCodeLine{8 \textcolor{comment}{\#include "{}lib\_aux.h"{}}}
-\DoxyCodeLine{9 \textcolor{comment}{}}
-\DoxyCodeLine{10 \textcolor{comment}{void print\_df(std::shared\_ptr<lib\_df::myDataFrame> df)}}
-\DoxyCodeLine{11 \textcolor{comment}{\{}}
-\DoxyCodeLine{12 \textcolor{comment}{    // print result of SQL query}}
-\DoxyCodeLine{13 \textcolor{comment}{    for (int i = 0; i < df-\/>tbl.values.size(); i++)}}
-\DoxyCodeLine{14 \textcolor{comment}{    \{}}
-\DoxyCodeLine{15 \textcolor{comment}{        for (int j = 0; j < df-\/>tbl.values[0].size(); j++)}}
-\DoxyCodeLine{16 \textcolor{comment}{        \{}}
-\DoxyCodeLine{17 \textcolor{comment}{            std::cout << df-\/>tbl.values[i][j] << "{} "{};}}
-\DoxyCodeLine{18 \textcolor{comment}{        \}}}
-\DoxyCodeLine{19 \textcolor{comment}{        std::cout << '\(\backslash\)n';}}
-\DoxyCodeLine{20 \textcolor{comment}{    \}}}
-\DoxyCodeLine{21 \textcolor{comment}{\}}}
-\DoxyCodeLine{22 \textcolor{comment}{}}
-\DoxyCodeLine{23 \textcolor{comment}{int main()}}
-\DoxyCodeLine{24 \textcolor{comment}{\{}}
-\DoxyCodeLine{25 \textcolor{comment}{    // variables}}
-\DoxyCodeLine{26 \textcolor{comment}{    const char * db\_file\_nm = "{}data/lib\_sql/cities.db"{};}}
-\DoxyCodeLine{27 \textcolor{comment}{    std::string sql\_file\_nm = "{}data/lib\_sql/cities.sql"{};}}
-\DoxyCodeLine{28 \textcolor{comment}{    std::string sql;}}
-\DoxyCodeLine{29 \textcolor{comment}{    std::shared\_ptr<lib\_df::myDataFrame> rslt = std::make\_shared<lib\_df::myDataFrame>();}}
-\DoxyCodeLine{30 \textcolor{comment}{    bool read\_only;}}
-\DoxyCodeLine{31 \textcolor{comment}{    int wait\_max\_seconds = 10;}}
-\DoxyCodeLine{32 \textcolor{comment}{    bool delete\_old\_data = false;}}
-\DoxyCodeLine{33 \textcolor{comment}{}}
-\DoxyCodeLine{34 \textcolor{comment}{    // create SQLite object and open connection to SQLite database file in read-\/write mode}}
-\DoxyCodeLine{35 \textcolor{comment}{    read\_only = false;}}
-\DoxyCodeLine{36 \textcolor{comment}{    lib\_sql::mySQLite db(db\_file\_nm, read\_only, wait\_max\_seconds);}}
-\DoxyCodeLine{37 \textcolor{comment}{}}
-\DoxyCodeLine{38 \textcolor{comment}{}}
-\DoxyCodeLine{39 \textcolor{comment}{    // create table if it does not exists}}
-\DoxyCodeLine{40 \textcolor{comment}{    sql = lib\_sql::read\_sql(sql\_file\_nm, "{}create\_tbl"{});}}
-\DoxyCodeLine{41 \textcolor{comment}{    db.exec(sql);}}
-\DoxyCodeLine{42 \textcolor{comment}{}}
-\DoxyCodeLine{43 \textcolor{comment}{    // delete table}}
-\DoxyCodeLine{44 \textcolor{comment}{    sql = lib\_sql::read\_sql(sql\_file\_nm, "{}delete\_tbl"{});}}
-\DoxyCodeLine{45 \textcolor{comment}{    db.exec("{}DELETE FROM cities;"{});   }}
-\DoxyCodeLine{46 \textcolor{comment}{}}
-\DoxyCodeLine{47 \textcolor{comment}{    // insert data into table}}
-\DoxyCodeLine{48 \textcolor{comment}{    sql = lib\_sql::read\_sql(sql\_file\_nm, "{}insert\_into\_tbl"{});}}
-\DoxyCodeLine{49 \textcolor{comment}{    db.exec("{}INSERT INTO cities (city, country) VALUES ('Prague', 'Czech Republic');"{});}}
-\DoxyCodeLine{50 \textcolor{comment}{    }}
-\DoxyCodeLine{51 \textcolor{comment}{    // vacuum SQLite database file to avoid its excessive growth}}
-\DoxyCodeLine{52 \textcolor{comment}{    db.vacuum();}}
-\DoxyCodeLine{53 \textcolor{comment}{}}
-\DoxyCodeLine{54 \textcolor{comment}{    // close connection to SQLite database file}}
-\DoxyCodeLine{55 \textcolor{comment}{    db.close();}}
-\DoxyCodeLine{56 \textcolor{comment}{}}
-\DoxyCodeLine{57 \textcolor{comment}{    // open connection to SQLite database file in read-\/only mode}}
-\DoxyCodeLine{58 \textcolor{comment}{    read\_only = true;}}
-\DoxyCodeLine{59 \textcolor{comment}{    db.open(db\_file\_nm, read\_only);}}
-\DoxyCodeLine{60 \textcolor{comment}{}}
-\DoxyCodeLine{61 \textcolor{comment}{    // query database}}
-\DoxyCodeLine{62 \textcolor{comment}{    sql = lib\_sql::read\_sql(sql\_file\_nm, "{}select\_from\_tbl"{});}}
-\DoxyCodeLine{63 \textcolor{comment}{    rslt = db.query(sql);}}
-\DoxyCodeLine{64 \textcolor{comment}{}}
-\DoxyCodeLine{65 \textcolor{comment}{    // print dataframe}}
-\DoxyCodeLine{66 \textcolor{comment}{    print\_df(rslt);}}
-\DoxyCodeLine{67 \textcolor{comment}{}}
-\DoxyCodeLine{68 \textcolor{comment}{    rslt = db.download\_tbl("{}cities"{});}}
-\DoxyCodeLine{69 \textcolor{comment}{}}
-\DoxyCodeLine{70 \textcolor{comment}{    // print dataframe}}
-\DoxyCodeLine{71 \textcolor{comment}{    print\_df(rslt);}}
-\DoxyCodeLine{72 \textcolor{comment}{}}
-\DoxyCodeLine{73 \textcolor{comment}{    // close connection to SQLite database file}}
-\DoxyCodeLine{74 \textcolor{comment}{    db.close();}}
-\DoxyCodeLine{75 \textcolor{comment}{}}
-\DoxyCodeLine{76 \textcolor{comment}{    // open connection to SQLite database file in read-\/write mode}}
-\DoxyCodeLine{77 \textcolor{comment}{    read\_only = false;}}
-\DoxyCodeLine{78 \textcolor{comment}{    db.open(db\_file\_nm, read\_only);}}
-\DoxyCodeLine{79 \textcolor{comment}{}}
-\DoxyCodeLine{80 \textcolor{comment}{    // re-\/insert dataframe into the table}}
-\DoxyCodeLine{81 \textcolor{comment}{    db.upload\_tbl(*rslt, "{}cities"{}, delete\_old\_data);}}
-\DoxyCodeLine{82 \textcolor{comment}{}}
-\DoxyCodeLine{83 \textcolor{comment}{    // print dataframe}}
-\DoxyCodeLine{84 \textcolor{comment}{    sql = lib\_sql::read\_sql(sql\_file\_nm, "{}select\_from\_tbl"{});}}
-\DoxyCodeLine{85 \textcolor{comment}{    rslt = db.query(sql);}}
-\DoxyCodeLine{86 \textcolor{comment}{}}
-\DoxyCodeLine{87 \textcolor{comment}{    // print dataframe}}
-\DoxyCodeLine{88 \textcolor{comment}{    print\_df(rslt);}}
-\DoxyCodeLine{89 \textcolor{comment}{}}
-\DoxyCodeLine{90 \textcolor{comment}{    // close connection to SQLite database file}}
-\DoxyCodeLine{91 \textcolor{comment}{    db.close();}}
-\DoxyCodeLine{92 \textcolor{comment}{}}
-\DoxyCodeLine{93 \textcolor{comment}{    // demonstrate function replace\_in\_sql()}}
-\DoxyCodeLine{94 \textcolor{comment}{    sql = "{}SELECT \#\#col\_nm\#\# FROM cities;"{};}}
-\DoxyCodeLine{95 \textcolor{comment}{    std::string replace\_what = "{}\#\#col\_nm\#\#"{};}}
-\DoxyCodeLine{96 \textcolor{comment}{    std::string replace\_with = "{}cities"{};}}
-\DoxyCodeLine{97 \textcolor{comment}{    sql = lib\_sql::replace\_in\_sql(sql, replace\_what, replace\_with);}}
-\DoxyCodeLine{98 \textcolor{comment}{    std::cout << sql << std::endl;}}
-\DoxyCodeLine{99 \textcolor{comment}{}}
-\DoxyCodeLine{100 \textcolor{comment}{    // everything OK}}
-\DoxyCodeLine{101 \textcolor{comment}{    return 0;}}
-\DoxyCodeLine{102 \textcolor{comment}{\}}}
-\DoxyCodeLine{103 \textcolor{comment}{*/}}
-\DoxyCodeLine{104 }
-\DoxyCodeLine{105 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{106 }
-\DoxyCodeLine{107 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{108 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{109 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{110 \textcolor{preprocessor}{\#include <sqlite3.h>}}
-\DoxyCodeLine{111 \textcolor{preprocessor}{\#include <memory>}}
-\DoxyCodeLine{112 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lib__df_8h}{lib\_df.h}}"{}}}
-\DoxyCodeLine{113 }
-\DoxyCodeLine{114 \textcolor{keyword}{namespace }lib\_sql}
-\DoxyCodeLine{115 \{}
-\DoxyCodeLine{116     \textcolor{comment}{// read SQL query from a text file}}
-\DoxyCodeLine{117     std::string read\_sql(\textcolor{keyword}{const} std::string\& sql\_file\_nm, \textcolor{keyword}{const} std::string\& tag);}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119     \textcolor{comment}{// make substitutions in SQL query}}
-\DoxyCodeLine{120     std::string replace\_in\_sql(std::string sql, std::string replace\_what, std::string replace\_with);}
-\DoxyCodeLine{121 }
-\DoxyCodeLine{122     \textcolor{comment}{// define object that handles SQLite database}}
-\DoxyCodeLine{123     \textcolor{keyword}{class }\mbox{\hyperlink{classlib__sql_1_1mySQLite}{mySQLite}}}
-\DoxyCodeLine{124     \{}
-\DoxyCodeLine{125         \textcolor{keyword}{private}:}
-\DoxyCodeLine{126             \textcolor{comment}{// SQLite database}}
-\DoxyCodeLine{127             sqlite3* db;}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129         \textcolor{keyword}{public}:}
-\DoxyCodeLine{130             \textcolor{comment}{// how many seconds to wait for SQLite database file being available}}
-\DoxyCodeLine{131             \textcolor{keywordtype}{int} wait\_max\_seconds;}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133             \textcolor{comment}{// object constructors}}
-\DoxyCodeLine{134             \mbox{\hyperlink{classlib__sql_1_1mySQLite}{mySQLite}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* db\_file\_nm, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} read\_only, \textcolor{keywordtype}{int} wait\_max\_seconds);}
-\DoxyCodeLine{135 }
-\DoxyCodeLine{136             \textcolor{comment}{// object destructor}}
-\DoxyCodeLine{137             \mbox{\hyperlink{classlib__sql_1_1mySQLite}{\string~mySQLite}}()\{\};}
-\DoxyCodeLine{138 }
-\DoxyCodeLine{139             \textcolor{comment}{// object function declarations}}
-\DoxyCodeLine{140             \textcolor{keywordtype}{void} open(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* db\_file\_nm, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} read\_only);}
-\DoxyCodeLine{141             \textcolor{keywordtype}{void} close() \textcolor{keyword}{const};}
-\DoxyCodeLine{142             \textcolor{keywordtype}{void} vacuum() \textcolor{keyword}{const};}
-\DoxyCodeLine{143             \textcolor{keywordtype}{void} exec(\textcolor{keyword}{const} std::string\& sql) \textcolor{keyword}{const};}
-\DoxyCodeLine{144             std::shared\_ptr<lib\_df::myDataFrame> query(\textcolor{keyword}{const} std::string\& sql) \textcolor{keyword}{const};}
-\DoxyCodeLine{145             std::shared\_ptr<lib\_df::myDataFrame> download\_tbl(\textcolor{keyword}{const} std::string\& tbl\_nm);}
-\DoxyCodeLine{146             \textcolor{keywordtype}{void} upload\_tbl(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\_df::myDataFrame}}\& tbl, \textcolor{keyword}{const} std::string\& tbl\_nm, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} delete\_old\_data);}
-\DoxyCodeLine{147     \};}
-\DoxyCodeLine{148 \}}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <sqlite3.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lib__df_8h}{lib\_df.h}}"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }lib\_sql}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{30     std::string \mbox{\hyperlink{lib__sql_8h_ab25d789db2f74aa8ac6178d6f85affa6}{read\_sql}}(\textcolor{keyword}{const} std::string\& sql\_file\_nm, \textcolor{keyword}{const} std::string\& tag);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{40     std::string \mbox{\hyperlink{lib__sql_8h_a7d7ca09cf140c25cde56ff0b56560b24}{replace\_in\_sql}}(std::string sql, std::string replace\_what, std::string replace\_with);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{46     \textcolor{keyword}{class }\mbox{\hyperlink{classlib__sql_1_1mySQLite}{mySQLite}}}
+\DoxyCodeLine{47     \{}
+\DoxyCodeLine{48         \textcolor{keyword}{private}:}
+\DoxyCodeLine{49             \textcolor{comment}{// SQLite database}}
+\DoxyCodeLine{50             sqlite3* db;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{keyword}{public}:}
+\DoxyCodeLine{57             \textcolor{keywordtype}{int} \mbox{\hyperlink{classlib__sql_1_1mySQLite_a387f0a0791b14b0522a0a434c3ed095d}{wait\_max\_seconds}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{66             \mbox{\hyperlink{classlib__sql_1_1mySQLite_a932decd95c135077efbf9e1a6003cc83}{mySQLite}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* db\_file\_nm, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} read\_only, \textcolor{keywordtype}{int} \mbox{\hyperlink{classlib__sql_1_1mySQLite_a387f0a0791b14b0522a0a434c3ed095d}{wait\_max\_seconds}});}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{72             \mbox{\hyperlink{classlib__sql_1_1mySQLite_a3e7df021abc365731efbfdd879488550}{\string~mySQLite}}()\{\};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{80             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__sql_1_1mySQLite_a5f3810d4f309627ff8b240bbfef96fd1}{open}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* db\_file\_nm, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} read\_only);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{86             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__sql_1_1mySQLite_a9ddc4e805a863fc17a0e2c1ea3a72433}{close}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{92             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__sql_1_1mySQLite_acd8c1bae0f451189336a4cf866277d6e}{vacuum}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{99             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__sql_1_1mySQLite_ac20c73c39f62f6a92924f3837f211163}{exec}}(\textcolor{keyword}{const} std::string\& sql) \textcolor{keyword}{const};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{107             std::shared\_ptr<lib\_df::myDataFrame> \mbox{\hyperlink{classlib__sql_1_1mySQLite_a12dd676f350f5e9448d61f9fe9301831}{query}}(\textcolor{keyword}{const} std::string\& sql) \textcolor{keyword}{const};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{115             std::shared\_ptr<lib\_df::myDataFrame> \mbox{\hyperlink{classlib__sql_1_1mySQLite_ae0fa0568ebaf3c4369e3166e9fbbfb45}{download\_tbl}}(\textcolor{keyword}{const} std::string\& tbl\_nm);}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{124             \textcolor{keywordtype}{void} \mbox{\hyperlink{classlib__sql_1_1mySQLite_ac15f63f59725afa0cebefe7279d69f33}{upload\_tbl}}(\textcolor{keyword}{const} \mbox{\hyperlink{classlib__df_1_1myDataFrame}{lib\_df::myDataFrame}}\& tbl, \textcolor{keyword}{const} std::string\& tbl\_nm, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} delete\_old\_data);}
+\DoxyCodeLine{125     \};}
+\DoxyCodeLine{126 \}}
 
 \end{DoxyCode}

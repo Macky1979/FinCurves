@@ -1,101 +1,594 @@
 \hypertarget{classlib__date_1_1myDate}{}\doxysection{lib\+\_\+date\+::my\+Date Class Reference}
 \label{classlib__date_1_1myDate}\index{lib\_date::myDate@{lib\_date::myDate}}
+
+
+Date class.  
+
+
+
+
+{\ttfamily \#include $<$lib\+\_\+date.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a16264220071afe6ecc5c17730241e7ab}\label{classlib__date_1_1myDate_a16264220071afe6ecc5c17730241e7ab}} 
-{\bfseries my\+Date} (const std\+::string \&date\+\_\+str, const std\+::string \&date\+\_\+format)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a3e01493bba0fa9a9e611750853069f74}\label{classlib__date_1_1myDate_a3e01493bba0fa9a9e611750853069f74}} 
-{\bfseries my\+Date} (const std\+::size\+\_\+t \&date\+\_\+int)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_ab574561e50a3df17c70d27bc0b11bcb1}\label{classlib__date_1_1myDate_ab574561e50a3df17c70d27bc0b11bcb1}} 
-{\bfseries my\+Date} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_ad07a81f653dbcd740521e33db95dd42d}\label{classlib__date_1_1myDate_ad07a81f653dbcd740521e33db95dd42d}} 
-long {\bfseries operator-\/} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date2)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_ae8bab4cf9c28d0797d678f3040c0ea1b}\label{classlib__date_1_1myDate_ae8bab4cf9c28d0797d678f3040c0ea1b}} 
-\mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \& {\bfseries operator=} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&\+\_\+date)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_ab69d4ccd052db2ad7dadcdf6d8c7d4ca}\label{classlib__date_1_1myDate_ab69d4ccd052db2ad7dadcdf6d8c7d4ca}} 
-bool {\bfseries operator==} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&\+\_\+date)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_abfe3f9d5f39fa87e803ba229c884925f}\label{classlib__date_1_1myDate_abfe3f9d5f39fa87e803ba229c884925f}} 
-bool {\bfseries operator$<$} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a6debf023572d11b5660074acfe77acd7}\label{classlib__date_1_1myDate_a6debf023572d11b5660074acfe77acd7}} 
-bool {\bfseries operator$>$} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a6bfb8e8979e8b0c3bfcd9d8da4211cf5}\label{classlib__date_1_1myDate_a6bfb8e8979e8b0c3bfcd9d8da4211cf5}} 
-bool {\bfseries operator$<$=} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a8dda29663aeaad04a7f5e7c824043987}\label{classlib__date_1_1myDate_a8dda29663aeaad04a7f5e7c824043987}} 
-bool {\bfseries operator$>$=} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date)
-\item 
+\mbox{\Hypertarget{classlib__date_1_1myDate_a553f277b6a43975ecac5004a65372447}\label{classlib__date_1_1myDate_a553f277b6a43975ecac5004a65372447}} 
+{\bfseries my\+Date} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} object and initialize it to reference date 01/01/1601. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__date_1_1myDate_a16264220071afe6ecc5c17730241e7ab}{my\+Date}} (const std\+::string \&date\+\_\+str, const std\+::string \&date\+\_\+format)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} object and initialize it to user specified date. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__date_1_1myDate_a3e01493bba0fa9a9e611750853069f74}{my\+Date}} (const std\+::size\+\_\+t \&date\+\_\+int)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} object and initialize it to user specified date. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__date_1_1myDate_ab574561e50a3df17c70d27bc0b11bcb1}{my\+Date}} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlib__date_1_1myDate_a31b301f74849e0601f490a5abcc7c5f9}\label{classlib__date_1_1myDate_a31b301f74849e0601f490a5abcc7c5f9}} 
+{\bfseries $\sim$my\+Date} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} object. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classlib__date_1_1myDate_ad07a81f653dbcd740521e33db95dd42d}{operator-\/}} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date2)
+\begin{DoxyCompactList}\small\item\em Overloaded \char`\"{}minus\char`\"{} operator \char`\"{}-\/\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \& \mbox{\hyperlink{classlib__date_1_1myDate_ae8bab4cf9c28d0797d678f3040c0ea1b}{operator=}} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&\+\_\+date)
+\begin{DoxyCompactList}\small\item\em Overloaded \char`\"{}assign\char`\"{} operator \char`\"{}=\char`\"{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlib__date_1_1myDate_ab69d4ccd052db2ad7dadcdf6d8c7d4ca}{operator==}} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&\+\_\+date)
+\begin{DoxyCompactList}\small\item\em Overloaded \char`\"{}equal\char`\"{} operator \char`\"{}==\char`\"{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlib__date_1_1myDate_abfe3f9d5f39fa87e803ba229c884925f}{operator$<$}} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date)
+\begin{DoxyCompactList}\small\item\em Overloaded \char`\"{}smaller than\char`\"{} operater \char`\"{}$<$\char`\"{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlib__date_1_1myDate_a6debf023572d11b5660074acfe77acd7}{operator$>$}} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date)
+\begin{DoxyCompactList}\small\item\em Overloaded \char`\"{}greater than\char`\"{} operater \char`\"{}$>$\char`\"{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlib__date_1_1myDate_a6bfb8e8979e8b0c3bfcd9d8da4211cf5}{operator$<$=}} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date)
+\begin{DoxyCompactList}\small\item\em Overloaded \char`\"{}smaller than or equal\char`\"{} operator \char`\"{}$<$=\char`\"{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlib__date_1_1myDate_a8dda29663aeaad04a7f5e7c824043987}{operator$>$=}} (const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&date)
+\begin{DoxyCompactList}\small\item\em Overloaded \char`\"{}greater than or equal\char`\"{} operator \char`\"{}$<$=\char`\"{}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classlib__date_1_1myDate_a35d0de8f921efb12d6a64d313848a604}\label{classlib__date_1_1myDate_a35d0de8f921efb12d6a64d313848a604}} 
 void {\bfseries recalc} ()
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_ab795a92dbba74824f992db25c942fc2f}\label{classlib__date_1_1myDate_ab795a92dbba74824f992db25c942fc2f}} 
-void {\bfseries set} (const std\+::string \&date\+\_\+str, const std\+::string \&date\+\_\+format)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a474ce046d8276ce1df914e441333e675}\label{classlib__date_1_1myDate_a474ce046d8276ce1df914e441333e675}} 
-void {\bfseries set} (const std\+::size\+\_\+t \&date\+\_\+int)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a4566a67839621f3fab74b43b8b806804}\label{classlib__date_1_1myDate_a4566a67839621f3fab74b43b8b806804}} 
-std\+::size\+\_\+t {\bfseries get\+\_\+year} () const
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a79c2f2abed4e06a69b56c1aad7a4793d}\label{classlib__date_1_1myDate_a79c2f2abed4e06a69b56c1aad7a4793d}} 
-std\+::size\+\_\+t {\bfseries get\+\_\+month} () const
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a06a628c33b049674b9d4af3d186a98ef}\label{classlib__date_1_1myDate_a06a628c33b049674b9d4af3d186a98ef}} 
-std\+::size\+\_\+t {\bfseries get\+\_\+day} () const
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a5f221fe2c190aadfbc8b8392c80aa85a}\label{classlib__date_1_1myDate_a5f221fe2c190aadfbc8b8392c80aa85a}} 
-std\+::size\+\_\+t {\bfseries get\+\_\+days\+\_\+no} () const
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a60b485f3d70f1279cfbfc50f4dd4a4ff}\label{classlib__date_1_1myDate_a60b485f3d70f1279cfbfc50f4dd4a4ff}} 
-unsigned short {\bfseries get\+\_\+day\+\_\+in\+\_\+week} () const
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_ac05e3954e487b0027dc760c9e4192b98}\label{classlib__date_1_1myDate_ac05e3954e487b0027dc760c9e4192b98}} 
-std\+::size\+\_\+t {\bfseries get\+\_\+date\+\_\+int} () const
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a8be515a9880f9e8083fe4acd30c88fcb}\label{classlib__date_1_1myDate_a8be515a9880f9e8083fe4acd30c88fcb}} 
-std\+::string {\bfseries get\+\_\+date\+\_\+str} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Recalculate \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} object (typically after adjusting the object manually). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__date_1_1myDate_ab795a92dbba74824f992db25c942fc2f}{set}} (const std\+::string \&date\+\_\+str, const std\+::string \&date\+\_\+format)
+\begin{DoxyCompactList}\small\item\em Set date in string format. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__date_1_1myDate_a474ce046d8276ce1df914e441333e675}{set}} (const std\+::size\+\_\+t \&date\+\_\+int)
+\begin{DoxyCompactList}\small\item\em Set date in integer format. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlib__date_1_1myDate_a4566a67839621f3fab74b43b8b806804}{get\+\_\+year}} () const
+\begin{DoxyCompactList}\small\item\em Get year. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlib__date_1_1myDate_a79c2f2abed4e06a69b56c1aad7a4793d}{get\+\_\+month}} () const
+\begin{DoxyCompactList}\small\item\em Get month in year. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlib__date_1_1myDate_a06a628c33b049674b9d4af3d186a98ef}{get\+\_\+day}} () const
+\begin{DoxyCompactList}\small\item\em Get day in month. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlib__date_1_1myDate_a5f221fe2c190aadfbc8b8392c80aa85a}{get\+\_\+days\+\_\+no}} () const
+\begin{DoxyCompactList}\small\item\em Get number of days from a reference date of 01/01/1601. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{classlib__date_1_1myDate_a60b485f3d70f1279cfbfc50f4dd4a4ff}{get\+\_\+day\+\_\+in\+\_\+week}} () const
+\begin{DoxyCompactList}\small\item\em Get the day in week. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlib__date_1_1myDate_ac05e3954e487b0027dc760c9e4192b98}{get\+\_\+date\+\_\+int}} () const
+\begin{DoxyCompactList}\small\item\em Get the date in integer format. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classlib__date_1_1myDate_a8be515a9880f9e8083fe4acd30c88fcb}{get\+\_\+date\+\_\+str}} () const
+\begin{DoxyCompactList}\small\item\em Get the date in string format of \char`\"{}yyyymmdd\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__date_1_1myDate_a4d7abaac285d6ba7be70ef16eb006745}{add}} (const std\+::string \&date\+\_\+freq)
+\begin{DoxyCompactList}\small\item\em Add period expressed in form of frequency string to the date. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__date_1_1myDate_af93f56f85d5468601c3d10f727de2c76}{remove}} (const std\+::string \&date\+\_\+freq)
+\begin{DoxyCompactList}\small\item\em Subtract period expressed in form of frequency string from the date. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlib__date_1_1myDate_a07af95a90b51c889a5e485c66dfb36cf}{is\+\_\+last\+\_\+day\+\_\+in\+\_\+month}} () const
+\begin{DoxyCompactList}\small\item\em Check if the date is the last day in month. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlib__date_1_1myDate_a390541adc6b1bdfcbde0b126c49e98f2}{is\+\_\+leap\+\_\+year}} () const
+\begin{DoxyCompactList}\small\item\em Check if the date belongs to a leap year. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlib__date_1_1myDate_a98c1185672e4a1637bbea449a76c70e1}{is\+\_\+weekend}} () const
+\begin{DoxyCompactList}\small\item\em Check if the date belongs to a weekend. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlib__date_1_1myDate_affa00efd35a3695f787d4737198a112e}{is\+\_\+holidays}} (const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&holidays) const
+\begin{DoxyCompactList}\small\item\em Check if the date belongs to public holidays. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlib__date_1_1myDate_a6be0979f6444c4627ad1cea5517a41ca}{is\+\_\+working\+\_\+day}} (const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&holidays) const
+\begin{DoxyCompactList}\small\item\em Check if the date is a working date. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__date_1_1myDate_ad99e4f47e34d6a5ac802f7088bd0bc3c}{add\+\_\+working\+\_\+days}} (const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&holidays, const std\+::size\+\_\+t \&working\+\_\+days\+\_\+no=1)
+\begin{DoxyCompactList}\small\item\em Add working days to the date. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__date_1_1myDate_aacd8e41776d1de9040bf3f229897f4dc}{set\+\_\+to\+\_\+next\+\_\+working\+\_\+day}} (const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&holidays)
+\begin{DoxyCompactList}\small\item\em Set date to next working day after the current date. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlib__date_1_1myDate_aee210cfba95c1397f19302ec4774173c}{set\+\_\+to\+\_\+prev\+\_\+working\+\_\+day}} (const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&holidays)
+\begin{DoxyCompactList}\small\item\em Set date to previous working day before the current date. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Date class. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_date_examples_8h-example}{lib\+\_\+date\+\_\+examples.\+h}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a16264220071afe6ecc5c17730241e7ab}\label{classlib__date_1_1myDate_a16264220071afe6ecc5c17730241e7ab}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!myDate@{myDate}}
+\index{myDate@{myDate}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{myDate()}{myDate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily lib\+\_\+date\+::my\+Date\+::my\+Date (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{date\+\_\+str,  }\item[{const std\+::string \&}]{date\+\_\+format }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} object and initialize it to user specified date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+\_\+str} & Date in string format. \\
+\hline
+{\em date\+\_\+format} & Date string format, e.\+g. \char`\"{}yyyyddmm\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a3e01493bba0fa9a9e611750853069f74}\label{classlib__date_1_1myDate_a3e01493bba0fa9a9e611750853069f74}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!myDate@{myDate}}
+\index{myDate@{myDate}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{myDate()}{myDate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily lib\+\_\+date\+::my\+Date\+::my\+Date (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t \&}]{date\+\_\+int }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} object and initialize it to user specified date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+\_\+int} & Date in integer format, e.\+g. 19791230. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__date_1_1myDate_ab574561e50a3df17c70d27bc0b11bcb1}\label{classlib__date_1_1myDate_ab574561e50a3df17c70d27bc0b11bcb1}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!myDate@{myDate}}
+\index{myDate@{myDate}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{myDate()}{myDate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily lib\+\_\+date\+::my\+Date\+::my\+Date (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classlib__date_1_1myDate_a4d7abaac285d6ba7be70ef16eb006745}\label{classlib__date_1_1myDate_a4d7abaac285d6ba7be70ef16eb006745}} 
-void {\bfseries add} (const std\+::string \&date\+\_\+freq)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_af93f56f85d5468601c3d10f727de2c76}\label{classlib__date_1_1myDate_af93f56f85d5468601c3d10f727de2c76}} 
-void {\bfseries remove} (const std\+::string \&date\+\_\+freq)
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a07af95a90b51c889a5e485c66dfb36cf}\label{classlib__date_1_1myDate_a07af95a90b51c889a5e485c66dfb36cf}} 
-bool {\bfseries is\+\_\+last\+\_\+day\+\_\+in\+\_\+month} () const
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a390541adc6b1bdfcbde0b126c49e98f2}\label{classlib__date_1_1myDate_a390541adc6b1bdfcbde0b126c49e98f2}} 
-bool {\bfseries is\+\_\+leap\+\_\+year} () const
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a98c1185672e4a1637bbea449a76c70e1}\label{classlib__date_1_1myDate_a98c1185672e4a1637bbea449a76c70e1}} 
-bool {\bfseries is\+\_\+weekend} () const
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_affa00efd35a3695f787d4737198a112e}\label{classlib__date_1_1myDate_affa00efd35a3695f787d4737198a112e}} 
-bool {\bfseries is\+\_\+holidays} (const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&holidays) const
-\item 
-\mbox{\Hypertarget{classlib__date_1_1myDate_a6be0979f6444c4627ad1cea5517a41ca}\label{classlib__date_1_1myDate_a6be0979f6444c4627ad1cea5517a41ca}} 
-bool {\bfseries is\+\_\+working\+\_\+day} (const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&holidays) const
-\item 
+\index{lib\_date::myDate@{lib\_date::myDate}!add@{add}}
+\index{add@{add}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void lib\+\_\+date\+::my\+Date\+::add (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{date\+\_\+freq }\end{DoxyParamCaption})}
+
+
+
+Add period expressed in form of frequency string to the date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+\_\+freq} & Frequency string, e.\+g. \char`\"{}1\+D\char`\"{}, \char`\"{}2\+M\char`\"{}, \char`\"{}5\+Y\char`\"{}, etc. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_date_examples_8h-example}{lib\+\_\+date\+\_\+examples.\+h}}.\end{Desc}
 \mbox{\Hypertarget{classlib__date_1_1myDate_ad99e4f47e34d6a5ac802f7088bd0bc3c}\label{classlib__date_1_1myDate_ad99e4f47e34d6a5ac802f7088bd0bc3c}} 
-void {\bfseries add\+\_\+working\+\_\+days} (const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&holidays, const std\+::size\+\_\+t \&working\+\_\+days\+\_\+no=1)
-\item 
+\index{lib\_date::myDate@{lib\_date::myDate}!add\_working\_days@{add\_working\_days}}
+\index{add\_working\_days@{add\_working\_days}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{add\_working\_days()}{add\_working\_days()}}
+{\footnotesize\ttfamily void lib\+\_\+date\+::my\+Date\+::add\+\_\+working\+\_\+days (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&}]{holidays,  }\item[{const std\+::size\+\_\+t \&}]{working\+\_\+days\+\_\+no = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Add working days to the date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em holidays} & Vector of dates representing public holidays. \\
+\hline
+{\em working\+\_\+days\+\_\+no} & Number of working days to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__date_1_1myDate_ac05e3954e487b0027dc760c9e4192b98}\label{classlib__date_1_1myDate_ac05e3954e487b0027dc760c9e4192b98}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!get\_date\_int@{get\_date\_int}}
+\index{get\_date\_int@{get\_date\_int}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{get\_date\_int()}{get\_date\_int()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t lib\+\_\+date\+::my\+Date\+::get\+\_\+date\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the date in integer format. 
+
+\begin{DoxyReturn}{Returns}
+std\+::size\+\_\+t Date in integer format. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a8be515a9880f9e8083fe4acd30c88fcb}\label{classlib__date_1_1myDate_a8be515a9880f9e8083fe4acd30c88fcb}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!get\_date\_str@{get\_date\_str}}
+\index{get\_date\_str@{get\_date\_str}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{get\_date\_str()}{get\_date\_str()}}
+{\footnotesize\ttfamily std\+::string lib\+\_\+date\+::my\+Date\+::get\+\_\+date\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the date in string format of \char`\"{}yyyymmdd\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Date in string format. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_date_examples_8h-example}{lib\+\_\+date\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a06a628c33b049674b9d4af3d186a98ef}\label{classlib__date_1_1myDate_a06a628c33b049674b9d4af3d186a98ef}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!get\_day@{get\_day}}
+\index{get\_day@{get\_day}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{get\_day()}{get\_day()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t lib\+\_\+date\+::my\+Date\+::get\+\_\+day (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get day in month. 
+
+\begin{DoxyReturn}{Returns}
+std\+::size\+\_\+t Day. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a60b485f3d70f1279cfbfc50f4dd4a4ff}\label{classlib__date_1_1myDate_a60b485f3d70f1279cfbfc50f4dd4a4ff}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!get\_day\_in\_week@{get\_day\_in\_week}}
+\index{get\_day\_in\_week@{get\_day\_in\_week}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{get\_day\_in\_week()}{get\_day\_in\_week()}}
+{\footnotesize\ttfamily unsigned short lib\+\_\+date\+::my\+Date\+::get\+\_\+day\+\_\+in\+\_\+week (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the day in week. 
+
+\begin{DoxyReturn}{Returns}
+unsigned short Day in week (Monday = 1, Sunday = 7). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a5f221fe2c190aadfbc8b8392c80aa85a}\label{classlib__date_1_1myDate_a5f221fe2c190aadfbc8b8392c80aa85a}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!get\_days\_no@{get\_days\_no}}
+\index{get\_days\_no@{get\_days\_no}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{get\_days\_no()}{get\_days\_no()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t lib\+\_\+date\+::my\+Date\+::get\+\_\+days\+\_\+no (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of days from a reference date of 01/01/1601. 
+
+\begin{DoxyReturn}{Returns}
+std\+::size\+\_\+t Number of days from the reference date. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_date_examples_8h-example}{lib\+\_\+date\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a79c2f2abed4e06a69b56c1aad7a4793d}\label{classlib__date_1_1myDate_a79c2f2abed4e06a69b56c1aad7a4793d}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!get\_month@{get\_month}}
+\index{get\_month@{get\_month}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{get\_month()}{get\_month()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t lib\+\_\+date\+::my\+Date\+::get\+\_\+month (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get month in year. 
+
+\begin{DoxyReturn}{Returns}
+std\+::size\+\_\+t Month. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a4566a67839621f3fab74b43b8b806804}\label{classlib__date_1_1myDate_a4566a67839621f3fab74b43b8b806804}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!get\_year@{get\_year}}
+\index{get\_year@{get\_year}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{get\_year()}{get\_year()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t lib\+\_\+date\+::my\+Date\+::get\+\_\+year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get year. 
+
+\begin{DoxyReturn}{Returns}
+std\+::size\+\_\+t Year. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_affa00efd35a3695f787d4737198a112e}\label{classlib__date_1_1myDate_affa00efd35a3695f787d4737198a112e}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!is\_holidays@{is\_holidays}}
+\index{is\_holidays@{is\_holidays}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{is\_holidays()}{is\_holidays()}}
+{\footnotesize\ttfamily bool lib\+\_\+date\+::my\+Date\+::is\+\_\+holidays (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&}]{holidays }\end{DoxyParamCaption}) const}
+
+
+
+Check if the date belongs to public holidays. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em holidays} & Vector of dates representing public holidays. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Date belongs to public holidays. 
+
+false Date does not belong to public holidays. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_date_examples_8h-example}{lib\+\_\+date\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a07af95a90b51c889a5e485c66dfb36cf}\label{classlib__date_1_1myDate_a07af95a90b51c889a5e485c66dfb36cf}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!is\_last\_day\_in\_month@{is\_last\_day\_in\_month}}
+\index{is\_last\_day\_in\_month@{is\_last\_day\_in\_month}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{is\_last\_day\_in\_month()}{is\_last\_day\_in\_month()}}
+{\footnotesize\ttfamily bool lib\+\_\+date\+::my\+Date\+::is\+\_\+last\+\_\+day\+\_\+in\+\_\+month (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the date is the last day in month. 
+
+\begin{DoxyReturn}{Returns}
+true Date is the last day in month. 
+
+false Date is not the last day in month. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a390541adc6b1bdfcbde0b126c49e98f2}\label{classlib__date_1_1myDate_a390541adc6b1bdfcbde0b126c49e98f2}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!is\_leap\_year@{is\_leap\_year}}
+\index{is\_leap\_year@{is\_leap\_year}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{is\_leap\_year()}{is\_leap\_year()}}
+{\footnotesize\ttfamily bool lib\+\_\+date\+::my\+Date\+::is\+\_\+leap\+\_\+year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the date belongs to a leap year. 
+
+\begin{DoxyReturn}{Returns}
+true Date belongs to a leap year. 
+
+false Date does not belong to a leap year. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a98c1185672e4a1637bbea449a76c70e1}\label{classlib__date_1_1myDate_a98c1185672e4a1637bbea449a76c70e1}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!is\_weekend@{is\_weekend}}
+\index{is\_weekend@{is\_weekend}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{is\_weekend()}{is\_weekend()}}
+{\footnotesize\ttfamily bool lib\+\_\+date\+::my\+Date\+::is\+\_\+weekend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the date belongs to a weekend. 
+
+\begin{DoxyReturn}{Returns}
+true Date belongs to a weekend. 
+
+false Date does not belong to a weekend. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_date_examples_8h-example}{lib\+\_\+date\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a6be0979f6444c4627ad1cea5517a41ca}\label{classlib__date_1_1myDate_a6be0979f6444c4627ad1cea5517a41ca}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!is\_working\_day@{is\_working\_day}}
+\index{is\_working\_day@{is\_working\_day}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{is\_working\_day()}{is\_working\_day()}}
+{\footnotesize\ttfamily bool lib\+\_\+date\+::my\+Date\+::is\+\_\+working\+\_\+day (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&}]{holidays }\end{DoxyParamCaption}) const}
+
+
+
+Check if the date is a working date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em holidays} & Vector of dates representing public holidays. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Date is a working day. 
+
+false Date is not a working day. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_date_examples_8h-example}{lib\+\_\+date\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__date_1_1myDate_ad07a81f653dbcd740521e33db95dd42d}\label{classlib__date_1_1myDate_ad07a81f653dbcd740521e33db95dd42d}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily long lib\+\_\+date\+::my\+Date\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&}]{date2 }\end{DoxyParamCaption})}
+
+
+
+Overloaded \char`\"{}minus\char`\"{} operator \char`\"{}-\/\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date2} & Date to right of the operator that should be be subtracted from the date to the left of the operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+long Difference between two dates in calendar days. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_abfe3f9d5f39fa87e803ba229c884925f}\label{classlib__date_1_1myDate_abfe3f9d5f39fa87e803ba229c884925f}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool lib\+\_\+date\+::my\+Date\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+Overloaded \char`\"{}smaller than\char`\"{} operater \char`\"{}$<$\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Date to the right of the operator that should be compared to the date to the left of the operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true The first date is smaller. 
+
+false The first date is greater. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a6bfb8e8979e8b0c3bfcd9d8da4211cf5}\label{classlib__date_1_1myDate_a6bfb8e8979e8b0c3bfcd9d8da4211cf5}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool lib\+\_\+date\+::my\+Date\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+Overloaded \char`\"{}smaller than or equal\char`\"{} operator \char`\"{}$<$=\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Date to the right of the operator that should be compared to the date to the left of the operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true The first date is smaller or equal. 
+
+false The first date is greater. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_ae8bab4cf9c28d0797d678f3040c0ea1b}\label{classlib__date_1_1myDate_ae8bab4cf9c28d0797d678f3040c0ea1b}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!operator=@{operator=}}
+\index{operator=@{operator=}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlib__date_1_1myDate}{lib\+\_\+date\+::my\+Date}} \& lib\+\_\+date\+::my\+Date\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&}]{\+\_\+date }\end{DoxyParamCaption})}
+
+
+
+Overloaded \char`\"{}assign\char`\"{} operator \char`\"{}=\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+date} & Date to right of the operator to be assigned to date on left of the operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}}\& Date to which value was assigned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_ab69d4ccd052db2ad7dadcdf6d8c7d4ca}\label{classlib__date_1_1myDate_ab69d4ccd052db2ad7dadcdf6d8c7d4ca}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!operator==@{operator==}}
+\index{operator==@{operator==}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool lib\+\_\+date\+::my\+Date\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&}]{\+\_\+date }\end{DoxyParamCaption})}
+
+
+
+Overloaded \char`\"{}equal\char`\"{} operator \char`\"{}==\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+date} & Date to the right of the operator that should be compared to the date to the left of the operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true The two dates are equal. 
+
+false The two dates are not equal. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a6debf023572d11b5660074acfe77acd7}\label{classlib__date_1_1myDate_a6debf023572d11b5660074acfe77acd7}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool lib\+\_\+date\+::my\+Date\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+Overloaded \char`\"{}greater than\char`\"{} operater \char`\"{}$>$\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Date to the right of the operator that should be compared to the date to the left of the operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true The first date is greater. 
+
+false The first date is smaller. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a8dda29663aeaad04a7f5e7c824043987}\label{classlib__date_1_1myDate_a8dda29663aeaad04a7f5e7c824043987}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool lib\+\_\+date\+::my\+Date\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+Overloaded \char`\"{}greater than or equal\char`\"{} operator \char`\"{}$<$=\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Date to the right of the operator that should be compared to the date to the left of the operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true The first date is greater or equal. 
+
+false The first date is smaller. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlib__date_1_1myDate_af93f56f85d5468601c3d10f727de2c76}\label{classlib__date_1_1myDate_af93f56f85d5468601c3d10f727de2c76}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!remove@{remove}}
+\index{remove@{remove}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void lib\+\_\+date\+::my\+Date\+::remove (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{date\+\_\+freq }\end{DoxyParamCaption})}
+
+
+
+Subtract period expressed in form of frequency string from the date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+\_\+freq} & Frequency string, e.\+g. \char`\"{}1\+D\char`\"{}, \char`\"{}2\+M\char`\"{}, \char`\"{}5\+Y\char`\"{}, etc. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_date_examples_8h-example}{lib\+\_\+date\+\_\+examples.\+h}}.\end{Desc}
+\mbox{\Hypertarget{classlib__date_1_1myDate_a474ce046d8276ce1df914e441333e675}\label{classlib__date_1_1myDate_a474ce046d8276ce1df914e441333e675}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!set@{set}}
+\index{set@{set}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void lib\+\_\+date\+::my\+Date\+::set (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t \&}]{date\+\_\+int }\end{DoxyParamCaption})}
+
+
+
+Set date in integer format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+\_\+int} & Date in integer format, e.\+g. 19791230. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlib__date_1_1myDate_ab795a92dbba74824f992db25c942fc2f}\label{classlib__date_1_1myDate_ab795a92dbba74824f992db25c942fc2f}} 
+\index{lib\_date::myDate@{lib\_date::myDate}!set@{set}}
+\index{set@{set}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void lib\+\_\+date\+::my\+Date\+::set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{date\+\_\+str,  }\item[{const std\+::string \&}]{date\+\_\+format }\end{DoxyParamCaption})}
+
+
+
+Set date in string format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+\_\+str} & Date in string format. \\
+\hline
+{\em date\+\_\+format} & Date string format, e.\+g. \char`\"{}yyyyddmm\char`\"{}. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classlib__date_1_1myDate_aacd8e41776d1de9040bf3f229897f4dc}\label{classlib__date_1_1myDate_aacd8e41776d1de9040bf3f229897f4dc}} 
-void {\bfseries set\+\_\+to\+\_\+next\+\_\+working\+\_\+day} (const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&holidays)
-\item 
+\index{lib\_date::myDate@{lib\_date::myDate}!set\_to\_next\_working\_day@{set\_to\_next\_working\_day}}
+\index{set\_to\_next\_working\_day@{set\_to\_next\_working\_day}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{set\_to\_next\_working\_day()}{set\_to\_next\_working\_day()}}
+{\footnotesize\ttfamily void lib\+\_\+date\+::my\+Date\+::set\+\_\+to\+\_\+next\+\_\+working\+\_\+day (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&}]{holidays }\end{DoxyParamCaption})}
+
+
+
+Set date to next working day after the current date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em holidays} & Vector of dates representing public holidays. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_date_examples_8h-example}{lib\+\_\+date\+\_\+examples.\+h}}.\end{Desc}
 \mbox{\Hypertarget{classlib__date_1_1myDate_aee210cfba95c1397f19302ec4774173c}\label{classlib__date_1_1myDate_aee210cfba95c1397f19302ec4774173c}} 
-void {\bfseries set\+\_\+to\+\_\+prev\+\_\+working\+\_\+day} (const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&holidays)
-\end{DoxyCompactItemize}
+\index{lib\_date::myDate@{lib\_date::myDate}!set\_to\_prev\_working\_day@{set\_to\_prev\_working\_day}}
+\index{set\_to\_prev\_working\_day@{set\_to\_prev\_working\_day}!lib\_date::myDate@{lib\_date::myDate}}
+\doxysubsubsection{\texorpdfstring{set\_to\_prev\_working\_day()}{set\_to\_prev\_working\_day()}}
+{\footnotesize\ttfamily void lib\+\_\+date\+::my\+Date\+::set\+\_\+to\+\_\+prev\+\_\+working\+\_\+day (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classlib__date_1_1myDate}{my\+Date}} $>$ \&}]{holidays }\end{DoxyParamCaption})}
+
+
+
+Set date to previous working day before the current date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em holidays} & Vector of dates representing public holidays. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{lib_date_examples_8h-example}{lib\+\_\+date\+\_\+examples.\+h}}.\end{Desc}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-lib\+\_\+date.\+h\item 
+\mbox{\hyperlink{lib__date_8h}{lib\+\_\+date.\+h}}\item 
 lib\+\_\+date.\+cpp\end{DoxyCompactItemize}

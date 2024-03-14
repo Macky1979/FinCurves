@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>general: lib_date::myDate Class Reference</title>
+<title>General C++ libraries: lib_date::myDate Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">general
+   <div id="projectname">General C++ libraries
    </div>
-   <div id="projectbrief">General C++ libraries</div>
+   <div id="projectbrief">C++ libraries to handle basic date, file, string and SQL operations, reading .csv files, etc.</div>
   </td>
  </tr>
  </tbody>
@@ -73,100 +73,950 @@ $(function() {
   <div class="headertitle"><div class="title">lib_date::myDate Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Date class.  
+ <a href="classlib__date_1_1myDate.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="lib__date_8h_source.html">lib_date.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a16264220071afe6ecc5c17730241e7ab"><td class="memItemLeft" align="right" valign="top"><a id="a16264220071afe6ecc5c17730241e7ab" name="a16264220071afe6ecc5c17730241e7ab"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>myDate</b> (const std::string &amp;date_str, const std::string &amp;date_format)</td></tr>
+<tr class="memitem:a553f277b6a43975ecac5004a65372447"><td class="memItemLeft" align="right" valign="top"><a id="a553f277b6a43975ecac5004a65372447" name="a553f277b6a43975ecac5004a65372447"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>myDate</b> ()</td></tr>
+<tr class="memdesc:a553f277b6a43975ecac5004a65372447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classlib__date_1_1myDate.html" title="Date class.">myDate</a> object and initialize it to reference date 01/01/1601. <br /></td></tr>
+<tr class="separator:a553f277b6a43975ecac5004a65372447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16264220071afe6ecc5c17730241e7ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a16264220071afe6ecc5c17730241e7ab">myDate</a> (const std::string &amp;date_str, const std::string &amp;date_format)</td></tr>
+<tr class="memdesc:a16264220071afe6ecc5c17730241e7ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classlib__date_1_1myDate.html" title="Date class.">myDate</a> object and initialize it to user specified date.  <a href="classlib__date_1_1myDate.html#a16264220071afe6ecc5c17730241e7ab">More...</a><br /></td></tr>
 <tr class="separator:a16264220071afe6ecc5c17730241e7ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e01493bba0fa9a9e611750853069f74"><td class="memItemLeft" align="right" valign="top"><a id="a3e01493bba0fa9a9e611750853069f74" name="a3e01493bba0fa9a9e611750853069f74"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>myDate</b> (const std::size_t &amp;date_int)</td></tr>
+<tr class="memitem:a3e01493bba0fa9a9e611750853069f74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a3e01493bba0fa9a9e611750853069f74">myDate</a> (const std::size_t &amp;date_int)</td></tr>
+<tr class="memdesc:a3e01493bba0fa9a9e611750853069f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classlib__date_1_1myDate.html" title="Date class.">myDate</a> object and initialize it to user specified date.  <a href="classlib__date_1_1myDate.html#a3e01493bba0fa9a9e611750853069f74">More...</a><br /></td></tr>
 <tr class="separator:a3e01493bba0fa9a9e611750853069f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab574561e50a3df17c70d27bc0b11bcb1"><td class="memItemLeft" align="right" valign="top"><a id="ab574561e50a3df17c70d27bc0b11bcb1" name="ab574561e50a3df17c70d27bc0b11bcb1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>myDate</b> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date)</td></tr>
+<tr class="memitem:ab574561e50a3df17c70d27bc0b11bcb1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#ab574561e50a3df17c70d27bc0b11bcb1">myDate</a> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date)</td></tr>
+<tr class="memdesc:ab574561e50a3df17c70d27bc0b11bcb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="classlib__date_1_1myDate.html#ab574561e50a3df17c70d27bc0b11bcb1">More...</a><br /></td></tr>
 <tr class="separator:ab574561e50a3df17c70d27bc0b11bcb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad07a81f653dbcd740521e33db95dd42d"><td class="memItemLeft" align="right" valign="top"><a id="ad07a81f653dbcd740521e33db95dd42d" name="ad07a81f653dbcd740521e33db95dd42d"></a>
-long&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date2)</td></tr>
+<tr class="memitem:a31b301f74849e0601f490a5abcc7c5f9"><td class="memItemLeft" align="right" valign="top"><a id="a31b301f74849e0601f490a5abcc7c5f9" name="a31b301f74849e0601f490a5abcc7c5f9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~myDate</b> ()</td></tr>
+<tr class="memdesc:a31b301f74849e0601f490a5abcc7c5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classlib__date_1_1myDate.html" title="Date class.">myDate</a> object. <br /></td></tr>
+<tr class="separator:a31b301f74849e0601f490a5abcc7c5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad07a81f653dbcd740521e33db95dd42d"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#ad07a81f653dbcd740521e33db95dd42d">operator-</a> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date2)</td></tr>
+<tr class="memdesc:ad07a81f653dbcd740521e33db95dd42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded "minus" operator "-".  <a href="classlib__date_1_1myDate.html#ad07a81f653dbcd740521e33db95dd42d">More...</a><br /></td></tr>
 <tr class="separator:ad07a81f653dbcd740521e33db95dd42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8bab4cf9c28d0797d678f3040c0ea1b"><td class="memItemLeft" align="right" valign="top"><a id="ae8bab4cf9c28d0797d678f3040c0ea1b" name="ae8bab4cf9c28d0797d678f3040c0ea1b"></a>
-<a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;_date)</td></tr>
+<tr class="memitem:ae8bab4cf9c28d0797d678f3040c0ea1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#ae8bab4cf9c28d0797d678f3040c0ea1b">operator=</a> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;_date)</td></tr>
+<tr class="memdesc:ae8bab4cf9c28d0797d678f3040c0ea1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded "assign" operator "=".  <a href="classlib__date_1_1myDate.html#ae8bab4cf9c28d0797d678f3040c0ea1b">More...</a><br /></td></tr>
 <tr class="separator:ae8bab4cf9c28d0797d678f3040c0ea1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab69d4ccd052db2ad7dadcdf6d8c7d4ca"><td class="memItemLeft" align="right" valign="top"><a id="ab69d4ccd052db2ad7dadcdf6d8c7d4ca" name="ab69d4ccd052db2ad7dadcdf6d8c7d4ca"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;_date)</td></tr>
+<tr class="memitem:ab69d4ccd052db2ad7dadcdf6d8c7d4ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#ab69d4ccd052db2ad7dadcdf6d8c7d4ca">operator==</a> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;_date)</td></tr>
+<tr class="memdesc:ab69d4ccd052db2ad7dadcdf6d8c7d4ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded "equal" operator "==".  <a href="classlib__date_1_1myDate.html#ab69d4ccd052db2ad7dadcdf6d8c7d4ca">More...</a><br /></td></tr>
 <tr class="separator:ab69d4ccd052db2ad7dadcdf6d8c7d4ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfe3f9d5f39fa87e803ba229c884925f"><td class="memItemLeft" align="right" valign="top"><a id="abfe3f9d5f39fa87e803ba229c884925f" name="abfe3f9d5f39fa87e803ba229c884925f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;</b> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date)</td></tr>
+<tr class="memitem:abfe3f9d5f39fa87e803ba229c884925f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#abfe3f9d5f39fa87e803ba229c884925f">operator&lt;</a> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date)</td></tr>
+<tr class="memdesc:abfe3f9d5f39fa87e803ba229c884925f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded "smaller than" operater "&lt;".  <a href="classlib__date_1_1myDate.html#abfe3f9d5f39fa87e803ba229c884925f">More...</a><br /></td></tr>
 <tr class="separator:abfe3f9d5f39fa87e803ba229c884925f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6debf023572d11b5660074acfe77acd7"><td class="memItemLeft" align="right" valign="top"><a id="a6debf023572d11b5660074acfe77acd7" name="a6debf023572d11b5660074acfe77acd7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;</b> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date)</td></tr>
+<tr class="memitem:a6debf023572d11b5660074acfe77acd7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a6debf023572d11b5660074acfe77acd7">operator&gt;</a> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date)</td></tr>
+<tr class="memdesc:a6debf023572d11b5660074acfe77acd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded "greater than" operater "&gt;".  <a href="classlib__date_1_1myDate.html#a6debf023572d11b5660074acfe77acd7">More...</a><br /></td></tr>
 <tr class="separator:a6debf023572d11b5660074acfe77acd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bfb8e8979e8b0c3bfcd9d8da4211cf5"><td class="memItemLeft" align="right" valign="top"><a id="a6bfb8e8979e8b0c3bfcd9d8da4211cf5" name="a6bfb8e8979e8b0c3bfcd9d8da4211cf5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;=</b> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date)</td></tr>
+<tr class="memitem:a6bfb8e8979e8b0c3bfcd9d8da4211cf5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a6bfb8e8979e8b0c3bfcd9d8da4211cf5">operator&lt;=</a> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date)</td></tr>
+<tr class="memdesc:a6bfb8e8979e8b0c3bfcd9d8da4211cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded "smaller than or equal" operator "&lt;=".  <a href="classlib__date_1_1myDate.html#a6bfb8e8979e8b0c3bfcd9d8da4211cf5">More...</a><br /></td></tr>
 <tr class="separator:a6bfb8e8979e8b0c3bfcd9d8da4211cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dda29663aeaad04a7f5e7c824043987"><td class="memItemLeft" align="right" valign="top"><a id="a8dda29663aeaad04a7f5e7c824043987" name="a8dda29663aeaad04a7f5e7c824043987"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;=</b> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date)</td></tr>
+<tr class="memitem:a8dda29663aeaad04a7f5e7c824043987"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a8dda29663aeaad04a7f5e7c824043987">operator&gt;=</a> (const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;date)</td></tr>
+<tr class="memdesc:a8dda29663aeaad04a7f5e7c824043987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded "greater than or equal" operator "&lt;=".  <a href="classlib__date_1_1myDate.html#a8dda29663aeaad04a7f5e7c824043987">More...</a><br /></td></tr>
 <tr class="separator:a8dda29663aeaad04a7f5e7c824043987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35d0de8f921efb12d6a64d313848a604"><td class="memItemLeft" align="right" valign="top"><a id="a35d0de8f921efb12d6a64d313848a604" name="a35d0de8f921efb12d6a64d313848a604"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>recalc</b> ()</td></tr>
+<tr class="memdesc:a35d0de8f921efb12d6a64d313848a604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recalculate <a class="el" href="classlib__date_1_1myDate.html" title="Date class.">myDate</a> object (typically after adjusting the object manually). <br /></td></tr>
 <tr class="separator:a35d0de8f921efb12d6a64d313848a604"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab795a92dbba74824f992db25c942fc2f"><td class="memItemLeft" align="right" valign="top"><a id="ab795a92dbba74824f992db25c942fc2f" name="ab795a92dbba74824f992db25c942fc2f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const std::string &amp;date_str, const std::string &amp;date_format)</td></tr>
+<tr class="memitem:ab795a92dbba74824f992db25c942fc2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#ab795a92dbba74824f992db25c942fc2f">set</a> (const std::string &amp;date_str, const std::string &amp;date_format)</td></tr>
+<tr class="memdesc:ab795a92dbba74824f992db25c942fc2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set date in string format.  <a href="classlib__date_1_1myDate.html#ab795a92dbba74824f992db25c942fc2f">More...</a><br /></td></tr>
 <tr class="separator:ab795a92dbba74824f992db25c942fc2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a474ce046d8276ce1df914e441333e675"><td class="memItemLeft" align="right" valign="top"><a id="a474ce046d8276ce1df914e441333e675" name="a474ce046d8276ce1df914e441333e675"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const std::size_t &amp;date_int)</td></tr>
+<tr class="memitem:a474ce046d8276ce1df914e441333e675"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a474ce046d8276ce1df914e441333e675">set</a> (const std::size_t &amp;date_int)</td></tr>
+<tr class="memdesc:a474ce046d8276ce1df914e441333e675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set date in integer format.  <a href="classlib__date_1_1myDate.html#a474ce046d8276ce1df914e441333e675">More...</a><br /></td></tr>
 <tr class="separator:a474ce046d8276ce1df914e441333e675"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4566a67839621f3fab74b43b8b806804"><td class="memItemLeft" align="right" valign="top"><a id="a4566a67839621f3fab74b43b8b806804" name="a4566a67839621f3fab74b43b8b806804"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_year</b> () const</td></tr>
+<tr class="memitem:a4566a67839621f3fab74b43b8b806804"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a4566a67839621f3fab74b43b8b806804">get_year</a> () const</td></tr>
+<tr class="memdesc:a4566a67839621f3fab74b43b8b806804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get year.  <a href="classlib__date_1_1myDate.html#a4566a67839621f3fab74b43b8b806804">More...</a><br /></td></tr>
 <tr class="separator:a4566a67839621f3fab74b43b8b806804"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79c2f2abed4e06a69b56c1aad7a4793d"><td class="memItemLeft" align="right" valign="top"><a id="a79c2f2abed4e06a69b56c1aad7a4793d" name="a79c2f2abed4e06a69b56c1aad7a4793d"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_month</b> () const</td></tr>
+<tr class="memitem:a79c2f2abed4e06a69b56c1aad7a4793d"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a79c2f2abed4e06a69b56c1aad7a4793d">get_month</a> () const</td></tr>
+<tr class="memdesc:a79c2f2abed4e06a69b56c1aad7a4793d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get month in year.  <a href="classlib__date_1_1myDate.html#a79c2f2abed4e06a69b56c1aad7a4793d">More...</a><br /></td></tr>
 <tr class="separator:a79c2f2abed4e06a69b56c1aad7a4793d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06a628c33b049674b9d4af3d186a98ef"><td class="memItemLeft" align="right" valign="top"><a id="a06a628c33b049674b9d4af3d186a98ef" name="a06a628c33b049674b9d4af3d186a98ef"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_day</b> () const</td></tr>
+<tr class="memitem:a06a628c33b049674b9d4af3d186a98ef"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a06a628c33b049674b9d4af3d186a98ef">get_day</a> () const</td></tr>
+<tr class="memdesc:a06a628c33b049674b9d4af3d186a98ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get day in month.  <a href="classlib__date_1_1myDate.html#a06a628c33b049674b9d4af3d186a98ef">More...</a><br /></td></tr>
 <tr class="separator:a06a628c33b049674b9d4af3d186a98ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f221fe2c190aadfbc8b8392c80aa85a"><td class="memItemLeft" align="right" valign="top"><a id="a5f221fe2c190aadfbc8b8392c80aa85a" name="a5f221fe2c190aadfbc8b8392c80aa85a"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_days_no</b> () const</td></tr>
+<tr class="memitem:a5f221fe2c190aadfbc8b8392c80aa85a"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a5f221fe2c190aadfbc8b8392c80aa85a">get_days_no</a> () const</td></tr>
+<tr class="memdesc:a5f221fe2c190aadfbc8b8392c80aa85a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of days from a reference date of 01/01/1601.  <a href="classlib__date_1_1myDate.html#a5f221fe2c190aadfbc8b8392c80aa85a">More...</a><br /></td></tr>
 <tr class="separator:a5f221fe2c190aadfbc8b8392c80aa85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60b485f3d70f1279cfbfc50f4dd4a4ff"><td class="memItemLeft" align="right" valign="top"><a id="a60b485f3d70f1279cfbfc50f4dd4a4ff" name="a60b485f3d70f1279cfbfc50f4dd4a4ff"></a>
-unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>get_day_in_week</b> () const</td></tr>
+<tr class="memitem:a60b485f3d70f1279cfbfc50f4dd4a4ff"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a60b485f3d70f1279cfbfc50f4dd4a4ff">get_day_in_week</a> () const</td></tr>
+<tr class="memdesc:a60b485f3d70f1279cfbfc50f4dd4a4ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the day in week.  <a href="classlib__date_1_1myDate.html#a60b485f3d70f1279cfbfc50f4dd4a4ff">More...</a><br /></td></tr>
 <tr class="separator:a60b485f3d70f1279cfbfc50f4dd4a4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac05e3954e487b0027dc760c9e4192b98"><td class="memItemLeft" align="right" valign="top"><a id="ac05e3954e487b0027dc760c9e4192b98" name="ac05e3954e487b0027dc760c9e4192b98"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_date_int</b> () const</td></tr>
+<tr class="memitem:ac05e3954e487b0027dc760c9e4192b98"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#ac05e3954e487b0027dc760c9e4192b98">get_date_int</a> () const</td></tr>
+<tr class="memdesc:ac05e3954e487b0027dc760c9e4192b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the date in integer format.  <a href="classlib__date_1_1myDate.html#ac05e3954e487b0027dc760c9e4192b98">More...</a><br /></td></tr>
 <tr class="separator:ac05e3954e487b0027dc760c9e4192b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8be515a9880f9e8083fe4acd30c88fcb"><td class="memItemLeft" align="right" valign="top"><a id="a8be515a9880f9e8083fe4acd30c88fcb" name="a8be515a9880f9e8083fe4acd30c88fcb"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_date_str</b> () const</td></tr>
+<tr class="memitem:a8be515a9880f9e8083fe4acd30c88fcb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a8be515a9880f9e8083fe4acd30c88fcb">get_date_str</a> () const</td></tr>
+<tr class="memdesc:a8be515a9880f9e8083fe4acd30c88fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the date in string format of "yyyymmdd".  <a href="classlib__date_1_1myDate.html#a8be515a9880f9e8083fe4acd30c88fcb">More...</a><br /></td></tr>
 <tr class="separator:a8be515a9880f9e8083fe4acd30c88fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d7abaac285d6ba7be70ef16eb006745"><td class="memItemLeft" align="right" valign="top"><a id="a4d7abaac285d6ba7be70ef16eb006745" name="a4d7abaac285d6ba7be70ef16eb006745"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add</b> (const std::string &amp;date_freq)</td></tr>
+<tr class="memitem:a4d7abaac285d6ba7be70ef16eb006745"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a4d7abaac285d6ba7be70ef16eb006745">add</a> (const std::string &amp;date_freq)</td></tr>
+<tr class="memdesc:a4d7abaac285d6ba7be70ef16eb006745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add period expressed in form of frequency string to the date.  <a href="classlib__date_1_1myDate.html#a4d7abaac285d6ba7be70ef16eb006745">More...</a><br /></td></tr>
 <tr class="separator:a4d7abaac285d6ba7be70ef16eb006745"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af93f56f85d5468601c3d10f727de2c76"><td class="memItemLeft" align="right" valign="top"><a id="af93f56f85d5468601c3d10f727de2c76" name="af93f56f85d5468601c3d10f727de2c76"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>remove</b> (const std::string &amp;date_freq)</td></tr>
+<tr class="memitem:af93f56f85d5468601c3d10f727de2c76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#af93f56f85d5468601c3d10f727de2c76">remove</a> (const std::string &amp;date_freq)</td></tr>
+<tr class="memdesc:af93f56f85d5468601c3d10f727de2c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract period expressed in form of frequency string from the date.  <a href="classlib__date_1_1myDate.html#af93f56f85d5468601c3d10f727de2c76">More...</a><br /></td></tr>
 <tr class="separator:af93f56f85d5468601c3d10f727de2c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07af95a90b51c889a5e485c66dfb36cf"><td class="memItemLeft" align="right" valign="top"><a id="a07af95a90b51c889a5e485c66dfb36cf" name="a07af95a90b51c889a5e485c66dfb36cf"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_last_day_in_month</b> () const</td></tr>
+<tr class="memitem:a07af95a90b51c889a5e485c66dfb36cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a07af95a90b51c889a5e485c66dfb36cf">is_last_day_in_month</a> () const</td></tr>
+<tr class="memdesc:a07af95a90b51c889a5e485c66dfb36cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the date is the last day in month.  <a href="classlib__date_1_1myDate.html#a07af95a90b51c889a5e485c66dfb36cf">More...</a><br /></td></tr>
 <tr class="separator:a07af95a90b51c889a5e485c66dfb36cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a390541adc6b1bdfcbde0b126c49e98f2"><td class="memItemLeft" align="right" valign="top"><a id="a390541adc6b1bdfcbde0b126c49e98f2" name="a390541adc6b1bdfcbde0b126c49e98f2"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_leap_year</b> () const</td></tr>
+<tr class="memitem:a390541adc6b1bdfcbde0b126c49e98f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a390541adc6b1bdfcbde0b126c49e98f2">is_leap_year</a> () const</td></tr>
+<tr class="memdesc:a390541adc6b1bdfcbde0b126c49e98f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the date belongs to a leap year.  <a href="classlib__date_1_1myDate.html#a390541adc6b1bdfcbde0b126c49e98f2">More...</a><br /></td></tr>
 <tr class="separator:a390541adc6b1bdfcbde0b126c49e98f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98c1185672e4a1637bbea449a76c70e1"><td class="memItemLeft" align="right" valign="top"><a id="a98c1185672e4a1637bbea449a76c70e1" name="a98c1185672e4a1637bbea449a76c70e1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_weekend</b> () const</td></tr>
+<tr class="memitem:a98c1185672e4a1637bbea449a76c70e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a98c1185672e4a1637bbea449a76c70e1">is_weekend</a> () const</td></tr>
+<tr class="memdesc:a98c1185672e4a1637bbea449a76c70e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the date belongs to a weekend.  <a href="classlib__date_1_1myDate.html#a98c1185672e4a1637bbea449a76c70e1">More...</a><br /></td></tr>
 <tr class="separator:a98c1185672e4a1637bbea449a76c70e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affa00efd35a3695f787d4737198a112e"><td class="memItemLeft" align="right" valign="top"><a id="affa00efd35a3695f787d4737198a112e" name="affa00efd35a3695f787d4737198a112e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_holidays</b> (const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;holidays) const</td></tr>
+<tr class="memitem:affa00efd35a3695f787d4737198a112e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#affa00efd35a3695f787d4737198a112e">is_holidays</a> (const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;holidays) const</td></tr>
+<tr class="memdesc:affa00efd35a3695f787d4737198a112e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the date belongs to public holidays.  <a href="classlib__date_1_1myDate.html#affa00efd35a3695f787d4737198a112e">More...</a><br /></td></tr>
 <tr class="separator:affa00efd35a3695f787d4737198a112e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6be0979f6444c4627ad1cea5517a41ca"><td class="memItemLeft" align="right" valign="top"><a id="a6be0979f6444c4627ad1cea5517a41ca" name="a6be0979f6444c4627ad1cea5517a41ca"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_working_day</b> (const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;holidays) const</td></tr>
+<tr class="memitem:a6be0979f6444c4627ad1cea5517a41ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#a6be0979f6444c4627ad1cea5517a41ca">is_working_day</a> (const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;holidays) const</td></tr>
+<tr class="memdesc:a6be0979f6444c4627ad1cea5517a41ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the date is a working date.  <a href="classlib__date_1_1myDate.html#a6be0979f6444c4627ad1cea5517a41ca">More...</a><br /></td></tr>
 <tr class="separator:a6be0979f6444c4627ad1cea5517a41ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad99e4f47e34d6a5ac802f7088bd0bc3c"><td class="memItemLeft" align="right" valign="top"><a id="ad99e4f47e34d6a5ac802f7088bd0bc3c" name="ad99e4f47e34d6a5ac802f7088bd0bc3c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_working_days</b> (const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;holidays, const std::size_t &amp;working_days_no=1)</td></tr>
+<tr class="memitem:ad99e4f47e34d6a5ac802f7088bd0bc3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#ad99e4f47e34d6a5ac802f7088bd0bc3c">add_working_days</a> (const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;holidays, const std::size_t &amp;working_days_no=1)</td></tr>
+<tr class="memdesc:ad99e4f47e34d6a5ac802f7088bd0bc3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add working days to the date.  <a href="classlib__date_1_1myDate.html#ad99e4f47e34d6a5ac802f7088bd0bc3c">More...</a><br /></td></tr>
 <tr class="separator:ad99e4f47e34d6a5ac802f7088bd0bc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacd8e41776d1de9040bf3f229897f4dc"><td class="memItemLeft" align="right" valign="top"><a id="aacd8e41776d1de9040bf3f229897f4dc" name="aacd8e41776d1de9040bf3f229897f4dc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_to_next_working_day</b> (const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;holidays)</td></tr>
+<tr class="memitem:aacd8e41776d1de9040bf3f229897f4dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#aacd8e41776d1de9040bf3f229897f4dc">set_to_next_working_day</a> (const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;holidays)</td></tr>
+<tr class="memdesc:aacd8e41776d1de9040bf3f229897f4dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set date to next working day after the current date.  <a href="classlib__date_1_1myDate.html#aacd8e41776d1de9040bf3f229897f4dc">More...</a><br /></td></tr>
 <tr class="separator:aacd8e41776d1de9040bf3f229897f4dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee210cfba95c1397f19302ec4774173c"><td class="memItemLeft" align="right" valign="top"><a id="aee210cfba95c1397f19302ec4774173c" name="aee210cfba95c1397f19302ec4774173c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_to_prev_working_day</b> (const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;holidays)</td></tr>
+<tr class="memitem:aee210cfba95c1397f19302ec4774173c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__date_1_1myDate.html#aee210cfba95c1397f19302ec4774173c">set_to_prev_working_day</a> (const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;holidays)</td></tr>
+<tr class="memdesc:aee210cfba95c1397f19302ec4774173c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set date to previous working day before the current date.  <a href="classlib__date_1_1myDate.html#aee210cfba95c1397f19302ec4774173c">More...</a><br /></td></tr>
 <tr class="separator:aee210cfba95c1397f19302ec4774173c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Date class. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_date_examples_8h-example.html#_a0">lib_date_examples.h</a>.</dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a16264220071afe6ecc5c17730241e7ab" name="a16264220071afe6ecc5c17730241e7ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16264220071afe6ecc5c17730241e7ab">&#9670;&nbsp;</a></span>myDate() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib_date::myDate::myDate </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>date_str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>date_format</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classlib__date_1_1myDate.html" title="Date class.">myDate</a> object and initialize it to user specified date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date_str</td><td>Date in string format. </td></tr>
+    <tr><td class="paramname">date_format</td><td>Date string format, e.g. "yyyyddmm". </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3e01493bba0fa9a9e611750853069f74" name="a3e01493bba0fa9a9e611750853069f74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e01493bba0fa9a9e611750853069f74">&#9670;&nbsp;</a></span>myDate() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib_date::myDate::myDate </td>
+          <td>(</td>
+          <td class="paramtype">const std::size_t &amp;&#160;</td>
+          <td class="paramname"><em>date_int</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classlib__date_1_1myDate.html" title="Date class.">myDate</a> object and initialize it to user specified date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date_int</td><td>Date in integer format, e.g. 19791230. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab574561e50a3df17c70d27bc0b11bcb1" name="ab574561e50a3df17c70d27bc0b11bcb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab574561e50a3df17c70d27bc0b11bcb1">&#9670;&nbsp;</a></span>myDate() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib_date::myDate::myDate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;&#160;</td>
+          <td class="paramname"><em>date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4d7abaac285d6ba7be70ef16eb006745" name="a4d7abaac285d6ba7be70ef16eb006745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d7abaac285d6ba7be70ef16eb006745">&#9670;&nbsp;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib_date::myDate::add </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>date_freq</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add period expressed in form of frequency string to the date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date_freq</td><td>Frequency string, e.g. "1D", "2M", "5Y", etc. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_date_examples_8h-example.html#a4">lib_date_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="ad99e4f47e34d6a5ac802f7088bd0bc3c" name="ad99e4f47e34d6a5ac802f7088bd0bc3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad99e4f47e34d6a5ac802f7088bd0bc3c">&#9670;&nbsp;</a></span>add_working_days()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib_date::myDate::add_working_days </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>holidays</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::size_t &amp;&#160;</td>
+          <td class="paramname"><em>working_days_no</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add working days to the date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">holidays</td><td>Vector of dates representing public holidays. </td></tr>
+    <tr><td class="paramname">working_days_no</td><td>Number of working days to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac05e3954e487b0027dc760c9e4192b98" name="ac05e3954e487b0027dc760c9e4192b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac05e3954e487b0027dc760c9e4192b98">&#9670;&nbsp;</a></span>get_date_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t lib_date::myDate::get_date_int </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the date in integer format. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::size_t Date in integer format. </dd></dl>
+
+</div>
+</div>
+<a id="a8be515a9880f9e8083fe4acd30c88fcb" name="a8be515a9880f9e8083fe4acd30c88fcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8be515a9880f9e8083fe4acd30c88fcb">&#9670;&nbsp;</a></span>get_date_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string lib_date::myDate::get_date_str </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the date in string format of "yyyymmdd". </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string Date in string format. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_date_examples_8h-example.html#a3">lib_date_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a06a628c33b049674b9d4af3d186a98ef" name="a06a628c33b049674b9d4af3d186a98ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06a628c33b049674b9d4af3d186a98ef">&#9670;&nbsp;</a></span>get_day()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t lib_date::myDate::get_day </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get day in month. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::size_t Day. </dd></dl>
+
+</div>
+</div>
+<a id="a60b485f3d70f1279cfbfc50f4dd4a4ff" name="a60b485f3d70f1279cfbfc50f4dd4a4ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60b485f3d70f1279cfbfc50f4dd4a4ff">&#9670;&nbsp;</a></span>get_day_in_week()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short lib_date::myDate::get_day_in_week </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the day in week. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned short Day in week (Monday = 1, Sunday = 7). </dd></dl>
+
+</div>
+</div>
+<a id="a5f221fe2c190aadfbc8b8392c80aa85a" name="a5f221fe2c190aadfbc8b8392c80aa85a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f221fe2c190aadfbc8b8392c80aa85a">&#9670;&nbsp;</a></span>get_days_no()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t lib_date::myDate::get_days_no </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get number of days from a reference date of 01/01/1601. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::size_t Number of days from the reference date. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_date_examples_8h-example.html#a2">lib_date_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a79c2f2abed4e06a69b56c1aad7a4793d" name="a79c2f2abed4e06a69b56c1aad7a4793d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79c2f2abed4e06a69b56c1aad7a4793d">&#9670;&nbsp;</a></span>get_month()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t lib_date::myDate::get_month </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get month in year. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::size_t Month. </dd></dl>
+
+</div>
+</div>
+<a id="a4566a67839621f3fab74b43b8b806804" name="a4566a67839621f3fab74b43b8b806804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4566a67839621f3fab74b43b8b806804">&#9670;&nbsp;</a></span>get_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t lib_date::myDate::get_year </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get year. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::size_t Year. </dd></dl>
+
+</div>
+</div>
+<a id="affa00efd35a3695f787d4737198a112e" name="affa00efd35a3695f787d4737198a112e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affa00efd35a3695f787d4737198a112e">&#9670;&nbsp;</a></span>is_holidays()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib_date::myDate::is_holidays </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>holidays</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the date belongs to public holidays. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">holidays</td><td>Vector of dates representing public holidays. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Date belongs to public holidays. </dd>
+<dd>
+false Date does not belong to public holidays. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_date_examples_8h-example.html#a14">lib_date_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a07af95a90b51c889a5e485c66dfb36cf" name="a07af95a90b51c889a5e485c66dfb36cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07af95a90b51c889a5e485c66dfb36cf">&#9670;&nbsp;</a></span>is_last_day_in_month()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib_date::myDate::is_last_day_in_month </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the date is the last day in month. </p>
+<dl class="section return"><dt>Returns</dt><dd>true Date is the last day in month. </dd>
+<dd>
+false Date is not the last day in month. </dd></dl>
+
+</div>
+</div>
+<a id="a390541adc6b1bdfcbde0b126c49e98f2" name="a390541adc6b1bdfcbde0b126c49e98f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390541adc6b1bdfcbde0b126c49e98f2">&#9670;&nbsp;</a></span>is_leap_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib_date::myDate::is_leap_year </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the date belongs to a leap year. </p>
+<dl class="section return"><dt>Returns</dt><dd>true Date belongs to a leap year. </dd>
+<dd>
+false Date does not belong to a leap year. </dd></dl>
+
+</div>
+</div>
+<a id="a98c1185672e4a1637bbea449a76c70e1" name="a98c1185672e4a1637bbea449a76c70e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98c1185672e4a1637bbea449a76c70e1">&#9670;&nbsp;</a></span>is_weekend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib_date::myDate::is_weekend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the date belongs to a weekend. </p>
+<dl class="section return"><dt>Returns</dt><dd>true Date belongs to a weekend. </dd>
+<dd>
+false Date does not belong to a weekend. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_date_examples_8h-example.html#a13">lib_date_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a6be0979f6444c4627ad1cea5517a41ca" name="a6be0979f6444c4627ad1cea5517a41ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6be0979f6444c4627ad1cea5517a41ca">&#9670;&nbsp;</a></span>is_working_day()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib_date::myDate::is_working_day </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>holidays</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the date is a working date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">holidays</td><td>Vector of dates representing public holidays. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Date is a working day. </dd>
+<dd>
+false Date is not a working day. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_date_examples_8h-example.html#a15">lib_date_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="ad07a81f653dbcd740521e33db95dd42d" name="ad07a81f653dbcd740521e33db95dd42d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad07a81f653dbcd740521e33db95dd42d">&#9670;&nbsp;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long lib_date::myDate::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;&#160;</td>
+          <td class="paramname"><em>date2</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overloaded "minus" operator "-". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date2</td><td>Date to right of the operator that should be be subtracted from the date to the left of the operator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>long Difference between two dates in calendar days. </dd></dl>
+
+</div>
+</div>
+<a id="abfe3f9d5f39fa87e803ba229c884925f" name="abfe3f9d5f39fa87e803ba229c884925f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfe3f9d5f39fa87e803ba229c884925f">&#9670;&nbsp;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib_date::myDate::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;&#160;</td>
+          <td class="paramname"><em>date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overloaded "smaller than" operater "&lt;". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>Date to the right of the operator that should be compared to the date to the left of the operator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true The first date is smaller. </dd>
+<dd>
+false The first date is greater. </dd></dl>
+
+</div>
+</div>
+<a id="a6bfb8e8979e8b0c3bfcd9d8da4211cf5" name="a6bfb8e8979e8b0c3bfcd9d8da4211cf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bfb8e8979e8b0c3bfcd9d8da4211cf5">&#9670;&nbsp;</a></span>operator&lt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib_date::myDate::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;&#160;</td>
+          <td class="paramname"><em>date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overloaded "smaller than or equal" operator "&lt;=". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>Date to the right of the operator that should be compared to the date to the left of the operator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true The first date is smaller or equal. </dd>
+<dd>
+false The first date is greater. </dd></dl>
+
+</div>
+</div>
+<a id="ae8bab4cf9c28d0797d678f3040c0ea1b" name="ae8bab4cf9c28d0797d678f3040c0ea1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8bab4cf9c28d0797d678f3040c0ea1b">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlib__date_1_1myDate.html">lib_date::myDate</a> &amp; lib_date::myDate::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;&#160;</td>
+          <td class="paramname"><em>_date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overloaded "assign" operator "=". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_date</td><td>Date to right of the operator to be assigned to date on left of the operator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classlib__date_1_1myDate.html" title="Date class.">myDate</a>&amp; Date to which value was assigned. </dd></dl>
+
+</div>
+</div>
+<a id="ab69d4ccd052db2ad7dadcdf6d8c7d4ca" name="ab69d4ccd052db2ad7dadcdf6d8c7d4ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab69d4ccd052db2ad7dadcdf6d8c7d4ca">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib_date::myDate::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;&#160;</td>
+          <td class="paramname"><em>_date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overloaded "equal" operator "==". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_date</td><td>Date to the right of the operator that should be compared to the date to the left of the operator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true The two dates are equal. </dd>
+<dd>
+false The two dates are not equal. </dd></dl>
+
+</div>
+</div>
+<a id="a6debf023572d11b5660074acfe77acd7" name="a6debf023572d11b5660074acfe77acd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6debf023572d11b5660074acfe77acd7">&#9670;&nbsp;</a></span>operator&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib_date::myDate::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;&#160;</td>
+          <td class="paramname"><em>date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overloaded "greater than" operater "&gt;". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>Date to the right of the operator that should be compared to the date to the left of the operator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true The first date is greater. </dd>
+<dd>
+false The first date is smaller. </dd></dl>
+
+</div>
+</div>
+<a id="a8dda29663aeaad04a7f5e7c824043987" name="a8dda29663aeaad04a7f5e7c824043987"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dda29663aeaad04a7f5e7c824043987">&#9670;&nbsp;</a></span>operator&gt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib_date::myDate::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &amp;&#160;</td>
+          <td class="paramname"><em>date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overloaded "greater than or equal" operator "&lt;=". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>Date to the right of the operator that should be compared to the date to the left of the operator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true The first date is greater or equal. </dd>
+<dd>
+false The first date is smaller. </dd></dl>
+
+</div>
+</div>
+<a id="af93f56f85d5468601c3d10f727de2c76" name="af93f56f85d5468601c3d10f727de2c76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af93f56f85d5468601c3d10f727de2c76">&#9670;&nbsp;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib_date::myDate::remove </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>date_freq</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subtract period expressed in form of frequency string from the date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date_freq</td><td>Frequency string, e.g. "1D", "2M", "5Y", etc. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_date_examples_8h-example.html#a5">lib_date_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a474ce046d8276ce1df914e441333e675" name="a474ce046d8276ce1df914e441333e675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a474ce046d8276ce1df914e441333e675">&#9670;&nbsp;</a></span>set() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib_date::myDate::set </td>
+          <td>(</td>
+          <td class="paramtype">const std::size_t &amp;&#160;</td>
+          <td class="paramname"><em>date_int</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set date in integer format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date_int</td><td>Date in integer format, e.g. 19791230. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab795a92dbba74824f992db25c942fc2f" name="ab795a92dbba74824f992db25c942fc2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab795a92dbba74824f992db25c942fc2f">&#9670;&nbsp;</a></span>set() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib_date::myDate::set </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>date_str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>date_format</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set date in string format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date_str</td><td>Date in string format. </td></tr>
+    <tr><td class="paramname">date_format</td><td>Date string format, e.g. "yyyyddmm". </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aacd8e41776d1de9040bf3f229897f4dc" name="aacd8e41776d1de9040bf3f229897f4dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacd8e41776d1de9040bf3f229897f4dc">&#9670;&nbsp;</a></span>set_to_next_working_day()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib_date::myDate::set_to_next_working_day </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>holidays</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set date to next working day after the current date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">holidays</td><td>Vector of dates representing public holidays. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_date_examples_8h-example.html#a17">lib_date_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="aee210cfba95c1397f19302ec4774173c" name="aee210cfba95c1397f19302ec4774173c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee210cfba95c1397f19302ec4774173c">&#9670;&nbsp;</a></span>set_to_prev_working_day()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib_date::myDate::set_to_prev_working_day </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classlib__date_1_1myDate.html">myDate</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>holidays</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set date to previous working day before the current date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">holidays</td><td>Vector of dates representing public holidays. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_date_examples_8h-example.html#a18">lib_date_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="lib__date_8h_source.html">lib_date.h</a></li>
 <li>lib_date.cpp</li>

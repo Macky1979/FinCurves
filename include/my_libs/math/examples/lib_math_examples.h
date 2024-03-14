@@ -63,6 +63,20 @@ int main()
         std::cout << '\n' << std::endl;
     }
 
+    // SORT VECTOR OF ELEMENTS OF ANY DATA TYPE
+    {
+        std::cout << "SORT VECTOR OF ELEMENTS OF ANY DATA TYPE" << std::endl;
+
+        std::vector<std::string> text = {"c", "a", "e", "b", "d"};
+        std::vector<std::size_t> i = lib_math::sort_index(text);
+        std::vector<std::string> text_sorted = lib_math::sort_vector(text);
+    
+        for (std::size_t idx = 0; idx < i.size(); idx++)
+            std::cout << std::to_string(i[idx]) << ": " << text_sorted[idx] << std::endl;
+
+        std::cout << '\n' << std::endl;
+    }
+
     // NEWTON-RAPHSON METHOD
     {
         std::cout << "NEWTON-RAPHSON METHOD" << std::endl;

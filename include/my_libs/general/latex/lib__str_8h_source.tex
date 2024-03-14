@@ -1,180 +1,55 @@
 \hypertarget{lib__str_8h_source}{}\doxysection{lib\+\_\+str.\+h}
-
+\mbox{\hyperlink{lib__str_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{\#include <iostream>}}
-\DoxyCodeLine{3 \textcolor{comment}{\#include <string>}}
-\DoxyCodeLine{4 \textcolor{comment}{\#include <vector>}}
-\DoxyCodeLine{5 \textcolor{comment}{\#include "{}lib\_str.h"{}}}
-\DoxyCodeLine{6 \textcolor{comment}{}}
-\DoxyCodeLine{7 \textcolor{comment}{int main()}}
-\DoxyCodeLine{8 \textcolor{comment}{\{}}
-\DoxyCodeLine{9 \textcolor{comment}{    // remove character from a string}}
-\DoxyCodeLine{10 \textcolor{comment}{    \{}}
-\DoxyCodeLine{11 \textcolor{comment}{        std::cout << "{}REMOVE CHARACTER FROM A STRING"{} << std::endl;}}
-\DoxyCodeLine{12 \textcolor{comment}{        std::string ahoj = "{}A  h o   j"{};}}
-\DoxyCodeLine{13 \textcolor{comment}{        std::cout << ahoj << std::endl;}}
-\DoxyCodeLine{14 \textcolor{comment}{        lib\_str::remove\_char(ahoj, ' ');}}
-\DoxyCodeLine{15 \textcolor{comment}{        std::cout << ahoj << std::endl;}}
-\DoxyCodeLine{16 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{17 \textcolor{comment}{    \}}}
-\DoxyCodeLine{18 \textcolor{comment}{    // remove character from a vector of strings}}
-\DoxyCodeLine{19 \textcolor{comment}{    \{}}
-\DoxyCodeLine{20 \textcolor{comment}{        std::cout << "{}REMOVE CHARACTER FROM A VECTOR OF STRINGS"{} << std::endl;}}
-\DoxyCodeLine{21 \textcolor{comment}{        std::vector<std::string> ahoj = \{"{}A  h o   j"{}, "{} Na z da   r"{}\};}}
-\DoxyCodeLine{22 \textcolor{comment}{        for (int i = 0; i < ahoj.size(); i++)}}
-\DoxyCodeLine{23 \textcolor{comment}{            std::cout << ahoj[i] << std::endl;}}
-\DoxyCodeLine{24 \textcolor{comment}{        lib\_str::remove\_char(ahoj, ' ');}}
-\DoxyCodeLine{25 \textcolor{comment}{         for (int i = 0; i < ahoj.size(); i++)}}
-\DoxyCodeLine{26 \textcolor{comment}{            std::cout << ahoj[i] << std::endl;       }}
-\DoxyCodeLine{27 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{28 \textcolor{comment}{    \}}}
-\DoxyCodeLine{29 \textcolor{comment}{}}
-\DoxyCodeLine{30 \textcolor{comment}{    // split string}}
-\DoxyCodeLine{31 \textcolor{comment}{    \{}}
-\DoxyCodeLine{32 \textcolor{comment}{        std::cout << "{}SPLIT STRING"{} << std::endl;}}
-\DoxyCodeLine{33 \textcolor{comment}{        std::string string\_to\_split = "{}a,h,o,j"{};}}
-\DoxyCodeLine{34 \textcolor{comment}{        std::vector<std::string> splits = lib\_str::split\_string(string\_to\_split, ',');}}
-\DoxyCodeLine{35 \textcolor{comment}{        for (int i = 0; i < splits.size(); i++)}}
-\DoxyCodeLine{36 \textcolor{comment}{            std::cout << splits[i] << std::endl;}}
-\DoxyCodeLine{37 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{38 \textcolor{comment}{    \}}}
-\DoxyCodeLine{39 \textcolor{comment}{}}
-\DoxyCodeLine{40 \textcolor{comment}{    // leading zeros}}
-\DoxyCodeLine{41 \textcolor{comment}{    \{}}
-\DoxyCodeLine{42 \textcolor{comment}{        std::cout << "{}LEADING ZEROS"{} << std::endl;}}
-\DoxyCodeLine{43 \textcolor{comment}{        unsigned short number = 10;}}
-\DoxyCodeLine{44 \textcolor{comment}{}}
-\DoxyCodeLine{45 \textcolor{comment}{        std::cout << lib\_str::to\_string(number, 2) << std::endl;}}
-\DoxyCodeLine{46 \textcolor{comment}{        std::cout << lib\_str::to\_string(number, 3) << std::endl;}}
-\DoxyCodeLine{47 \textcolor{comment}{}}
-\DoxyCodeLine{48 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{49 \textcolor{comment}{    \}}}
-\DoxyCodeLine{50 \textcolor{comment}{}}
-\DoxyCodeLine{51 \textcolor{comment}{    // cast to lower and upper case}}
-\DoxyCodeLine{52 \textcolor{comment}{    \{}}
-\DoxyCodeLine{53 \textcolor{comment}{        std::cout << "{}CAST TO UPPER AND LOWER CASE"{} << std::endl;}}
-\DoxyCodeLine{54 \textcolor{comment}{}}
-\DoxyCodeLine{55 \textcolor{comment}{        std::string x = "{}hello!"{};}}
-\DoxyCodeLine{56 \textcolor{comment}{        std::string y = "{}BYE!"{};}}
-\DoxyCodeLine{57 \textcolor{comment}{}}
-\DoxyCodeLine{58 \textcolor{comment}{        std::cout << x << "{} -\/> "{} << lib\_str::to\_upper(x) << std::endl;}}
-\DoxyCodeLine{59 \textcolor{comment}{        std::cout << y << "{} -\/> "{} << lib\_str::to\_lower(y) << std::endl;}}
-\DoxyCodeLine{60 \textcolor{comment}{}}
-\DoxyCodeLine{61 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{62 \textcolor{comment}{    \}}}
-\DoxyCodeLine{63 \textcolor{comment}{ }}
-\DoxyCodeLine{64 \textcolor{comment}{    // repeat character}}
-\DoxyCodeLine{65 \textcolor{comment}{    \{}}
-\DoxyCodeLine{66 \textcolor{comment}{        std::cout << "{}REPEATING CHARACTER"{} << std::endl;}}
-\DoxyCodeLine{67 \textcolor{comment}{}}
-\DoxyCodeLine{68 \textcolor{comment}{        std::string input\_str = "{}\string^-\/"{};}}
-\DoxyCodeLine{69 \textcolor{comment}{        unsigned short repeat\_no = 5;}}
-\DoxyCodeLine{70 \textcolor{comment}{        std::string output\_str = lib\_str::repeat\_char(input\_str, repeat\_no);}}
-\DoxyCodeLine{71 \textcolor{comment}{        std::cout << "{}input string:  "{} + input\_str << std::endl;}}
-\DoxyCodeLine{72 \textcolor{comment}{        std::cout << "{}output string: "{} + output\_str << std::endl;}}
-\DoxyCodeLine{73 \textcolor{comment}{}}
-\DoxyCodeLine{74 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{75 \textcolor{comment}{    \}}}
-\DoxyCodeLine{76 \textcolor{comment}{}}
-\DoxyCodeLine{77 \textcolor{comment}{    // leading and trailing character}}
-\DoxyCodeLine{78 \textcolor{comment}{    \{}}
-\DoxyCodeLine{79 \textcolor{comment}{        std::cout << "{}LEADING AND TRAILING CHARACTER"{} << std::endl;}}
-\DoxyCodeLine{80 \textcolor{comment}{}}
-\DoxyCodeLine{81 \textcolor{comment}{        std::string number = "{}123"{};}}
-\DoxyCodeLine{82 \textcolor{comment}{        std::size\_t str\_len = 6;}}
-\DoxyCodeLine{83 \textcolor{comment}{        char add\_char = '0';}}
-\DoxyCodeLine{84 \textcolor{comment}{}}
-\DoxyCodeLine{85 \textcolor{comment}{        std::cout << number << "{} -\/> "{} << lib\_str::add\_leading\_char(number, str\_len, add\_char) << std::endl;}}
-\DoxyCodeLine{86 \textcolor{comment}{        std::cout << number << "{} -\/> "{} << lib\_str::add\_trailing\_char(number, str\_len, add\_char) << std::endl;}}
-\DoxyCodeLine{87 \textcolor{comment}{}}
-\DoxyCodeLine{88 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{89 \textcolor{comment}{    \}}}
-\DoxyCodeLine{90 \textcolor{comment}{}}
-\DoxyCodeLine{91 \textcolor{comment}{    // reverse string}}
-\DoxyCodeLine{92 \textcolor{comment}{    \{}}
-\DoxyCodeLine{93 \textcolor{comment}{        std::cout << "{}REVERSE STRING"{} << std::endl;}}
-\DoxyCodeLine{94 \textcolor{comment}{        std::string input\_str = "{}Ahoj!"{};}}
-\DoxyCodeLine{95 \textcolor{comment}{        std::string reversed\_str = lib\_str::reverse\_str(input\_str);}}
-\DoxyCodeLine{96 \textcolor{comment}{        std::cout << input\_str << "{} -\/> "{} << reversed\_str << std::endl;}}
-\DoxyCodeLine{97 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{98 \textcolor{comment}{    \}}}
-\DoxyCodeLine{99 \textcolor{comment}{}}
-\DoxyCodeLine{100 \textcolor{comment}{    // format number}}
-\DoxyCodeLine{101 \textcolor{comment}{    \{}}
-\DoxyCodeLine{102 \textcolor{comment}{        std::cout << "{}FORMAT NUMBER"{} << std::endl;}}
-\DoxyCodeLine{103 \textcolor{comment}{        double num = 123545.598;}}
-\DoxyCodeLine{104 \textcolor{comment}{        bool ths\_sep = true;}}
-\DoxyCodeLine{105 \textcolor{comment}{        std::size\_t dec\_places = 2;}}
-\DoxyCodeLine{106 \textcolor{comment}{        bool round = true;}}
-\DoxyCodeLine{107 \textcolor{comment}{        std::string formated\_num = lib\_str::format\_num(num, ths\_sep, dec\_places, round);}}
-\DoxyCodeLine{108 \textcolor{comment}{}}
-\DoxyCodeLine{109 \textcolor{comment}{        std::cout << std::to\_string(num) << "{} -\/> "{} << formated\_num << std::endl;}}
-\DoxyCodeLine{110 \textcolor{comment}{        std::cout << '\(\backslash\)n' << std::endl;}}
-\DoxyCodeLine{111 \textcolor{comment}{    \}}}
-\DoxyCodeLine{112 \textcolor{comment}{}}
-\DoxyCodeLine{113 \textcolor{comment}{    // everything OK}}
-\DoxyCodeLine{114 \textcolor{comment}{    return 0;}}
-\DoxyCodeLine{115 \textcolor{comment}{\}}}
-\DoxyCodeLine{116 \textcolor{comment}{*/}}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{namespace }lib\_str}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{lib__str_8h_abf22f814fb3204b9089607b259c61334}{remove\_char}}(std::string\& str, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& char\_to\_remove = \textcolor{charliteral}{' '});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{lib__str_8h_abf22f814fb3204b9089607b259c61334}{remove\_char}}(std::vector<std::string>\& str, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& char\_to\_remove = \textcolor{charliteral}{' '});}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{43     std::vector<std::string> \mbox{\hyperlink{lib__str_8h_ac8150c4da8c588d5dfe4bad2f9163ff9}{split\_string}}(\textcolor{keyword}{const} std::string\& string\_to\_split, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& sep);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{comment}{// convert unsigned short to string with leading zeros}}
+\DoxyCodeLine{53 \textcolor{comment}{}    std::string \mbox{\hyperlink{lib__str_8h_ad885a59ce17d49fcc744143e580b6cd3}{to\_string}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& number, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& length);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{61     std::string \mbox{\hyperlink{lib__str_8h_ac236c04302cbf1bd6798391c458ebac3}{to\_upper}}(\textcolor{keyword}{const} std::string\& input\_str);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{69     std::string \mbox{\hyperlink{lib__str_8h_ae31e459aa502bf7b7ac915863cdfc503}{to\_lower}}(\textcolor{keyword}{const} std::string\& input\_str);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{78     std::string \mbox{\hyperlink{lib__str_8h_a2695363cdc108d8e117497805ae2e7be}{repeat\_char}}(\textcolor{keyword}{const} std::string\& input\_str, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& repeat\_no = 1);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{88     std::string \mbox{\hyperlink{lib__str_8h_a0ccfefc164b8b2146c1e7dc54bfdaf92}{add\_leading\_char}}(\textcolor{keyword}{const} std::string\& input\_str, \textcolor{keyword}{const} std::size\_t\& str\_len, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& add\_char = \textcolor{charliteral}{' '});}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{98     std::string \mbox{\hyperlink{lib__str_8h_abbcb07cf39fb2fe75d826000b52b7fd0}{add\_trailing\_char}}(\textcolor{keyword}{const} std::string\& input\_str, \textcolor{keyword}{const} std::size\_t\& str\_len, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& add\_char = \textcolor{charliteral}{' '});}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{106     std::string \mbox{\hyperlink{lib__str_8h_acc53c69cb6e93d46e45c4420eb21d332}{reverse\_str}}(\textcolor{keyword}{const} std::string\& input\_str);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{116     std::string \mbox{\hyperlink{lib__str_8h_abd23792c26daf16321ce5dc8eb49da2a}{format\_num}}(std::string\& num\_str, \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& ths\_sep, \textcolor{keyword}{const} std::size\_t\& dec\_places);}
 \DoxyCodeLine{117 }
-\DoxyCodeLine{118 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{119 }
-\DoxyCodeLine{120 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{121 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{122 \textcolor{preprocessor}{\#include <math.h>}}
-\DoxyCodeLine{123 }
-\DoxyCodeLine{124 \textcolor{keyword}{namespace }lib\_str}
-\DoxyCodeLine{125 \{}
-\DoxyCodeLine{126     \textcolor{comment}{// remove selected character from the string}}
-\DoxyCodeLine{127     \textcolor{keywordtype}{void} remove\_char(std::string\& str, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& char\_to\_remove = \textcolor{charliteral}{' '});}
-\DoxyCodeLine{128     \textcolor{keywordtype}{void} remove\_char(std::vector<std::string>\& str, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& char\_to\_remove = \textcolor{charliteral}{' '});}
-\DoxyCodeLine{129 }
-\DoxyCodeLine{130     \textcolor{comment}{// split string}}
-\DoxyCodeLine{131     std::vector<std::string> split\_string(\textcolor{keyword}{const} std::string\& string\_to\_split, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& sep);}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133     \textcolor{comment}{// convert unsigned short to string with leading zeros}}
-\DoxyCodeLine{134     std::string to\_string(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& number, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& length);}
-\DoxyCodeLine{135 }
-\DoxyCodeLine{136     \textcolor{comment}{// convert string to an upper case}}
-\DoxyCodeLine{137     std::string to\_upper(\textcolor{keyword}{const} std::string\& input\_str);}
-\DoxyCodeLine{138 }
-\DoxyCodeLine{139     \textcolor{comment}{// convert string to an upper case}}
-\DoxyCodeLine{140     std::string to\_lower(\textcolor{keyword}{const} std::string\& input\_str);}
+\DoxyCodeLine{128     \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{129     std::string \mbox{\hyperlink{lib__str_8h_abd23792c26daf16321ce5dc8eb49da2a}{format\_num}}(\textcolor{keyword}{const} T\& input\_num, \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& ths\_sep = \textcolor{keyword}{true}, \textcolor{keyword}{const} std::size\_t\& dec\_places = 2, \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& round = \textcolor{keyword}{true})}
+\DoxyCodeLine{130     \{}
+\DoxyCodeLine{131         \textcolor{comment}{// convert number to stringNumber of decimal places to display.}}
+\DoxyCodeLine{132         std::string num;}
+\DoxyCodeLine{133         \textcolor{keywordflow}{if} (round)}
+\DoxyCodeLine{134         \{}
+\DoxyCodeLine{135             T aux = std::pow(10, dec\_places);}
+\DoxyCodeLine{136             T input\_num\_aux = (T)std::round(input\_num * aux) / aux;}
+\DoxyCodeLine{137             num = std::to\_string(input\_num\_aux);}
+\DoxyCodeLine{138         \}}
+\DoxyCodeLine{139         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{140             num = std::to\_string(input\_num);}
 \DoxyCodeLine{141 }
-\DoxyCodeLine{142     \textcolor{comment}{// repeat character}}
-\DoxyCodeLine{143     std::string repeat\_char(\textcolor{keyword}{const} std::string\& input\_str, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\& repeat\_no = 1);}
-\DoxyCodeLine{144 }
-\DoxyCodeLine{145     \textcolor{comment}{// add leading character}}
-\DoxyCodeLine{146     std::string add\_leading\_char(\textcolor{keyword}{const} std::string\& input\_str, \textcolor{keyword}{const} std::size\_t\& str\_len, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& add\_char = \textcolor{charliteral}{' '});}
-\DoxyCodeLine{147 }
-\DoxyCodeLine{148     \textcolor{comment}{// add trailing character}}
-\DoxyCodeLine{149     std::string add\_trailing\_char(\textcolor{keyword}{const} std::string\& input\_str, \textcolor{keyword}{const} std::size\_t\& str\_len, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& add\_char = \textcolor{charliteral}{' '});}
-\DoxyCodeLine{150 }
-\DoxyCodeLine{151     \textcolor{comment}{// reverse string}}
-\DoxyCodeLine{152     std::string reverse\_str(\textcolor{keyword}{const} std::string\& input\_str);}
-\DoxyCodeLine{153 }
-\DoxyCodeLine{154     \textcolor{comment}{// auxiliary function to format the number}}
-\DoxyCodeLine{155     std::string format\_num(std::string\& num\_str, \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& ths\_sep, \textcolor{keyword}{const} std::size\_t\& dec\_places);}
-\DoxyCodeLine{156 }
-\DoxyCodeLine{157     \textcolor{comment}{// format number}}
-\DoxyCodeLine{158     \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
-\DoxyCodeLine{159     std::string format\_num(\textcolor{keyword}{const} T\& input\_num, \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& ths\_sep = \textcolor{keyword}{true}, \textcolor{keyword}{const} std::size\_t\& dec\_places = 2, \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& round = \textcolor{keyword}{true})}
-\DoxyCodeLine{160     \{}
-\DoxyCodeLine{161         \textcolor{comment}{// convert number to string}}
-\DoxyCodeLine{162         std::string num;}
-\DoxyCodeLine{163         \textcolor{keywordflow}{if} (round)}
-\DoxyCodeLine{164         \{}
-\DoxyCodeLine{165             T aux = std::pow(10, dec\_places);}
-\DoxyCodeLine{166             T input\_num\_aux = (T)std::round(input\_num * aux) / aux;}
-\DoxyCodeLine{167             num = std::to\_string(input\_num\_aux);}
-\DoxyCodeLine{168         \}}
-\DoxyCodeLine{169         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{170             num = std::to\_string(input\_num);}
-\DoxyCodeLine{171         }
-\DoxyCodeLine{172         \textcolor{comment}{// format the number}}
-\DoxyCodeLine{173         \textcolor{keywordflow}{return} format\_num(num, ths\_sep, dec\_places);}
-\DoxyCodeLine{174     \};}
-\DoxyCodeLine{175 \}}
+\DoxyCodeLine{142         \textcolor{comment}{// format the number}}
+\DoxyCodeLine{143         \textcolor{keywordflow}{return} \mbox{\hyperlink{lib__str_8h_abd23792c26daf16321ce5dc8eb49da2a}{format\_num}}(num, ths\_sep, dec\_places);}
+\DoxyCodeLine{144     \};}
+\DoxyCodeLine{145 \}}
 
 \end{DoxyCode}

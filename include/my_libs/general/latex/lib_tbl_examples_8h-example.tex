@@ -5,7 +5,7 @@
 \DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include <vector>}}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include <memory>}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}lib\_str.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lib__str_8h}{lib\_str.h}}"{}}}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lib__tbl_8h}{lib\_tbl.h}}"{}}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keyword}{using namespace }std;}
@@ -13,30 +13,30 @@
 \DoxyCodeLine{\textcolor{keywordtype}{void} print\_tbl(\textcolor{keyword}{const} std::vector<std::shared\_ptr<std::string>>\& tenors, \textcolor{keyword}{const} std::vector<std::shared\_ptr<double>>\& rates)}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{    std::string row;}
-\DoxyCodeLine{    std::cout << lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}="{}}, 15, \textcolor{charliteral}{'='}) << std::endl;}
+\DoxyCodeLine{    std::cout << \mbox{\hyperlink{lib__str_8h_a0ccfefc164b8b2146c1e7dc54bfdaf92}{lib\_str::add\_leading\_char}}(\textcolor{stringliteral}{"{}="{}}, 15, \textcolor{charliteral}{'='}) << std::endl;}
 \DoxyCodeLine{}
-\DoxyCodeLine{    row = lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}tenor"{}}, 5, \textcolor{charliteral}{' '});}
-\DoxyCodeLine{    row += lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}rate"{}}, 10, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{    row = \mbox{\hyperlink{lib__str_8h_a0ccfefc164b8b2146c1e7dc54bfdaf92}{lib\_str::add\_leading\_char}}(\textcolor{stringliteral}{"{}tenor"{}}, 5, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{    row += \mbox{\hyperlink{lib__str_8h_a0ccfefc164b8b2146c1e7dc54bfdaf92}{lib\_str::add\_leading\_char}}(\textcolor{stringliteral}{"{}rate"{}}, 10, \textcolor{charliteral}{' '});}
 \DoxyCodeLine{    std::cout << row << std::endl;}
 \DoxyCodeLine{}
-\DoxyCodeLine{    std::cout << lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}="{}}, 15, \textcolor{charliteral}{'='}) << std::endl;}
+\DoxyCodeLine{    std::cout << \mbox{\hyperlink{lib__str_8h_a0ccfefc164b8b2146c1e7dc54bfdaf92}{lib\_str::add\_leading\_char}}(\textcolor{stringliteral}{"{}="{}}, 15, \textcolor{charliteral}{'='}) << std::endl;}
 \DoxyCodeLine{}
 \DoxyCodeLine{    \textcolor{keywordflow}{for} (std::size\_t idx = 0; idx < tenors.size(); idx++)}
 \DoxyCodeLine{    \{}
 \DoxyCodeLine{        \textcolor{keywordflow}{if} (tenors[idx] == \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{            row = lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}NULL"{}}, 5, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{            row = \mbox{\hyperlink{lib__str_8h_a0ccfefc164b8b2146c1e7dc54bfdaf92}{lib\_str::add\_leading\_char}}(\textcolor{stringliteral}{"{}NULL"{}}, 5, \textcolor{charliteral}{' '});}
 \DoxyCodeLine{        \textcolor{keywordflow}{else}}
-\DoxyCodeLine{            row = lib\_str::add\_leading\_char(*tenors[idx], 5, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{            row = \mbox{\hyperlink{lib__str_8h_a0ccfefc164b8b2146c1e7dc54bfdaf92}{lib\_str::add\_leading\_char}}(*tenors[idx], 5, \textcolor{charliteral}{' '});}
 \DoxyCodeLine{        }
 \DoxyCodeLine{        \textcolor{keywordflow}{if} (rates[idx] == \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{            row += lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}NULL"{}}, 10, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{            row += \mbox{\hyperlink{lib__str_8h_a0ccfefc164b8b2146c1e7dc54bfdaf92}{lib\_str::add\_leading\_char}}(\textcolor{stringliteral}{"{}NULL"{}}, 10, \textcolor{charliteral}{' '});}
 \DoxyCodeLine{        \textcolor{keywordflow}{else}}
-\DoxyCodeLine{            row += lib\_str::add\_leading\_char(std::to\_string(*rates[idx]), 10, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{            row += \mbox{\hyperlink{lib__str_8h_a0ccfefc164b8b2146c1e7dc54bfdaf92}{lib\_str::add\_leading\_char}}(std::to\_string(*rates[idx]), 10, \textcolor{charliteral}{' '});}
 \DoxyCodeLine{}
 \DoxyCodeLine{        std::cout << row << std::endl;}
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{}
-\DoxyCodeLine{    std::cout << lib\_str::add\_leading\_char(\textcolor{stringliteral}{"{}="{}}, 15, \textcolor{charliteral}{'='}) << std::endl;}
+\DoxyCodeLine{    std::cout << \mbox{\hyperlink{lib__str_8h_a0ccfefc164b8b2146c1e7dc54bfdaf92}{lib\_str::add\_leading\_char}}(\textcolor{stringliteral}{"{}="{}}, 15, \textcolor{charliteral}{'='}) << std::endl;}
 \DoxyCodeLine{\}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordtype}{int} main()}

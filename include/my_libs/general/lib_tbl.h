@@ -1,7 +1,7 @@
 /** \example lib_tbl_examples.h
  * @file lib_tbl.h
  * @author Michal Mackanic
- * @brief 
+ * @brief Simple implementation of table that could be read from a .csv file.
  * @version 1.0
  * @date 2024-01-31
  * 

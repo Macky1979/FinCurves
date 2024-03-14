@@ -1,35 +1,16 @@
 \hypertarget{lib__settings_8h_source}{}\doxysection{lib\+\_\+settings.\+h}
-
+\mbox{\hyperlink{lib__settings_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{\#include <iostream>}}
-\DoxyCodeLine{3 \textcolor{comment}{\#include <string>}}
-\DoxyCodeLine{4 \textcolor{comment}{\#include <vector>}}
-\DoxyCodeLine{5 \textcolor{comment}{\#include "{}lib\_settings.h"{}}}
-\DoxyCodeLine{6 \textcolor{comment}{}}
-\DoxyCodeLine{7 \textcolor{comment}{int main()}}
-\DoxyCodeLine{8 \textcolor{comment}{\{}}
-\DoxyCodeLine{9 \textcolor{comment}{    // read settings file}}
-\DoxyCodeLine{10 \textcolor{comment}{    std::string file\_nm = "{}data/fin\_mig\_mtrx/csc\_corp\#na\#00\#ttc.settings"{};}}
-\DoxyCodeLine{11 \textcolor{comment}{    std::vector<std::vector<std::string>> parameters = lib\_settings::load\_settings(file\_nm, ':');}}
-\DoxyCodeLine{12 \textcolor{comment}{}}
-\DoxyCodeLine{13 \textcolor{comment}{    // print settings}}
-\DoxyCodeLine{14 \textcolor{comment}{    for (unsigned short idx = 0; idx < parameters.size(); idx++)}}
-\DoxyCodeLine{15 \textcolor{comment}{        std::cout << parameters[idx][0] << "{}: "{} << parameters[idx][1] << std::endl;}}
-\DoxyCodeLine{16 \textcolor{comment}{ }}
-\DoxyCodeLine{17 \textcolor{comment}{    // everything OK}}
-\DoxyCodeLine{18 \textcolor{comment}{    return 0;}}
-\DoxyCodeLine{19 \textcolor{comment}{\}}}
-\DoxyCodeLine{20 \textcolor{comment}{*/}}
-\DoxyCodeLine{21 \textcolor{preprocessor}{\# pragma once}}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27 \textcolor{keyword}{namespace }lib\_settings}
-\DoxyCodeLine{28 \{}
-\DoxyCodeLine{29     std::vector<std::vector<std::string>> load\_settings(\textcolor{keyword}{const} std::string\& file\_nm, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& sep = \textcolor{charliteral}{':'});}
-\DoxyCodeLine{30 \}}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\# pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{namespace }lib\_settings}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{27     std::vector<std::vector<std::string>> \mbox{\hyperlink{lib__settings_8h_a0388765414ebc76d89696dfc1261187a}{load\_settings}}(\textcolor{keyword}{const} std::string\& file\_nm, \textcolor{keyword}{const} \textcolor{keywordtype}{char}\& sep = \textcolor{charliteral}{':'});}
+\DoxyCodeLine{28 \}}
 
 \end{DoxyCode}

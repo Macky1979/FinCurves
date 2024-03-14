@@ -139,7 +139,7 @@ namespace fin_curves
             std::map<std::string, std::shared_ptr<generator>> instruments;
 
             /**
-             * @brief Construct a new myGenerators object using their definition stored in .csv files.
+             * @brief Construct a new myGenerators object using their definition stored in .csv files. Generators hold definitions needed for intrument evaluation, e.g. currency, day-count method, day-rolling method, fixing frequency, calendar, etc.
              * 
              * @param instrument_nms Vector of instrument names.
              * @param sep Column separator.

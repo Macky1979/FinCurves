@@ -89,7 +89,7 @@ std::string lib_str::to_lower(const std::string& input_str)
 }
 
 // repeat character
-std::string lib_str::repeat_char(const std::string& input_str, const unsigned short& repeat_no)
+std::string lib_str::repeate_char(const std::string& input_str, const unsigned short& repeat_no)
 {
 	std::string output_str = "";
 	for (unsigned short idx = 0; idx < repeat_no; idx++)

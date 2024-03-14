@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>general: lib_sql::mySQLite Class Reference</title>
+<title>General C++ libraries: lib_sql::mySQLite Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">general
+   <div id="projectname">General C++ libraries
    </div>
-   <div id="projectbrief">General C++ libraries</div>
+   <div id="projectbrief">C++ libraries to handle basic date, file, string and SQL operations, reading .csv files, etc.</div>
   </td>
  </tr>
  </tbody>
@@ -74,44 +74,271 @@ $(function() {
   <div class="headertitle"><div class="title">lib_sql::mySQLite Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>SQLite object.  
+ <a href="classlib__sql_1_1mySQLite.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="lib__sql_8h_source.html">lib_sql.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a932decd95c135077efbf9e1a6003cc83"><td class="memItemLeft" align="right" valign="top"><a id="a932decd95c135077efbf9e1a6003cc83" name="a932decd95c135077efbf9e1a6003cc83"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>mySQLite</b> (const char *db_file_nm, const bool read_only, int wait_max_seconds)</td></tr>
+<tr class="memitem:a932decd95c135077efbf9e1a6003cc83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__sql_1_1mySQLite.html#a932decd95c135077efbf9e1a6003cc83">mySQLite</a> (const char *db_file_nm, const bool read_only, int <a class="el" href="classlib__sql_1_1mySQLite.html#a387f0a0791b14b0522a0a434c3ed095d">wait_max_seconds</a>)</td></tr>
+<tr class="memdesc:a932decd95c135077efbf9e1a6003cc83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classlib__sql_1_1mySQLite.html" title="SQLite object.">mySQLite</a> object.  <a href="classlib__sql_1_1mySQLite.html#a932decd95c135077efbf9e1a6003cc83">More...</a><br /></td></tr>
 <tr class="separator:a932decd95c135077efbf9e1a6003cc83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f3810d4f309627ff8b240bbfef96fd1"><td class="memItemLeft" align="right" valign="top"><a id="a5f3810d4f309627ff8b240bbfef96fd1" name="a5f3810d4f309627ff8b240bbfef96fd1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>open</b> (const char *db_file_nm, const bool read_only)</td></tr>
+<tr class="memitem:a3e7df021abc365731efbfdd879488550"><td class="memItemLeft" align="right" valign="top"><a id="a3e7df021abc365731efbfdd879488550" name="a3e7df021abc365731efbfdd879488550"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~mySQLite</b> ()</td></tr>
+<tr class="memdesc:a3e7df021abc365731efbfdd879488550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classlib__sql_1_1mySQLite.html" title="SQLite object.">mySQLite</a> object. <br /></td></tr>
+<tr class="separator:a3e7df021abc365731efbfdd879488550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f3810d4f309627ff8b240bbfef96fd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__sql_1_1mySQLite.html#a5f3810d4f309627ff8b240bbfef96fd1">open</a> (const char *db_file_nm, const bool read_only)</td></tr>
+<tr class="memdesc:a5f3810d4f309627ff8b240bbfef96fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open connection to SQLite database file.  <a href="classlib__sql_1_1mySQLite.html#a5f3810d4f309627ff8b240bbfef96fd1">More...</a><br /></td></tr>
 <tr class="separator:a5f3810d4f309627ff8b240bbfef96fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ddc4e805a863fc17a0e2c1ea3a72433"><td class="memItemLeft" align="right" valign="top"><a id="a9ddc4e805a863fc17a0e2c1ea3a72433" name="a9ddc4e805a863fc17a0e2c1ea3a72433"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>close</b> () const</td></tr>
+<tr class="memdesc:a9ddc4e805a863fc17a0e2c1ea3a72433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close connection to SQLite database file. <br /></td></tr>
 <tr class="separator:a9ddc4e805a863fc17a0e2c1ea3a72433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd8c1bae0f451189336a4cf866277d6e"><td class="memItemLeft" align="right" valign="top"><a id="acd8c1bae0f451189336a4cf866277d6e" name="acd8c1bae0f451189336a4cf866277d6e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>vacuum</b> () const</td></tr>
+<tr class="memdesc:acd8c1bae0f451189336a4cf866277d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vacuum SQLite database file. <br /></td></tr>
 <tr class="separator:acd8c1bae0f451189336a4cf866277d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac20c73c39f62f6a92924f3837f211163"><td class="memItemLeft" align="right" valign="top"><a id="ac20c73c39f62f6a92924f3837f211163" name="ac20c73c39f62f6a92924f3837f211163"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>exec</b> (const std::string &amp;sql) const</td></tr>
+<tr class="memitem:ac20c73c39f62f6a92924f3837f211163"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__sql_1_1mySQLite.html#ac20c73c39f62f6a92924f3837f211163">exec</a> (const std::string &amp;sql) const</td></tr>
+<tr class="memdesc:ac20c73c39f62f6a92924f3837f211163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute SQL query, e.g. DELETE, DROP, INSERT commands.  <a href="classlib__sql_1_1mySQLite.html#ac20c73c39f62f6a92924f3837f211163">More...</a><br /></td></tr>
 <tr class="separator:ac20c73c39f62f6a92924f3837f211163"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12dd676f350f5e9448d61f9fe9301831"><td class="memItemLeft" align="right" valign="top"><a id="a12dd676f350f5e9448d61f9fe9301831" name="a12dd676f350f5e9448d61f9fe9301831"></a>
-std::shared_ptr&lt; <a class="el" href="classlib__df_1_1myDataFrame.html">lib_df::myDataFrame</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>query</b> (const std::string &amp;sql) const</td></tr>
+<tr class="memitem:a12dd676f350f5e9448d61f9fe9301831"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlib__df_1_1myDataFrame.html">lib_df::myDataFrame</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__sql_1_1mySQLite.html#a12dd676f350f5e9448d61f9fe9301831">query</a> (const std::string &amp;sql) const</td></tr>
+<tr class="memdesc:a12dd676f350f5e9448d61f9fe9301831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run SQL query, e.g. SELECT command.  <a href="classlib__sql_1_1mySQLite.html#a12dd676f350f5e9448d61f9fe9301831">More...</a><br /></td></tr>
 <tr class="separator:a12dd676f350f5e9448d61f9fe9301831"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0fa0568ebaf3c4369e3166e9fbbfb45"><td class="memItemLeft" align="right" valign="top"><a id="ae0fa0568ebaf3c4369e3166e9fbbfb45" name="ae0fa0568ebaf3c4369e3166e9fbbfb45"></a>
-std::shared_ptr&lt; <a class="el" href="classlib__df_1_1myDataFrame.html">lib_df::myDataFrame</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>download_tbl</b> (const std::string &amp;tbl_nm)</td></tr>
+<tr class="memitem:ae0fa0568ebaf3c4369e3166e9fbbfb45"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classlib__df_1_1myDataFrame.html">lib_df::myDataFrame</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__sql_1_1mySQLite.html#ae0fa0568ebaf3c4369e3166e9fbbfb45">download_tbl</a> (const std::string &amp;tbl_nm)</td></tr>
+<tr class="memdesc:ae0fa0568ebaf3c4369e3166e9fbbfb45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve content of a table.  <a href="classlib__sql_1_1mySQLite.html#ae0fa0568ebaf3c4369e3166e9fbbfb45">More...</a><br /></td></tr>
 <tr class="separator:ae0fa0568ebaf3c4369e3166e9fbbfb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac15f63f59725afa0cebefe7279d69f33"><td class="memItemLeft" align="right" valign="top"><a id="ac15f63f59725afa0cebefe7279d69f33" name="ac15f63f59725afa0cebefe7279d69f33"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>upload_tbl</b> (const <a class="el" href="classlib__df_1_1myDataFrame.html">lib_df::myDataFrame</a> &amp;tbl, const std::string &amp;tbl_nm, const bool delete_old_data)</td></tr>
+<tr class="memitem:ac15f63f59725afa0cebefe7279d69f33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib__sql_1_1mySQLite.html#ac15f63f59725afa0cebefe7279d69f33">upload_tbl</a> (const <a class="el" href="classlib__df_1_1myDataFrame.html">lib_df::myDataFrame</a> &amp;tbl, const std::string &amp;tbl_nm, const bool delete_old_data)</td></tr>
+<tr class="memdesc:ac15f63f59725afa0cebefe7279d69f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upload table into SQLite database file.  <a href="classlib__sql_1_1mySQLite.html#ac15f63f59725afa0cebefe7279d69f33">More...</a><br /></td></tr>
 <tr class="separator:ac15f63f59725afa0cebefe7279d69f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a387f0a0791b14b0522a0a434c3ed095d"><td class="memItemLeft" align="right" valign="top"><a id="a387f0a0791b14b0522a0a434c3ed095d" name="a387f0a0791b14b0522a0a434c3ed095d"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>wait_max_seconds</b></td></tr>
+<tr class="memdesc:a387f0a0791b14b0522a0a434c3ed095d"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many seconds to wait for SQLite database file being available. <br /></td></tr>
 <tr class="separator:a387f0a0791b14b0522a0a434c3ed095d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_df_examples_8h-example.html#_a0">lib_df_examples.h</a>.</dd>
+<div class="textblock"><p >SQLite object. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_df_examples_8h-example.html#_a0">lib_df_examples.h</a>, and <a class="el" href="lib_sql_examples_8h-example.html#_a0">lib_sql_examples.h</a>.</dd>
 </dl>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a932decd95c135077efbf9e1a6003cc83" name="a932decd95c135077efbf9e1a6003cc83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a932decd95c135077efbf9e1a6003cc83">&#9670;&nbsp;</a></span>mySQLite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib_sql::mySQLite::mySQLite </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>db_file_nm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>read_only</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>wait_max_seconds</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classlib__sql_1_1mySQLite.html" title="SQLite object.">mySQLite</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db_file_nm</td><td>Name of SQLite database file. </td></tr>
+    <tr><td class="paramname">read_only</td><td>true =&gt; SQLite database file is read-only. <br  />
+ false =&gt; SQLite database file could be written into. </td></tr>
+    <tr><td class="paramname">wait_max_seconds</td><td>How many seconds to wait for SQLite database file being available. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae0fa0568ebaf3c4369e3166e9fbbfb45" name="ae0fa0568ebaf3c4369e3166e9fbbfb45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0fa0568ebaf3c4369e3166e9fbbfb45">&#9670;&nbsp;</a></span>download_tbl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classlib__df_1_1myDataFrame.html">lib_df::myDataFrame</a> &gt; lib_sql::mySQLite::download_tbl </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>tbl_nm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve content of a table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tbl_nm</td><td>Name of the table to be retrieved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;lib_df::myDataFrame&gt; Data retrieved from the table. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_df_examples_8h-example.html#a3">lib_df_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="ac20c73c39f62f6a92924f3837f211163" name="ac20c73c39f62f6a92924f3837f211163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac20c73c39f62f6a92924f3837f211163">&#9670;&nbsp;</a></span>exec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib_sql::mySQLite::exec </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sql</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Execute SQL query, e.g. DELETE, DROP, INSERT commands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sql</td><td>SQL query to be executed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lib_df_examples_8h-example.html#a1">lib_df_examples.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a5f3810d4f309627ff8b240bbfef96fd1" name="a5f3810d4f309627ff8b240bbfef96fd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f3810d4f309627ff8b240bbfef96fd1">&#9670;&nbsp;</a></span>open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib_sql::mySQLite::open </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>db_file_nm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>read_only</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open connection to SQLite database file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db_file_nm</td><td>SQLite database file name. </td></tr>
+    <tr><td class="paramname">read_only</td><td>true =&gt; SQLite database file is read-only. <br  />
+ false =&gt; SQLite database file could be written into. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a12dd676f350f5e9448d61f9fe9301831" name="a12dd676f350f5e9448d61f9fe9301831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12dd676f350f5e9448d61f9fe9301831">&#9670;&nbsp;</a></span>query()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classlib__df_1_1myDataFrame.html">lib_df::myDataFrame</a> &gt; lib_sql::mySQLite::query </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sql</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run SQL query, e.g. SELECT command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sql</td><td>SQL query to be run. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;lib_df::myDataFrame&gt; Data retrieved via SQL query. </dd></dl>
+
+</div>
+</div>
+<a id="ac15f63f59725afa0cebefe7279d69f33" name="ac15f63f59725afa0cebefe7279d69f33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac15f63f59725afa0cebefe7279d69f33">&#9670;&nbsp;</a></span>upload_tbl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib_sql::mySQLite::upload_tbl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib__df_1_1myDataFrame.html">lib_df::myDataFrame</a> &amp;&#160;</td>
+          <td class="paramname"><em>tbl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>tbl_nm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>delete_old_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Upload table into SQLite database file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tbl</td><td>Table in form of myDataFrame object. </td></tr>
+    <tr><td class="paramname">tbl_nm</td><td>Name of the table to be created. </td></tr>
+    <tr><td class="paramname">delete_old_data</td><td>true =&gt; Delete existing data in the table before uploading the table. <br  />
+ false =&gt; Add date to existing data when uploading the table. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="lib__sql_8h_source.html">lib_sql.h</a></li>
 <li>lib_sql.cpp</li>
 </ul>

@@ -6,6 +6,143 @@
 
 int main()
 {
+    // decompose frequency string
+    {
+        std::cout << "DECOMPOSING FREQUENCY STRING" << std::endl;
+        std::string freq_str;
+        std::tuple<int, std::string> freq_decomposed;
+
+        // decompose "ON"
+        freq_str = "ON";
+        freq_decomposed = fin_date::decompose_freq(freq_str);
+        std::cout << freq_str + " is decomposed into " << std::to_string(std::get<0>(freq_decomposed)) << " and " << std::get<1>(freq_decomposed) << std::endl;
+
+        // decompose "1M"
+        freq_str = "1M";
+        freq_decomposed = fin_date::decompose_freq(freq_str);
+        std::cout << freq_str + " is decomposed into " << std::to_string(std::get<0>(freq_decomposed)) << " and " << std::get<1>(freq_decomposed) << std::endl;
+
+        // decompose "1Y3M"
+        freq_str = "1Y3M";
+        freq_decomposed = fin_date::decompose_freq(freq_str);
+        std::cout << freq_str + " is decomposed into " << std::to_string(std::get<0>(freq_decomposed)) << " and " << std::get<1>(freq_decomposed) << std::endl;
+
+        std::cout << '\n' << std::endl;
+    }
+
+    // compose frequency string
+    {
+        std::cout << "COMPOSING FREQUENCY STRING" << std::endl;
+        std::tuple<int, std::string> freq_decomposed;
+
+        // compose "ON"
+        freq_decomposed = {-2, "D"};
+        std::cout << std::to_string(std::get<0>(freq_decomposed)) << " and " << std::get<1>(freq_decomposed) << " is composed into " << fin_date::compose_freq(freq_decomposed) << std::endl;
+
+        // compose "1M"
+        freq_decomposed = {1, "M"};
+        std::cout << std::to_string(std::get<0>(freq_decomposed)) << " and " << std::get<1>(freq_decomposed) << " is composed into " << fin_date::compose_freq(freq_decomposed) << std::endl;
+
+        std::cout << '\n' << std::endl;
+    }
+
+    // convert frequency amount and unit into proxy amount
+    {
+        std::cout << "CONVERT FREQUENCY AMOUNT AND UNIT INTO PROXY AMOUNT" << std::endl;
+        std::tuple<int, std::string> freq_decomposed;
+
+        // convert "1D"
+        freq_decomposed = {1, "D"};
+        std::cout << std::to_string(std::get<0>(freq_decomposed)) << " and " << std::get<1>(freq_decomposed) << " is approximately " << fin_date::get_tenor_maturity(freq_decomposed) << " year(s)" << std::endl;
+
+        // convert "1W"
+        freq_decomposed = {1, "W"};
+        std::cout << std::to_string(std::get<0>(freq_decomposed)) << " and " << std::get<1>(freq_decomposed) << " is approximately " << fin_date::get_tenor_maturity(freq_decomposed) << " year(s)" << std::endl;
+
+        // convert "1M"
+        freq_decomposed = {1, "M"};
+        std::cout << std::to_string(std::get<0>(freq_decomposed)) << " and " << std::get<1>(freq_decomposed) << " is approximately " << fin_date::get_tenor_maturity(freq_decomposed) << " year(s)" << std::endl;
+
+        // convert "1Y"
+        freq_decomposed = {1, "Y"};
+        std::cout << std::to_string(std::get<0>(freq_decomposed)) << " and " << std::get<1>(freq_decomposed) << " is approximately " << fin_date::get_tenor_maturity(freq_decomposed) << " year(s)" << std::endl;
+
+        std::cout << '\n' << std::endl;
+    }
+
+    // generate list of decomposed frequencies
+    {
+        std::cout << "CREATE LIST OF DECOMPOSED FREQUENCIES" << std::endl;
+
+        std::tuple<int, std::string> freq_decomposed = {1, "Y"};
+        unsigned short maturity = 5;
+        std::vector<std::tuple<int, std::string>> freqs = fin_date::generate_freqs(freq_decomposed, maturity);
+
+        for (std::size_t idx = 0; idx < freqs.size(); idx++)
+        {
+            std::cout << "[" << std::to_string(std::get<0>(freqs[idx])) << ", " << std::get<1>(freqs[idx]) << "]" << std::endl;
+        }
+
+        std::cout << '\n' << std::endl;
+    }
+
+    // remove duplicities from frequency list
+    {
+        std::cout << "REMOVE DUPLICITIES FROM FREQUENCY LIST" << std::endl;
+
+        std::vector<std::string> freqs_str = {"6M", "12M", "1Y"};
+
+        std::vector<std::tuple<int, std::string>> freqs_decomposed;
+        for (std::size_t idx = 0; idx < freqs_str.size(); idx++)
+            freqs_decomposed.push_back(fin_date::decompose_freq(freqs_str[idx]));
+
+        std::vector<std::tuple<int, std::string>> freqs_decomposed_unique = fin_date::drop_freq_duplicates(freqs_decomposed);
+
+        for (std::size_t idx = 0; idx < freqs_decomposed_unique.size(); idx++)
+            std::cout << "[" << std::to_string(std::get<0>(freqs_decomposed_unique[idx])) << ", " << std::get<1>(freqs_decomposed_unique[idx]) << "]" << std::endl;
+
+        std::cout << '\n' << std::endl;
+    }
+
+    // sort vector of frequencies
+    {
+        std::cout << "SORT VECTOR OF FREQUENCIES" << std::endl;
+
+        // list of frequency strings
+        std::vector<std::string> freqs_str = {"3M", "1M", "1D", "1Y"};
+
+        // convert frequency strings to frequency amounts and units
+        std::vector<std::tuple<int, std::string>> freqs_decomposed;
+        for (std::size_t idx = 0; idx < freqs_str.size(); idx++)
+            freqs_decomposed.push_back(fin_date::decompose_freq(freqs_str[idx]));
+
+        // sort frequency amounts and units
+        std::vector<std::tuple<int, std::string>> freqs_sorted = fin_date::sort_freqs(freqs_decomposed);
+
+        // print result
+        for (std::size_t idx = 0; idx < freqs_sorted.size(); idx++)
+            std::cout << "[" << std::to_string(std::get<0>(freqs_sorted[idx])) << ", " << std::get<1>(freqs_sorted[idx]) << "]" << std::endl;
+
+        std::cout << '\n' << std::endl;
+    }
+
+    // combine decomposed frequencies
+    {
+        std::cout << "COMBINE DECOMPOSED FREQUENCIES" << std::endl;
+
+        // define frequencies
+        std::tuple<int, std::string> freq1 = {1, "M"};
+        std::tuple<int, std::string> freq2 = {2, "M"};
+        std::string operand = "+";
+        std::tuple<int, std::string> freq3 = fin_date::combine_freqs(freq1, freq2, operand);
+
+        std::cout << "[" << std::to_string(std::get<0>(freq1)) << ", " << std::get<1>(freq1) << "] " << operand << " ";
+        std::cout << "[" << std::to_string(std::get<0>(freq2)) << ", " << std::get<1>(freq2) << "] = ";
+        std::cout << "[" << std::to_string(std::get<0>(freq3)) << ", " << std::get<1>(freq3) << "]" << std::endl;
+
+        std::cout << '\n' << std::endl;
+    }
+
     // day count method - two dates
     {
         std::cout << "DAY COUNT METHOD - TWO DATES" << std::endl;
